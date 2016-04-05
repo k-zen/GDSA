@@ -1,0 +1,8 @@
+=================== Release 1.0 2016-XX-XX =====================
+Description
+    * First production ready version of the App.
+Functionalities
+    *
+Changes
+    * Version 1.0 Build 01 (2016/XX/XX)
+        *
