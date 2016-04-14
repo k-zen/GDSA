@@ -1,13 +1,16 @@
 PODS:
   - HexColors (2.2.1)
+  - Mapbox-iOS-SDK (3.2.0)
   - TSMessages (0.9.12):
     - HexColors (~> 2.2.0)
 
 DEPENDENCIES:
+  - Mapbox-iOS-SDK
   - TSMessages
 
 SPEC CHECKSUMS:
   HexColors: abfd172e329dab59888614ccba6f216cec59289d
+  Mapbox-iOS-SDK: 3b9e8d0f77098494cc236384fde2a26eb6683f3d
   TSMessages: c8cc7b80f2a833af533872cd02010cac061532cc
 
 COCOAPODS: 0.39.0

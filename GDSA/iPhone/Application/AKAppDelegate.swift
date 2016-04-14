@@ -1,46 +1,61 @@
-//
-//  AppDelegate.swift
-//  GDSA
-//
-//  Created by K-Zen on 4/4/16.
-//  Copyright © 2016 APKC.net. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
+class AppDelegate: UIResponder, UIApplicationDelegate
+{
+    // MARK: Properties
+    let menu: AMSlideOutNavigationController = AMSlideOutNavigationController.slideOutNavigation() as! AMSlideOutNavigationController
     var window: UIWindow?
-
-
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+    
+    // MARK: UIApplicationDelegate Implementation
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
+    {
+        // LOOK & FEEL CUSTOMIZATIONS.
+        // [[UINavigationBar appearance] setBarTintColor:HEXCOLOR(0x2A363B)];
+        // [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:HEXCOLOR(0xFFFFFF),
+        //     NSForegroundColorAttributeName, [UIFont fontWithName:@"HelveticaNeue-CondensedBold" size:18.0],
+        //     NSFontAttributeName, nil]];
+        
+        self.menu.setSlideoutOptions(AMSlideOutGlobals.defaultFlatOptions())
+        self.menu.addSectionWithTitle("Recording")
+        self.menu.addViewControllerToLastSection(AKRecordTravelViewController(nibName: "AKRecordTravelView", bundle: nil), tagged: 1, withTitle: "Record Travel", andIcon: nil)
+//        self.menu.setSlideoutOptions([
+//            AMOptionsButtonIcon : UIImage(imageLiteral:"0002-044px.png"),
+//            AMOptionsSlideValue : (240.0),
+//            AMOptionsHeaderSeparatorUpper : UIColor.clearColor(),
+//            AMOptionsHeaderSeparatorLower : UIColor.clearColor(),
+//            AMOptionsHeaderGradientUp : UIColor.clearColor(),
+//            AMOptionsHeaderGradientDown : UIColor.clearColor(),
+//            AMOptionsHeaderFont : UIFont(name:"HelveticaNeue-CondensedBold", size:18.0)!,
+//            AMOptionsHeaderFontColor : UIColor.whiteColor(),
+//            AMOptionsHeaderPadding : (10.0),
+//            AMOptionsHeaderHeight : (60),
+//            AMOptionsImageOffsetByY : (5.0),
+//            AMOptionsImageHeight : (24.0),
+//            AMOptionsImagePadding : (44.0),
+//            AMOptionsImageLeftPadding : (10.0),
+//            AMOptionsTableIconMaxSize : (24.0),
+//            AMOptionsSelectionBackground : UIColor.clearColor(),
+//            AMOptionsCellSelectionFontColor : UIColor.whiteColor(),
+//            AMOptionsTableBackground : UIImage(),
+//            AMOptionsTableInsetX : (0.0),
+//            AMOptionsTableOffsetY : (100.0),
+//            AMOptionsTableCellHeight : (34.0),
+//            AMOptionsTextPadding : (0.0),
+//            AMOptionsBackground : UIColor.clearColor(),
+//            AMOptionsCellBackground : UIColor.clearColor(),
+//            AMOptionsCellFont : UIFont(name:"HelveticaNeue-CondensedBold", size:16.0)!,
+//            AMOptionsCellFontColor : UIColor.whiteColor(),
+//            AMOptionsCellSeparatorUpper : UIColor.clearColor(),
+//            AMOptionsCellSeparatorLower : UIColor.clearColor(),
+//            AMOptionsTableCellHeight : (60),
+//            AMOptionsNavbarTranslucent : false,
+//            AMOptionsEnableShadow : false
+//            ]);
+        
+        self.window?.rootViewController = self.menu
+        self.window?.makeKeyAndVisible()
+        
         return true
     }
-
-    func applicationWillResignActive(application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-    }
-
-    func applicationDidEnterBackground(application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-    }
-
-    func applicationWillEnterForeground(application: UIApplication) {
-        // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-    }
-
-    func applicationDidBecomeActive(application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    }
-
-    func applicationWillTerminate(application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    }
-
-
 }
-
