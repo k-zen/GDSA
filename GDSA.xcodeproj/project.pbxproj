@@ -524,6 +524,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.apkc.projects.ios.GDSA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0fb9fd46-1890-4bf5-80fb-2f95a7592420";
 				SWIFT_OBJC_BRIDGING_HEADER = GDSA/iPhone/Application/AKBridgingHeader.h;
 			};
 			name = Release;
