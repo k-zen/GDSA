@@ -8,12 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		178A34455A0F7214483C7616 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E02FA7FCAA3C364950EA04A8 /* Pods.framework */; };
-		499DB65D1CB6BF6900342742 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 499DB65C1CB6BF6900342742 /* MapKit.framework */; };
-		499DB66D1CB6E4F500342742 /* AMSlideOutGlobals.m in Sources */ = {isa = PBXBuildFile; fileRef = 499DB6601CB6E4F500342742 /* AMSlideOutGlobals.m */; };
-		499DB66E1CB6E4F500342742 /* AMSlideOutNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 499DB6621CB6E4F500342742 /* AMSlideOutNavigationController.m */; };
-		499DB66F1CB6E4F500342742 /* AMSlideTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 499DB6641CB6E4F500342742 /* AMSlideTableCell.m */; };
-		499DB6701CB6E4F500342742 /* AMSlideTableHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 499DB6661CB6E4F500342742 /* AMSlideTableHeader.m */; };
-		499DB6711CB6E4F500342742 /* AMTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 499DB6681CB6E4F500342742 /* AMTableView.m */; };
+		4922DD701CE679CE003E0AFB /* AKMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4922DD6F1CE679CE003E0AFB /* AKMainViewController.swift */; };
+		4922DD721CE67C01003E0AFB /* AKViewTravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4922DD711CE67C01003E0AFB /* AKViewTravelViewController.swift */; };
 		499DB6801CB6E8B900342742 /* 0001-512px.png in Resources */ = {isa = PBXBuildFile; fileRef = 499DB6791CB6E8B900342742 /* 0001-512px.png */; };
 		499DB6811CB6E8B900342742 /* AppIcon-29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 499DB67A1CB6E8B900342742 /* AppIcon-29@2x.png */; };
 		499DB6821CB6E8B900342742 /* AppIcon-29@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 499DB67B1CB6E8B900342742 /* AppIcon-29@3x.png */; };
@@ -22,11 +18,6 @@
 		499DB6851CB6E8B900342742 /* AppIcon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 499DB67E1CB6E8B900342742 /* AppIcon-60@2x.png */; };
 		499DB6861CB6E8B900342742 /* AppIcon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 499DB67F1CB6E8B900342742 /* AppIcon-60@3x.png */; };
 		499DB6881CB6EAD500342742 /* AKRecordTravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499DB6871CB6EAD500342742 /* AKRecordTravelViewController.swift */; };
-		499DB68A1CB6EB6300342742 /* AKRecordTravelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 499DB6891CB6EB6300342742 /* AKRecordTravelView.xib */; };
-		499DB6901CB6F21100342742 /* iconSlide.png in Resources */ = {isa = PBXBuildFile; fileRef = 499DB68C1CB6F21100342742 /* iconSlide.png */; };
-		499DB6911CB6F21100342742 /* iconSlide@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 499DB68D1CB6F21100342742 /* iconSlide@2x.png */; };
-		499DB6921CB6F21100342742 /* iconSlideBlack.png in Resources */ = {isa = PBXBuildFile; fileRef = 499DB68E1CB6F21100342742 /* iconSlideBlack.png */; };
-		499DB6931CB6F21100342742 /* iconSlideBlack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 499DB68F1CB6F21100342742 /* iconSlideBlack@2x.png */; };
 		499DB6951CB6F24200342742 /* 0002-044px.png in Resources */ = {isa = PBXBuildFile; fileRef = 499DB6941CB6F24200342742 /* 0002-044px.png */; };
 		49B252231CB2F84D005C88C9 /* CHANGES.txt in Resources */ = {isa = PBXBuildFile; fileRef = 49B252211CB2F84D005C88C9 /* CHANGES.txt */; };
 		49B252241CB2F84D005C88C9 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 49B252221CB2F84D005C88C9 /* Podfile */; };
@@ -36,17 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		499DB65C1CB6BF6900342742 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		499DB65F1CB6E4F500342742 /* AMSlideOutGlobals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideOutGlobals.h; sourceTree = "<group>"; };
-		499DB6601CB6E4F500342742 /* AMSlideOutGlobals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMSlideOutGlobals.m; sourceTree = "<group>"; };
-		499DB6611CB6E4F500342742 /* AMSlideOutNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideOutNavigationController.h; sourceTree = "<group>"; };
-		499DB6621CB6E4F500342742 /* AMSlideOutNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMSlideOutNavigationController.m; sourceTree = "<group>"; };
-		499DB6631CB6E4F500342742 /* AMSlideTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideTableCell.h; sourceTree = "<group>"; };
-		499DB6641CB6E4F500342742 /* AMSlideTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMSlideTableCell.m; sourceTree = "<group>"; };
-		499DB6651CB6E4F500342742 /* AMSlideTableHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideTableHeader.h; sourceTree = "<group>"; };
-		499DB6661CB6E4F500342742 /* AMSlideTableHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMSlideTableHeader.m; sourceTree = "<group>"; };
-		499DB6671CB6E4F500342742 /* AMTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMTableView.h; sourceTree = "<group>"; };
-		499DB6681CB6E4F500342742 /* AMTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMTableView.m; sourceTree = "<group>"; };
+		4922DD6F1CE679CE003E0AFB /* AKMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKMainViewController.swift; sourceTree = "<group>"; };
+		4922DD711CE67C01003E0AFB /* AKViewTravelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKViewTravelViewController.swift; sourceTree = "<group>"; };
 		499DB6791CB6E8B900342742 /* 0001-512px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "0001-512px.png"; sourceTree = "<group>"; };
 		499DB67A1CB6E8B900342742 /* AppIcon-29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon-29@2x.png"; sourceTree = "<group>"; };
 		499DB67B1CB6E8B900342742 /* AppIcon-29@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon-29@3x.png"; sourceTree = "<group>"; };
@@ -55,12 +37,7 @@
 		499DB67E1CB6E8B900342742 /* AppIcon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon-60@2x.png"; sourceTree = "<group>"; };
 		499DB67F1CB6E8B900342742 /* AppIcon-60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon-60@3x.png"; sourceTree = "<group>"; };
 		499DB6871CB6EAD500342742 /* AKRecordTravelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKRecordTravelViewController.swift; sourceTree = "<group>"; };
-		499DB6891CB6EB6300342742 /* AKRecordTravelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AKRecordTravelView.xib; sourceTree = "<group>"; };
 		499DB68B1CB6ECE500342742 /* AKBridgingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKBridgingHeader.h; sourceTree = "<group>"; };
-		499DB68C1CB6F21100342742 /* iconSlide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconSlide.png; sourceTree = "<group>"; };
-		499DB68D1CB6F21100342742 /* iconSlide@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconSlide@2x.png"; sourceTree = "<group>"; };
-		499DB68E1CB6F21100342742 /* iconSlideBlack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconSlideBlack.png; sourceTree = "<group>"; };
-		499DB68F1CB6F21100342742 /* iconSlideBlack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconSlideBlack@2x.png"; sourceTree = "<group>"; };
 		499DB6941CB6F24200342742 /* 0002-044px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "0002-044px.png"; sourceTree = "<group>"; };
 		49B251F11CB2F26B005C88C9 /* GDSA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GDSA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49B252211CB2F84D005C88C9 /* CHANGES.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGES.txt; sourceTree = "<group>"; };
@@ -79,7 +56,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				499DB65D1CB6BF6900342742 /* MapKit.framework in Frameworks */,
 				178A34455A0F7214483C7616 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,27 +63,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		499DB65E1CB6E4F500342742 /* Menu */ = {
-			isa = PBXGroup;
-			children = (
-				499DB65F1CB6E4F500342742 /* AMSlideOutGlobals.h */,
-				499DB6601CB6E4F500342742 /* AMSlideOutGlobals.m */,
-				499DB6611CB6E4F500342742 /* AMSlideOutNavigationController.h */,
-				499DB6621CB6E4F500342742 /* AMSlideOutNavigationController.m */,
-				499DB6631CB6E4F500342742 /* AMSlideTableCell.h */,
-				499DB6641CB6E4F500342742 /* AMSlideTableCell.m */,
-				499DB6651CB6E4F500342742 /* AMSlideTableHeader.h */,
-				499DB6661CB6E4F500342742 /* AMSlideTableHeader.m */,
-				499DB6671CB6E4F500342742 /* AMTableView.h */,
-				499DB6681CB6E4F500342742 /* AMTableView.m */,
-				499DB68C1CB6F21100342742 /* iconSlide.png */,
-				499DB68D1CB6F21100342742 /* iconSlide@2x.png */,
-				499DB68E1CB6F21100342742 /* iconSlideBlack.png */,
-				499DB68F1CB6F21100342742 /* iconSlideBlack@2x.png */,
-			);
-			path = Menu;
-			sourceTree = "<group>";
-		};
 		499DB6761CB6E8B900342742 /* Certificates */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,7 +145,9 @@
 		49B2522A1CB2FA13005C88C9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4922DD6F1CE679CE003E0AFB /* AKMainViewController.swift */,
 				499DB6871CB6EAD500342742 /* AKRecordTravelViewController.swift */,
+				4922DD711CE67C01003E0AFB /* AKViewTravelViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -199,7 +156,6 @@
 			isa = PBXGroup;
 			children = (
 				49B252291CB2FA13005C88C9 /* AKMain.storyboard */,
-				499DB6891CB6EB6300342742 /* AKRecordTravelView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -226,7 +182,6 @@
 		49B2522F1CB2FA13005C88C9 /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				499DB65E1CB6E4F500342742 /* Menu */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -242,7 +197,6 @@
 		66481AA77F176DBE344C17C0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				499DB65C1CB6BF6900342742 /* MapKit.framework */,
 				E02FA7FCAA3C364950EA04A8 /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -299,7 +253,7 @@
 								enabled = 1;
 							};
 							com.apple.Maps.iOS = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -332,17 +286,12 @@
 				499DB6841CB6E8B900342742 /* AppIcon-40@3x.png in Resources */,
 				499DB6861CB6E8B900342742 /* AppIcon-60@3x.png in Resources */,
 				499DB6851CB6E8B900342742 /* AppIcon-60@2x.png in Resources */,
-				499DB6901CB6F21100342742 /* iconSlide.png in Resources */,
-				499DB68A1CB6EB6300342742 /* AKRecordTravelView.xib in Resources */,
 				49B252241CB2F84D005C88C9 /* Podfile in Resources */,
 				499DB6831CB6E8B900342742 /* AppIcon-40@2x.png in Resources */,
 				499DB6801CB6E8B900342742 /* 0001-512px.png in Resources */,
 				499DB6811CB6E8B900342742 /* AppIcon-29@2x.png in Resources */,
-				499DB6931CB6F21100342742 /* iconSlideBlack@2x.png in Resources */,
 				49B252231CB2F84D005C88C9 /* CHANGES.txt in Resources */,
 				49B252341CB2FA13005C88C9 /* AKMain.storyboard in Resources */,
-				499DB6911CB6F21100342742 /* iconSlide@2x.png in Resources */,
-				499DB6921CB6F21100342742 /* iconSlideBlack.png in Resources */,
 				499DB6821CB6E8B900342742 /* AppIcon-29@3x.png in Resources */,
 				49B252351CB2FA13005C88C9 /* Assets.xcassets in Resources */,
 			);
@@ -403,13 +352,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				499DB66F1CB6E4F500342742 /* AMSlideTableCell.m in Sources */,
 				49B252321CB2FA13005C88C9 /* AKAppDelegate.swift in Sources */,
-				499DB6701CB6E4F500342742 /* AMSlideTableHeader.m in Sources */,
 				499DB6881CB6EAD500342742 /* AKRecordTravelViewController.swift in Sources */,
-				499DB66E1CB6E4F500342742 /* AMSlideOutNavigationController.m in Sources */,
-				499DB66D1CB6E4F500342742 /* AMSlideOutGlobals.m in Sources */,
-				499DB6711CB6E4F500342742 /* AMTableView.m in Sources */,
+				4922DD721CE67C01003E0AFB /* AKViewTravelViewController.swift in Sources */,
+				4922DD701CE679CE003E0AFB /* AKMainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

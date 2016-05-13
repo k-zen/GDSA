@@ -1,8 +1,11 @@
 =================== Release 1.0 2016-XX-XX =====================
 Description
-    * First production ready version of the App.
+    * First alpha version of the App.
 Functionalities
-    *
+    * Ability to record travels.
+    * Ability to visualize travels.
+        * Travel distance.
+        * Stops (Time, Location)
 Changes
     * Version 1.0 Build 01 (2016/XX/XX)
-        *
+        * Added base support for the following views: Main, RecordTravel, ViewTravel. (2016/05/13)
