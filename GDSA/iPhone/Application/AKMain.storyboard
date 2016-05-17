@@ -39,7 +39,7 @@
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Mup-7e-09B">
                                         <rect key="frame" x="0.0" y="48" width="560" height="359"/>
-                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.8666666666666667" green="0.8666666666666667" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableView>
                                 </subviews>
                                 <constraints>
@@ -113,7 +113,9 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="GDSA" id="1xK-wB-F8c"/>
+                    <navigationItem key="navigationItem" title="Main" id="1xK-wB-F8c">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="J2e-Vy-8wS"/>
+                    </navigationItem>
                     <connections>
                         <segue destination="X3k-3j-jYF" kind="show" identifier="RecordTravelSegue" id="QDS-3v-fef"/>
                         <segue destination="JUZ-Og-x3G" kind="show" identifier="ViewTravelSegue" id="uHL-jK-XJd"/>
@@ -134,9 +136,73 @@
                     <view key="view" contentMode="scaleToFill" id="CNF-ug-vaW" userLabel="Main_Container">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2rq-5Z-0ad" userLabel="Statistics_Container">
+                                <rect key="frame" x="20" y="72" width="560" height="48"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance Traveled (meters):" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vt6-qs-1gY" userLabel="Distance_Traveled_Title">
+                                        <rect key="frame" x="8" y="8" width="180" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="82X-J9-2Y2"/>
+                                            <constraint firstAttribute="width" constant="180" id="b1Y-sV-7k2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="16"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBm-c8-gxS" userLabel="Distance_Traveled_Value">
+                                        <rect key="frame" x="196" y="8" width="356" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="356" id="MCY-Jo-bzr"/>
+                                            <constraint firstAttribute="height" constant="32" id="WRP-lM-FXg"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="16"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="vt6-qs-1gY" firstAttribute="baseline" secondItem="mBm-c8-gxS" secondAttribute="baseline" id="1e5-3W-5de"/>
+                                    <constraint firstAttribute="height" constant="48" id="An3-Au-bxO"/>
+                                    <constraint firstItem="mBm-c8-gxS" firstAttribute="leading" secondItem="vt6-qs-1gY" secondAttribute="trailing" constant="8" symbolic="YES" id="bKy-yQ-xKs"/>
+                                    <constraint firstItem="vt6-qs-1gY" firstAttribute="top" secondItem="2rq-5Z-0ad" secondAttribute="topMargin" id="fF4-Qw-bYN"/>
+                                    <constraint firstItem="vt6-qs-1gY" firstAttribute="leading" secondItem="2rq-5Z-0ad" secondAttribute="leadingMargin" id="yFL-aO-dJS"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CWK-GB-zQm" userLabel="Action_Button_Container">
+                                <rect key="frame" x="20" y="128" width="560" height="45"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8kB-p2-mqB">
+                                        <rect key="frame" x="8" y="8" width="544" height="29"/>
+                                        <state key="normal" title="Stop Recording Travel"/>
+                                        <connections>
+                                            <action selector="stopRecordingTravel:" destination="X3k-3j-jYF" eventType="touchUpInside" id="ifZ-fJ-RtX"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="8kB-p2-mqB" firstAttribute="trailing" secondItem="CWK-GB-zQm" secondAttribute="trailingMargin" id="62Q-tt-cS0"/>
+                                    <constraint firstItem="8kB-p2-mqB" firstAttribute="bottom" secondItem="CWK-GB-zQm" secondAttribute="bottomMargin" id="6gt-rd-vmu"/>
+                                    <constraint firstAttribute="height" constant="45" id="E0r-P1-aqd"/>
+                                    <constraint firstItem="8kB-p2-mqB" firstAttribute="leading" secondItem="CWK-GB-zQm" secondAttribute="leadingMargin" id="HSY-4v-lNh"/>
+                                    <constraint firstItem="8kB-p2-mqB" firstAttribute="top" secondItem="CWK-GB-zQm" secondAttribute="topMargin" id="QG6-Ol-BgX"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="2rq-5Z-0ad" firstAttribute="top" secondItem="oQE-nB-6ul" secondAttribute="bottom" constant="8" symbolic="YES" id="GA3-5K-xm1"/>
+                            <constraint firstItem="2rq-5Z-0ad" firstAttribute="leading" secondItem="CNF-ug-vaW" secondAttribute="leadingMargin" id="H6m-7A-60W"/>
+                            <constraint firstItem="2rq-5Z-0ad" firstAttribute="leading" secondItem="CWK-GB-zQm" secondAttribute="leading" id="VAA-qc-zKe"/>
+                            <constraint firstItem="2rq-5Z-0ad" firstAttribute="trailing" secondItem="CNF-ug-vaW" secondAttribute="trailingMargin" id="kEx-8c-cWn"/>
+                            <constraint firstItem="CWK-GB-zQm" firstAttribute="top" secondItem="2rq-5Z-0ad" secondAttribute="bottom" constant="8" symbolic="YES" id="kTc-ff-44o"/>
+                            <constraint firstItem="2rq-5Z-0ad" firstAttribute="trailing" secondItem="CWK-GB-zQm" secondAttribute="trailing" id="ych-y8-rw4"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Record Travel" id="h0R-Uz-8Xk"/>
+                    <navigationItem key="navigationItem" title="Record Travel" id="h0R-Uz-8Xk">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="2Cg-TJ-Mg3"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="distanceTraveled" destination="mBm-c8-gxS" id="jMe-F2-q5f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nM5-BQ-zc5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -155,7 +221,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="View Travel" id="gc4-GJ-moF"/>
+                    <navigationItem key="navigationItem" title="View Travel" id="gc4-GJ-moF">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="LRp-qD-yG6"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Reg-fW-jH0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

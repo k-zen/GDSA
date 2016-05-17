@@ -1,8 +1,8 @@
 import UIKit
 
-class AKViewTravelViewController: UIViewController
+class AKViewTravelViewController: AKCustomViewController
 {
-    // MARK: UIViewController Overriding
+    // MARK: AKCustomViewController Overriding
     override func viewDidLoad()
     {
         super.viewDidLoad()

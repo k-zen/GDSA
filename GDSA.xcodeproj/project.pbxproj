@@ -10,6 +10,10 @@
 		178A34455A0F7214483C7616 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E02FA7FCAA3C364950EA04A8 /* Pods.framework */; };
 		4922DD701CE679CE003E0AFB /* AKMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4922DD6F1CE679CE003E0AFB /* AKMainViewController.swift */; };
 		4922DD721CE67C01003E0AFB /* AKViewTravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4922DD711CE67C01003E0AFB /* AKViewTravelViewController.swift */; };
+		495683341CEA235B0057B06E /* AKCustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495683331CEA235B0057B06E /* AKCustomViewController.swift */; };
+		495683361CEA268B0057B06E /* AKConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495683351CEA268B0057B06E /* AKConstants.swift */; };
+		495683391CEA57BC0057B06E /* AKInputData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495683371CEA57BC0057B06E /* AKInputData.swift */; };
+		4956833A1CEA57BC0057B06E /* AKTravelSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495683381CEA57BC0057B06E /* AKTravelSegment.swift */; };
 		499DB6801CB6E8B900342742 /* 0001-512px.png in Resources */ = {isa = PBXBuildFile; fileRef = 499DB6791CB6E8B900342742 /* 0001-512px.png */; };
 		499DB6811CB6E8B900342742 /* AppIcon-29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 499DB67A1CB6E8B900342742 /* AppIcon-29@2x.png */; };
 		499DB6821CB6E8B900342742 /* AppIcon-29@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 499DB67B1CB6E8B900342742 /* AppIcon-29@3x.png */; };
@@ -24,11 +28,16 @@
 		49B252321CB2FA13005C88C9 /* AKAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B252271CB2FA13005C88C9 /* AKAppDelegate.swift */; };
 		49B252341CB2FA13005C88C9 /* AKMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49B252291CB2FA13005C88C9 /* AKMain.storyboard */; };
 		49B252351CB2FA13005C88C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49B2522D1CB2FA13005C88C9 /* Assets.xcassets */; };
+		49BEBB1A1CEA635F00A5FC12 /* AKTravel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BEBB191CEA635F00A5FC12 /* AKTravel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4922DD6F1CE679CE003E0AFB /* AKMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKMainViewController.swift; sourceTree = "<group>"; };
 		4922DD711CE67C01003E0AFB /* AKViewTravelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKViewTravelViewController.swift; sourceTree = "<group>"; };
+		495683331CEA235B0057B06E /* AKCustomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKCustomViewController.swift; sourceTree = "<group>"; };
+		495683351CEA268B0057B06E /* AKConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKConstants.swift; sourceTree = "<group>"; };
+		495683371CEA57BC0057B06E /* AKInputData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKInputData.swift; sourceTree = "<group>"; };
+		495683381CEA57BC0057B06E /* AKTravelSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKTravelSegment.swift; sourceTree = "<group>"; };
 		499DB6791CB6E8B900342742 /* 0001-512px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "0001-512px.png"; sourceTree = "<group>"; };
 		499DB67A1CB6E8B900342742 /* AppIcon-29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon-29@2x.png"; sourceTree = "<group>"; };
 		499DB67B1CB6E8B900342742 /* AppIcon-29@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon-29@3x.png"; sourceTree = "<group>"; };
@@ -46,6 +55,7 @@
 		49B252291CB2FA13005C88C9 /* AKMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = AKMain.storyboard; path = ../Application/AKMain.storyboard; sourceTree = "<group>"; };
 		49B2522D1CB2FA13005C88C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49B252311CB2FA13005C88C9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49BEBB191CEA635F00A5FC12 /* AKTravel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKTravel.swift; sourceTree = "<group>"; };
 		BBC791C1362B49FEE23CD920 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E02FA7FCAA3C364950EA04A8 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F12237D9CD9C0B4697286FF7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -63,6 +73,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		495683321CEA235B0057B06E /* CustomComponents */ = {
+			isa = PBXGroup;
+			children = (
+				495683331CEA235B0057B06E /* AKCustomViewController.swift */,
+			);
+			path = CustomComponents;
+			sourceTree = "<group>";
+		};
 		499DB6761CB6E8B900342742 /* Certificates */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +200,11 @@
 		49B2522F1CB2FA13005C88C9 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				495683351CEA268B0057B06E /* AKConstants.swift */,
+				495683371CEA57BC0057B06E /* AKInputData.swift */,
+				49BEBB191CEA635F00A5FC12 /* AKTravel.swift */,
+				495683381CEA57BC0057B06E /* AKTravelSegment.swift */,
+				495683321CEA235B0057B06E /* CustomComponents */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -352,10 +375,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49BEBB1A1CEA635F00A5FC12 /* AKTravel.swift in Sources */,
 				49B252321CB2FA13005C88C9 /* AKAppDelegate.swift in Sources */,
+				495683361CEA268B0057B06E /* AKConstants.swift in Sources */,
 				499DB6881CB6EAD500342742 /* AKRecordTravelViewController.swift in Sources */,
 				4922DD721CE67C01003E0AFB /* AKViewTravelViewController.swift in Sources */,
+				495683391CEA57BC0057B06E /* AKInputData.swift in Sources */,
 				4922DD701CE679CE003E0AFB /* AKMainViewController.swift in Sources */,
+				4956833A1CEA57BC0057B06E /* AKTravelSegment.swift in Sources */,
+				495683341CEA235B0057B06E /* AKCustomViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
