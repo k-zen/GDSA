@@ -1,5 +1,7 @@
+import AudioToolbox
 import CoreLocation
 import Foundation
+import TSMessages
 import UIKit
 
 // MARK: Extensions
@@ -36,11 +38,22 @@ struct UserLocation {
 // MARK: Global Constants
 struct GlobalConstants {
     static let AKLocationUpdateInterval = 15
+    static let AKLocationUpdateNotificationName = "LocationUpdate"
+    static let AKNotificationBarDismissDelay = 8
+    static let AKNotificationBarSound = 1057
 }
 
 // MARK: Global Enumerations
 enum ErrorCodes: Int {
     case GENERIC = 1000
+}
+
+enum Exceptions: ErrorType
+{
+    case NotInitialized(String)
+    case EmptyData(String)
+    case InvalidLength(String)
+    case NotValid(String)
 }
 
 // MARK: Global Functions
@@ -60,19 +73,119 @@ func AKDelegate() -> AKAppDelegate { return UIApplication.sharedApplication().de
 
 /// Computes the distance between two points and returns the distance in meters.
 ///
-/// - Parameter pointALat: Point A latitude. (Y)
-/// - Parameter pointALon: Point A longitude. (X)
-/// - Parameter pointBLat: Point B latitude. (Y)
-/// - Parameter pointBLon: Point B longitude. (X)
+/// - Parameter pointA: Point A location.
+/// - Parameter pointB: Point B location.
 ///
 /// - Returns: TRUE if within range, FALSE otherwise.
-func AKComputeDistanceBetweenTwoPoints(pointALat pointALat: CLLocationDegrees,
-                                                 pointALon: CLLocationDegrees,
-                                                 pointBLat: CLLocationDegrees,
-                                                 pointBLon: CLLocationDegrees) -> CLLocationDistance
+func AKComputeDistanceBetweenTwoPoints(pointA pointA: UserLocation,
+                                              pointB: UserLocation) -> CLLocationDistance
 {
-    let pointA = CLLocation(latitude: pointALat, longitude: pointALon)
-    let pointB = CLLocation(latitude: pointBLat, longitude: pointBLon)
+    let pointA = CLLocation(latitude: pointA.latitude, longitude: pointA.longitude)
+    let pointB = CLLocation(latitude: pointB.latitude, longitude: pointB.longitude)
     
     return pointA.distanceFromLocation(pointB)
+}
+
+func AKPresentTopMessageInfo(presenter: AKCustomViewController!, title: String! = "Information", message: String!)
+{
+    TSMessage.showNotificationInViewController(
+        presenter,
+        title: title,
+        subtitle: message,
+        image: nil,
+        type: TSMessageNotificationType.Message,
+        duration: NSTimeInterval(GlobalConstants.AKNotificationBarDismissDelay),
+        callback: nil,
+        buttonTitle: nil,
+        buttonCallback: {},
+        atPosition: TSMessageNotificationPosition.Top,
+        canBeDismissedByUser: true
+    )
+    AudioServicesPlaySystemSound(UInt32(GlobalConstants.AKNotificationBarSound))
+}
+
+func AKPresentTopMessageWarn(presenter: AKCustomViewController!, title: String! = "Warning", message: String!)
+{
+    TSMessage.showNotificationInViewController(
+        presenter,
+        title: title,
+        subtitle: message,
+        image: nil,
+        type: TSMessageNotificationType.Warning,
+        duration: NSTimeInterval(GlobalConstants.AKNotificationBarDismissDelay),
+        callback: nil,
+        buttonTitle: nil,
+        buttonCallback: {},
+        atPosition: TSMessageNotificationPosition.Top,
+        canBeDismissedByUser: true
+    )
+    AudioServicesPlaySystemSound(UInt32(GlobalConstants.AKNotificationBarSound))
+}
+
+func AKPresentTopMessageError(presenter: AKCustomViewController!, title: String! = "Error", message: String!)
+{
+    TSMessage.showNotificationInViewController(
+        presenter,
+        title: title,
+        subtitle: message,
+        image: nil,
+        type: TSMessageNotificationType.Error,
+        duration: NSTimeInterval(GlobalConstants.AKNotificationBarDismissDelay),
+        callback: nil,
+        buttonTitle: nil,
+        buttonCallback: {},
+        atPosition: TSMessageNotificationPosition.Top,
+        canBeDismissedByUser: true
+    )
+    AudioServicesPlaySystemSound(UInt32(GlobalConstants.AKNotificationBarSound))
+}
+
+func AKPresentTopMessageSuccess(presenter: AKCustomViewController!, title: String! = "Message", message: String!)
+{
+    TSMessage.showNotificationInViewController(
+        presenter,
+        title: title,
+        subtitle: message,
+        image: nil,
+        type: TSMessageNotificationType.Success,
+        duration: NSTimeInterval(GlobalConstants.AKNotificationBarDismissDelay),
+        callback: nil,
+        buttonTitle: nil,
+        buttonCallback: {},
+        atPosition: TSMessageNotificationPosition.Top,
+        canBeDismissedByUser: true
+    )
+    AudioServicesPlaySystemSound(UInt32(GlobalConstants.AKNotificationBarSound))
+}
+
+func AKPresentMessageFromError(errorMessage: String = "", controller: AKCustomViewController!)
+{
+    do {
+        let input = errorMessage
+        let regex = try NSRegularExpression(pattern: ".*\"(.*)\"", options: NSRegularExpressionOptions.CaseInsensitive)
+        let matches = regex.matchesInString(input, options: [], range: NSMakeRange(0, input.characters.count))
+        
+        if let match = matches.first {
+            let range = match.rangeAtIndex(1)
+            if let swiftRange = AKRangeFromNSRange(range, forString: input) {
+                let msg = input.substringWithRange(swiftRange)
+                AKPresentTopMessageError(controller, message: msg)
+            }
+        }
+    }
+    catch {
+        NSLog("=> Generic Error ==> %@", "\(error)")
+    }
+}
+
+func AKRangeFromNSRange(nsRange: NSRange, forString str: String) -> Range<String.Index>?
+{
+    let fromUTF16 = str.utf16.startIndex.advancedBy(nsRange.location, limit: str.utf16.endIndex)
+    let toUTF16 = fromUTF16.advancedBy(nsRange.length, limit: str.utf16.endIndex)
+    
+    if let from = String.Index(fromUTF16, within: str), let to = String.Index(toUTF16, within: str) {
+        return from ..< to
+    }
+    
+    return nil
 }

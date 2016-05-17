@@ -1,12 +1,5 @@
 import Foundation
 
-enum InputDataError: ErrorType
-{
-    case EmptyData(String)
-    case InvalidLength(String)
-    case NotValid(String)
-}
-
 /// Base class for all *Input Data* in the App.
 class AKInputData: NSObject
 {
@@ -21,7 +14,7 @@ class AKInputData: NSObject
     
     internal func isReady() throws
     {
-        guard inputData != nil && !inputData.isEmpty else { throw InputDataError.EmptyData("Empty data.") }
+        guard inputData != nil && !inputData.isEmpty else { throw Exceptions.EmptyData("Empty data.") }
     }
     
     func validate() throws

@@ -26,6 +26,8 @@
 	<string>en</string>
 	<key>UIMainStoryboardFile</key>
 	<string>AKMain</string>
+	<key>MGLMapboxAccessToken</key>
+	<string>pk.eyJ1Ijoiay16ZW4iLCJhIjoiY2lvYmx4eDF4MDQ3bnZ3bHo1NDE4eXd6MSJ9.8qKupsK2vfdg0X-p00d5Lg</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>We need to access your location in order to record travel routes.</string>
 	<key>UIBackgroundModes</key>
