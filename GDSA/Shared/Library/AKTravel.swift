@@ -1,3 +1,4 @@
+import CoreLocation
 import Foundation
 
 class AKTravel
@@ -36,10 +37,30 @@ class AKTravel
         }
     }
     
+    func computeTravelOriginAsCoordinate() throws -> CLLocationCoordinate2D
+    {
+        if self.travelOrigin != nil {
+            return CLLocationCoordinate2DMake(self.travelOrigin!.latitude, self.travelOrigin!.longitude)
+        }
+        else {
+            throw Exceptions.NotInitialized("The travel origin has not been set!")
+        }
+    }
+    
     func computeTravelDestination() throws -> UserLocation
     {
         if self.travelDestination != nil {
             return self.travelDestination!
+        }
+        else {
+            throw Exceptions.NotInitialized("The travel destination has not been set!")
+        }
+    }
+    
+    func computeTravelDestinationAsCoordinate() throws -> CLLocationCoordinate2D
+    {
+        if self.travelDestination != nil {
+            return CLLocationCoordinate2DMake(self.travelDestination!.latitude, self.travelDestination!.longitude)
         }
         else {
             throw Exceptions.NotInitialized("The travel destination has not been set!")

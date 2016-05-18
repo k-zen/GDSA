@@ -37,10 +37,13 @@ struct UserLocation {
 
 // MARK: Global Constants
 struct GlobalConstants {
-    static let AKLocationUpdateInterval = 15
+    static let AKLocationUpdateInterval = 6
     static let AKLocationUpdateNotificationName = "LocationUpdate"
     static let AKNotificationBarDismissDelay = 8
     static let AKNotificationBarSound = 1057
+    static let AKPointDiscardRadius = 50.0
+    static let AKTravelStartAnnotationTitle = "Start_Annotation"
+    static let AKTravelEndAnnotationTitle = "End_Annotation"
 }
 
 // MARK: Global Enumerations
@@ -84,6 +87,21 @@ func AKComputeDistanceBetweenTwoPoints(pointA pointA: UserLocation,
     let pointB = CLLocation(latitude: pointB.latitude, longitude: pointB.longitude)
     
     return pointA.distanceFromLocation(pointB)
+}
+
+/// Computes and generates a **UIColor** object based
+/// on it's hexadecimal representation.
+///
+/// - Parameter hex: The hexadecimal representation of the color.
+///
+/// - Returns: A **UIColor** object.
+func AKHexColor(hex: UInt) -> UIColor
+{
+    let red = CGFloat((hex >> 16) & 0xFF) / 255.0
+    let green = CGFloat((hex >> 8) & 0xFF) / 255.0
+    let blue = CGFloat((hex) & 0xFF) / 255.0
+    
+    return UIColor.init(red: red, green: green, blue: blue, alpha: 1)
 }
 
 func AKPresentTopMessageInfo(presenter: AKCustomViewController!, title: String! = "Information", message: String!)

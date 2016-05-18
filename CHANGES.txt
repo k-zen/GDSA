@@ -8,6 +8,7 @@ Functionalities
         * Stops (Time, Location)
 Changes
     * Version 1.0 Build 01 (2016/XX/XX)
+        * Improved support for initial coordinates. Added pins for start and end points. Some other minor modifications. (2016/05/18)
         * Second usable version. Tested on trip to UCA on 17/05. (2016/05/17)
         * First usable version. Tested on trip to UCA on 16/05 (On notebook). Produced an error margin of 1.52% in regards to odometer. (2016/05/17)
         * Added base support for the following views: Main, RecordTravel, ViewTravel. (2016/05/13)
