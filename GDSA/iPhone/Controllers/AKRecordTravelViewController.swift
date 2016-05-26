@@ -6,7 +6,7 @@ import UIKit
 class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
 {
     // MARK: Properties
-    var travel: AKTravel!
+    private var travel: AKTravel! = AKTravel()
     private var startAnnotation: MGLPolygon?
     private var endAnnotation: MGLPolygon?
     private var currentPosition: UserLocation?
@@ -22,22 +22,7 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
     // MARK: Actions
     @IBAction func stopRecordingTravel(sender: AnyObject)
     {
-        NSLog("=> LOCATION SERVICES ==> STOP RECORDING TRAVEL ...")
-        AKDelegate().recordingTravel = false
-        
-        self.travel.addTravelDestination(UserLocation(latitude: self.currentPosition!.latitude, longitude: self.currentPosition!.longitude))
-        
-        do {
-            self.endAnnotation = self.createCircleForCoordinate(
-                GlobalConstants.AKTravelEndAnnotationTitle,
-                coordinate: try self.travel.computeTravelDestinationAsCoordinate(),
-                withMeterRadius: 25.0)
-            self.map.addAnnotation(self.endAnnotation!)
-        }
-        catch {
-            AKPresentMessageFromError("\(error)", controller: self)
-            return
-        }
+        self.stopRecording({ Void -> Void in self.navigationController?.popViewControllerAnimated(true) })
     }
     
     // MARK: AKCustomViewController Overriding
@@ -51,18 +36,69 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
     {
         super.viewDidAppear(animated)
         
+        // Configure map.
+        self.map.minimumZoomLevel = 8
+        self.map.maximumZoomLevel = 15
+        self.map.zoomLevel = 14
+        self.map.userTrackingMode = MGLUserTrackingMode.Follow
+        
+        // Start recording.
+        self.startRecording({})
+    }
+    
+    // MARK: Recording Methods
+    func startRecording(completionTask: Void -> Void)
+    {
+        defer {
+            completionTask()
+        }
+        
+        NSLog("=> LOCATION SERVICES ==> START RECORDING TRAVEL ...")
+        AKDelegate().recordingTravel = true
+        
+        // Compute travel origin.
+        self.travel.addTravelOrigin(UserLocation(latitude: AKDelegate().currentLatitude, longitude: AKDelegate().currentLongitude))
+        
         do {
+            // Append origin to coordinates and center map.
             self.coordinates.append(try self.travel.computeTravelOriginAsCoordinate())
             self.map.centerCoordinate = try self.travel.computeTravelOriginAsCoordinate()
+            
+            // Add start annotation.
             self.startAnnotation = self.createCircleForCoordinate(
                 GlobalConstants.AKTravelStartAnnotationTitle,
                 coordinate: try self.travel.computeTravelOriginAsCoordinate(), withMeterRadius: 25.0)
-            
             self.map.addAnnotation(self.startAnnotation!)
-            self.map.minimumZoomLevel = 8
-            self.map.maximumZoomLevel = 15
-            self.map.zoomLevel = 14
-            self.map.userTrackingMode = MGLUserTrackingMode.Follow
+        }
+        catch {
+            AKPresentMessageFromError("\(error)", controller: self)
+            return
+        }
+    }
+    
+    func stopRecording(completionTask: Void -> Void)
+    {
+        defer {
+            completionTask()
+        }
+        
+        NSLog("=> LOCATION SERVICES ==> STOP RECORDING TRAVEL ...")
+        AKDelegate().recordingTravel = false
+        
+        // Compute travel destination.
+        self.travel.addTravelDestination(UserLocation(latitude: self.currentPosition!.latitude, longitude: self.currentPosition!.longitude))
+        
+        do {
+            // Append origin to coordinates and center map.
+            self.coordinates.append(try self.travel.computeTravelDestinationAsCoordinate())
+            self.map.centerCoordinate = try self.travel.computeTravelDestinationAsCoordinate()
+            
+            // Add end annotation.
+            self.endAnnotation = self.createCircleForCoordinate(
+                GlobalConstants.AKTravelEndAnnotationTitle,
+                coordinate: try self.travel.computeTravelDestinationAsCoordinate(),
+                withMeterRadius: 25.0)
+            self.map.addAnnotation(self.endAnnotation!)
         }
         catch {
             AKPresentMessageFromError("\(error)", controller: self)
@@ -221,7 +257,7 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
         // Custom notifications.
         NSNotificationCenter.defaultCenter().addObserver(
             self,
-            selector: #selector(AKRecordTravelViewController.locationUpdated),
+            selector: #selector(AKRecordTravelViewController.locationUpdated(_:)),
             name: GlobalConstants.AKLocationUpdateNotificationName,
             object: nil)
         
@@ -236,5 +272,8 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
         self.currentTime.layer.cornerRadius = 4.0
         self.currentTime.layer.masksToBounds = true
         self.stopRecordingTravel.layer.cornerRadius = 4.0
+        
+        // Configure NavigationController.
+        self.navigationItem.hidesBackButton = true
     }
 }

@@ -38,6 +38,8 @@ struct UserLocation {
 // MARK: Global Constants
 struct GlobalConstants {
     static let AKLocationUpdateInterval = 6
+    static let AKStartRecordingTravelNotificationName = "StartRecordingTravel"
+    static let AKStopRecordingTravelNotificationName = "StopRecordingTravel"
     static let AKLocationUpdateNotificationName = "LocationUpdate"
     static let AKNotificationBarDismissDelay = 8
     static let AKNotificationBarSound = 1057
