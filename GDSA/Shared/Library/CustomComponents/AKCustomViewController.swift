@@ -30,7 +30,7 @@ class AKCustomViewController: UIViewController, UIGestureRecognizerDelegate
     func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool { return !self.shouldDisableGesture }
     
     // MARK: Miscellaneous
-    func setup(helpContainer: UIView!)
+    func setup()
     {
         self.tapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(AKCustomViewController.tap(_:)))
         

@@ -7,13 +7,16 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
 {
     // MARK: Properties
     var travel: AKTravel!
-    private var startAnnotation: MGLPointAnnotation = MGLPointAnnotation()
-    private var endAnnotation: MGLPointAnnotation = MGLPointAnnotation()
+    private var startAnnotation: MGLPolygon?
+    private var endAnnotation: MGLPolygon?
     private var currentPosition: UserLocation?
     private var coordinates: [CLLocationCoordinate2D] = []
     
     // MARK: Outlets
     @IBOutlet weak var distanceTraveled: UILabel!
+    @IBOutlet weak var currentSpeed: UILabel!
+    @IBOutlet weak var currentTime: UILabel!
+    @IBOutlet weak var stopRecordingTravel: UIButton!
     @IBOutlet weak var map: MGLMapView!
     
     // MARK: Actions
@@ -25,9 +28,11 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
         self.travel.addTravelDestination(UserLocation(latitude: self.currentPosition!.latitude, longitude: self.currentPosition!.longitude))
         
         do {
-            self.endAnnotation.coordinate = try self.travel.computeTravelDestinationAsCoordinate()
-            self.endAnnotation.title = GlobalConstants.AKTravelEndAnnotationTitle
-            self.map.addAnnotation(endAnnotation)
+            self.endAnnotation = self.createCircleForCoordinate(
+                GlobalConstants.AKTravelEndAnnotationTitle,
+                coordinate: try self.travel.computeTravelDestinationAsCoordinate(),
+                withMeterRadius: 25.0)
+            self.map.addAnnotation(self.endAnnotation!)
         }
         catch {
             AKPresentMessageFromError("\(error)", controller: self)
@@ -39,11 +44,7 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AKRecordTravelViewController.locationUpdated), name: GlobalConstants.AKLocationUpdateNotificationName, object: nil)
-        
-        // Delegates
-        self.map.delegate = self
+        self.customSetup()
     }
     
     override func viewDidAppear(animated: Bool)
@@ -53,10 +54,11 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
         do {
             self.coordinates.append(try self.travel.computeTravelOriginAsCoordinate())
             self.map.centerCoordinate = try self.travel.computeTravelOriginAsCoordinate()
-            self.startAnnotation.coordinate = try self.travel.computeTravelOriginAsCoordinate()
-            self.startAnnotation.title = GlobalConstants.AKTravelStartAnnotationTitle
+            self.startAnnotation = self.createCircleForCoordinate(
+                GlobalConstants.AKTravelStartAnnotationTitle,
+                coordinate: try self.travel.computeTravelOriginAsCoordinate(), withMeterRadius: 25.0)
             
-            self.map.addAnnotation(startAnnotation)
+            self.map.addAnnotation(self.startAnnotation!)
             self.map.minimumZoomLevel = 8
             self.map.maximumZoomLevel = 15
             self.map.zoomLevel = 14
@@ -89,7 +91,7 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
         }
         else {
             switch annotation.title! {
-            case "Travel_Segment":
+            case GlobalConstants.AKTravelSegmentAnnotationTitle:
                 return 2.5
             default:
                 return 1.0
@@ -104,8 +106,8 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
         }
         else {
             switch annotation.title! {
-            case "Travel_Segment":
-                return AKHexColor(0x0D9FB6)
+            case GlobalConstants.AKTravelStartAnnotationTitle, GlobalConstants.AKTravelEndAnnotationTitle, GlobalConstants.AKTravelSegmentAnnotationTitle:
+                return GlobalConstants.AKTravelPathMarkerColor
             default:
                 return UIColor.clearColor()
             }
@@ -119,8 +121,8 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
         }
         else {
             switch annotation.title! {
-            case "Travel_Segment":
-                return AKHexColor(0x0D9FB6)
+            case GlobalConstants.AKTravelStartAnnotationTitle, GlobalConstants.AKTravelEndAnnotationTitle, GlobalConstants.AKTravelSegmentAnnotationTitle:
+                return GlobalConstants.AKTravelPathMarkerColor
             default:
                 return UIColor.clearColor()
             }
@@ -159,7 +161,7 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
     // MARK: Utilities
     func drawPolyline() {
         let line = MGLPolyline(coordinates: &self.coordinates, count: UInt(coordinates.count))
-        line.title = "Travel_Segment"
+        line.title = GlobalConstants.AKTravelSegmentAnnotationTitle
         
         if self.map.annotations?.count > 0 {
             let annotationsToRemove = self.map.annotations!.filter {
@@ -208,5 +210,31 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
         polygon.title = title
         
         return polygon
+    }
+    
+    // MARK: Miscellaneous
+    func customSetup()
+    {
+        super.shouldCheckLoggedUser = false
+        super.setup()
+        
+        // Custom notifications.
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: #selector(AKRecordTravelViewController.locationUpdated),
+            name: GlobalConstants.AKLocationUpdateNotificationName,
+            object: nil)
+        
+        // Delegates
+        self.map.delegate = self
+        
+        // Custom L&F.
+        self.distanceTraveled.layer.cornerRadius = 4.0
+        self.distanceTraveled.layer.masksToBounds = true
+        self.currentSpeed.layer.cornerRadius = 4.0
+        self.currentSpeed.layer.masksToBounds = true
+        self.currentTime.layer.cornerRadius = 4.0
+        self.currentTime.layer.masksToBounds = true
+        self.stopRecordingTravel.layer.cornerRadius = 4.0
     }
 }

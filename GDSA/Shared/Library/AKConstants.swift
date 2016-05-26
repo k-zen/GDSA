@@ -44,6 +44,8 @@ struct GlobalConstants {
     static let AKPointDiscardRadius = 50.0
     static let AKTravelStartAnnotationTitle = "Start_Annotation"
     static let AKTravelEndAnnotationTitle = "End_Annotation"
+    static let AKTravelSegmentAnnotationTitle = "Travel_Segment"
+    static let AKTravelPathMarkerColor: UIColor = AKHexColor(0x0D9FB6)
 }
 
 // MARK: Global Enumerations
