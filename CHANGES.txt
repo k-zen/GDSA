@@ -8,6 +8,7 @@ Functionalities
         * Stops (Time, Location)
 Changes
     * Version 1.0 Build 01 (2016/XX/XX)
+        * Added map travel information overlay support. (2016/05/27)
         * Some minor modifications. (2016/05/26)
         * Improved support for initial coordinates. Added pins for start and end points. Some other minor modifications. (2016/05/18)
         * Second usable version. Tested on trip to UCA on 17/05. (2016/05/17)

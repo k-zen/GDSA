@@ -6,6 +6,8 @@ import UIKit
 class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
 {
     // MARK: Properties
+    private let infoOverlayViewContainer: AKTravelInfoOverlayView = AKTravelInfoOverlayView()
+    private var infoOverlayViewSubView: UIView!
     private var travel: AKTravel! = AKTravel()
     private var startAnnotation: MGLPolygon?
     private var endAnnotation: MGLPolygon?
@@ -13,9 +15,6 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
     private var coordinates: [CLLocationCoordinate2D] = []
     
     // MARK: Outlets
-    @IBOutlet weak var distanceTraveled: UILabel!
-    @IBOutlet weak var currentSpeed: UILabel!
-    @IBOutlet weak var currentTime: UILabel!
     @IBOutlet weak var stopRecordingTravel: UIButton!
     @IBOutlet weak var map: MGLMapView!
     
@@ -41,6 +40,27 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
         self.map.maximumZoomLevel = 15
         self.map.zoomLevel = 14
         self.map.userTrackingMode = MGLUserTrackingMode.Follow
+        
+        // Add map overlay for travel information.
+        self.infoOverlayViewSubView = self.infoOverlayViewContainer.customView
+        self.infoOverlayViewContainer.controller = self
+        self.infoOverlayViewSubView.frame = CGRect(x: 0, y: 0, width: self.map.bounds.width, height: 21)
+        self.infoOverlayViewSubView.translatesAutoresizingMaskIntoConstraints = true
+        self.infoOverlayViewSubView.clipsToBounds = true
+        self.infoOverlayViewSubView.autoresizingMask = [.FlexibleWidth]
+        
+        self.map.addSubview(self.infoOverlayViewSubView)
+        
+        let constraintWidth = NSLayoutConstraint(
+            item: self.infoOverlayViewSubView,
+            attribute: NSLayoutAttribute.Width,
+            relatedBy: NSLayoutRelation.Equal,
+            toItem: self.map,
+            attribute: NSLayoutAttribute.Width,
+            multiplier: 1.0,
+            constant: 0.0
+        )
+        self.map.addConstraint(constraintWidth)
         
         // Start recording.
         self.startRecording({})
@@ -187,7 +207,7 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
             
             let coordinate = CLLocationCoordinate2DMake(self.currentPosition!.latitude, self.currentPosition!.longitude)
             self.travel.addSegment(travelSegment.travelDistance)
-            self.distanceTraveled.text = String(format: "%.0f", self.travel.computeTravelDistance())
+            self.infoOverlayViewContainer.distance.text = String(format: "%.3fkm", self.travel.computeTravelDistance()/1000)
             self.coordinates.append(coordinate)
             self.map.centerCoordinate = coordinate
             self.drawPolyline()
@@ -265,12 +285,6 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
         self.map.delegate = self
         
         // Custom L&F.
-        self.distanceTraveled.layer.cornerRadius = 4.0
-        self.distanceTraveled.layer.masksToBounds = true
-        self.currentSpeed.layer.cornerRadius = 4.0
-        self.currentSpeed.layer.masksToBounds = true
-        self.currentTime.layer.cornerRadius = 4.0
-        self.currentTime.layer.masksToBounds = true
         self.stopRecordingTravel.layer.cornerRadius = 4.0
         
         // Configure NavigationController.
