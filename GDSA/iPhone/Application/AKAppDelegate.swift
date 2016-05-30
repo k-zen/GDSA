@@ -59,10 +59,10 @@ class AKAppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelega
             return
         }
         else {
-            let pointA = UserLocation(latitude: self.lastSavedLatitude, longitude: self.lastSavedLongitude)
-            let pointB = UserLocation(latitude: self.currentLatitude, longitude: self.currentLongitude)
+            let pointA = UserLocation(lat: self.lastSavedLatitude, lon: self.lastSavedLongitude)
+            let pointB = UserLocation(lat: self.currentLatitude, lon: self.currentLongitude)
             
-            let travelSegment = AKTravelSegment(pointA: pointA, pointB: pointB, travelTime: (NSDate().timeIntervalSince1970 - self.lastSavedTime))
+            let travelSegment = AKTravelSegment(str: pointA, end: pointB, time: (NSDate().timeIntervalSince1970 - self.lastSavedTime))
             
             if travelSegment.shouldSave() {
                 travelSegment.printObject()

@@ -30,9 +30,9 @@ extension String
 /// The user's location.
 struct UserLocation {
     /// Denotes the user's geographic latitude.
-    var latitude: Double
+    var lat: Double
     /// Denotes the user's geographic longitude.
-    var longitude: Double
+    var lon: Double
 }
 
 // MARK: Global Constants
@@ -87,8 +87,8 @@ func AKDelegate() -> AKAppDelegate { return UIApplication.sharedApplication().de
 func AKComputeDistanceBetweenTwoPoints(pointA pointA: UserLocation,
                                               pointB: UserLocation) -> CLLocationDistance
 {
-    let pointA = CLLocation(latitude: pointA.latitude, longitude: pointA.longitude)
-    let pointB = CLLocation(latitude: pointB.latitude, longitude: pointB.longitude)
+    let pointA = CLLocation(latitude: pointA.lat, longitude: pointA.lon)
+    let pointB = CLLocation(latitude: pointB.lat, longitude: pointB.lon)
     
     return pointA.distanceFromLocation(pointB)
 }

@@ -1,75 +1,97 @@
 import CoreLocation
 import Foundation
 
-class AKTravel
+class AKTravel: NSObject, NSCoding
 {
+    struct Keys {
+        static let originLat = "AKT.origin.lat"
+        static let originLon = "AKT.origin.lon"
+        static let destinationLat = "AKT.destination.lat"
+        static let destinationLon = "AKT.destination.lon"
+        static let segments = "AKT.segments"
+        static let distance = "AKT.distance"
+    }
+    
     // MARK: Properties
-    private var travelOrigin: UserLocation?
-    private var travelDestination: UserLocation?
-    private var travelDistance: Double! = 0.0
+    private var origin: UserLocation = UserLocation(lat: 0.0, lon: 0.0)
+    private var destination: UserLocation = UserLocation(lat: 0.0, lon: 0.0)
+    private var segments: [AKTravelSegment] = []
+    private var distance: Double! = 0.0
     
-    func addTravelOrigin(travelOrigin: UserLocation)
+    // MARK: Initializers
+    convenience init(origin: UserLocation, destination: UserLocation, segments: [AKTravelSegment], distance: Double)
     {
-        if self.travelOrigin == nil {
-            self.travelOrigin = travelOrigin
-        }
+        self.init()
+        
+        self.origin = origin
+        self.destination = destination
+        self.segments = segments
+        self.distance = distance
     }
     
-    func addTravelDestination(travelDestination: UserLocation)
+    func addSegment(segment: AKTravelSegment)
     {
-        if self.travelDestination == nil {
-            self.travelDestination = travelDestination
-        }
+        self.segments.append(segment)
     }
     
-    func addSegment(segment: Double)
+    func addOrigin(origin: UserLocation)
     {
-        self.travelDistance = self.travelDistance + segment
+        self.origin = origin
     }
     
-    func computeTravelOrigin() throws -> UserLocation
+    func addDestination(destination: UserLocation)
     {
-        if self.travelOrigin != nil {
-            return self.travelOrigin!
+        self.destination = destination
+    }
+    
+    func addDistance(segmentDistance: Double)
+    {
+        self.distance = self.distance + segmentDistance
+    }
+    
+    func computeOrigin() throws -> UserLocation
+    {
+        if self.origin.lat + self.origin.lon == 0.0 {
+            return self.origin
         }
         else {
             throw Exceptions.NotInitialized("The travel origin has not been set!")
         }
     }
     
-    func computeTravelOriginAsCoordinate() throws -> CLLocationCoordinate2D
+    func computeOriginAsCoordinate() throws -> CLLocationCoordinate2D
     {
-        if self.travelOrigin != nil {
-            return CLLocationCoordinate2DMake(self.travelOrigin!.latitude, self.travelOrigin!.longitude)
+        if self.origin.lat + self.origin.lon == 0.0 {
+            return CLLocationCoordinate2DMake(self.origin.lat, self.origin.lon)
         }
         else {
             throw Exceptions.NotInitialized("The travel origin has not been set!")
         }
     }
     
-    func computeTravelDestination() throws -> UserLocation
+    func computeDestination() throws -> UserLocation
     {
-        if self.travelDestination != nil {
-            return self.travelDestination!
+        if self.destination.lat + self.destination.lon == 0.0 {
+            return self.destination
         }
         else {
             throw Exceptions.NotInitialized("The travel destination has not been set!")
         }
     }
     
-    func computeTravelDestinationAsCoordinate() throws -> CLLocationCoordinate2D
+    func computeDestinationAsCoordinate() throws -> CLLocationCoordinate2D
     {
-        if self.travelDestination != nil {
-            return CLLocationCoordinate2DMake(self.travelDestination!.latitude, self.travelDestination!.longitude)
+        if self.destination.lat + self.destination.lon == 0.0 {
+            return CLLocationCoordinate2DMake(self.destination.lat, self.destination.lon)
         }
         else {
             throw Exceptions.NotInitialized("The travel destination has not been set!")
         }
     }
     
-    func computeTravelDistance() -> Double
+    func computeDistance() -> Double
     {
-        return self.travelDistance
+        return self.distance
     }
     
     func printObject()
@@ -78,21 +100,32 @@ class AKTravel
         
         string.appendString("\n")
         string.appendString("****** TRAVEL ******\n")
-        if self.travelOrigin != nil {
-            string.appendFormat("\t>>> Travel Origin = Lat: %f, Lon: %f\n", self.travelOrigin!.latitude, self.travelOrigin!.longitude)
-        }
-        else {
-            string.appendFormat("\t>>> Travel Origin = NOT SET\n")
-        }
-        string.appendFormat("\t>>> Travel Distance = %f\n", self.travelDistance)
-        if self.travelDestination != nil {
-            string.appendFormat("\t>>> Travel Destination = Lat: %f, Lon: %f\n", self.travelDestination!.latitude, self.travelDestination!.longitude)
-        }
-        else {
-            string.appendFormat("\t>>> Travel Destination = NOT SET\n")
-        }
+        string.appendFormat("\t>>> Origin = Lat: %f, Lon: %f\n", self.origin.lat, self.origin.lon)
+        string.appendFormat("\t>>> Distance = %f\n", self.distance)
+        string.appendFormat("\t>>> Destination = Lat: %f, Lon: %f\n", self.destination.lat, self.destination.lon)
         string.appendString("****** TRAVEL ******\n")
         
         NSLog("%@", string)
+    }
+    
+    // MARK: NSCoding Implementation
+    required convenience init(coder aDecoder: NSCoder)
+    {
+        let origin = UserLocation(lat: aDecoder.decodeDoubleForKey(Keys.originLat), lon: aDecoder.decodeDoubleForKey(Keys.originLon))
+        let destination = UserLocation(lat: aDecoder.decodeDoubleForKey(Keys.destinationLat), lon: aDecoder.decodeDoubleForKey(Keys.destinationLon))
+        let segments = aDecoder.decodeObject() as! [AKTravelSegment]
+        let distance = aDecoder.decodeDoubleForKey(Keys.distance)
+        
+        self.init(origin: origin, destination: destination, segments: segments, distance: distance)
+    }
+    
+    func encodeWithCoder(aCoder: NSCoder)
+    {
+        aCoder.encodeDouble(self.origin.lat, forKey: Keys.originLat)
+        aCoder.encodeDouble(self.origin.lon, forKey: Keys.originLon)
+        aCoder.encodeDouble(self.destination.lat, forKey: Keys.destinationLat)
+        aCoder.encodeDouble(self.destination.lon, forKey: Keys.destinationLon)
+        aCoder.encodeObject(self.segments)
+        aCoder.encodeDouble(self.distance, forKey: Keys.distance)
     }
 }

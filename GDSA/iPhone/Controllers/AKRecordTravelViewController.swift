@@ -6,11 +6,11 @@ import UIKit
 class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
 {
     // MARK: Properties
+    private let startAnnotation: MGLPointAnnotation = MGLPointAnnotation()
+    private let endAnnotation: MGLPointAnnotation = MGLPointAnnotation()
     private let infoOverlayViewContainer: AKTravelInfoOverlayView = AKTravelInfoOverlayView()
     private var infoOverlayViewSubView: UIView!
     private var travel: AKTravel! = AKTravel()
-    private var startAnnotation: MGLPolygon?
-    private var endAnnotation: MGLPolygon?
     private var currentPosition: UserLocation?
     private var coordinates: [CLLocationCoordinate2D] = []
     
@@ -77,18 +77,17 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
         AKDelegate().recordingTravel = true
         
         // Compute travel origin.
-        self.travel.addTravelOrigin(UserLocation(latitude: AKDelegate().currentLatitude, longitude: AKDelegate().currentLongitude))
+        self.travel.addOrigin(UserLocation(lat: AKDelegate().currentLatitude, lon: AKDelegate().currentLongitude))
         
         do {
             // Append origin to coordinates and center map.
-            self.coordinates.append(try self.travel.computeTravelOriginAsCoordinate())
-            self.map.centerCoordinate = try self.travel.computeTravelOriginAsCoordinate()
+            self.coordinates.append(try self.travel.computeOriginAsCoordinate())
+            self.map.centerCoordinate = try self.travel.computeOriginAsCoordinate()
             
             // Add start annotation.
-            self.startAnnotation = self.createCircleForCoordinate(
-                GlobalConstants.AKTravelStartAnnotationTitle,
-                coordinate: try self.travel.computeTravelOriginAsCoordinate(), withMeterRadius: 25.0)
-            self.map.addAnnotation(self.startAnnotation!)
+            self.startAnnotation.coordinate = try self.travel.computeOriginAsCoordinate()
+            self.startAnnotation.title = GlobalConstants.AKTravelStartAnnotationTitle
+            self.map.addAnnotation(self.startAnnotation)
         }
         catch {
             AKPresentMessageFromError("\(error)", controller: self)
@@ -106,19 +105,17 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
         AKDelegate().recordingTravel = false
         
         // Compute travel destination.
-        self.travel.addTravelDestination(UserLocation(latitude: self.currentPosition!.latitude, longitude: self.currentPosition!.longitude))
+        self.travel.addDestination(UserLocation(lat: self.currentPosition!.lat, lon: self.currentPosition!.lon))
         
         do {
             // Append origin to coordinates and center map.
-            self.coordinates.append(try self.travel.computeTravelDestinationAsCoordinate())
-            self.map.centerCoordinate = try self.travel.computeTravelDestinationAsCoordinate()
+            self.coordinates.append(try self.travel.computeDestinationAsCoordinate())
+            self.map.centerCoordinate = try self.travel.computeDestinationAsCoordinate()
             
             // Add end annotation.
-            self.endAnnotation = self.createCircleForCoordinate(
-                GlobalConstants.AKTravelEndAnnotationTitle,
-                coordinate: try self.travel.computeTravelDestinationAsCoordinate(),
-                withMeterRadius: 25.0)
-            self.map.addAnnotation(self.endAnnotation!)
+            self.endAnnotation.coordinate = try self.travel.computeDestinationAsCoordinate()
+            self.endAnnotation.title = GlobalConstants.AKTravelEndAnnotationTitle
+            self.map.addAnnotation(self.endAnnotation)
         }
         catch {
             AKPresentMessageFromError("\(error)", controller: self)
@@ -162,7 +159,7 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
         }
         else {
             switch annotation.title! {
-            case GlobalConstants.AKTravelStartAnnotationTitle, GlobalConstants.AKTravelEndAnnotationTitle, GlobalConstants.AKTravelSegmentAnnotationTitle:
+            case GlobalConstants.AKTravelSegmentAnnotationTitle:
                 return GlobalConstants.AKTravelPathMarkerColor
             default:
                 return UIColor.clearColor()
@@ -177,7 +174,7 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
         }
         else {
             switch annotation.title! {
-            case GlobalConstants.AKTravelStartAnnotationTitle, GlobalConstants.AKTravelEndAnnotationTitle, GlobalConstants.AKTravelSegmentAnnotationTitle:
+            case GlobalConstants.AKTravelSegmentAnnotationTitle:
                 return GlobalConstants.AKTravelPathMarkerColor
             default:
                 return UIColor.clearColor()
@@ -190,27 +187,30 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
     {
         NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
             let travelSegment = notification.userInfo!["data"] as! AKTravelSegment
-            self.currentPosition = UserLocation(latitude: travelSegment.pointB.latitude, longitude: travelSegment.pointB.longitude)
+            self.currentPosition = UserLocation(lat: travelSegment.computeEnd().lat, lon: travelSegment.computeEnd().lon)
             
-            // If point is within 50 meters of the origin, discard it.
             do {
-                let travelOrigin = try self.travel.computeTravelOrigin()
+                // IF point is within 50 meters of the origin, discard it.
+                let travelOrigin = try self.travel.computeOrigin()
                 if AKComputeDistanceBetweenTwoPoints(pointA: travelOrigin, pointB: self.currentPosition!) < GlobalConstants.AKPointDiscardRadius {
                     NSLog("=> DISCARDING POINT BECAUSE IT'S TOO CLOSE TO ORIGIN!")
                     return
+                }
+                else { // ELSE include travel segment.
+                    self.travel.addSegment(travelSegment)
+                    
+                    let coordinate = CLLocationCoordinate2DMake(self.currentPosition!.lat, self.currentPosition!.lon)
+                    self.travel.addDistance(travelSegment.computeDistance())
+                    self.infoOverlayViewContainer.distance.text = String(format: "%.3fkm", self.travel.computeDistance() / 1000)
+                    self.coordinates.append(coordinate)
+                    self.map.centerCoordinate = coordinate
+                    self.drawPolyline()
                 }
             }
             catch {
                 AKPresentMessageFromError("\(error)", controller: self)
                 return
             }
-            
-            let coordinate = CLLocationCoordinate2DMake(self.currentPosition!.latitude, self.currentPosition!.longitude)
-            self.travel.addSegment(travelSegment.travelDistance)
-            self.infoOverlayViewContainer.distance.text = String(format: "%.3fkm", self.travel.computeTravelDistance()/1000)
-            self.coordinates.append(coordinate)
-            self.map.centerCoordinate = coordinate
-            self.drawPolyline()
         })
     }
     
