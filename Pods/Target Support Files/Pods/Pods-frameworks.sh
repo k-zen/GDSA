@@ -86,12 +86,16 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods/HexColors.framework"
   install_framework "${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework"
+  install_framework "Pods/Realm.framework"
+  install_framework "Pods/RealmSwift.framework"
   install_framework "Pods/SCLAlertView.framework"
   install_framework "Pods/TSMessages.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/HexColors.framework"
   install_framework "${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework"
+  install_framework "Pods/Realm.framework"
+  install_framework "Pods/RealmSwift.framework"
   install_framework "Pods/SCLAlertView.framework"
   install_framework "Pods/TSMessages.framework"
 fi

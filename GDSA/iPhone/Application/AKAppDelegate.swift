@@ -27,7 +27,7 @@ class AKAppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelega
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
     {
         // LOOK & FEEL CUSTOMIZATIONS.
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : AKHexColor(0xD8DAE7), NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBold", size: 16.0)!]
+        UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBold", size: 16.0)!]
         
         // Manage Location Services
         if CLLocationManager.locationServicesEnabled() {
