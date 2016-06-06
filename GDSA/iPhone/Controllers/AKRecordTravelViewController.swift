@@ -37,7 +37,7 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
         
         // Configure map.
         self.map.minimumZoomLevel = 8
-        self.map.maximumZoomLevel = 15
+        self.map.maximumZoomLevel = 14
         self.map.zoomLevel = 14
         self.map.userTrackingMode = MGLUserTrackingMode.Follow
         

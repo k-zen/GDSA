@@ -18,11 +18,9 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.000km" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SAM-aT-jOa" userLabel="Distance_Value">
                     <rect key="frame" x="8" y="0.0" width="284" height="21"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="18"/>
-                    <color key="textColor" red="0.84705882349999995" green="0.85490196080000003" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="SAM-aT-jOa" firstAttribute="centerY" secondItem="52P-sE-pR0" secondAttribute="centerY" id="KQC-j9-h01"/>
                 <constraint firstItem="SAM-aT-jOa" firstAttribute="leading" secondItem="52P-sE-pR0" secondAttribute="leadingMargin" id="b5J-Sh-NSx"/>

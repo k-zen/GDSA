@@ -17,6 +17,7 @@
 		495683361CEA268B0057B06E /* AKConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495683351CEA268B0057B06E /* AKConstants.swift */; };
 		495683391CEA57BC0057B06E /* AKInputData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495683371CEA57BC0057B06E /* AKInputData.swift */; };
 		4956833A1CEA57BC0057B06E /* AKTravelSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495683381CEA57BC0057B06E /* AKTravelSegment.swift */; };
+		4967CF981D060A560050DDF2 /* AKFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4967CF971D060A560050DDF2 /* AKFilters.swift */; };
 		499DB6801CB6E8B900342742 /* 0001-512px.png in Resources */ = {isa = PBXBuildFile; fileRef = 499DB6791CB6E8B900342742 /* 0001-512px.png */; };
 		499DB6811CB6E8B900342742 /* AppIcon-29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 499DB67A1CB6E8B900342742 /* AppIcon-29@2x.png */; };
 		499DB6821CB6E8B900342742 /* AppIcon-29@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 499DB67B1CB6E8B900342742 /* AppIcon-29@3x.png */; };
@@ -45,6 +46,7 @@
 		495683351CEA268B0057B06E /* AKConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKConstants.swift; sourceTree = "<group>"; };
 		495683371CEA57BC0057B06E /* AKInputData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKInputData.swift; sourceTree = "<group>"; };
 		495683381CEA57BC0057B06E /* AKTravelSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKTravelSegment.swift; sourceTree = "<group>"; };
+		4967CF971D060A560050DDF2 /* AKFilters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKFilters.swift; sourceTree = "<group>"; };
 		499DB6791CB6E8B900342742 /* 0001-512px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "0001-512px.png"; sourceTree = "<group>"; };
 		499DB67A1CB6E8B900342742 /* AppIcon-29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon-29@2x.png"; sourceTree = "<group>"; };
 		499DB67B1CB6E8B900342742 /* AppIcon-29@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon-29@3x.png"; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				495683351CEA268B0057B06E /* AKConstants.swift */,
+				4967CF971D060A560050DDF2 /* AKFilters.swift */,
 				495683371CEA57BC0057B06E /* AKInputData.swift */,
 				49BEBB191CEA635F00A5FC12 /* AKTravel.swift */,
 				495683381CEA57BC0057B06E /* AKTravelSegment.swift */,
@@ -394,6 +397,7 @@
 				4922DD721CE67C01003E0AFB /* AKViewTravelViewController.swift in Sources */,
 				495683391CEA57BC0057B06E /* AKInputData.swift in Sources */,
 				4922DD701CE679CE003E0AFB /* AKMainViewController.swift in Sources */,
+				4967CF981D060A560050DDF2 /* AKFilters.swift in Sources */,
 				490F91581CF7870F0031B8AE /* AKCustomView.m in Sources */,
 				4956833A1CEA57BC0057B06E /* AKTravelSegment.swift in Sources */,
 				495683341CEA235B0057B06E /* AKCustomViewController.swift in Sources */,

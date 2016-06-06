@@ -13,20 +13,28 @@ class AKTravel: NSObject, NSCoding
     }
     
     // MARK: Properties
-    private var origin: UserLocation = UserLocation(lat: 0.0, lon: 0.0)
-    private var destination: UserLocation = UserLocation(lat: 0.0, lon: 0.0)
-    private var segments: [AKTravelSegment] = []
-    private var distance: Double! = 0.0
+    private var origin: UserLocation
+    private var destination: UserLocation
+    private var segments: [AKTravelSegment]
+    private var distance: Double
     
     // MARK: Initializers
-    convenience init(origin: UserLocation, destination: UserLocation, segments: [AKTravelSegment], distance: Double)
+    override init()
     {
-        self.init()
-        
+        self.origin = UserLocation(lat: 0.0, lon: 0.0)
+        self.destination = UserLocation(lat: 0.0, lon: 0.0)
+        self.segments = []
+        self.distance = 0.0
+    }
+    
+    init(origin: UserLocation, destination: UserLocation, segments: [AKTravelSegment], distance: Double)
+    {
         self.origin = origin
         self.destination = destination
         self.segments = segments
         self.distance = distance
+        
+        super.init()
     }
     
     func addSegment(segment: AKTravelSegment)
@@ -37,6 +45,8 @@ class AKTravel: NSObject, NSCoding
     func addOrigin(origin: UserLocation)
     {
         self.origin = origin
+        
+        printObject()
     }
     
     func addDestination(destination: UserLocation)
@@ -51,7 +61,7 @@ class AKTravel: NSObject, NSCoding
     
     func computeOrigin() throws -> UserLocation
     {
-        if self.origin.lat + self.origin.lon == 0.0 {
+        if self.origin.lat + self.origin.lon != 0.0 {
             return self.origin
         }
         else {
@@ -61,7 +71,7 @@ class AKTravel: NSObject, NSCoding
     
     func computeOriginAsCoordinate() throws -> CLLocationCoordinate2D
     {
-        if self.origin.lat + self.origin.lon == 0.0 {
+        if self.origin.lat + self.origin.lon != 0.0 {
             return CLLocationCoordinate2DMake(self.origin.lat, self.origin.lon)
         }
         else {
@@ -71,7 +81,7 @@ class AKTravel: NSObject, NSCoding
     
     func computeDestination() throws -> UserLocation
     {
-        if self.destination.lat + self.destination.lon == 0.0 {
+        if self.destination.lat + self.destination.lon != 0.0 {
             return self.destination
         }
         else {
@@ -81,7 +91,7 @@ class AKTravel: NSObject, NSCoding
     
     func computeDestinationAsCoordinate() throws -> CLLocationCoordinate2D
     {
-        if self.destination.lat + self.destination.lon == 0.0 {
+        if self.destination.lat + self.destination.lon != 0.0 {
             return CLLocationCoordinate2DMake(self.destination.lat, self.destination.lon)
         }
         else {
