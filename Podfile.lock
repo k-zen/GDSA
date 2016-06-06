@@ -1,18 +1,12 @@
 PODS:
   - HexColors (2.3.0)
   - Mapbox-iOS-SDK (3.2.0)
-  - Realm (1.0.0):
-    - Realm/Headers (= 1.0.0)
-  - Realm/Headers (1.0.0)
-  - RealmSwift (1.0.0):
-    - Realm (= 1.0.0)
   - SCLAlertView (0.5.8)
   - TSMessages (0.9.13):
     - HexColors (~> 2.3.0)
 
 DEPENDENCIES:
   - Mapbox-iOS-SDK
-  - RealmSwift
   - SCLAlertView
   - TSMessages (from `https://github.com/KrauseFx/TSMessages.git`)
 
@@ -28,8 +22,6 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   HexColors: 6ad3947c3447a055a3aa8efa859def096351fe5f
   Mapbox-iOS-SDK: 3b9e8d0f77098494cc236384fde2a26eb6683f3d
-  Realm: e15cd8e7c11d3e576f628ba0b7cb855269b4991c
-  RealmSwift: 3229306d020d96f83b335f87a0dcbf2cef0e6a2b
   SCLAlertView: 653e84d1f9fd95333bc54671fbadb7d0c47fce49
   TSMessages: 6e403b790139636c15ab4f51946537095e03e79c
 

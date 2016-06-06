@@ -8,6 +8,7 @@ Functionalities
         * Stops (Time, Location)
 Changes
     * Version 1.0 Build 01 (2016/XX/XX)
+        * Removed support for the *Realm* database. (2016/06/06)
         * Added support for the *Realm* database. (2016/05/31)
         * Added map travel information overlay support. (2016/05/27)
         * Some minor modifications. (2016/05/26)
