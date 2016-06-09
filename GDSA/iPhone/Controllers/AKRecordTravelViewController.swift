@@ -13,6 +13,7 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
     private var travel: AKTravel! = AKTravel()
     private var currentPosition: UserLocation?
     private var coordinates: [CLLocationCoordinate2D] = []
+    private var filteredPointsCounter: Int = 0
     
     // MARK: Outlets
     @IBOutlet weak var stopRecordingTravel: UIButton!
@@ -21,7 +22,9 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
     // MARK: Actions
     @IBAction func stopRecordingTravel(sender: AnyObject)
     {
-        self.stopRecording({ Void -> Void in self.navigationController?.popViewControllerAnimated(true) })
+        self.stopRecording({ Void -> Void in
+            // self.navigationController?.popViewControllerAnimated(true)
+        })
     }
     
     // MARK: AKCustomViewController Overriding
@@ -37,7 +40,7 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
         
         // Configure map.
         self.map.minimumZoomLevel = 8
-        self.map.maximumZoomLevel = 14
+        self.map.maximumZoomLevel = 18
         self.map.zoomLevel = 14
         self.map.userTrackingMode = MGLUserTrackingMode.Follow
         
@@ -47,7 +50,7 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
         self.infoOverlayViewSubView.frame = CGRect(x: 0, y: 0, width: self.map.bounds.width, height: 21)
         self.infoOverlayViewSubView.translatesAutoresizingMaskIntoConstraints = true
         self.infoOverlayViewSubView.clipsToBounds = true
-        self.infoOverlayViewSubView.autoresizingMask = [.FlexibleWidth]
+        self.infoOverlayViewSubView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         
         self.map.addSubview(self.infoOverlayViewSubView)
         
@@ -131,6 +134,10 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
         }
         else {
             switch annotation.title! {
+            case GlobalConstants.AKTravelSegmentAnnotationTitle:
+                return 0.75
+            case GlobalConstants.AKTravelStopPointMarkTitle:
+                return 0.5
             default:
                 return 1.0
             }
@@ -145,7 +152,7 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
         else {
             switch annotation.title! {
             case GlobalConstants.AKTravelSegmentAnnotationTitle:
-                return 2.5
+                return 6.0
             default:
                 return 1.0
             }
@@ -176,6 +183,8 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
             switch annotation.title! {
             case GlobalConstants.AKTravelSegmentAnnotationTitle:
                 return GlobalConstants.AKTravelPathMarkerColor
+            case GlobalConstants.AKTravelStopPointMarkTitle:
+                return UIColor.redColor()
             default:
                 return UIColor.clearColor()
             }
@@ -188,29 +197,24 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
         NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
             let travelSegment = notification.userInfo!["data"] as! AKTravelSegment
             self.currentPosition = UserLocation(lat: travelSegment.computeEnd().lat, lon: travelSegment.computeEnd().lon)
+            self.travel.addSegment(travelSegment)
             
-            do {
-                // IF point is within 50 meters of the origin, discard it.
-                let travelOrigin = try self.travel.computeOrigin()
-                if AKComputeDistanceBetweenTwoPoints(pointA: travelOrigin, pointB: self.currentPosition!) < GlobalConstants.AKPointDiscardRadius {
-                    NSLog("=> DISCARDING POINT BECAUSE IT'S TOO CLOSE TO ORIGIN!")
-                    return
-                }
-                else { // ELSE include travel segment.
-                    self.travel.addSegment(travelSegment)
-                    
-                    let coordinate = CLLocationCoordinate2DMake(self.currentPosition!.lat, self.currentPosition!.lon)
-                    self.travel.addDistance(travelSegment.computeDistance())
-                    self.infoOverlayViewContainer.distance.text = String(format: "%.3fkm", self.travel.computeDistance() / 1000)
-                    self.coordinates.append(coordinate)
-                    self.map.centerCoordinate = coordinate
-                    self.drawPolyline()
-                }
+            // Execute filters.
+            if !AKFilters.filter(self.map, travel: self.travel, travelSegment: travelSegment) {
+                self.filteredPointsCounter += 1
+                self.infoOverlayViewContainer.filteredPoints.text = String(format: "%iFP", self.filteredPointsCounter)
             }
-            catch {
-                AKPresentMessageFromError("\(error)", controller: self)
-                return
+            else {
+                self.travel.addDistance(travelSegment.computeDistance(UnitOfLength.Meter))
+                self.infoOverlayViewContainer.distance.text = String(format: "%.1fkm", self.travel.computeDistance(UnitOfLength.Kilometer))
+                self.infoOverlayViewContainer.speed.text = String(format: "%ikm/h", travelSegment.computeDistance(UnitOfLength.Kilometer) * travelSegment.computeTime(UnitOfTime.Hour))
+                self.coordinates.append(CLLocationCoordinate2DMake(self.currentPosition!.lat, self.currentPosition!.lon))
+                self.map.centerCoordinate = CLLocationCoordinate2DMake(self.currentPosition!.lat, self.currentPosition!.lon)
+                self.drawPolyline()
             }
+            
+            // Execute detections.
+            AKDetection.detect(self.map, travel: self.travel, travelSegment: travelSegment)
         })
     }
     
@@ -228,7 +232,7 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
                 }
                 else {
                     switch annotation.title!! {
-                    case GlobalConstants.AKTravelStartAnnotationTitle, GlobalConstants.AKTravelEndAnnotationTitle:
+                    case GlobalConstants.AKTravelStartAnnotationTitle, GlobalConstants.AKTravelEndAnnotationTitle, GlobalConstants.AKTravelStopPointMarkTitle, GlobalConstants.AKTravelStopPointPinTitle:
                         return false
                     default:
                         return true
@@ -239,33 +243,6 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
         }
         
         self.map.addAnnotation(line)
-    }
-    
-    func createCircleForCoordinate(title: String, coordinate: CLLocationCoordinate2D, withMeterRadius: Double) -> MGLPolygon
-    {
-        let degreesBetweenPoints = 8.0
-        let numberOfPoints = floor(360.0 / degreesBetweenPoints)
-        let distRadians: Double = withMeterRadius / 6371000.0
-        let centerLatRadians: Double = coordinate.latitude * M_PI / 180
-        let centerLonRadians: Double = coordinate.longitude * M_PI / 180
-        var coordinates = [CLLocationCoordinate2D]()
-        
-        for index in 0 ..< Int(numberOfPoints) {
-            let degrees: Double = Double(index) * Double(degreesBetweenPoints)
-            let degreeRadians: Double = degrees * M_PI / 180
-            let pointLatRadians: Double = asin(sin(centerLatRadians) * cos(distRadians) + cos(centerLatRadians) * sin(distRadians) * cos(degreeRadians))
-            let pointLonRadians: Double = centerLonRadians + atan2(sin(degreeRadians) * sin(distRadians) * cos(centerLatRadians), cos(distRadians) - sin(centerLatRadians) * sin(pointLatRadians))
-            let pointLat: Double = pointLatRadians * 180 / M_PI
-            let pointLon: Double = pointLonRadians * 180 / M_PI
-            let point: CLLocationCoordinate2D = CLLocationCoordinate2DMake(pointLat, pointLon)
-            
-            coordinates.append(point)
-        }
-        
-        let polygon = MGLPolygon(coordinates: &coordinates, count: UInt(coordinates.count))
-        polygon.title = title
-        
-        return polygon
     }
     
     // MARK: Miscellaneous

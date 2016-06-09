@@ -99,9 +99,16 @@ class AKTravel: NSObject, NSCoding
         }
     }
     
-    func computeDistance() -> Double
+    func computeSegments() -> [AKTravelSegment] { return self.segments }
+    
+    func computeDistance(let unit: UnitOfLength) -> Double
     {
-        return self.distance
+        switch unit {
+        case UnitOfLength.Meter:
+            return self.distance
+        case UnitOfLength.Kilometer:
+            return self.distance / 1000
+        }
     }
     
     func printObject()

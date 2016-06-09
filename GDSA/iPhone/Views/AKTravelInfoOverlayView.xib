@@ -2,37 +2,65 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AKTravelInfoOverlayView" customModule="GDSA" customModuleProvider="target">
             <connections>
                 <outlet property="distance" destination="SAM-aT-jOa" id="xn3-ni-i76"/>
+                <outlet property="filteredPoints" destination="q2F-93-4W8" id="FHb-X2-j4G"/>
+                <outlet property="speed" destination="zuc-TH-RVI" id="o7r-MO-Czf"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view alpha="0.75" contentMode="scaleToFill" id="52P-sE-pR0" userLabel="Main_Container">
-            <rect key="frame" x="0.0" y="0.0" width="300" height="21"/>
+            <rect key="frame" x="0.0" y="0.0" width="300" height="22"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.000km" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SAM-aT-jOa" userLabel="Distance_Value">
-                    <rect key="frame" x="8" y="0.0" width="284" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0km/h" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zuc-TH-RVI" userLabel="Distance_Value">
+                    <rect key="frame" x="110" y="0.0" width="80" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="0f7-2p-dze"/>
+                        <constraint firstAttribute="width" constant="80" id="9Sh-kg-SWq"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="18"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0FP" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q2F-93-4W8" userLabel="Distance_Value">
+                    <rect key="frame" x="216" y="0.0" width="80" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="GXp-tO-0rV"/>
+                        <constraint firstAttribute="height" constant="21" id="cfp-1A-7QB"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="18"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0km" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SAM-aT-jOa" userLabel="Distance_Value">
+                    <rect key="frame" x="4" y="1" width="80" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="5Gf-Ao-o7w"/>
+                        <constraint firstAttribute="height" constant="21" id="Fkk-d1-7si"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="18"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
+            <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="SAM-aT-jOa" firstAttribute="centerY" secondItem="52P-sE-pR0" secondAttribute="centerY" id="KQC-j9-h01"/>
-                <constraint firstItem="SAM-aT-jOa" firstAttribute="leading" secondItem="52P-sE-pR0" secondAttribute="leadingMargin" id="b5J-Sh-NSx"/>
-                <constraint firstItem="SAM-aT-jOa" firstAttribute="trailing" secondItem="52P-sE-pR0" secondAttribute="trailingMargin" id="bhc-3W-euc"/>
-                <constraint firstItem="SAM-aT-jOa" firstAttribute="top" secondItem="52P-sE-pR0" secondAttribute="top" id="su4-bE-a5V"/>
+                <constraint firstItem="SAM-aT-jOa" firstAttribute="baseline" secondItem="zuc-TH-RVI" secondAttribute="firstBaseline" id="STe-20-EzS"/>
+                <constraint firstItem="zuc-TH-RVI" firstAttribute="centerX" secondItem="52P-sE-pR0" secondAttribute="centerX" id="XBO-gg-L61"/>
+                <constraint firstAttribute="trailing" secondItem="q2F-93-4W8" secondAttribute="trailing" constant="4" id="f4m-SD-UdW"/>
+                <constraint firstItem="zuc-TH-RVI" firstAttribute="baseline" secondItem="q2F-93-4W8" secondAttribute="baseline" id="jhb-on-8ft"/>
+                <constraint firstItem="zuc-TH-RVI" firstAttribute="top" secondItem="52P-sE-pR0" secondAttribute="top" id="lUS-8M-6Ni"/>
+                <constraint firstItem="SAM-aT-jOa" firstAttribute="leading" secondItem="52P-sE-pR0" secondAttribute="leading" constant="4" id="oD0-Jn-RT5"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="421" y="204.5"/>
+            <point key="canvasLocation" x="421" y="205"/>
         </view>
     </objects>
 </document>

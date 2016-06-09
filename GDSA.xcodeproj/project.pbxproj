@@ -27,6 +27,7 @@
 		499DB6861CB6E8B900342742 /* AppIcon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 499DB67F1CB6E8B900342742 /* AppIcon-60@3x.png */; };
 		499DB6881CB6EAD500342742 /* AKRecordTravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499DB6871CB6EAD500342742 /* AKRecordTravelViewController.swift */; };
 		499DB6951CB6F24200342742 /* 0002-044px.png in Resources */ = {isa = PBXBuildFile; fileRef = 499DB6941CB6F24200342742 /* 0002-044px.png */; };
+		49B138F71D09BDC70071E0DB /* AKDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B138F61D09BDC70071E0DB /* AKDetection.swift */; };
 		49B252231CB2F84D005C88C9 /* CHANGES.txt in Resources */ = {isa = PBXBuildFile; fileRef = 49B252211CB2F84D005C88C9 /* CHANGES.txt */; };
 		49B252241CB2F84D005C88C9 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 49B252221CB2F84D005C88C9 /* Podfile */; };
 		49B252321CB2FA13005C88C9 /* AKAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B252271CB2FA13005C88C9 /* AKAppDelegate.swift */; };
@@ -57,6 +58,7 @@
 		499DB6871CB6EAD500342742 /* AKRecordTravelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKRecordTravelViewController.swift; sourceTree = "<group>"; };
 		499DB68B1CB6ECE500342742 /* AKBridgingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKBridgingHeader.h; sourceTree = "<group>"; };
 		499DB6941CB6F24200342742 /* 0002-044px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "0002-044px.png"; sourceTree = "<group>"; };
+		49B138F61D09BDC70071E0DB /* AKDetection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKDetection.swift; sourceTree = "<group>"; };
 		49B251F11CB2F26B005C88C9 /* GDSA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GDSA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49B252211CB2F84D005C88C9 /* CHANGES.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGES.txt; sourceTree = "<group>"; };
 		49B252221CB2F84D005C88C9 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -214,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				495683351CEA268B0057B06E /* AKConstants.swift */,
+				49B138F61D09BDC70071E0DB /* AKDetection.swift */,
 				4967CF971D060A560050DDF2 /* AKFilters.swift */,
 				495683371CEA57BC0057B06E /* AKInputData.swift */,
 				49BEBB191CEA635F00A5FC12 /* AKTravel.swift */,
@@ -399,6 +402,7 @@
 				4922DD701CE679CE003E0AFB /* AKMainViewController.swift in Sources */,
 				4967CF981D060A560050DDF2 /* AKFilters.swift in Sources */,
 				490F91581CF7870F0031B8AE /* AKCustomView.m in Sources */,
+				49B138F71D09BDC70071E0DB /* AKDetection.swift in Sources */,
 				4956833A1CEA57BC0057B06E /* AKTravelSegment.swift in Sources */,
 				495683341CEA235B0057B06E /* AKCustomViewController.swift in Sources */,
 				490F915A1CF7876B0031B8AE /* AKTravelInfoOverlayView.swift in Sources */,

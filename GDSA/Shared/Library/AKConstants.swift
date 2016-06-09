@@ -1,6 +1,7 @@
 import AudioToolbox
 import CoreLocation
 import Foundation
+import Mapbox
 import TSMessages
 import UIKit
 
@@ -37,6 +38,7 @@ struct UserLocation {
 
 // MARK: Global Constants
 struct GlobalConstants {
+    static let AKDebug = true
     static let AKLocationUpdateInterval = 6
     static let AKStartRecordingTravelNotificationName = "StartRecordingTravel"
     static let AKStopRecordingTravelNotificationName = "StopRecordingTravel"
@@ -44,10 +46,12 @@ struct GlobalConstants {
     static let AKNotificationBarDismissDelay = 8
     static let AKNotificationBarSound = 1057
     static let AKPointDiscardRadius = 50.0
-    static let AKTravelStartAnnotationTitle = "Start_Annotation"
-    static let AKTravelEndAnnotationTitle = "End_Annotation"
-    static let AKTravelSegmentAnnotationTitle = "Travel_Segment"
-    static let AKTravelPathMarkerColor: UIColor = AKHexColor(0x0D9FB6)
+    static let AKTravelStartAnnotationTitle = "Start Annotation"
+    static let AKTravelEndAnnotationTitle = "End Annotation"
+    static let AKTravelSegmentAnnotationTitle = "Travel Segment"
+    static let AKTravelStopPointMarkTitle = "Stop Mark"
+    static let AKTravelStopPointPinTitle = "Stop Point"
+    static let AKTravelPathMarkerColor: UIColor = AKHexColor(0xE09E9F)
 }
 
 // MARK: Global Enumerations
@@ -55,12 +59,22 @@ enum ErrorCodes: Int {
     case GENERIC = 1000
 }
 
-enum Exceptions: ErrorType
-{
+enum Exceptions: ErrorType {
     case NotInitialized(String)
     case EmptyData(String)
     case InvalidLength(String)
     case NotValid(String)
+}
+
+enum UnitOfLength: Int {
+    case Meter = 1
+    case Kilometer = 2
+}
+
+enum UnitOfTime: Int {
+    case Second = 1
+    case Minute = 2
+    case Hour = 3
 }
 
 // MARK: Global Functions
@@ -91,6 +105,40 @@ func AKComputeDistanceBetweenTwoPoints(pointA pointA: UserLocation,
     let pointB = CLLocation(latitude: pointB.lat, longitude: pointB.lon)
     
     return pointA.distanceFromLocation(pointB)
+}
+
+/// Create a polygon with the form of a circle.
+///
+/// - Parameter title:           The title of the polygon.
+/// - Parameter coordinate:      The location in coordinates of the center of the polygon.
+/// - Parameter withMeterRadius: The radius of the circle.
+///
+/// - Returns: A polygon object in the form of a circle.
+func AKCreateCircleForCoordinate(title: String, coordinate: CLLocationCoordinate2D, withMeterRadius: Double) -> MGLPolygon
+{
+    let degreesBetweenPoints = 8.0
+    let numberOfPoints = floor(360.0 / degreesBetweenPoints)
+    let distRadians: Double = withMeterRadius / 6371000.0
+    let centerLatRadians: Double = coordinate.latitude * M_PI / 180
+    let centerLonRadians: Double = coordinate.longitude * M_PI / 180
+    var coordinates = [CLLocationCoordinate2D]()
+    
+    for index in 0 ..< Int(numberOfPoints) {
+        let degrees: Double = Double(index) * Double(degreesBetweenPoints)
+        let degreeRadians: Double = degrees * M_PI / 180
+        let pointLatRadians: Double = asin(sin(centerLatRadians) * cos(distRadians) + cos(centerLatRadians) * sin(distRadians) * cos(degreeRadians))
+        let pointLonRadians: Double = centerLonRadians + atan2(sin(degreeRadians) * sin(distRadians) * cos(centerLatRadians), cos(distRadians) - sin(centerLatRadians) * sin(pointLatRadians))
+        let pointLat: Double = pointLatRadians * 180 / M_PI
+        let pointLon: Double = pointLonRadians * 180 / M_PI
+        let point: CLLocationCoordinate2D = CLLocationCoordinate2DMake(pointLat, pointLon)
+        
+        coordinates.append(point)
+    }
+    
+    let polygon = MGLPolygon(coordinates: &coordinates, count: UInt(coordinates.count))
+    polygon.title = title
+    
+    return polygon
 }
 
 /// Computes and generates a **UIColor** object based

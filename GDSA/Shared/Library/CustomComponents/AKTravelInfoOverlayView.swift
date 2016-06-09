@@ -8,6 +8,8 @@ class AKTravelInfoOverlayView: AKCustomView
     
     // MARK: Outlets
     @IBOutlet weak var distance: UILabel!
+    @IBOutlet weak var speed: UILabel!
+    @IBOutlet weak var filteredPoints: UILabel!
     
     // MARK: UIView Overriding
     convenience init()
