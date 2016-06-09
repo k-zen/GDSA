@@ -47,7 +47,7 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
         // Add map overlay for travel information.
         self.infoOverlayViewSubView = self.infoOverlayViewContainer.customView
         self.infoOverlayViewContainer.controller = self
-        self.infoOverlayViewSubView.frame = CGRect(x: 0, y: 0, width: self.map.bounds.width, height: 21)
+        self.infoOverlayViewSubView.frame = CGRect(x: 0, y: 0, width: self.map.bounds.width, height: 22)
         self.infoOverlayViewSubView.translatesAutoresizingMaskIntoConstraints = true
         self.infoOverlayViewSubView.clipsToBounds = true
         self.infoOverlayViewSubView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
