@@ -207,7 +207,7 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
             else {
                 self.travel.addDistance(travelSegment.computeDistance(UnitOfLength.Meter))
                 self.infoOverlayViewContainer.distance.text = String(format: "%.1fkm", self.travel.computeDistance(UnitOfLength.Kilometer))
-                self.infoOverlayViewContainer.speed.text = String(format: "%ikm/h", travelSegment.computeDistance(UnitOfLength.Kilometer) * travelSegment.computeTime(UnitOfTime.Hour))
+                self.infoOverlayViewContainer.speed.text = String(format: "%ikm/h", travelSegment.computeDistance(UnitOfLength.Kilometer) / travelSegment.computeTime(UnitOfTime.Hour))
                 self.coordinates.append(CLLocationCoordinate2DMake(self.currentPosition!.lat, self.currentPosition!.lon))
                 self.map.centerCoordinate = CLLocationCoordinate2DMake(self.currentPosition!.lat, self.currentPosition!.lon)
                 self.drawPolyline()
