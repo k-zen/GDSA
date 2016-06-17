@@ -3,6 +3,7 @@ import Foundation
 
 class AKTravel: NSObject, NSCoding
 {
+    // MARK: Constants
     struct Keys {
         static let originLat = "AKT.origin.lat"
         static let originLon = "AKT.origin.lon"
@@ -37,27 +38,14 @@ class AKTravel: NSObject, NSCoding
         super.init()
     }
     
-    func addSegment(segment: AKTravelSegment)
-    {
-        self.segments.append(segment)
-    }
+    // MARK: Utilities
+    func addSegment(segment: AKTravelSegment) { self.segments.append(segment) }
     
-    func addOrigin(origin: UserLocation)
-    {
-        self.origin = origin
-        
-        printObject()
-    }
+    func addOrigin(origin: UserLocation) { self.origin = origin }
     
-    func addDestination(destination: UserLocation)
-    {
-        self.destination = destination
-    }
+    func addDestination(destination: UserLocation) { self.destination = destination }
     
-    func addDistance(segmentDistance: Double)
-    {
-        self.distance = self.distance + segmentDistance
-    }
+    func addDistance(segmentDistance: Double) { self.distance = self.distance + segmentDistance }
     
     func computeOrigin() throws -> UserLocation
     {
@@ -111,18 +99,21 @@ class AKTravel: NSObject, NSCoding
         }
     }
     
-    func printObject()
+    func printObject(let padding: String = "") -> String
     {
         let string: NSMutableString = NSMutableString()
         
         string.appendString("\n")
-        string.appendString("****** TRAVEL ******\n")
-        string.appendFormat("\t>>> Origin = Lat: %f, Lon: %f\n", self.origin.lat, self.origin.lon)
-        string.appendFormat("\t>>> Distance = %f\n", self.distance)
-        string.appendFormat("\t>>> Destination = Lat: %f, Lon: %f\n", self.destination.lat, self.destination.lon)
-        string.appendString("****** TRAVEL ******\n")
+        string.appendFormat("%@****** TRAVEL ******\n", padding)
+        string.appendFormat("%@\t>>> Origin = Lat: %f, Lon: %f\n", padding, self.origin.lat, self.origin.lon)
+        string.appendFormat("%@\t>>> Distance = %f\n", padding, self.distance)
+        string.appendFormat("%@\t>>> Destination = Lat: %f, Lon: %f\n", padding, self.destination.lat, self.destination.lon)
+        for segment in segments {
+            string.appendFormat("%@", segment.printObject("\t"))
+        }
+        string.appendFormat("%@****** TRAVEL ******\n", padding)
         
-        NSLog("%@", string)
+        return string as String
     }
     
     // MARK: NSCoding Implementation
@@ -130,7 +121,7 @@ class AKTravel: NSObject, NSCoding
     {
         let origin = UserLocation(lat: aDecoder.decodeDoubleForKey(Keys.originLat), lon: aDecoder.decodeDoubleForKey(Keys.originLon))
         let destination = UserLocation(lat: aDecoder.decodeDoubleForKey(Keys.destinationLat), lon: aDecoder.decodeDoubleForKey(Keys.destinationLon))
-        let segments = aDecoder.decodeObject() as! [AKTravelSegment]
+        let segments = aDecoder.decodeObjectForKey(Keys.segments) as! [AKTravelSegment]
         let distance = aDecoder.decodeDoubleForKey(Keys.distance)
         
         self.init(origin: origin, destination: destination, segments: segments, distance: distance)
@@ -142,7 +133,7 @@ class AKTravel: NSObject, NSCoding
         aCoder.encodeDouble(self.origin.lon, forKey: Keys.originLon)
         aCoder.encodeDouble(self.destination.lat, forKey: Keys.destinationLat)
         aCoder.encodeDouble(self.destination.lon, forKey: Keys.destinationLon)
-        aCoder.encodeObject(self.segments)
+        aCoder.encodeObject(self.segments, forKey: Keys.segments)
         aCoder.encodeDouble(self.distance, forKey: Keys.distance)
     }
 }

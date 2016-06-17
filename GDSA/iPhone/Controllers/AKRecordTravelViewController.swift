@@ -1,6 +1,7 @@
 import CoreLocation
 import Foundation
 import Mapbox
+import SCLAlertView
 import UIKit
 
 class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
@@ -11,7 +12,7 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
     private let infoOverlayViewContainer: AKTravelInfoOverlayView = AKTravelInfoOverlayView()
     private var infoOverlayViewSubView: UIView!
     private var travel: AKTravel! = AKTravel()
-    private var currentPosition: UserLocation?
+    private var currentPosition: UserLocation = UserLocation()
     private var coordinates: [CLLocationCoordinate2D] = []
     private var filteredPointsCounter: Int = 0
     
@@ -23,7 +24,7 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
     @IBAction func stopRecordingTravel(sender: AnyObject)
     {
         self.stopRecording({ Void -> Void in
-            // self.navigationController?.popViewControllerAnimated(true)
+            self.navigationController?.popViewControllerAnimated(true)
         })
     }
     
@@ -80,7 +81,7 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
         AKDelegate().recordingTravel = true
         
         // Compute travel origin.
-        self.travel.addOrigin(UserLocation(lat: AKDelegate().currentLatitude, lon: AKDelegate().currentLongitude))
+        self.travel.addOrigin(UserLocation(lat: AKDelegate().currentPosition.lat, lon: AKDelegate().currentPosition.lon))
         
         do {
             // Append origin to coordinates and center map.
@@ -100,17 +101,13 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
     
     func stopRecording(completionTask: Void -> Void)
     {
-        defer {
-            completionTask()
-        }
-        
         NSLog("=> LOCATION SERVICES ==> STOP RECORDING TRAVEL ...")
         AKDelegate().recordingTravel = false
         
-        // Compute travel destination.
-        self.travel.addDestination(UserLocation(lat: self.currentPosition!.lat, lon: self.currentPosition!.lon))
-        
         do {
+            // Compute travel destination.
+            self.travel.addDestination(UserLocation(lat: self.currentPosition.lat, lon: self.currentPosition.lon))
+            
             // Append origin to coordinates and center map.
             self.coordinates.append(try self.travel.computeDestinationAsCoordinate())
             self.map.centerCoordinate = try self.travel.computeDestinationAsCoordinate()
@@ -122,8 +119,28 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
         }
         catch {
             AKPresentMessageFromError("\(error)", controller: self)
-            return
         }
+        
+        let appearance = SCLAlertView.SCLAppearance(
+            kTitleFont: UIFont(name: GlobalConstants.AKDefaultFont, size: 20)!,
+            kTextFont: UIFont(name: GlobalConstants.AKDefaultFont, size: 14)!,
+            kButtonFont: UIFont(name: GlobalConstants.AKDefaultFont, size: 14)!,
+            showCloseButton: true
+        )
+        let alertController = SCLAlertView(appearance: appearance)
+        
+        alertController.addButton("Save & Exit", action: { () -> Void in
+            AKDelegate().masterFile?.addTravel(self.travel)
+            completionTask()
+        })
+        alertController.addButton("Discard", action: { () -> Void in completionTask() })
+        
+        alertController.showNotice(
+            "Stop Travel",
+            subTitle: "Do you want to save the travel...?",
+            closeButtonTitle: nil,
+            duration: 0.0
+        )
     }
     
     // MARK: MGLMapViewDelegate Implementation
@@ -208,8 +225,8 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
                 self.travel.addDistance(travelSegment.computeDistance(UnitOfLength.Meter))
                 self.infoOverlayViewContainer.distance.text = String(format: "%.1fkm", self.travel.computeDistance(UnitOfLength.Kilometer))
                 self.infoOverlayViewContainer.speed.text = String(format: "%ikm/h", travelSegment.computeDistance(UnitOfLength.Kilometer) / travelSegment.computeTime(UnitOfTime.Hour))
-                self.coordinates.append(CLLocationCoordinate2DMake(self.currentPosition!.lat, self.currentPosition!.lon))
-                self.map.centerCoordinate = CLLocationCoordinate2DMake(self.currentPosition!.lat, self.currentPosition!.lon)
+                self.coordinates.append(CLLocationCoordinate2DMake(self.currentPosition.lat, self.currentPosition.lon))
+                self.map.centerCoordinate = CLLocationCoordinate2DMake(self.currentPosition.lat, self.currentPosition.lon)
                 self.drawPolyline()
             }
             

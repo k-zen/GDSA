@@ -8,6 +8,7 @@ Functionalities
         * Stops (Time, Location)
 Changes
     * Version 1.0 Build 01 (2016/XX/XX)
+        * Added base support for file serialisation, and for the custom GDSA database. And support for pod *DeviceKit*. (2016/06/17)
         * Corrected minor bug. (2016/06/09/)
         * Mayor modifications: Added base support for Filters & Detection Systems. And some more. (2016/06/09)
         * Removed support for the *Realm* database. (2016/06/06)

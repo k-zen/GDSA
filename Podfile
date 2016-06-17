@@ -4,6 +4,7 @@ use_frameworks!
 workspace 'GDSA'
 
 # pod 'Crashlytics'
+pod 'DeviceKit'
 # pod 'Fabric'
 pod 'Mapbox-iOS-SDK'
 pod 'SCLAlertView'

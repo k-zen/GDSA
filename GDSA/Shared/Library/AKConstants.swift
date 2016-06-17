@@ -31,9 +31,9 @@ extension String
 /// The user's location.
 struct UserLocation {
     /// Denotes the user's geographic latitude.
-    var lat: Double
+    var lat: Double = 0.0
     /// Denotes the user's geographic longitude.
-    var lon: Double
+    var lon: Double = 0.0
 }
 
 // MARK: Global Constants
@@ -51,7 +51,9 @@ struct GlobalConstants {
     static let AKTravelSegmentAnnotationTitle = "Travel Segment"
     static let AKTravelStopPointMarkTitle = "Stop Mark"
     static let AKTravelStopPointPinTitle = "Stop Point"
-    static let AKTravelPathMarkerColor: UIColor = AKHexColor(0xE09E9F)
+    static let AKTravelPathMarkerColor = AKHexColor(0xE09E9F)
+    static let AKMasterFileName = "MasterFile.dat"
+    static let AKDefaultFont = "HelveticaNeue-CondensedBold"
 }
 
 // MARK: Global Enumerations
@@ -78,6 +80,32 @@ enum UnitOfTime: Int {
 }
 
 // MARK: Global Functions
+/// Computes the App's build version.
+///
+/// - Returns: The App's build version.
+func AKAppBuild() -> String
+{
+    if let b = NSBundle.mainBundle().infoDictionary?["CFBundleVersion"] as? String {
+        return b
+    }
+    else {
+        return "0"
+    }
+}
+
+/// Computes the App's version.
+///
+/// - Returns: The App's version.
+func AKAppVersion() -> String
+{
+    if let v = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleShortVersionString") as? String {
+        return v
+    }
+    else {
+        return "0"
+    }
+}
+
 /// Executes a function with a delay.
 ///
 /// - Parameter delay: The delay.

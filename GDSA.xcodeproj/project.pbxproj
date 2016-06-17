@@ -13,6 +13,8 @@
 		490F915A1CF7876B0031B8AE /* AKTravelInfoOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F91591CF7876B0031B8AE /* AKTravelInfoOverlayView.swift */; };
 		4922DD701CE679CE003E0AFB /* AKMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4922DD6F1CE679CE003E0AFB /* AKMainViewController.swift */; };
 		4922DD721CE67C01003E0AFB /* AKViewTravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4922DD711CE67C01003E0AFB /* AKViewTravelViewController.swift */; };
+		4934C6781D0AF920004754AF /* AKFileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4934C6771D0AF920004754AF /* AKFileUtils.swift */; };
+		4934C67A1D0B5FEB004754AF /* AKMasterFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4934C6791D0B5FEB004754AF /* AKMasterFile.swift */; };
 		495683341CEA235B0057B06E /* AKCustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495683331CEA235B0057B06E /* AKCustomViewController.swift */; };
 		495683361CEA268B0057B06E /* AKConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495683351CEA268B0057B06E /* AKConstants.swift */; };
 		495683391CEA57BC0057B06E /* AKInputData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495683371CEA57BC0057B06E /* AKInputData.swift */; };
@@ -43,6 +45,8 @@
 		490F91591CF7876B0031B8AE /* AKTravelInfoOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKTravelInfoOverlayView.swift; sourceTree = "<group>"; };
 		4922DD6F1CE679CE003E0AFB /* AKMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKMainViewController.swift; sourceTree = "<group>"; };
 		4922DD711CE67C01003E0AFB /* AKViewTravelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKViewTravelViewController.swift; sourceTree = "<group>"; };
+		4934C6771D0AF920004754AF /* AKFileUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKFileUtils.swift; sourceTree = "<group>"; };
+		4934C6791D0B5FEB004754AF /* AKMasterFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKMasterFile.swift; sourceTree = "<group>"; };
 		495683331CEA235B0057B06E /* AKCustomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKCustomViewController.swift; sourceTree = "<group>"; };
 		495683351CEA268B0057B06E /* AKConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKConstants.swift; sourceTree = "<group>"; };
 		495683371CEA57BC0057B06E /* AKInputData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKInputData.swift; sourceTree = "<group>"; };
@@ -217,8 +221,10 @@
 			children = (
 				495683351CEA268B0057B06E /* AKConstants.swift */,
 				49B138F61D09BDC70071E0DB /* AKDetection.swift */,
+				4934C6771D0AF920004754AF /* AKFileUtils.swift */,
 				4967CF971D060A560050DDF2 /* AKFilters.swift */,
 				495683371CEA57BC0057B06E /* AKInputData.swift */,
+				4934C6791D0B5FEB004754AF /* AKMasterFile.swift */,
 				49BEBB191CEA635F00A5FC12 /* AKTravel.swift */,
 				495683381CEA57BC0057B06E /* AKTravelSegment.swift */,
 				495683321CEA235B0057B06E /* CustomComponents */,
@@ -398,8 +404,10 @@
 				495683361CEA268B0057B06E /* AKConstants.swift in Sources */,
 				499DB6881CB6EAD500342742 /* AKRecordTravelViewController.swift in Sources */,
 				4922DD721CE67C01003E0AFB /* AKViewTravelViewController.swift in Sources */,
+				4934C67A1D0B5FEB004754AF /* AKMasterFile.swift in Sources */,
 				495683391CEA57BC0057B06E /* AKInputData.swift in Sources */,
 				4922DD701CE679CE003E0AFB /* AKMainViewController.swift in Sources */,
+				4934C6781D0AF920004754AF /* AKFileUtils.swift in Sources */,
 				4967CF981D060A560050DDF2 /* AKFilters.swift in Sources */,
 				490F91581CF7870F0031B8AE /* AKCustomView.m in Sources */,
 				49B138F71D09BDC70071E0DB /* AKDetection.swift in Sources */,

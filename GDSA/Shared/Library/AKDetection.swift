@@ -30,10 +30,6 @@ class AKDetection: NSObject
         for k in (firstIndex ... lastIndex).reverse() { // Iterate in reverse order.
             totalDistance += segments[k].computeDistance(UnitOfLength.Meter)
             lastSegment = segments[k]
-            
-            if GlobalConstants.AKDebug {
-                segments[k].printObject("\t")
-            }
         }
         
         isStop = totalDistance <= 10 ? 1 : 0 // If it's 1 then is a STOP.

@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>DeviceKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>HexColors.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,12 +32,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>010BFDF3D3BD4517C5A5FFC32F3478BD</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>18EF5907D7962C7DC3B6095EC7404147</key>
+		<key>A3B48BF93B212BC3D46A6AD24C1EF979</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -42,7 +42,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E0640A8B61FBCB3111AA555F23098CC1</key>
+		<key>CDC414A36F36C22915C03574CAB0ECF6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E2664F00878D9067CCD55050385834D0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EF78824223C74AA13AE655CD2ACF32A3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

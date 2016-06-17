@@ -94,7 +94,7 @@ class AKTravelSegment: NSObject, NSCoding
         return true
     }
     
-    func printObject(let padding: String = "")
+    func printObject(let padding: String = "") -> String
     {
         let string: NSMutableString = NSMutableString()
         
@@ -110,7 +110,7 @@ class AKTravelSegment: NSObject, NSCoding
         string.appendFormat("%@\t>>> Stop Time = %f\n", padding, self.stopTime)
         string.appendFormat("%@****** TRAVEL SEGMENT ******\n", padding)
         
-        NSLog("%@", string)
+        return string as String
     }
     
     // MARK: NSCoding Implementation

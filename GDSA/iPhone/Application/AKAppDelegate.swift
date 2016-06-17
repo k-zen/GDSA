@@ -7,12 +7,13 @@ class AKAppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelega
 {
     // MARK: Properties
     let locationManager: CLLocationManager! = CLLocationManager()
+    var masterFile: AKMasterFile?
     var window: UIWindow?
-    var currentLatitude: Double = 0.0
-    var currentLongitude: Double = 0.0
+    // ### USER POSITION ### //
+    var currentPosition: UserLocation = UserLocation()
+    private var lastSavedPosition: UserLocation = UserLocation()
+    // ### USER POSITION ### //
     var recordingTravel: Bool = false
-    private var lastSavedLatitude: Double = 0.0
-    private var lastSavedLongitude: Double = 0.0
     private var lastSavedTime: Double = 0.0
     // The state of the App. False = Disabled because Location Service is disabled.
     var applicationActive: Bool! = true {
@@ -24,8 +25,27 @@ class AKAppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelega
     }
     
     // MARK: UIApplicationDelegate Implementation
+    func applicationWillResignActive(application: UIApplication)
+    {
+        do {
+            NSLog("=> SAVING *MASTER FILE* TO FILE.")
+            try AKFileUtils.write(GlobalConstants.AKMasterFileName, newData: self.masterFile!)
+        }
+        catch {
+            NSLog("=> ERROR: \(error)")
+        }
+    }
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
     {
+        do {
+            NSLog("=> READING *MASTER FILE* FROM FILE.")
+            self.masterFile = try AKFileUtils.read(GlobalConstants.AKMasterFileName) as? AKMasterFile
+        }
+        catch {
+            NSLog("=> ERROR: \(error)")
+        }
+        
         // LOOK & FEEL CUSTOMIZATIONS.
         UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBold", size: 16.0)!]
         
@@ -45,10 +65,10 @@ class AKAppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelega
         let currentLocation = locations.last
         
         // Always save the current location.
-        self.currentLatitude = (currentLocation?.coordinate.latitude)!
-        self.currentLongitude = (currentLocation?.coordinate.longitude)!
+        self.currentPosition.lat = (currentLocation?.coordinate.latitude)!
+        self.currentPosition.lon = (currentLocation?.coordinate.longitude)!
         
-        NSLog("=> CURRENT LAT: %f, CURRENT LON: %f", self.currentLatitude, self.currentLongitude)
+        NSLog("=> CURRENT LAT: %f, CURRENT LON: %f", self.currentPosition.lat, self.currentPosition.lon)
         
         if !self.recordingTravel {
             return
@@ -59,20 +79,24 @@ class AKAppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelega
             return
         }
         else {
-            let pointA = UserLocation(lat: self.lastSavedLatitude, lon: self.lastSavedLongitude)
-            let pointB = UserLocation(lat: self.currentLatitude, lon: self.currentLongitude)
+            let pointA = UserLocation(lat: self.lastSavedPosition.lat, lon: self.lastSavedPosition.lon)
+            let pointB = UserLocation(lat: self.currentPosition.lat, lon: self.currentPosition.lon)
             
             let travelSegment = AKTravelSegment(str: pointA, end: pointB, time: (NSDate().timeIntervalSince1970 - self.lastSavedTime))
             
             if travelSegment.shouldSave() {
-                travelSegment.printObject()
+                if GlobalConstants.AKDebug {
+                    NSLog("=> ### NEWLY DETECTED SEGMENT")
+                    NSLog("%@", travelSegment.printObject("=> "))
+                    NSLog("=> ### NEWLY DETECTED SEGMENT")
+                }
                 
                 NSNotificationCenter.defaultCenter().postNotificationName(GlobalConstants.AKLocationUpdateNotificationName, object: self, userInfo: [ "data" : travelSegment ])
             }
             
             self.lastSavedTime = NSDate().timeIntervalSince1970
-            self.lastSavedLatitude = self.currentLatitude
-            self.lastSavedLongitude = self.currentLongitude
+            self.lastSavedPosition.lat = self.currentPosition.lat
+            self.lastSavedPosition.lon = self.currentPosition.lon
         }
     }
     
