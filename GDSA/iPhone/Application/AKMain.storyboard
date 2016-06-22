@@ -45,9 +45,10 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="18"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Mup-7e-09B">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Mup-7e-09B" userLabel="Travels_Table">
                                         <rect key="frame" x="0.0" y="48" width="560" height="359"/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <sections/>
                                     </tableView>
                                 </subviews>
                                 <constraints>
@@ -128,6 +129,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="startRecordingTravel" destination="JQe-ex-z8P" id="AOE-N1-cMh"/>
+                        <outlet property="travelsTable" destination="Mup-7e-09B" id="e5G-0m-gTp"/>
                         <segue destination="X3k-3j-jYF" kind="show" identifier="RecordTravelSegue" id="QDS-3v-fef"/>
                         <segue destination="JUZ-Og-x3G" kind="show" identifier="ViewTravelSegue" id="uHL-jK-XJd"/>
                     </connections>

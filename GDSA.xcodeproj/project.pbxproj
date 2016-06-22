@@ -11,6 +11,8 @@
 		490F91551CF785BF0031B8AE /* AKTravelInfoOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490F91541CF785BF0031B8AE /* AKTravelInfoOverlayView.xib */; };
 		490F91581CF7870F0031B8AE /* AKCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 490F91571CF7870F0031B8AE /* AKCustomView.m */; };
 		490F915A1CF7876B0031B8AE /* AKTravelInfoOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F91591CF7876B0031B8AE /* AKTravelInfoOverlayView.swift */; };
+		49199ABD1D15A367009A5A31 /* AKTravelsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49199ABC1D15A367009A5A31 /* AKTravelsTableViewCell.xib */; };
+		49199ABF1D15A3DA009A5A31 /* AKTravelsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49199ABE1D15A3DA009A5A31 /* AKTravelsTableViewCell.swift */; };
 		4922DD701CE679CE003E0AFB /* AKMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4922DD6F1CE679CE003E0AFB /* AKMainViewController.swift */; };
 		4922DD721CE67C01003E0AFB /* AKViewTravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4922DD711CE67C01003E0AFB /* AKViewTravelViewController.swift */; };
 		4934C6781D0AF920004754AF /* AKFileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4934C6771D0AF920004754AF /* AKFileUtils.swift */; };
@@ -36,6 +38,7 @@
 		49B252341CB2FA13005C88C9 /* AKMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49B252291CB2FA13005C88C9 /* AKMain.storyboard */; };
 		49B252351CB2FA13005C88C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49B2522D1CB2FA13005C88C9 /* Assets.xcassets */; };
 		49BEBB1A1CEA635F00A5FC12 /* AKTravel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BEBB191CEA635F00A5FC12 /* AKTravel.swift */; };
+		49CAA8471D1B3A25007BDD57 /* 0003-128px.png in Resources */ = {isa = PBXBuildFile; fileRef = 49CAA8461D1B3A25007BDD57 /* 0003-128px.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +46,8 @@
 		490F91561CF7870F0031B8AE /* AKCustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKCustomView.h; sourceTree = "<group>"; };
 		490F91571CF7870F0031B8AE /* AKCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKCustomView.m; sourceTree = "<group>"; };
 		490F91591CF7876B0031B8AE /* AKTravelInfoOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKTravelInfoOverlayView.swift; sourceTree = "<group>"; };
+		49199ABC1D15A367009A5A31 /* AKTravelsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AKTravelsTableViewCell.xib; sourceTree = "<group>"; };
+		49199ABE1D15A3DA009A5A31 /* AKTravelsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKTravelsTableViewCell.swift; sourceTree = "<group>"; };
 		4922DD6F1CE679CE003E0AFB /* AKMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKMainViewController.swift; sourceTree = "<group>"; };
 		4922DD711CE67C01003E0AFB /* AKViewTravelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKViewTravelViewController.swift; sourceTree = "<group>"; };
 		4934C6771D0AF920004754AF /* AKFileUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKFileUtils.swift; sourceTree = "<group>"; };
@@ -71,6 +76,7 @@
 		49B2522D1CB2FA13005C88C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49B252311CB2FA13005C88C9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49BEBB191CEA635F00A5FC12 /* AKTravel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKTravel.swift; sourceTree = "<group>"; };
+		49CAA8461D1B3A25007BDD57 /* 0003-128px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "0003-128px.png"; sourceTree = "<group>"; };
 		BBC791C1362B49FEE23CD920 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E02FA7FCAA3C364950EA04A8 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F12237D9CD9C0B4697286FF7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -95,6 +101,7 @@
 				490F91571CF7870F0031B8AE /* AKCustomView.m */,
 				495683331CEA235B0057B06E /* AKCustomViewController.swift */,
 				490F91591CF7876B0031B8AE /* AKTravelInfoOverlayView.swift */,
+				49199ABE1D15A3DA009A5A31 /* AKTravelsTableViewCell.swift */,
 			);
 			path = CustomComponents;
 			sourceTree = "<group>";
@@ -118,6 +125,7 @@
 			children = (
 				499DB6791CB6E8B900342742 /* 0001-512px.png */,
 				499DB6941CB6F24200342742 /* 0002-044px.png */,
+				49CAA8461D1B3A25007BDD57 /* 0003-128px.png */,
 				499DB67A1CB6E8B900342742 /* AppIcon-29@2x.png */,
 				499DB67B1CB6E8B900342742 /* AppIcon-29@3x.png */,
 				499DB67C1CB6E8B900342742 /* AppIcon-40@2x.png */,
@@ -193,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				490F91541CF785BF0031B8AE /* AKTravelInfoOverlayView.xib */,
+				49199ABC1D15A367009A5A31 /* AKTravelsTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -339,8 +348,10 @@
 				490F91551CF785BF0031B8AE /* AKTravelInfoOverlayView.xib in Resources */,
 				49B252231CB2F84D005C88C9 /* CHANGES.txt in Resources */,
 				49B252341CB2FA13005C88C9 /* AKMain.storyboard in Resources */,
+				49CAA8471D1B3A25007BDD57 /* 0003-128px.png in Resources */,
 				499DB6821CB6E8B900342742 /* AppIcon-29@3x.png in Resources */,
 				49B252351CB2FA13005C88C9 /* Assets.xcassets in Resources */,
+				49199ABD1D15A367009A5A31 /* AKTravelsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,6 +417,7 @@
 				4922DD721CE67C01003E0AFB /* AKViewTravelViewController.swift in Sources */,
 				4934C67A1D0B5FEB004754AF /* AKMasterFile.swift in Sources */,
 				495683391CEA57BC0057B06E /* AKInputData.swift in Sources */,
+				49199ABF1D15A3DA009A5A31 /* AKTravelsTableViewCell.swift in Sources */,
 				4922DD701CE679CE003E0AFB /* AKMainViewController.swift in Sources */,
 				4934C6781D0AF920004754AF /* AKFileUtils.swift in Sources */,
 				4967CF981D060A560050DDF2 /* AKFilters.swift in Sources */,

@@ -54,6 +54,14 @@ struct GlobalConstants {
     static let AKTravelPathMarkerColor = AKHexColor(0xE09E9F)
     static let AKMasterFileName = "MasterFile.dat"
     static let AKDefaultFont = "HelveticaNeue-CondensedBold"
+    static let AKDisabledButtonBg = AKHexColor(0xEEEEEE)
+    static let AKEnabledButtonBg = AKHexColor(0xCCCCCC)
+    static let AKTableHeaderCellBg = AKHexColor(0x333333)
+    static let AKTableHeaderLeftBorderBg = AKHexColor(0x72BF44)
+    static let AKHeaderLeftBorderBg = AKHexColor(0x555555)
+    static let AKHeaderTopBorderBg = AKHexColor(0x72BF44)
+    static let AKButtonCornerRadius = 4.0
+    static let AKDefaultBorderThickness = 2.0
 }
 
 // MARK: Global Enumerations
@@ -77,6 +85,13 @@ enum UnitOfTime: Int {
     case Second = 1
     case Minute = 2
     case Hour = 3
+}
+
+enum CustomBorderDecorationPosition: Int {
+    case Top = 0
+    case Right = 1
+    case Bottom = 2
+    case Left = 3
 }
 
 // MARK: Global Functions
@@ -119,6 +134,19 @@ func AKDelay(delay: Double, task: Void -> Void)
 ///
 /// - Returns: The App's delegate object.
 func AKDelegate() -> AKAppDelegate { return UIApplication.sharedApplication().delegate as! AKAppDelegate }
+
+/// Returns the App's master file object.
+///
+/// - Returns The App's master file.
+func AKObtainMasterFile() throws -> AKMasterFile
+{
+    if let mf = AKDelegate().masterFile {
+        return mf
+    }
+    else {
+        throw Exceptions.NotInitialized("The *Master File* has not been initialized.")
+    }
+}
 
 /// Computes the distance between two points and returns the distance in meters.
 ///
@@ -286,4 +314,26 @@ func AKRangeFromNSRange(nsRange: NSRange, forString str: String) -> Range<String
     }
     
     return nil
+}
+
+func AKAddBorderDeco(component: UIView, color: CGColorRef, thickness: Double, position: CustomBorderDecorationPosition) -> Void
+{
+    let border = CALayer()
+    border.backgroundColor = color
+    switch position {
+    case .Top:
+        border.frame = CGRectMake(0, 0, component.frame.width, CGFloat(thickness))
+        break
+    case .Right:
+        border.frame = CGRectMake((component.frame.width - CGFloat(thickness)), 0, CGFloat(thickness), component.frame.height)
+        break
+    case .Bottom:
+        border.frame = CGRectMake(0, (component.frame.height - CGFloat(thickness)), component.frame.width, CGFloat(thickness))
+        break
+    case .Left:
+        border.frame = CGRectMake(0, 0, CGFloat(thickness), component.frame.height)
+        break
+    }
+    
+    component.layer.addSublayer(border)
 }
