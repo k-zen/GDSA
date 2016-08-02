@@ -1,4 +1,3 @@
-import SCLAlertView
 import UIKit
 
 class AKTravelInfoOverlayView: AKCustomView

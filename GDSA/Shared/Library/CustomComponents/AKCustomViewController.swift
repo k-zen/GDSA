@@ -66,7 +66,7 @@ class AKCustomViewController: UIViewController, UIGestureRecognizerDelegate
             alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in AKDelegate().applicationActive = false }))
             alertController.addAction(UIAlertAction(title: "Open Settings", style: .default) { (action) in
                 if let url = URL(string:UIApplicationOpenSettingsURLString) {
-                    AKDelay(0.0, task: { () in UIApplication.shared().openURL(url) })
+                    AKDelay(0.0, task: { () in UIApplication.shared().open(url, options: [:], completionHandler: nil) })
                 }})
             
             self.present(alertController, animated: true, completion: nil)

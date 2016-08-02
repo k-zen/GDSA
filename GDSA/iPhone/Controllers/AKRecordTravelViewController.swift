@@ -1,7 +1,6 @@
 import CoreLocation
 import Foundation
 import Mapbox
-import SCLAlertView
 import UIKit
 
 class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
@@ -31,7 +30,7 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
     @IBAction func stopRecordingTravel(_ sender: AnyObject)
     {
         self.stopRecording({ Void -> Void in
-            self.navigationController?.popViewController(animated: true)
+            _ = self.navigationController?.popViewController(animated: true)
         })
     }
     
@@ -130,26 +129,19 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
             AKPresentMessageFromError("\(error)", controller: self)
         }
         
-        let appearance = SCLAlertView.SCLAppearance(
-            kTitleFont: UIFont(name: GlobalConstants.AKDefaultFont, size: 20)!,
-            kTextFont: UIFont(name: GlobalConstants.AKDefaultFont, size: 14)!,
-            kButtonFont: UIFont(name: GlobalConstants.AKDefaultFont, size: 14)!,
-            showCloseButton: true
+        let alertController = UIAlertController(
+            title: "Stop Travel",
+            message: "Do you want to save the travel...?",
+            preferredStyle: UIAlertControllerStyle.actionSheet
         )
-        let alertController = SCLAlertView(appearance: appearance)
-        
-        alertController.addButton("Save & Exit", action: { () -> Void in
-            AKDelegate().masterFile?.addTravel(self.travel)
-            completionTask()
-        })
-        alertController.addButton("Discard", action: { () -> Void in completionTask() })
-        
-        alertController.showNotice(
-            "Stop Travel",
-            subTitle: "Do you want to save the travel...?",
-            closeButtonTitle: nil,
-            duration: 0.0
+        alertController.addAction(UIAlertAction(
+            title: "Save & Exit",
+            style: UIAlertActionStyle.default,
+            handler: { (action) -> Void in
+                AKDelegate().masterFile?.addTravel(self.travel)
+                completionTask() })
         )
+        alertController.addAction(UIAlertAction(title: "Discard", style: UIAlertActionStyle.destructive, handler: { (action) -> Void in completionTask() }))
     }
     
     // MARK: MGLMapViewDelegate Implementation

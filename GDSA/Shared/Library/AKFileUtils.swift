@@ -18,8 +18,8 @@ class AKFileUtils {
     /// \returns The URL of the file archive.
     static func openFileArchive(
         _ fileName: String,
-            location: FileManager.SearchPathDirectory,
-                shouldCreate: Bool) throws -> String?
+        location: FileManager.SearchPathDirectory,
+        shouldCreate: Bool) throws -> String?
     {
         let fm: FileManager = FileManager()
         let appSupportDir: URL = try fm.urlForDirectory(
@@ -35,7 +35,7 @@ class AKFileUtils {
         else {
             if shouldCreate {
                 NSLog("=> FILE *%@* DOES NOT EXISTS! CREATING...", fileName)
-                guard fm.createFile(try! appSupportDir.appendingPathComponent(fileName).path!, contents: nil, attributes: nil) else {
+                guard fm.createFile(atPath: try! appSupportDir.appendingPathComponent(fileName).path!, contents: nil, attributes: nil) else {
                     throw FileIOError.fileCreationError("File cannot be created.")
                 }
                 

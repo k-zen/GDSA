@@ -14,11 +14,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>SCLAlertView.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>TSMessages.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,17 +22,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>43DC34CDD066868199B842A99171BD66</key>
+		<key>1402647B73E47EABFE6DD15DA31E81FB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7C11321A1696ECB818ECD14E22BC7896</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>9F3A7AE4D1BADF21164E55161114DD25</key>
+		<key>3C015959684D48CA885B865BBB066924</key>
 		<dict>
 			<key>primary</key>
 			<true/>

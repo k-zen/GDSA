@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0800"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9F3A7AE4D1BADF21164E55161114DD25"
+               BlueprintIdentifier = "3C015959684D48CA885B865BBB066924"
                BuildableName = "Pods_GDSA.framework"
                BlueprintName = "Pods-GDSA"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9F3A7AE4D1BADF21164E55161114DD25"
+            BlueprintIdentifier = "3C015959684D48CA885B865BBB066924"
             BuildableName = "Pods_GDSA.framework"
             BlueprintName = "Pods-GDSA"
             ReferencedContainer = "container:Pods.xcodeproj">

@@ -131,7 +131,7 @@ func AKAppVersion() -> String
 /// - Parameter task:  The function to execute.
 func AKDelay(_ delay: Double, task: (Void) -> Void)
 {
-    DispatchQueue.main.after(when: DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), block: task)
+    DispatchQueue.main.after(when: DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: task)
 }
 
 /// Returns the App's delegate object.
@@ -159,7 +159,7 @@ func AKObtainMasterFile() throws -> AKMasterFile
 ///
 /// - Returns: TRUE if within range, FALSE otherwise.
 func AKComputeDistanceBetweenTwoPoints(pointA: UserLocation,
-                                              pointB: UserLocation) -> CLLocationDistance
+                                       pointB: UserLocation) -> CLLocationDistance
 {
     let pointA = CLLocation(latitude: pointA.lat, longitude: pointA.lon)
     let pointB = CLLocation(latitude: pointB.lat, longitude: pointB.lon)
@@ -310,8 +310,8 @@ func AKPresentMessageFromError(_ errorMessage: String = "", controller: AKCustom
 
 func AKRangeFromNSRange(_ nsRange: NSRange, forString str: String) -> Range<String.Index>?
 {
-    let fromUTF16 = str.utf16.startIndex.advancedBy(nsRange.location, limit: str.utf16.endIndex)
-    let toUTF16 = fromUTF16.advancedBy(nsRange.length, limit: str.utf16.endIndex)
+    let fromUTF16 = str.utf16.startIndex.advanced(by: nsRange.location)
+    let toUTF16 = fromUTF16.advanced(by: nsRange.length)
     
     if let from = String.Index(fromUTF16, within: str), let to = String.Index(toUTF16, within: str) {
         return from ..< to

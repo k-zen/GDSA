@@ -1,4 +1,4 @@
-platform :ios, '9.0'
+platform :ios, '10.0'
 use_frameworks!
 
 workspace 'GDSA'
@@ -16,6 +16,5 @@ end
 
 target "GDSA" do
     pod 'Mapbox-iOS-SDK'
-    pod 'SCLAlertView'
     pod 'TSMessages', :git => 'https://github.com/KrauseFx/TSMessages.git'
 end
