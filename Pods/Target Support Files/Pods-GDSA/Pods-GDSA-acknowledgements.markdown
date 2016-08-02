@@ -1,20 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>PreferenceSpecifiers</key>
-	<array>
-		<dict>
-			<key>FooterText</key>
-			<string>This application makes use of the following third party libraries:</string>
-			<key>Title</key>
-			<string>Acknowledgements</string>
-			<key>Type</key>
-			<string>PSGroupSpecifier</string>
-		</dict>
-		<dict>
-			<key>FooterText</key>
-			<string>Copyright (c) 2015 Dennis Weissmann
+# Acknowledgements
+This application makes use of the following third party libraries:
+
+## DeviceKit
+
+Copyright (c) 2015 Dennis Weissmann
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -32,15 +21,11 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.</string>
-			<key>Title</key>
-			<string>DeviceKit</string>
-			<key>Type</key>
-			<string>PSGroupSpecifier</string>
-		</dict>
-		<dict>
-			<key>FooterText</key>
-			<string>The MIT License (MIT)
+THE SOFTWARE.
+
+## HexColors
+
+The MIT License (MIT)
 Copyright (c) 2012 Marius Landwehr marius.landwehr@gmail.com
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
@@ -48,15 +33,11 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-</string>
-			<key>Title</key>
-			<string>HexColors</string>
-			<key>Type</key>
-			<string>PSGroupSpecifier</string>
-		</dict>
-		<dict>
-			<key>FooterText</key>
-			<string>mapbox-gl-native copyright (c) 2014-2016 Mapbox.
+
+
+## Mapbox-iOS-SDK
+
+mapbox-gl-native copyright (c) 2014-2016 Mapbox.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are
@@ -146,7 +127,7 @@ Website   :  http://www.angusj.com
 Copyright :  Angus Johnson 2010-2014
 
 License:
-Use, modification &amp; distribution is subject to Boost Software License Ver 1.
+Use, modification & distribution is subject to Boost Software License Ver 1.
 http://www.boost.org/LICENSE_1_0.txt
 
 Attributions:
@@ -197,8 +178,8 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 Mapbox GL uses portions of CSS Color Parser.
 
-(c) Dean McNamee &lt;dean@gmail.com&gt;, 2012.
-C++ port by Konstantin K&#228;fer &lt;mail@kkaefer.com&gt;, 2014.
+(c) Dean McNamee <dean@gmail.com>, 2012.
+C++ port by Konstantin Käfer <mail@kkaefer.com>, 2014.
 
 https://github.com/deanm/css-color-parser-js
 https://github.com/kkaefer/css-color-parser-cpp
@@ -226,7 +207,7 @@ IN THE SOFTWARE.
 Mapbox GL uses portions of GLFW.
 
 Copyright (c) 2002-2006 Marcus Geelnard
-Copyright (c) 2006-2010 Camilla Berglund &lt;elmindreda@elmindreda.org&gt;
+Copyright (c) 2006-2010 Camilla Berglund <elmindreda@elmindreda.org>
 
 This software is provided 'as-is', without any express or implied
 warranty. In no event will the authors be held liable for any damages
@@ -330,7 +311,7 @@ Mapbox GL uses portions of libcurl.
 
 COPYRIGHT AND PERMISSION NOTICE
 
-Copyright (c) 1996 - 2015, Daniel Stenberg, &lt;daniel@haxx.se&gt;.
+Copyright (c) 1996 - 2015, Daniel Stenberg, <daniel@haxx.se>.
 
 All rights reserved.
 
@@ -528,7 +509,7 @@ The externally maintained libraries used by libuv are:
 
 - android-ifaddrs.h, android-ifaddrs.c, copyright Berkeley Software Design
   Inc, Kenneth MacKay and Emergya (Cloud4all, FP7/2007-2013, grant agreement
-  n&#176; 289016). Three clause BSD license.
+  n° 289016). Three clause BSD license.
 
 ===========================================================================
 
@@ -536,7 +517,7 @@ Mapbox GL uses portions of libzip.
 
 Copyright (C) 1999-2014 Dieter Baron and Thomas Klausner
 
-The authors can be contacted at &lt;libzip@nih.at&gt;
+The authors can be contacted at <libzip@nih.at>
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -619,7 +600,7 @@ POSSIBILITY OF SUCH DAMAGE.
 
 Mapbox GL uses portions of nunicode.
 
-Copyright (c) 2013 Aleksey Tulinov &lt;aleksey.tulinov@gmail.com&gt;
+Copyright (c) 2013 Aleksey Tulinov <aleksey.tulinov@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -935,7 +916,7 @@ a legal notice, here is a blessing:
 
 Mapbox GL uses portions of SVPulsingAnnotationView.
 
-Copyright (c) 2013, Sam Vermette &lt;hello@samvermette.com&gt;
+Copyright (c) 2013, Sam Vermette <hello@samvermette.com>
 
 Permission to use, copy, modify, and/or distribute this software for any purpose
 with or without fee is hereby granted, provided that the above copyright notice
@@ -1000,15 +981,11 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-</string>
-			<key>Title</key>
-			<string>Mapbox-iOS-SDK</string>
-			<key>Type</key>
-			<string>PSGroupSpecifier</string>
-		</dict>
-		<dict>
-			<key>FooterText</key>
-			<string>Copyright (c) 2013-2014 SCPopUpView by Viktor Radchenko
+
+
+## SCLAlertView
+
+Copyright (c) 2013-2014 SCPopUpView by Viktor Radchenko
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -1027,15 +1004,11 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-</string>
-			<key>Title</key>
-			<string>SCLAlertView</string>
-			<key>Type</key>
-			<string>PSGroupSpecifier</string>
-		</dict>
-		<dict>
-			<key>FooterText</key>
-			<string>Copyright (c) 2016 Felix Krause
+
+
+## TSMessages
+
+Copyright (c) 2016 Felix Krause
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -1054,24 +1027,5 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-</string>
-			<key>Title</key>
-			<string>TSMessages</string>
-			<key>Type</key>
-			<string>PSGroupSpecifier</string>
-		</dict>
-		<dict>
-			<key>FooterText</key>
-			<string>Generated by CocoaPods - http://cocoapods.org</string>
-			<key>Title</key>
-			<string></string>
-			<key>Type</key>
-			<string>PSGroupSpecifier</string>
-		</dict>
-	</array>
-	<key>StringsTable</key>
-	<string>Acknowledgements</string>
-	<key>Title</key>
-	<string>Acknowledgements</string>
-</dict>
-</plist>
+
+Generated by CocoaPods - https://cocoapods.org

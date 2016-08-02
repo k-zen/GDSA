@@ -14,7 +14,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods.xcscheme</key>
+		<key>Pods-GDSA.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -32,7 +32,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>A3B48BF93B212BC3D46A6AD24C1EF979</key>
+		<key>5016C3C5A2FF9AFC8CFBBCDEA025DBFF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7B752BB73A55502BAAF1D7C15BA969D1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -42,12 +47,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CDC414A36F36C22915C03574CAB0ECF6</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E2664F00878D9067CCD55050385834D0</key>
+		<key>E8F64AB735AE01C0DC42153330F6C2E8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
