@@ -1,5 +1,4 @@
 PODS:
-  - DeviceKit (0.3.2)
   - HexColors (2.3.0)
   - Mapbox-iOS-SDK (3.3.3)
   - SCLAlertView (0.5.9)
@@ -7,7 +6,6 @@ PODS:
     - HexColors (~> 2.3.0)
 
 DEPENDENCIES:
-  - DeviceKit
   - Mapbox-iOS-SDK
   - SCLAlertView
   - TSMessages (from `https://github.com/KrauseFx/TSMessages.git`)
@@ -22,12 +20,11 @@ CHECKOUT OPTIONS:
     :git: https://github.com/KrauseFx/TSMessages.git
 
 SPEC CHECKSUMS:
-  DeviceKit: 79182140c0aa8daaf4f4b3920e0b079f5fa9db79
   HexColors: 6ad3947c3447a055a3aa8efa859def096351fe5f
   Mapbox-iOS-SDK: 13cd4d7e118acae2782a1bdc5947164d8f6d80fd
   SCLAlertView: d7c6a48c7d340e60206d4ed0e8ebcbff3b9d2a44
   TSMessages: 6e403b790139636c15ab4f51946537095e03e79c
 
-PODFILE CHECKSUM: bf330ebfacf38afd157939371a98b4266d300781
+PODFILE CHECKSUM: 422a810114c197446cf3070739b19e601d4e1451
 
 COCOAPODS: 1.0.1

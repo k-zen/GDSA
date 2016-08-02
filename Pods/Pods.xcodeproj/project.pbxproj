@@ -7,83 +7,72 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		029415BB5FF5DF9CB8D3CE34827B0A0B /* Info.plist in Sources */ = {isa = PBXBuildFile; fileRef = DE05915ACD8793AC67E739AEEB5074EF /* Info.plist */; };
-		076E187211C8D6FFF5C1AC8275F25BC8 /* NotificationBackgroundSuccess.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EE026BDF0FD3CAD0A72BD801D921009 /* NotificationBackgroundSuccess.png */; };
-		079C88EB120535A87150C01F807DF8BC /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80E9917C996E2ED920DC09CE7B0037B /* Device.swift */; };
-		09D7E455E5B29FC20C6C93BC70B3AB05 /* NotificationButtonBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DC9FC60269C002A167EC13D2D78934D /* NotificationButtonBackground@2x.png */; };
-		0D4F0D7B20A7D4009E872A1CDF0EAD51 /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A853B372F03525CB49ADBD73F9859ED /* SCLAlertView.swift */; };
-		13C272ECE77888787C9A64C0C9E30E9C /* TSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = E54F33A41620E524BCD1CB9E66E7C7D0 /* TSMessage.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		172F4395E6330FB07E2A0908649E20EE /* NotificationBackgroundErrorIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 18996EEAE9D7928696226A507F041A3B /* NotificationBackgroundErrorIcon.png */; };
-		1B1030732717078B48C9CBD328C1DB62 /* NotificationButtonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = B750945DBA46BD34B1D30A18E01631D8 /* NotificationButtonBackground.png */; };
-		2F99FF12F683CCE7C10C63ACC53CC1B1 /* NotificationBackgroundWarningIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = E2CC5DFBF23498D342E12D28397F4E36 /* NotificationBackgroundWarningIcon.png */; };
-		2FF064A8900F4906454B97F4D1D4DA11 /* DeviceKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A85D3EB822527FDBB461F948903050 /* DeviceKit-dummy.m */; };
-		4E5B4EEA50BEF0B4D0FE2394D3EB119A /* HexColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7DC7E5DA11D77E6BA6B4E4E64C6BAE /* HexColors.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		596758BBEC68789E6C8928ECE3FC341C /* HexColors.h in Headers */ = {isa = PBXBuildFile; fileRef = E371B002BCF4DD48134659748D5601C9 /* HexColors.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5A8F0745C7D7DF5C80119D89BE388CF3 /* TSMessageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A830F60992BB7688855F813ABD631D4 /* TSMessageView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5C64A51B2803C32A84179ED232D4B8B1 /* Pods-GDSA-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E227CBFFCD4852A486F445F6427FC6F4 /* Pods-GDSA-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6E0AA1F234DEF011D609D735B547598D /* DeviceKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 36E5BBDED5869D8900DB9657F986A684 /* DeviceKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6E165FB8497A106C14497583E0F2D730 /* NotificationBackgroundWarningIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B1711E890B322367B24F8EC52499C57 /* NotificationBackgroundWarningIcon@2x.png */; };
-		79D0ED0FB57BA845780C1B77FB6E4570 /* NotificationBackgroundError.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B12249A2784B078F27317DD3852BF00 /* NotificationBackgroundError.png */; };
-		7C36989388BF595E744A10BB0224706D /* NotificationBackgroundWarning@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D07DD1907108D5EC57814C290129AD5 /* NotificationBackgroundWarning@2x.png */; };
-		80837CE3E8043DA699811E05DBADFCE9 /* NotificationBackgroundError@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FFDBB4B49F87A78A6FE073419509F24 /* NotificationBackgroundError@2x.png */; };
-		855FD9B3C6F0B7573142DCE0465A5579 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6738A478FE941B7C80E95ACEB4217A /* Foundation.framework */; };
-		8608166B497A2BFBCDF53060691759A9 /* TSBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE24CDB51FB9CA0BBB48AFEEDD32544D /* TSBlurView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		8687A2046D3735A8B3C7BE0FA87E305F /* NotificationBackgroundSuccess@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 108A92A7AA3919B78510681A7EF0B8C9 /* NotificationBackgroundSuccess@2x.png */; };
-		8B188E13AE1A9BD62716116750997218 /* TSMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE16692D43729BD2D0998CC234E10015 /* TSMessageView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		8C24D22C194B1907E9CE0650984E7F96 /* NotificationBackgroundSuccessIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 053A74E6642EC694DC62816A81008A1B /* NotificationBackgroundSuccessIcon@2x.png */; };
-		8D5CC3613AF7D14CD67821698BB2EDBA /* NotificationBackgroundMessage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22D8FBC0ACB3E9782904174FED970BFB /* NotificationBackgroundMessage@2x.png */; };
-		8D85EACA7FC930D32E55967965F0F11B /* NotificationBackgroundMessage.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D0E9EC6E07432B0B925A716385E2D12 /* NotificationBackgroundMessage.png */; };
-		8DCF5C0EE6AC7543935C51AA756864C0 /* HexColors-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4A71C60446D02CEE3C6023E20A42C8 /* HexColors-dummy.m */; };
-		AAA9549038EE37EA00AC05B99CDBFBB4 /* NotificationBackgroundWarning.png in Resources */ = {isa = PBXBuildFile; fileRef = D3232F44CCA4FB46FAC2973F64A2DA41 /* NotificationBackgroundWarning.png */; };
-		ADB3A7DF0047B69FD6002F523E4B7540 /* SCLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EDECC3450A7907EE64967962A2E69E /* SCLExtensions.swift */; };
-		AE0144BE483E13F8E21ECF365DD32E08 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6738A478FE941B7C80E95ACEB4217A /* Foundation.framework */; };
-		B55CE1E4FA9DEAC1A96A7AFE8DC9475F /* TSMessagesDefaultDesign.json in Resources */ = {isa = PBXBuildFile; fileRef = 3906A26D8D3EDE579E7C3F2CFE836EA8 /* TSMessagesDefaultDesign.json */; };
-		B919C57A72FEF998CFFADECDCB73F94A /* TSMessages-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D288F65297DB1ACA25EEF6BE760BE66 /* TSMessages-dummy.m */; };
-		BE1EC8CDAF9BB18B9B1652B1A90658BC /* TSBlurView.h in Headers */ = {isa = PBXBuildFile; fileRef = F93584B46130AB0ADE08B6441B468A1D /* TSBlurView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C1817F9078E715E6604E9E1E9D9FB26F /* NotificationBackgroundSuccessIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3486ADA7DBEDD2B5479C1FDA6264487D /* NotificationBackgroundSuccessIcon.png */; };
-		C587A969DAD9B2CF5A43F1F7B6DFC60C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6738A478FE941B7C80E95ACEB4217A /* Foundation.framework */; };
-		C729ECDB6B510B2D4634C84645AA1D22 /* NotificationBackgroundErrorIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A757D710FA5971C83860ABA80D62A8A2 /* NotificationBackgroundErrorIcon@2x.png */; };
-		CDB6BB2B847653E6D1A6951A198E9BC8 /* SCLAlertView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 977158F518739855C1644311091F79E9 /* SCLAlertView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D0813E4C3E241918E7D106109BD99819 /* TSMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = DAA66D0F8E07006EF7F4A8D43281A174 /* TSMessage.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D0FC411530BFBCD14C046EF9B2C4F00A /* TSMessages-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CB752BEDB7B1799989F2428F9BB4A75 /* TSMessages-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D1E0C2CABA75863D403444ECB303D9BA /* HexColors.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED95C9854C5A1E9D1863834AA6302259 /* HexColors.framework */; };
-		D1E92AEC9F093E10C69F2B89A14F49F5 /* HexColors-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F5ADF232F435A603DFAA1A34EE17371D /* HexColors-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D9C3F86F64AE98DBAF2CA5DBDC13474E /* SCLAlertView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3E9CF0BEC0142015CC7B165A1D6631 /* SCLAlertView-dummy.m */; };
-		DBBEE09C7AB824E03E447845074BB8E6 /* Pods-GDSA-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4246B07A992DC6EE619A45B611A5DF87 /* Pods-GDSA-dummy.m */; };
+		016C753969626630CB8A4B0E32D90A04 /* NotificationBackgroundSuccessIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F823AB61D32E5A63E4F441E36402F190 /* NotificationBackgroundSuccessIcon@2x.png */; };
+		024725FD295A02B09D01AFC2C162571E /* TSBlurView.h in Headers */ = {isa = PBXBuildFile; fileRef = 64384F1EFA2DEF21E42EC28E0E3564EF /* TSBlurView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1AA7A400947F7CFEE90A6088B2D7BEEB /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38494D0E46A0FD5F78E0AB8B19A84FC /* SCLAlertView.swift */; };
+		1B234AD49E1DD7078C658B3171030498 /* NotificationBackgroundWarning.png in Resources */ = {isa = PBXBuildFile; fileRef = F08383C5F99F0DEC2B078E659FE36AC1 /* NotificationBackgroundWarning.png */; };
+		2601C218368A00EF5A49D2EA2FAC9F54 /* NotificationBackgroundWarningIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F346D882326D181000481BEFF649E4C /* NotificationBackgroundWarningIcon@2x.png */; };
+		268B5F9299769371F7CEBE7C6526FCDC /* HexColors.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED95C9854C5A1E9D1863834AA6302259 /* HexColors.framework */; };
+		3D67BEDA169801F6241EDD725AD66B95 /* TSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5121D0EDA0445697EB5C99D8A13CFEF3 /* TSMessage.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		3E6162DD33E08EFB389DDF7BB1E290EF /* TSMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 542C41469060CA862704DE684AC53618 /* TSMessage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3F9E7963641652FAB2A28A95769EE637 /* NotificationBackgroundWarning@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A467BB6C958D9D7841AA086CD6B1CFE2 /* NotificationBackgroundWarning@2x.png */; };
+		421C85ACC8D1D6B3E951CFE4236C1DCD /* NotificationBackgroundError.png in Resources */ = {isa = PBXBuildFile; fileRef = E339482D511D41BED771B673545AFB52 /* NotificationBackgroundError.png */; };
+		4853B699445D59701CAAF1D7F7137D70 /* NotificationBackgroundSuccess.png in Resources */ = {isa = PBXBuildFile; fileRef = A0750410AB75AE22D832CAB7579320BD /* NotificationBackgroundSuccess.png */; };
+		4984B2D6A2882A5BE8791FECFA1918FA /* NotificationButtonBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65237BCC8F5A16469716C3FDB15299E7 /* NotificationButtonBackground@2x.png */; };
+		4A9BCD5B4712F150F47F693A6C6C3933 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6738A478FE941B7C80E95ACEB4217A /* Foundation.framework */; };
+		4E5B4EEA50BEF0B4D0FE2394D3EB119A /* HexColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 64EC07DFB31AAA1927A82A86A2C25B0A /* HexColors.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		54B7CF7CF3789F94564851370FAA0798 /* TSMessages-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A8422C80ADB27D077C541CBFFB85D04F /* TSMessages-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		596758BBEC68789E6C8928ECE3FC341C /* HexColors.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CB1031FEBFC3431610C31A2AE646B1F /* HexColors.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5A37CFABF2826A05EDB9BCBCB487ABB3 /* NotificationBackgroundWarningIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AC889D4F77AE299114AB788B8B3B1CC /* NotificationBackgroundWarningIcon.png */; };
+		645F12DB0DF3B1BB0237F6AF2FEA4A40 /* Pods-GDSA-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4246B07A992DC6EE619A45B611A5DF87 /* Pods-GDSA-dummy.m */; };
+		67E3561253ABA42335B84E533F3F9F4C /* NotificationBackgroundErrorIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F48FF68DDDAFF407A4042D9523A38184 /* NotificationBackgroundErrorIcon@2x.png */; };
+		68D0D159D011F03AD1B7EAC1D4CA5FD4 /* NotificationButtonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = EA28DE927629347A8A5E7844B94D347F /* NotificationButtonBackground.png */; };
+		696D42B89F848B231CDEA4F646C767B1 /* TSBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = D92AC7429BE123BFF50C9135E61D83AC /* TSBlurView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		7AA02654D38F25BC9668402A55427A2A /* TSMessagesDefaultDesign.json in Resources */ = {isa = PBXBuildFile; fileRef = 8629A60FBCB077C3C49B910BD31135F5 /* TSMessagesDefaultDesign.json */; };
+		7BC3CA35448E93B3B7C6C911B84BB95D /* NotificationBackgroundMessage.png in Resources */ = {isa = PBXBuildFile; fileRef = 155617D8D01AFE27DC165921969BC53E /* NotificationBackgroundMessage.png */; };
+		81680F73125ABDD1D87F9EF4D38BB0D8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6738A478FE941B7C80E95ACEB4217A /* Foundation.framework */; };
+		81F863C59F6D03DB9CFEF5F1A29DAA85 /* Info.plist in Sources */ = {isa = PBXBuildFile; fileRef = 9DF8FD2E31A04D18BD872BFFC217C3D9 /* Info.plist */; };
+		822C73828A5DFE7ED387160140EF0360 /* Pods-GDSA-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E227CBFFCD4852A486F445F6427FC6F4 /* Pods-GDSA-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8AF19E5A1D6C858E9E2A45E18440DAD4 /* TSMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = DABA91BDDF57357098DCE807FA0DA370 /* TSMessageView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		8DCF5C0EE6AC7543935C51AA756864C0 /* HexColors-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4420FED3D33F7F17CA6AE9937A1BAAD9 /* HexColors-dummy.m */; };
+		AA846F2334ED18C4FA390548BD417B37 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6738A478FE941B7C80E95ACEB4217A /* Foundation.framework */; };
+		B6C9B47A7FFAA42AEFC5833D401B8884 /* NotificationBackgroundSuccessIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 059D93C020F06A124B3320C73EEF0229 /* NotificationBackgroundSuccessIcon.png */; };
+		C00F24853932BC2F08A0720B9F8B56EE /* SCLAlertView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 71F679DDF3555EC83B0AF97C72098D25 /* SCLAlertView-dummy.m */; };
+		C3157F3CE99847454AA4C7C376F6A628 /* NotificationBackgroundError@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 02BAEEBE9E63E4DAFF8ED21A9A514E80 /* NotificationBackgroundError@2x.png */; };
+		CC595A619AD4797EBC6B98FB3D8131B5 /* NotificationBackgroundSuccess@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2A8826A53AFED369E9E67A6EA341D4A /* NotificationBackgroundSuccess@2x.png */; };
+		D1E92AEC9F093E10C69F2B89A14F49F5 /* HexColors-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E86346CA29114A43EADF5682C7B0673F /* HexColors-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D89B162EE3799893C6B65541EBC2B2CA /* TSMessages-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DE49CD0969E501589AD7D318F2D730D /* TSMessages-dummy.m */; };
+		DA268BE5F6F76B5B3ACB2A832D831305 /* NotificationBackgroundMessage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B419D30D8BF177EECC556E1B4F273D60 /* NotificationBackgroundMessage@2x.png */; };
+		DC2D1CF8A1803CF616DE30CD1387049F /* NotificationBackgroundErrorIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = C50E60EF798235B52E7763A9855C9659 /* NotificationBackgroundErrorIcon.png */; };
+		DED67A6BB9F64B500BA8CC2A01C5F75F /* SCLAlertView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 872560414D86083B5D03A0F89200CCE2 /* SCLAlertView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E46464ECEAF459AEAA999FBE85905098 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6738A478FE941B7C80E95ACEB4217A /* Foundation.framework */; };
-		FDCDD5C516B1C2A7D759D421DAD419A5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6738A478FE941B7C80E95ACEB4217A /* Foundation.framework */; };
+		E51C1FFC7A96FD85757084B53C59A661 /* SCLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9E9206A595FD2B746BC65545303930 /* SCLExtensions.swift */; };
+		FA0A5B124C88FD4AB5EFC1439A8AD11C /* TSMessageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B3301F234CD082BE4F392839B9A5AD4 /* TSMessageView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		00075C5E216BA8D0924B3DDCCF8142AC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EF78824223C74AA13AE655CD2ACF32A3;
-			remoteInfo = DeviceKit;
-		};
-		5178BA8C52190B84126F25C7E9EA8BD8 /* PBXContainerItemProxy */ = {
+		23EA05263FACC1BE8A0E77FD32E8971F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = C408D4E183A88B763793C217A66A1950;
 			remoteInfo = HexColors;
 		};
-		7166E190F6A1AE9E0FC3D9BA3F08A602 /* PBXContainerItemProxy */ = {
+		3F26D7EF1C713CBB10E52F0200BD14AB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 5016C3C5A2FF9AFC8CFBBCDEA025DBFF;
-			remoteInfo = TSMessages;
-		};
-		7F1F1719873E16DB0EE8939A2DBA32C6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7B752BB73A55502BAAF1D7C15BA969D1;
+			remoteGlobalIDString = 43DC34CDD066868199B842A99171BD66;
 			remoteInfo = SCLAlertView;
 		};
-		C753CDF929F46495A44A6221856D7CFE /* PBXContainerItemProxy */ = {
+		7DE8CFAAB0A256480E316EB4EDD1B8BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7C11321A1696ECB818ECD14E22BC7896;
+			remoteInfo = TSMessages;
+		};
+		CCF76824D67DB907F1EB916579B42AB5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
@@ -93,78 +82,70 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		053A74E6642EC694DC62816A81008A1B /* NotificationBackgroundSuccessIcon@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "NotificationBackgroundSuccessIcon@2x.png"; path = "Pod/Assets/NotificationBackgroundSuccessIcon@2x.png"; sourceTree = "<group>"; };
-		05A7F6F729DBF7623248ACAFB13B941B /* DeviceKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DeviceKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		02BAEEBE9E63E4DAFF8ED21A9A514E80 /* NotificationBackgroundError@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "NotificationBackgroundError@2x.png"; path = "Pod/Assets/NotificationBackgroundError@2x.png"; sourceTree = "<group>"; };
+		059D93C020F06A124B3320C73EEF0229 /* NotificationBackgroundSuccessIcon.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = NotificationBackgroundSuccessIcon.png; path = Pod/Assets/NotificationBackgroundSuccessIcon.png; sourceTree = "<group>"; };
 		06C071529D4EE7292E553268F21DD420 /* Pods-GDSA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GDSA.release.xcconfig"; sourceTree = "<group>"; };
 		071B60B95467513B9FACB4AD99EBC764 /* Pods-GDSA.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-GDSA.modulemap"; sourceTree = "<group>"; };
-		0B1711E890B322367B24F8EC52499C57 /* NotificationBackgroundWarningIcon@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "NotificationBackgroundWarningIcon@2x.png"; path = "Pod/Assets/NotificationBackgroundWarningIcon@2x.png"; sourceTree = "<group>"; };
 		0C6738A478FE941B7C80E95ACEB4217A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		0ED7A7A53E4BE2E91C62FC7543B90646 /* SCLAlertView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SCLAlertView.modulemap; sourceTree = "<group>"; };
+		0E6A44037375E5E45F5D0618513AF713 /* HexColors.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = HexColors.modulemap; sourceTree = "<group>"; };
 		0ED8D2B2F3470DBB08ABF7EFE8A35391 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0EE026BDF0FD3CAD0A72BD801D921009 /* NotificationBackgroundSuccess.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = NotificationBackgroundSuccess.png; path = Pod/Assets/NotificationBackgroundSuccess.png; sourceTree = "<group>"; };
-		108A92A7AA3919B78510681A7EF0B8C9 /* NotificationBackgroundSuccess@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "NotificationBackgroundSuccess@2x.png"; path = "Pod/Assets/NotificationBackgroundSuccess@2x.png"; sourceTree = "<group>"; };
-		1442D0DED87F098DBFC96BE74C0D9571 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mapbox.framework; path = dynamic/Mapbox.framework; sourceTree = "<group>"; };
-		18996EEAE9D7928696226A507F041A3B /* NotificationBackgroundErrorIcon.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = NotificationBackgroundErrorIcon.png; path = Pod/Assets/NotificationBackgroundErrorIcon.png; sourceTree = "<group>"; };
-		1B12249A2784B078F27317DD3852BF00 /* NotificationBackgroundError.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = NotificationBackgroundError.png; path = Pod/Assets/NotificationBackgroundError.png; sourceTree = "<group>"; };
-		1C4482EF3DDD572DE3A5B9AAC2F89005 /* HexColors-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HexColors-prefix.pch"; sourceTree = "<group>"; };
-		22D8FBC0ACB3E9782904174FED970BFB /* NotificationBackgroundMessage@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "NotificationBackgroundMessage@2x.png"; path = "Pod/Assets/NotificationBackgroundMessage@2x.png"; sourceTree = "<group>"; };
+		155617D8D01AFE27DC165921969BC53E /* NotificationBackgroundMessage.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = NotificationBackgroundMessage.png; path = Pod/Assets/NotificationBackgroundMessage.png; sourceTree = "<group>"; };
+		1F137568CF5662A70924FECB83024ADD /* SCLAlertView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SCLAlertView.xcconfig; sourceTree = "<group>"; };
 		2375780DED05A3DE7BF498379613B228 /* Pods-GDSA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GDSA.debug.xcconfig"; sourceTree = "<group>"; };
-		2D07DD1907108D5EC57814C290129AD5 /* NotificationBackgroundWarning@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "NotificationBackgroundWarning@2x.png"; path = "Pod/Assets/NotificationBackgroundWarning@2x.png"; sourceTree = "<group>"; };
+		2AC889D4F77AE299114AB788B8B3B1CC /* NotificationBackgroundWarningIcon.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = NotificationBackgroundWarningIcon.png; path = Pod/Assets/NotificationBackgroundWarningIcon.png; sourceTree = "<group>"; };
+		2F346D882326D181000481BEFF649E4C /* NotificationBackgroundWarningIcon@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "NotificationBackgroundWarningIcon@2x.png"; path = "Pod/Assets/NotificationBackgroundWarningIcon@2x.png"; sourceTree = "<group>"; };
 		3090A206A214392683BF250D3DD03AC3 /* Pods-GDSA-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GDSA-acknowledgements.markdown"; sourceTree = "<group>"; };
-		3486ADA7DBEDD2B5479C1FDA6264487D /* NotificationBackgroundSuccessIcon.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = NotificationBackgroundSuccessIcon.png; path = Pod/Assets/NotificationBackgroundSuccessIcon.png; sourceTree = "<group>"; };
-		3563F834F800183D075215F285F71CFB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		36E5BBDED5869D8900DB9657F986A684 /* DeviceKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DeviceKit-umbrella.h"; sourceTree = "<group>"; };
-		3906A26D8D3EDE579E7C3F2CFE836EA8 /* TSMessagesDefaultDesign.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; name = TSMessagesDefaultDesign.json; path = Pod/Assets/TSMessagesDefaultDesign.json; sourceTree = "<group>"; };
-		3A830F60992BB7688855F813ABD631D4 /* TSMessageView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TSMessageView.h; path = Pod/Classes/TSMessageView.h; sourceTree = "<group>"; };
+		32B6CE6B8BA752DABB98058B61476394 /* TSMessages-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TSMessages-prefix.pch"; sourceTree = "<group>"; };
+		37066296D53EFB385D128F2B7E40FC32 /* Pods_GDSA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GDSA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4246B07A992DC6EE619A45B611A5DF87 /* Pods-GDSA-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GDSA-dummy.m"; sourceTree = "<group>"; };
+		4420FED3D33F7F17CA6AE9937A1BAAD9 /* HexColors-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HexColors-dummy.m"; sourceTree = "<group>"; };
+		44E5220B00EEB86E8D81EDDF20CF6CEF /* TSMessages.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TSMessages.xcconfig; sourceTree = "<group>"; };
 		480EC87A39D76B6F71C14E94AD3A3B1E /* Pods-GDSA-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GDSA-resources.sh"; sourceTree = "<group>"; };
-		4DC9FC60269C002A167EC13D2D78934D /* NotificationButtonBackground@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "NotificationButtonBackground@2x.png"; path = "Pod/Assets/NotificationButtonBackground@2x.png"; sourceTree = "<group>"; };
-		4FFDBB4B49F87A78A6FE073419509F24 /* NotificationBackgroundError@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "NotificationBackgroundError@2x.png"; path = "Pod/Assets/NotificationBackgroundError@2x.png"; sourceTree = "<group>"; };
-		5E69F06DE93510C99465F0F67B5FFED2 /* TSMessages.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TSMessages.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		60F084C2DAF9069441F52F7527241196 /* SCLAlertView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SCLAlertView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		616C48735EC8CCA6A711D49BC05DE3AD /* HexColors.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HexColors.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		62179CF2A07BE970AC4F4C363395A626 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6C3E9CF0BEC0142015CC7B165A1D6631 /* SCLAlertView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SCLAlertView-dummy.m"; sourceTree = "<group>"; };
-		6D0E9EC6E07432B0B925A716385E2D12 /* NotificationBackgroundMessage.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = NotificationBackgroundMessage.png; path = Pod/Assets/NotificationBackgroundMessage.png; sourceTree = "<group>"; };
-		6D288F65297DB1ACA25EEF6BE760BE66 /* TSMessages-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TSMessages-dummy.m"; sourceTree = "<group>"; };
-		76EDECC3450A7907EE64967962A2E69E /* SCLExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SCLExtensions.swift; path = SCLAlertView/SCLExtensions.swift; sourceTree = "<group>"; };
-		78A85D3EB822527FDBB461F948903050 /* DeviceKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DeviceKit-dummy.m"; sourceTree = "<group>"; };
+		4AD68386E1634C270B9F5C49419C8848 /* SCLAlertView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SCLAlertView-prefix.pch"; sourceTree = "<group>"; };
+		4C9E9206A595FD2B746BC65545303930 /* SCLExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SCLExtensions.swift; path = SCLAlertView/SCLExtensions.swift; sourceTree = "<group>"; };
+		5121D0EDA0445697EB5C99D8A13CFEF3 /* TSMessage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TSMessage.m; path = Pod/Classes/TSMessage.m; sourceTree = "<group>"; };
+		542C41469060CA862704DE684AC53618 /* TSMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TSMessage.h; path = Pod/Classes/TSMessage.h; sourceTree = "<group>"; };
+		5DE49CD0969E501589AD7D318F2D730D /* TSMessages-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TSMessages-dummy.m"; sourceTree = "<group>"; };
+		638950615BC164243318FCD9DC60B9E9 /* HexColors.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = HexColors.xcconfig; sourceTree = "<group>"; };
+		64384F1EFA2DEF21E42EC28E0E3564EF /* TSBlurView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TSBlurView.h; path = Pod/Classes/TSBlurView.h; sourceTree = "<group>"; };
+		64EC07DFB31AAA1927A82A86A2C25B0A /* HexColors.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HexColors.m; path = Classes/HexColors.m; sourceTree = "<group>"; };
+		65237BCC8F5A16469716C3FDB15299E7 /* NotificationButtonBackground@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "NotificationButtonBackground@2x.png"; path = "Pod/Assets/NotificationButtonBackground@2x.png"; sourceTree = "<group>"; };
+		6B3301F234CD082BE4F392839B9A5AD4 /* TSMessageView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TSMessageView.h; path = Pod/Classes/TSMessageView.h; sourceTree = "<group>"; };
+		71F679DDF3555EC83B0AF97C72098D25 /* SCLAlertView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SCLAlertView-dummy.m"; sourceTree = "<group>"; };
 		79A5B960F06E2B7EB0EDFBEE34E8545E /* Pods-GDSA-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GDSA-frameworks.sh"; sourceTree = "<group>"; };
-		7A853B372F03525CB49ADBD73F9859ED /* SCLAlertView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SCLAlertView.swift; path = SCLAlertView/SCLAlertView.swift; sourceTree = "<group>"; };
-		7F8239E9DB1E126475EB5BD97CD327C6 /* DeviceKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = DeviceKit.modulemap; sourceTree = "<group>"; };
-		86EA844262B6A41BEB26BDCDD484B0C6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8CB752BEDB7B1799989F2428F9BB4A75 /* TSMessages-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TSMessages-umbrella.h"; sourceTree = "<group>"; };
-		8E7E4C98EBCFBA53AAEA413D9A513CBA /* SCLAlertView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SCLAlertView.xcconfig; sourceTree = "<group>"; };
-		8F3B0CE589D336B66AA56E00E743AF06 /* DeviceKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DeviceKit-prefix.pch"; sourceTree = "<group>"; };
-		900E4E75572CC72FA47A2B885EE47F52 /* HexColors.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = HexColors.modulemap; sourceTree = "<group>"; };
+		8629A60FBCB077C3C49B910BD31135F5 /* TSMessagesDefaultDesign.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; name = TSMessagesDefaultDesign.json; path = Pod/Assets/TSMessagesDefaultDesign.json; sourceTree = "<group>"; };
+		872560414D86083B5D03A0F89200CCE2 /* SCLAlertView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SCLAlertView-umbrella.h"; sourceTree = "<group>"; };
+		896D0EEE3BD9C8150D09E8C1F5141773 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CB1031FEBFC3431610C31A2AE646B1F /* HexColors.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HexColors.h; path = Classes/HexColors.h; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		95E72F16CD9049AF798840F2C4EEF491 /* TSMessages-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TSMessages-prefix.pch"; sourceTree = "<group>"; };
-		977158F518739855C1644311091F79E9 /* SCLAlertView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SCLAlertView-umbrella.h"; sourceTree = "<group>"; };
-		9B7DC7E5DA11D77E6BA6B4E4E64C6BAE /* HexColors.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HexColors.m; path = Classes/HexColors.m; sourceTree = "<group>"; };
-		A757D710FA5971C83860ABA80D62A8A2 /* NotificationBackgroundErrorIcon@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "NotificationBackgroundErrorIcon@2x.png"; path = "Pod/Assets/NotificationBackgroundErrorIcon@2x.png"; sourceTree = "<group>"; };
+		9DF8FD2E31A04D18BD872BFFC217C3D9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = SCLAlertView/Info.plist; sourceTree = "<group>"; };
+		A0750410AB75AE22D832CAB7579320BD /* NotificationBackgroundSuccess.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = NotificationBackgroundSuccess.png; path = Pod/Assets/NotificationBackgroundSuccess.png; sourceTree = "<group>"; };
+		A467BB6C958D9D7841AA086CD6B1CFE2 /* NotificationBackgroundWarning@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "NotificationBackgroundWarning@2x.png"; path = "Pod/Assets/NotificationBackgroundWarning@2x.png"; sourceTree = "<group>"; };
+		A8422C80ADB27D077C541CBFFB85D04F /* TSMessages-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TSMessages-umbrella.h"; sourceTree = "<group>"; };
 		A9CAE88373324F00B6C456D5532F7BCA /* Pods-GDSA-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GDSA-acknowledgements.plist"; sourceTree = "<group>"; };
-		AEDBC7A79128C72CECCC767E9F6F92D9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B750945DBA46BD34B1D30A18E01631D8 /* NotificationButtonBackground.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = NotificationButtonBackground.png; path = Pod/Assets/NotificationButtonBackground.png; sourceTree = "<group>"; };
-		BB4A71C60446D02CEE3C6023E20A42C8 /* HexColors-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HexColors-dummy.m"; sourceTree = "<group>"; };
-		CC76B300E26BB8935892DB3D2244721C /* TSMessages.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = TSMessages.modulemap; sourceTree = "<group>"; };
-		CE16692D43729BD2D0998CC234E10015 /* TSMessageView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TSMessageView.m; path = Pod/Classes/TSMessageView.m; sourceTree = "<group>"; };
-		D3232F44CCA4FB46FAC2973F64A2DA41 /* NotificationBackgroundWarning.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = NotificationBackgroundWarning.png; path = Pod/Assets/NotificationBackgroundWarning.png; sourceTree = "<group>"; };
-		D324FD8DA1F49F2163AF57061777C8FD /* Pods_GDSA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GDSA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D5EFE7683E1D6D6566B58AEFC99EE380 /* DeviceKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DeviceKit.xcconfig; sourceTree = "<group>"; };
-		D80E9917C996E2ED920DC09CE7B0037B /* Device.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Device.swift; path = Source/Device.swift; sourceTree = "<group>"; };
-		DAA66D0F8E07006EF7F4A8D43281A174 /* TSMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TSMessage.h; path = Pod/Classes/TSMessage.h; sourceTree = "<group>"; };
-		DD5CE8EB11361786F24558E8A28E32B5 /* SCLAlertView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SCLAlertView-prefix.pch"; sourceTree = "<group>"; };
-		DE05915ACD8793AC67E739AEEB5074EF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = SCLAlertView/Info.plist; sourceTree = "<group>"; };
+		ABC6C7DFBD5B12D653C25EB853D84625 /* SCLAlertView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SCLAlertView.modulemap; sourceTree = "<group>"; };
+		B2A8826A53AFED369E9E67A6EA341D4A /* NotificationBackgroundSuccess@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "NotificationBackgroundSuccess@2x.png"; path = "Pod/Assets/NotificationBackgroundSuccess@2x.png"; sourceTree = "<group>"; };
+		B38494D0E46A0FD5F78E0AB8B19A84FC /* SCLAlertView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SCLAlertView.swift; path = SCLAlertView/SCLAlertView.swift; sourceTree = "<group>"; };
+		B419D30D8BF177EECC556E1B4F273D60 /* NotificationBackgroundMessage@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "NotificationBackgroundMessage@2x.png"; path = "Pod/Assets/NotificationBackgroundMessage@2x.png"; sourceTree = "<group>"; };
+		BBBF17585FF11FDE4A7375C3E27D0CAD /* TSMessages.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TSMessages.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C50E60EF798235B52E7763A9855C9659 /* NotificationBackgroundErrorIcon.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = NotificationBackgroundErrorIcon.png; path = Pod/Assets/NotificationBackgroundErrorIcon.png; sourceTree = "<group>"; };
+		D92AC7429BE123BFF50C9135E61D83AC /* TSBlurView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TSBlurView.m; path = Pod/Classes/TSBlurView.m; sourceTree = "<group>"; };
+		DABA91BDDF57357098DCE807FA0DA370 /* TSMessageView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TSMessageView.m; path = Pod/Classes/TSMessageView.m; sourceTree = "<group>"; };
+		DE334C2A350EC1D2A5379FB06149C9C1 /* HexColors-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HexColors-prefix.pch"; sourceTree = "<group>"; };
 		E227CBFFCD4852A486F445F6427FC6F4 /* Pods-GDSA-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GDSA-umbrella.h"; sourceTree = "<group>"; };
-		E2CC5DFBF23498D342E12D28397F4E36 /* NotificationBackgroundWarningIcon.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = NotificationBackgroundWarningIcon.png; path = Pod/Assets/NotificationBackgroundWarningIcon.png; sourceTree = "<group>"; };
-		E371B002BCF4DD48134659748D5601C9 /* HexColors.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HexColors.h; path = Classes/HexColors.h; sourceTree = "<group>"; };
-		E54F33A41620E524BCD1CB9E66E7C7D0 /* TSMessage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TSMessage.m; path = Pod/Classes/TSMessage.m; sourceTree = "<group>"; };
-		E6388A0914E9F76782373B8795FD4A6E /* TSMessages.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TSMessages.xcconfig; sourceTree = "<group>"; };
-		E94C2AD9DB65A7FB5F8B886C02C19AB6 /* HexColors.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = HexColors.xcconfig; sourceTree = "<group>"; };
+		E3018A76F2D2FFEC491A0A19C1C7DDEE /* SCLAlertView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SCLAlertView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E339482D511D41BED771B673545AFB52 /* NotificationBackgroundError.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = NotificationBackgroundError.png; path = Pod/Assets/NotificationBackgroundError.png; sourceTree = "<group>"; };
+		E3B522F5D1D5C94E187F88800DD9BB75 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5B05E5433289154CCF48103A739C947 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E86346CA29114A43EADF5682C7B0673F /* HexColors-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HexColors-umbrella.h"; sourceTree = "<group>"; };
+		E920FC01E53C9B1EECDFB5607CCBFEE7 /* TSMessages.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = TSMessages.modulemap; sourceTree = "<group>"; };
+		EA28DE927629347A8A5E7844B94D347F /* NotificationButtonBackground.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = NotificationButtonBackground.png; path = Pod/Assets/NotificationButtonBackground.png; sourceTree = "<group>"; };
 		ED95C9854C5A1E9D1863834AA6302259 /* HexColors.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HexColors.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F5ADF232F435A603DFAA1A34EE17371D /* HexColors-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HexColors-umbrella.h"; sourceTree = "<group>"; };
-		F93584B46130AB0ADE08B6441B468A1D /* TSBlurView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TSBlurView.h; path = Pod/Classes/TSBlurView.h; sourceTree = "<group>"; };
-		FE24CDB51FB9CA0BBB48AFEEDD32544D /* TSBlurView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TSBlurView.m; path = Pod/Classes/TSBlurView.m; sourceTree = "<group>"; };
+		F08383C5F99F0DEC2B078E659FE36AC1 /* NotificationBackgroundWarning.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = NotificationBackgroundWarning.png; path = Pod/Assets/NotificationBackgroundWarning.png; sourceTree = "<group>"; };
+		F0DC75694DD78C08909117D304ACB9E6 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mapbox.framework; path = dynamic/Mapbox.framework; sourceTree = "<group>"; };
+		F2DA5D58FEA9D0209F353AE87A5C3C42 /* HexColors.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HexColors.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F48FF68DDDAFF407A4042D9523A38184 /* NotificationBackgroundErrorIcon@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "NotificationBackgroundErrorIcon@2x.png"; path = "Pod/Assets/NotificationBackgroundErrorIcon@2x.png"; sourceTree = "<group>"; };
+		F823AB61D32E5A63E4F441E36402F190 /* NotificationBackgroundSuccessIcon@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "NotificationBackgroundSuccessIcon@2x.png"; path = "Pod/Assets/NotificationBackgroundSuccessIcon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,56 +157,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7B071396CC7A2D5F46C808DB80EAAC7B /* Frameworks */ = {
+		5DC849B1C80C1FC359CEB73A1760CF60 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C587A969DAD9B2CF5A43F1F7B6DFC60C /* Foundation.framework in Frameworks */,
+				81680F73125ABDD1D87F9EF4D38BB0D8 /* Foundation.framework in Frameworks */,
+				268B5F9299769371F7CEBE7C6526FCDC /* HexColors.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A6847807ADDF9BF578FDA5F3C71B708F /* Frameworks */ = {
+		ACC0E8D826FB4FA19B4573DB02CAC68F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				855FD9B3C6F0B7573142DCE0465A5579 /* Foundation.framework in Frameworks */,
-				D1E0C2CABA75863D403444ECB303D9BA /* HexColors.framework in Frameworks */,
+				AA846F2334ED18C4FA390548BD417B37 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BD20BCFC934111630A1A3ECA81350F59 /* Frameworks */ = {
+		D1EDB4A1B8901CC43FFE877ABC2195EB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FDCDD5C516B1C2A7D759D421DAD419A5 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FB73B446D66D8EF2549D4C0E54A2D7A9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AE0144BE483E13F8E21ECF365DD32E08 /* Foundation.framework in Frameworks */,
+				4A9BCD5B4712F150F47F693A6C6C3933 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		003AD9BBA2771C571959779198B883B4 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				900E4E75572CC72FA47A2B885EE47F52 /* HexColors.modulemap */,
-				E94C2AD9DB65A7FB5F8B886C02C19AB6 /* HexColors.xcconfig */,
-				BB4A71C60446D02CEE3C6023E20A42C8 /* HexColors-dummy.m */,
-				1C4482EF3DDD572DE3A5B9AAC2F89005 /* HexColors-prefix.pch */,
-				F5ADF232F435A603DFAA1A34EE17371D /* HexColors-umbrella.h */,
-				62179CF2A07BE970AC4F4C363395A626 /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/HexColors";
-			sourceTree = "<group>";
-		};
 		04DC935C3F51D0E46520DD78439CCA1B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,30 +194,28 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		0BB106B9A40CD69EFD8D34F4B6F350FC /* Support Files */ = {
+		17ADFF0D17B8EBB0048F0678AAE534E3 /* HexColors */ = {
 			isa = PBXGroup;
 			children = (
-				7F8239E9DB1E126475EB5BD97CD327C6 /* DeviceKit.modulemap */,
-				D5EFE7683E1D6D6566B58AEFC99EE380 /* DeviceKit.xcconfig */,
-				78A85D3EB822527FDBB461F948903050 /* DeviceKit-dummy.m */,
-				8F3B0CE589D336B66AA56E00E743AF06 /* DeviceKit-prefix.pch */,
-				36E5BBDED5869D8900DB9657F986A684 /* DeviceKit-umbrella.h */,
-				AEDBC7A79128C72CECCC767E9F6F92D9 /* Info.plist */,
+				8CB1031FEBFC3431610C31A2AE646B1F /* HexColors.h */,
+				64EC07DFB31AAA1927A82A86A2C25B0A /* HexColors.m */,
+				542DC7E3F1B1C9589E919742A75B1B55 /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/DeviceKit";
+			path = HexColors;
 			sourceTree = "<group>";
 		};
-		2E15F4FDEB06273E075CBCC95982DE63 /* Products */ = {
+		2FF55EA4662A544879391EB20E617FF1 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				05A7F6F729DBF7623248ACAFB13B941B /* DeviceKit.framework */,
-				616C48735EC8CCA6A711D49BC05DE3AD /* HexColors.framework */,
-				D324FD8DA1F49F2163AF57061777C8FD /* Pods_GDSA.framework */,
-				60F084C2DAF9069441F52F7527241196 /* SCLAlertView.framework */,
-				5E69F06DE93510C99465F0F67B5FFED2 /* TSMessages.framework */,
+				E3B522F5D1D5C94E187F88800DD9BB75 /* Info.plist */,
+				ABC6C7DFBD5B12D653C25EB853D84625 /* SCLAlertView.modulemap */,
+				1F137568CF5662A70924FECB83024ADD /* SCLAlertView.xcconfig */,
+				71F679DDF3555EC83B0AF97C72098D25 /* SCLAlertView-dummy.m */,
+				4AD68386E1634C270B9F5C49419C8848 /* SCLAlertView-prefix.pch */,
+				872560414D86083B5D03A0F89200CCE2 /* SCLAlertView-umbrella.h */,
 			);
-			name = Products;
+			name = "Support Files";
+			path = "../Target Support Files/SCLAlertView";
 			sourceTree = "<group>";
 		};
 		3E09CC7EEFA56482B60A2A5C268FB351 /* Targets Support Files */ = {
@@ -269,33 +226,26 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		6E70D6694AD1D76AEAC913C012731B00 /* TSMessages */ = {
+		416516BD6C83F4C84D0E086F7F998B1C /* Mapbox-iOS-SDK */ = {
 			isa = PBXGroup;
 			children = (
-				F93584B46130AB0ADE08B6441B468A1D /* TSBlurView.h */,
-				FE24CDB51FB9CA0BBB48AFEEDD32544D /* TSBlurView.m */,
-				DAA66D0F8E07006EF7F4A8D43281A174 /* TSMessage.h */,
-				E54F33A41620E524BCD1CB9E66E7C7D0 /* TSMessage.m */,
-				3A830F60992BB7688855F813ABD631D4 /* TSMessageView.h */,
-				CE16692D43729BD2D0998CC234E10015 /* TSMessageView.m */,
-				F1F9DDA55C3FF369E9DD08237EEA28F1 /* Resources */,
-				BDEE1650C62239C6CE1BFEB58B25C275 /* Support Files */,
+				892D8F1BCE1DDBAB592CB2B774FEDEC7 /* Frameworks */,
 			);
-			path = TSMessages;
+			path = "Mapbox-iOS-SDK";
 			sourceTree = "<group>";
 		};
-		708E4E0189123438D84CD29663B1BD3E /* Support Files */ = {
+		542DC7E3F1B1C9589E919742A75B1B55 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				86EA844262B6A41BEB26BDCDD484B0C6 /* Info.plist */,
-				0ED7A7A53E4BE2E91C62FC7543B90646 /* SCLAlertView.modulemap */,
-				8E7E4C98EBCFBA53AAEA413D9A513CBA /* SCLAlertView.xcconfig */,
-				6C3E9CF0BEC0142015CC7B165A1D6631 /* SCLAlertView-dummy.m */,
-				DD5CE8EB11361786F24558E8A28E32B5 /* SCLAlertView-prefix.pch */,
-				977158F518739855C1644311091F79E9 /* SCLAlertView-umbrella.h */,
+				0E6A44037375E5E45F5D0618513AF713 /* HexColors.modulemap */,
+				638950615BC164243318FCD9DC60B9E9 /* HexColors.xcconfig */,
+				4420FED3D33F7F17CA6AE9937A1BAAD9 /* HexColors-dummy.m */,
+				DE334C2A350EC1D2A5379FB06149C9C1 /* HexColors-prefix.pch */,
+				E86346CA29114A43EADF5682C7B0673F /* HexColors-umbrella.h */,
+				896D0EEE3BD9C8150D09E8C1F5141773 /* Info.plist */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/SCLAlertView";
+			path = "../Target Support Files/HexColors";
 			sourceTree = "<group>";
 		};
 		757B9D766E0FF01071DB11F86E36F85F /* Pods-GDSA */ = {
@@ -316,54 +266,56 @@
 			path = "Target Support Files/Pods-GDSA";
 			sourceTree = "<group>";
 		};
-		765DFFA5689B4636AB28F91A79307E48 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				A81DE6228D89C5994690FFCD07590491 /* DeviceKit */,
-				95D354D40D0ADAAA383C5EC743D3A04D /* HexColors */,
-				FE3BA9A0CC022C88E15FDA9097072EB4 /* Mapbox-iOS-SDK */,
-				CA6F90107E80DE733969BD9FBB6FE489 /* SCLAlertView */,
-				6E70D6694AD1D76AEAC913C012731B00 /* TSMessages */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				04DC935C3F51D0E46520DD78439CCA1B /* Frameworks */,
-				765DFFA5689B4636AB28F91A79307E48 /* Pods */,
-				2E15F4FDEB06273E075CBCC95982DE63 /* Products */,
+				B2C60E80AD6C968268330BBC7C20D275 /* Pods */,
+				A8BA4DFC67765CE414D87B44AED3857A /* Products */,
 				3E09CC7EEFA56482B60A2A5C268FB351 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		95D354D40D0ADAAA383C5EC743D3A04D /* HexColors */ = {
+		834B6EDC2B22E9A57EB807911D8AA995 /* SCLAlertView */ = {
 			isa = PBXGroup;
 			children = (
-				E371B002BCF4DD48134659748D5601C9 /* HexColors.h */,
-				9B7DC7E5DA11D77E6BA6B4E4E64C6BAE /* HexColors.m */,
-				003AD9BBA2771C571959779198B883B4 /* Support Files */,
+				9DF8FD2E31A04D18BD872BFFC217C3D9 /* Info.plist */,
+				B38494D0E46A0FD5F78E0AB8B19A84FC /* SCLAlertView.swift */,
+				4C9E9206A595FD2B746BC65545303930 /* SCLExtensions.swift */,
+				2FF55EA4662A544879391EB20E617FF1 /* Support Files */,
 			);
-			path = HexColors;
+			path = SCLAlertView;
 			sourceTree = "<group>";
 		};
-		A81DE6228D89C5994690FFCD07590491 /* DeviceKit */ = {
+		892D8F1BCE1DDBAB592CB2B774FEDEC7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D80E9917C996E2ED920DC09CE7B0037B /* Device.swift */,
-				0BB106B9A40CD69EFD8D34F4B6F350FC /* Support Files */,
-			);
-			path = DeviceKit;
-			sourceTree = "<group>";
-		};
-		AC535D3DD4703D37A5FFD027B5372D75 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				1442D0DED87F098DBFC96BE74C0D9571 /* Mapbox.framework */,
+				F0DC75694DD78C08909117D304ACB9E6 /* Mapbox.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A8BA4DFC67765CE414D87B44AED3857A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F2DA5D58FEA9D0209F353AE87A5C3C42 /* HexColors.framework */,
+				37066296D53EFB385D128F2B7E40FC32 /* Pods_GDSA.framework */,
+				E3018A76F2D2FFEC491A0A19C1C7DDEE /* SCLAlertView.framework */,
+				BBBF17585FF11FDE4A7375C3E27D0CAD /* TSMessages.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B2C60E80AD6C968268330BBC7C20D275 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				17ADFF0D17B8EBB0048F0678AAE534E3 /* HexColors */,
+				416516BD6C83F4C84D0E086F7F998B1C /* Mapbox-iOS-SDK */,
+				834B6EDC2B22E9A57EB807911D8AA995 /* SCLAlertView */,
+				F6C1D0B83E8BBF34CA12AECC2F61B178 /* TSMessages */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		BA7D9119E27C6576FE471ACBB857F9FF /* iOS */ = {
@@ -374,90 +326,86 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		BDEE1650C62239C6CE1BFEB58B25C275 /* Support Files */ = {
+		C47C40341642CF885EF734E0A39F31B9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				3563F834F800183D075215F285F71CFB /* Info.plist */,
-				CC76B300E26BB8935892DB3D2244721C /* TSMessages.modulemap */,
-				E6388A0914E9F76782373B8795FD4A6E /* TSMessages.xcconfig */,
-				6D288F65297DB1ACA25EEF6BE760BE66 /* TSMessages-dummy.m */,
-				95E72F16CD9049AF798840F2C4EEF491 /* TSMessages-prefix.pch */,
-				8CB752BEDB7B1799989F2428F9BB4A75 /* TSMessages-umbrella.h */,
+				E339482D511D41BED771B673545AFB52 /* NotificationBackgroundError.png */,
+				02BAEEBE9E63E4DAFF8ED21A9A514E80 /* NotificationBackgroundError@2x.png */,
+				C50E60EF798235B52E7763A9855C9659 /* NotificationBackgroundErrorIcon.png */,
+				F48FF68DDDAFF407A4042D9523A38184 /* NotificationBackgroundErrorIcon@2x.png */,
+				155617D8D01AFE27DC165921969BC53E /* NotificationBackgroundMessage.png */,
+				B419D30D8BF177EECC556E1B4F273D60 /* NotificationBackgroundMessage@2x.png */,
+				A0750410AB75AE22D832CAB7579320BD /* NotificationBackgroundSuccess.png */,
+				B2A8826A53AFED369E9E67A6EA341D4A /* NotificationBackgroundSuccess@2x.png */,
+				059D93C020F06A124B3320C73EEF0229 /* NotificationBackgroundSuccessIcon.png */,
+				F823AB61D32E5A63E4F441E36402F190 /* NotificationBackgroundSuccessIcon@2x.png */,
+				F08383C5F99F0DEC2B078E659FE36AC1 /* NotificationBackgroundWarning.png */,
+				A467BB6C958D9D7841AA086CD6B1CFE2 /* NotificationBackgroundWarning@2x.png */,
+				2AC889D4F77AE299114AB788B8B3B1CC /* NotificationBackgroundWarningIcon.png */,
+				2F346D882326D181000481BEFF649E4C /* NotificationBackgroundWarningIcon@2x.png */,
+				EA28DE927629347A8A5E7844B94D347F /* NotificationButtonBackground.png */,
+				65237BCC8F5A16469716C3FDB15299E7 /* NotificationButtonBackground@2x.png */,
+				8629A60FBCB077C3C49B910BD31135F5 /* TSMessagesDefaultDesign.json */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		E889C8BC50F92360A74CD2557B20EAC6 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E5B05E5433289154CCF48103A739C947 /* Info.plist */,
+				E920FC01E53C9B1EECDFB5607CCBFEE7 /* TSMessages.modulemap */,
+				44E5220B00EEB86E8D81EDDF20CF6CEF /* TSMessages.xcconfig */,
+				5DE49CD0969E501589AD7D318F2D730D /* TSMessages-dummy.m */,
+				32B6CE6B8BA752DABB98058B61476394 /* TSMessages-prefix.pch */,
+				A8422C80ADB27D077C541CBFFB85D04F /* TSMessages-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/TSMessages";
 			sourceTree = "<group>";
 		};
-		CA6F90107E80DE733969BD9FBB6FE489 /* SCLAlertView */ = {
+		F6C1D0B83E8BBF34CA12AECC2F61B178 /* TSMessages */ = {
 			isa = PBXGroup;
 			children = (
-				DE05915ACD8793AC67E739AEEB5074EF /* Info.plist */,
-				7A853B372F03525CB49ADBD73F9859ED /* SCLAlertView.swift */,
-				76EDECC3450A7907EE64967962A2E69E /* SCLExtensions.swift */,
-				708E4E0189123438D84CD29663B1BD3E /* Support Files */,
+				64384F1EFA2DEF21E42EC28E0E3564EF /* TSBlurView.h */,
+				D92AC7429BE123BFF50C9135E61D83AC /* TSBlurView.m */,
+				542C41469060CA862704DE684AC53618 /* TSMessage.h */,
+				5121D0EDA0445697EB5C99D8A13CFEF3 /* TSMessage.m */,
+				6B3301F234CD082BE4F392839B9A5AD4 /* TSMessageView.h */,
+				DABA91BDDF57357098DCE807FA0DA370 /* TSMessageView.m */,
+				C47C40341642CF885EF734E0A39F31B9 /* Resources */,
+				E889C8BC50F92360A74CD2557B20EAC6 /* Support Files */,
 			);
-			path = SCLAlertView;
-			sourceTree = "<group>";
-		};
-		F1F9DDA55C3FF369E9DD08237EEA28F1 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				1B12249A2784B078F27317DD3852BF00 /* NotificationBackgroundError.png */,
-				4FFDBB4B49F87A78A6FE073419509F24 /* NotificationBackgroundError@2x.png */,
-				18996EEAE9D7928696226A507F041A3B /* NotificationBackgroundErrorIcon.png */,
-				A757D710FA5971C83860ABA80D62A8A2 /* NotificationBackgroundErrorIcon@2x.png */,
-				6D0E9EC6E07432B0B925A716385E2D12 /* NotificationBackgroundMessage.png */,
-				22D8FBC0ACB3E9782904174FED970BFB /* NotificationBackgroundMessage@2x.png */,
-				0EE026BDF0FD3CAD0A72BD801D921009 /* NotificationBackgroundSuccess.png */,
-				108A92A7AA3919B78510681A7EF0B8C9 /* NotificationBackgroundSuccess@2x.png */,
-				3486ADA7DBEDD2B5479C1FDA6264487D /* NotificationBackgroundSuccessIcon.png */,
-				053A74E6642EC694DC62816A81008A1B /* NotificationBackgroundSuccessIcon@2x.png */,
-				D3232F44CCA4FB46FAC2973F64A2DA41 /* NotificationBackgroundWarning.png */,
-				2D07DD1907108D5EC57814C290129AD5 /* NotificationBackgroundWarning@2x.png */,
-				E2CC5DFBF23498D342E12D28397F4E36 /* NotificationBackgroundWarningIcon.png */,
-				0B1711E890B322367B24F8EC52499C57 /* NotificationBackgroundWarningIcon@2x.png */,
-				B750945DBA46BD34B1D30A18E01631D8 /* NotificationButtonBackground.png */,
-				4DC9FC60269C002A167EC13D2D78934D /* NotificationButtonBackground@2x.png */,
-				3906A26D8D3EDE579E7C3F2CFE836EA8 /* TSMessagesDefaultDesign.json */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		FE3BA9A0CC022C88E15FDA9097072EB4 /* Mapbox-iOS-SDK */ = {
-			isa = PBXGroup;
-			children = (
-				AC535D3DD4703D37A5FFD027B5372D75 /* Frameworks */,
-			);
-			path = "Mapbox-iOS-SDK";
+			path = TSMessages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		538C84B4B110A4CD7AF969A776182E50 /* Headers */ = {
+		7B36B46B643017736063C1B183A6DFB1 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E0AA1F234DEF011D609D735B547598D /* DeviceKit-umbrella.h in Headers */,
+				024725FD295A02B09D01AFC2C162571E /* TSBlurView.h in Headers */,
+				3E6162DD33E08EFB389DDF7BB1E290EF /* TSMessage.h in Headers */,
+				54B7CF7CF3789F94564851370FAA0798 /* TSMessages-umbrella.h in Headers */,
+				FA0A5B124C88FD4AB5EFC1439A8AD11C /* TSMessageView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B6531595F5FF428E93D9FBCE56293F9D /* Headers */ = {
+		80EEEE7AED794B36260389E5A711F909 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDB6BB2B847653E6D1A6951A198E9BC8 /* SCLAlertView-umbrella.h in Headers */,
+				822C73828A5DFE7ED387160140EF0360 /* Pods-GDSA-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C387DB8F86BCAC8B04295488AB371FB4 /* Headers */ = {
+		946B319DD09AD55CEBD6B7AE9CFA8712 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE1EC8CDAF9BB18B9B1652B1A90658BC /* TSBlurView.h in Headers */,
-				D0813E4C3E241918E7D106109BD99819 /* TSMessage.h in Headers */,
-				D0FC411530BFBCD14C046EF9B2C4F00A /* TSMessages-umbrella.h in Headers */,
-				5A8F0745C7D7DF5C80119D89BE388CF3 /* TSMessageView.h in Headers */,
+				DED67A6BB9F64B500BA8CC2A01C5F75F /* SCLAlertView-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,43 +418,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E10F0B8AFE26E27D1D4CA84F1045FFC5 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5C64A51B2803C32A84179ED232D4B8B1 /* Pods-GDSA-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		5016C3C5A2FF9AFC8CFBBCDEA025DBFF /* TSMessages */ = {
+		43DC34CDD066868199B842A99171BD66 /* SCLAlertView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D934B5D7C3BA028EDA534803AE32F04D /* Build configuration list for PBXNativeTarget "TSMessages" */;
+			buildConfigurationList = 1FF31B95C4ECFB0FCC45E744D8C5E7DE /* Build configuration list for PBXNativeTarget "SCLAlertView" */;
 			buildPhases = (
-				987666F9C4ECBE9060BEE433377BE184 /* Sources */,
-				A6847807ADDF9BF578FDA5F3C71B708F /* Frameworks */,
-				C387DB8F86BCAC8B04295488AB371FB4 /* Headers */,
-				221497C368DA0EF64A8CEA2359309123 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				AE47A9F4BACDBB4EF3EDB87623596B60 /* PBXTargetDependency */,
-			);
-			name = TSMessages;
-			productName = TSMessages;
-			productReference = 5E69F06DE93510C99465F0F67B5FFED2 /* TSMessages.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		7B752BB73A55502BAAF1D7C15BA969D1 /* SCLAlertView */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B9B5D61553C4540F163ECD179F084D7E /* Build configuration list for PBXNativeTarget "SCLAlertView" */;
-			buildPhases = (
-				4B4F1A46D130BBCDE0486F4E0577281A /* Sources */,
-				7B071396CC7A2D5F46C808DB80EAAC7B /* Frameworks */,
-				B6531595F5FF428E93D9FBCE56293F9D /* Headers */,
+				8DE2932B39E23C1BC1DCEB5F9A18BA10 /* Sources */,
+				D1EDB4A1B8901CC43FFE877ABC2195EB /* Frameworks */,
+				946B319DD09AD55CEBD6B7AE9CFA8712 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -514,7 +435,46 @@
 			);
 			name = SCLAlertView;
 			productName = SCLAlertView;
-			productReference = 60F084C2DAF9069441F52F7527241196 /* SCLAlertView.framework */;
+			productReference = E3018A76F2D2FFEC491A0A19C1C7DDEE /* SCLAlertView.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7C11321A1696ECB818ECD14E22BC7896 /* TSMessages */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F31F8A96D81CCF2618E009E1E3DE2100 /* Build configuration list for PBXNativeTarget "TSMessages" */;
+			buildPhases = (
+				796275D64A83D6BF1C197F070E11322F /* Sources */,
+				5DC849B1C80C1FC359CEB73A1760CF60 /* Frameworks */,
+				7B36B46B643017736063C1B183A6DFB1 /* Headers */,
+				206A9CE1AD0F9C5B232AA39B23022C88 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9E8EC18CEABA1A46128D839946331EEA /* PBXTargetDependency */,
+			);
+			name = TSMessages;
+			productName = TSMessages;
+			productReference = BBBF17585FF11FDE4A7375C3E27D0CAD /* TSMessages.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9F3A7AE4D1BADF21164E55161114DD25 /* Pods-GDSA */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E1AC6963C1A78C36EC6B4B9F5A5F36AE /* Build configuration list for PBXNativeTarget "Pods-GDSA" */;
+			buildPhases = (
+				9C995840FA175F3E3DED7DF6A86BDC34 /* Sources */,
+				ACC0E8D826FB4FA19B4573DB02CAC68F /* Frameworks */,
+				80EEEE7AED794B36260389E5A711F909 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5B96DDEAA31951B6BA288801851AC30F /* PBXTargetDependency */,
+				B1CD2E6D5A90B238BAB61E5D882D75EF /* PBXTargetDependency */,
+				947989C4C10E1BFAAB9927B4BA2A779C /* PBXTargetDependency */,
+			);
+			name = "Pods-GDSA";
+			productName = "Pods-GDSA";
+			productReference = 37066296D53EFB385D128F2B7E40FC32 /* Pods_GDSA.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		C408D4E183A88B763793C217A66A1950 /* HexColors */ = {
@@ -531,45 +491,7 @@
 			);
 			name = HexColors;
 			productName = HexColors;
-			productReference = 616C48735EC8CCA6A711D49BC05DE3AD /* HexColors.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		E8F64AB735AE01C0DC42153330F6C2E8 /* Pods-GDSA */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C6756C91F1DBB2B0F7C041A319828058 /* Build configuration list for PBXNativeTarget "Pods-GDSA" */;
-			buildPhases = (
-				434859CB86A62BA29910372B59A9B64C /* Sources */,
-				BD20BCFC934111630A1A3ECA81350F59 /* Frameworks */,
-				E10F0B8AFE26E27D1D4CA84F1045FFC5 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				538D1BA6E3D3ADC08F6F2D5E94D6AB72 /* PBXTargetDependency */,
-				5440B0AB53BCC1CB962CF43D8789443D /* PBXTargetDependency */,
-				87FCEDCCA36F63AB3CA77A2D3C95594E /* PBXTargetDependency */,
-				08B8F3E1375412EC536823A72BFBC54A /* PBXTargetDependency */,
-			);
-			name = "Pods-GDSA";
-			productName = "Pods-GDSA";
-			productReference = D324FD8DA1F49F2163AF57061777C8FD /* Pods_GDSA.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		EF78824223C74AA13AE655CD2ACF32A3 /* DeviceKit */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CA85F2BF69637EE21AB719E67C75B86C /* Build configuration list for PBXNativeTarget "DeviceKit" */;
-			buildPhases = (
-				9369C457F374271592532564CD072B98 /* Sources */,
-				FB73B446D66D8EF2549D4C0E54A2D7A9 /* Frameworks */,
-				538C84B4B110A4CD7AF969A776182E50 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = DeviceKit;
-			productName = DeviceKit;
-			productReference = 05A7F6F729DBF7623248ACAFB13B941B /* DeviceKit.framework */;
+			productReference = F2DA5D58FEA9D0209F353AE87A5C3C42 /* HexColors.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -580,6 +502,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0700;
+				TargetAttributes = {
+					43DC34CDD066868199B842A99171BD66 = {
+						LastSwiftMigration = 0800;
+					};
+				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -589,66 +516,46 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 2E15F4FDEB06273E075CBCC95982DE63 /* Products */;
+			productRefGroup = A8BA4DFC67765CE414D87B44AED3857A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EF78824223C74AA13AE655CD2ACF32A3 /* DeviceKit */,
 				C408D4E183A88B763793C217A66A1950 /* HexColors */,
-				E8F64AB735AE01C0DC42153330F6C2E8 /* Pods-GDSA */,
-				7B752BB73A55502BAAF1D7C15BA969D1 /* SCLAlertView */,
-				5016C3C5A2FF9AFC8CFBBCDEA025DBFF /* TSMessages */,
+				9F3A7AE4D1BADF21164E55161114DD25 /* Pods-GDSA */,
+				43DC34CDD066868199B842A99171BD66 /* SCLAlertView */,
+				7C11321A1696ECB818ECD14E22BC7896 /* TSMessages */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		221497C368DA0EF64A8CEA2359309123 /* Resources */ = {
+		206A9CE1AD0F9C5B232AA39B23022C88 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79D0ED0FB57BA845780C1B77FB6E4570 /* NotificationBackgroundError.png in Resources */,
-				80837CE3E8043DA699811E05DBADFCE9 /* NotificationBackgroundError@2x.png in Resources */,
-				172F4395E6330FB07E2A0908649E20EE /* NotificationBackgroundErrorIcon.png in Resources */,
-				C729ECDB6B510B2D4634C84645AA1D22 /* NotificationBackgroundErrorIcon@2x.png in Resources */,
-				8D85EACA7FC930D32E55967965F0F11B /* NotificationBackgroundMessage.png in Resources */,
-				8D5CC3613AF7D14CD67821698BB2EDBA /* NotificationBackgroundMessage@2x.png in Resources */,
-				076E187211C8D6FFF5C1AC8275F25BC8 /* NotificationBackgroundSuccess.png in Resources */,
-				8687A2046D3735A8B3C7BE0FA87E305F /* NotificationBackgroundSuccess@2x.png in Resources */,
-				C1817F9078E715E6604E9E1E9D9FB26F /* NotificationBackgroundSuccessIcon.png in Resources */,
-				8C24D22C194B1907E9CE0650984E7F96 /* NotificationBackgroundSuccessIcon@2x.png in Resources */,
-				AAA9549038EE37EA00AC05B99CDBFBB4 /* NotificationBackgroundWarning.png in Resources */,
-				7C36989388BF595E744A10BB0224706D /* NotificationBackgroundWarning@2x.png in Resources */,
-				2F99FF12F683CCE7C10C63ACC53CC1B1 /* NotificationBackgroundWarningIcon.png in Resources */,
-				6E165FB8497A106C14497583E0F2D730 /* NotificationBackgroundWarningIcon@2x.png in Resources */,
-				1B1030732717078B48C9CBD328C1DB62 /* NotificationButtonBackground.png in Resources */,
-				09D7E455E5B29FC20C6C93BC70B3AB05 /* NotificationButtonBackground@2x.png in Resources */,
-				B55CE1E4FA9DEAC1A96A7AFE8DC9475F /* TSMessagesDefaultDesign.json in Resources */,
+				421C85ACC8D1D6B3E951CFE4236C1DCD /* NotificationBackgroundError.png in Resources */,
+				C3157F3CE99847454AA4C7C376F6A628 /* NotificationBackgroundError@2x.png in Resources */,
+				DC2D1CF8A1803CF616DE30CD1387049F /* NotificationBackgroundErrorIcon.png in Resources */,
+				67E3561253ABA42335B84E533F3F9F4C /* NotificationBackgroundErrorIcon@2x.png in Resources */,
+				7BC3CA35448E93B3B7C6C911B84BB95D /* NotificationBackgroundMessage.png in Resources */,
+				DA268BE5F6F76B5B3ACB2A832D831305 /* NotificationBackgroundMessage@2x.png in Resources */,
+				4853B699445D59701CAAF1D7F7137D70 /* NotificationBackgroundSuccess.png in Resources */,
+				CC595A619AD4797EBC6B98FB3D8131B5 /* NotificationBackgroundSuccess@2x.png in Resources */,
+				B6C9B47A7FFAA42AEFC5833D401B8884 /* NotificationBackgroundSuccessIcon.png in Resources */,
+				016C753969626630CB8A4B0E32D90A04 /* NotificationBackgroundSuccessIcon@2x.png in Resources */,
+				1B234AD49E1DD7078C658B3171030498 /* NotificationBackgroundWarning.png in Resources */,
+				3F9E7963641652FAB2A28A95769EE637 /* NotificationBackgroundWarning@2x.png in Resources */,
+				5A37CFABF2826A05EDB9BCBCB487ABB3 /* NotificationBackgroundWarningIcon.png in Resources */,
+				2601C218368A00EF5A49D2EA2FAC9F54 /* NotificationBackgroundWarningIcon@2x.png in Resources */,
+				68D0D159D011F03AD1B7EAC1D4CA5FD4 /* NotificationButtonBackground.png in Resources */,
+				4984B2D6A2882A5BE8791FECFA1918FA /* NotificationButtonBackground@2x.png in Resources */,
+				7AA02654D38F25BC9668402A55427A2A /* TSMessagesDefaultDesign.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		434859CB86A62BA29910372B59A9B64C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DBBEE09C7AB824E03E447845074BB8E6 /* Pods-GDSA-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4B4F1A46D130BBCDE0486F4E0577281A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				029415BB5FF5DF9CB8D3CE34827B0A0B /* Info.plist in Sources */,
-				D9C3F86F64AE98DBAF2CA5DBDC13474E /* SCLAlertView-dummy.m in Sources */,
-				0D4F0D7B20A7D4009E872A1CDF0EAD51 /* SCLAlertView.swift in Sources */,
-				ADB3A7DF0047B69FD6002F523E4B7540 /* SCLExtensions.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		67EF9044B76E629170DD09EE2E94E76D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -658,58 +565,62 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9369C457F374271592532564CD072B98 /* Sources */ = {
+		796275D64A83D6BF1C197F070E11322F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				079C88EB120535A87150C01F807DF8BC /* Device.swift in Sources */,
-				2FF064A8900F4906454B97F4D1D4DA11 /* DeviceKit-dummy.m in Sources */,
+				696D42B89F848B231CDEA4F646C767B1 /* TSBlurView.m in Sources */,
+				3D67BEDA169801F6241EDD725AD66B95 /* TSMessage.m in Sources */,
+				D89B162EE3799893C6B65541EBC2B2CA /* TSMessages-dummy.m in Sources */,
+				8AF19E5A1D6C858E9E2A45E18440DAD4 /* TSMessageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		987666F9C4ECBE9060BEE433377BE184 /* Sources */ = {
+		8DE2932B39E23C1BC1DCEB5F9A18BA10 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8608166B497A2BFBCDF53060691759A9 /* TSBlurView.m in Sources */,
-				13C272ECE77888787C9A64C0C9E30E9C /* TSMessage.m in Sources */,
-				B919C57A72FEF998CFFADECDCB73F94A /* TSMessages-dummy.m in Sources */,
-				8B188E13AE1A9BD62716116750997218 /* TSMessageView.m in Sources */,
+				81F863C59F6D03DB9CFEF5F1A29DAA85 /* Info.plist in Sources */,
+				C00F24853932BC2F08A0720B9F8B56EE /* SCLAlertView-dummy.m in Sources */,
+				1AA7A400947F7CFEE90A6088B2D7BEEB /* SCLAlertView.swift in Sources */,
+				E51C1FFC7A96FD85757084B53C59A661 /* SCLExtensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C995840FA175F3E3DED7DF6A86BDC34 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				645F12DB0DF3B1BB0237F6AF2FEA4A40 /* Pods-GDSA-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		08B8F3E1375412EC536823A72BFBC54A /* PBXTargetDependency */ = {
+		5B96DDEAA31951B6BA288801851AC30F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = HexColors;
+			target = C408D4E183A88B763793C217A66A1950 /* HexColors */;
+			targetProxy = 23EA05263FACC1BE8A0E77FD32E8971F /* PBXContainerItemProxy */;
+		};
+		947989C4C10E1BFAAB9927B4BA2A779C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = TSMessages;
-			target = 5016C3C5A2FF9AFC8CFBBCDEA025DBFF /* TSMessages */;
-			targetProxy = 7166E190F6A1AE9E0FC3D9BA3F08A602 /* PBXContainerItemProxy */;
+			target = 7C11321A1696ECB818ECD14E22BC7896 /* TSMessages */;
+			targetProxy = 7DE8CFAAB0A256480E316EB4EDD1B8BA /* PBXContainerItemProxy */;
 		};
-		538D1BA6E3D3ADC08F6F2D5E94D6AB72 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = DeviceKit;
-			target = EF78824223C74AA13AE655CD2ACF32A3 /* DeviceKit */;
-			targetProxy = 00075C5E216BA8D0924B3DDCCF8142AC /* PBXContainerItemProxy */;
-		};
-		5440B0AB53BCC1CB962CF43D8789443D /* PBXTargetDependency */ = {
+		9E8EC18CEABA1A46128D839946331EEA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = HexColors;
 			target = C408D4E183A88B763793C217A66A1950 /* HexColors */;
-			targetProxy = 5178BA8C52190B84126F25C7E9EA8BD8 /* PBXContainerItemProxy */;
+			targetProxy = CCF76824D67DB907F1EB916579B42AB5 /* PBXContainerItemProxy */;
 		};
-		87FCEDCCA36F63AB3CA77A2D3C95594E /* PBXTargetDependency */ = {
+		B1CD2E6D5A90B238BAB61E5D882D75EF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SCLAlertView;
-			target = 7B752BB73A55502BAAF1D7C15BA969D1 /* SCLAlertView */;
-			targetProxy = 7F1F1719873E16DB0EE8939A2DBA32C6 /* PBXContainerItemProxy */;
-		};
-		AE47A9F4BACDBB4EF3EDB87623596B60 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = HexColors;
-			target = C408D4E183A88B763793C217A66A1950 /* HexColors */;
-			targetProxy = C753CDF929F46495A44A6221856D7CFE /* PBXContainerItemProxy */;
+			target = 43DC34CDD066868199B842A99171BD66 /* SCLAlertView */;
+			targetProxy = 3F26D7EF1C713CBB10E52F0200BD14AB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -756,10 +667,11 @@
 			};
 			name = Debug;
 		};
-		088F11AE61BC97A0E0CFE7244448B59C /* Debug */ = {
+		2569C7AC28A6AB63CF5C49931EC03936 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D5EFE7683E1D6D6566B58AEFC99EE380 /* DeviceKit.xcconfig */;
+			baseConfigurationReference = 44E5220B00EEB86E8D81EDDF20CF6CEF /* TSMessages.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -772,27 +684,27 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				EXPANDED_CODE_SIGN_IDENTITY = "";
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/DeviceKit/DeviceKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/DeviceKit/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/TSMessages/TSMessages-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TSMessages/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/DeviceKit/DeviceKit.modulemap";
+				MODULEMAP_FILE = "Target Support Files/TSMessages/TSMessages.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = DeviceKit;
+				PRODUCT_NAME = TSMessages;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		3C1731E0EBBAABF8B23481FD80C9A9BE /* Release */ = {
+		4CB4E05FE286E67F9AB574BF9D2BBE60 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 06C071529D4EE7292E553268F21DD420 /* Pods-GDSA.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -825,75 +737,11 @@
 			};
 			name = Release;
 		};
-		5A1B93CB60350C090757395F839C8573 /* Debug */ = {
+		5DB81394D5A5A126E8DD74CBADC5F8A2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8E7E4C98EBCFBA53AAEA413D9A513CBA /* SCLAlertView.xcconfig */;
+			baseConfigurationReference = 44E5220B00EEB86E8D81EDDF20CF6CEF /* TSMessages.xcconfig */;
 			buildSettings = {
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_REQUIRED = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				EXPANDED_CODE_SIGN_IDENTITY = "";
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SCLAlertView/SCLAlertView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SCLAlertView/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SCLAlertView/SCLAlertView.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = SCLAlertView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		637CCEF0205D8D0BF882C2533A2712A6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D5EFE7683E1D6D6566B58AEFC99EE380 /* DeviceKit.xcconfig */;
-			buildSettings = {
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_REQUIRED = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				EXPANDED_CODE_SIGN_IDENTITY = "";
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/DeviceKit/DeviceKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/DeviceKit/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/DeviceKit/DeviceKit.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = DeviceKit;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		90B50D5DD20A0E81B9AEDCA16829D02C /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E6388A0914E9F76782373B8795FD4A6E /* TSMessages.xcconfig */;
-			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -922,10 +770,11 @@
 			};
 			name = Release;
 		};
-		9C83D6111F6D9CA3FF0DF10DCED379DE /* Debug */ = {
+		60BD6807E6AA9FAC69B6587D1078DE53 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2375780DED05A3DE7BF498379613B228 /* Pods-GDSA.debug.xcconfig */;
+			baseConfigurationReference = 638950615BC164243318FCD9DC60B9E9 /* HexColors.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -938,31 +787,61 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				EXPANDED_CODE_SIGN_IDENTITY = "";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-GDSA/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/HexColors/HexColors-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/HexColors/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-GDSA/Pods-GDSA.modulemap";
+				MODULEMAP_FILE = "Target Support Files/HexColors/HexColors.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_GDSA;
+				PRODUCT_NAME = HexColors;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		AA25E0DFE9DD8E94DF4A3FDB8F1A0C44 /* Release */ = {
+		7E48B17F093BC9E098411BFC7F4443A6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E94C2AD9DB65A7FB5F8B886C02C19AB6 /* HexColors.xcconfig */;
+			baseConfigurationReference = 1F137568CF5662A70924FECB83024ADD /* SCLAlertView.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXPANDED_CODE_SIGN_IDENTITY = "";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SCLAlertView/SCLAlertView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SCLAlertView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SCLAlertView/SCLAlertView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = SCLAlertView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		AE0D98A581F9C1D77B9AA561686ACED7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 638950615BC164243318FCD9DC60B9E9 /* HexColors.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -991,10 +870,11 @@
 			};
 			name = Release;
 		};
-		AEB4A593F64D7AAB38E18CC761190F5E /* Debug */ = {
+		C6DCAC83F75564E25FD1332F7F211C4F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E94C2AD9DB65A7FB5F8B886C02C19AB6 /* HexColors.xcconfig */;
+			baseConfigurationReference = 1F137568CF5662A70924FECB83024ADD /* SCLAlertView.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1007,16 +887,18 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				EXPANDED_CODE_SIGN_IDENTITY = "";
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/HexColors/HexColors-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/HexColors/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/SCLAlertView/SCLAlertView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SCLAlertView/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/HexColors/HexColors.modulemap";
+				MODULEMAP_FILE = "Target Support Files/SCLAlertView/SCLAlertView.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = HexColors;
+				PRODUCT_NAME = SCLAlertView;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1061,42 +943,11 @@
 			};
 			name = Release;
 		};
-		EABD97C088E0A3618B8F5F18E7AC374B /* Release */ = {
+		D2079FBE4E22803775D33F3FA1D29ACD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8E7E4C98EBCFBA53AAEA413D9A513CBA /* SCLAlertView.xcconfig */;
+			baseConfigurationReference = 2375780DED05A3DE7BF498379613B228 /* Pods-GDSA.debug.xcconfig */;
 			buildSettings = {
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_REQUIRED = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				EXPANDED_CODE_SIGN_IDENTITY = "";
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SCLAlertView/SCLAlertView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SCLAlertView/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SCLAlertView/SCLAlertView.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = SCLAlertView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		F8EAD5B24B15B60CCD925CC45C542A09 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E6388A0914E9F76782373B8795FD4A6E /* TSMessages.xcconfig */;
-			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1109,16 +960,21 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				EXPANDED_CODE_SIGN_IDENTITY = "";
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/TSMessages/TSMessages-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/TSMessages/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-GDSA/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/TSMessages/TSMessages.modulemap";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-GDSA/Pods-GDSA.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = TSMessages;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_GDSA;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1131,8 +987,17 @@
 		120D0B17EB9DEF64F2E1BC979F24A556 /* Build configuration list for PBXNativeTarget "HexColors" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AEB4A593F64D7AAB38E18CC761190F5E /* Debug */,
-				AA25E0DFE9DD8E94DF4A3FDB8F1A0C44 /* Release */,
+				60BD6807E6AA9FAC69B6587D1078DE53 /* Debug */,
+				AE0D98A581F9C1D77B9AA561686ACED7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1FF31B95C4ECFB0FCC45E744D8C5E7DE /* Build configuration list for PBXNativeTarget "SCLAlertView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6DCAC83F75564E25FD1332F7F211C4F /* Debug */,
+				7E48B17F093BC9E098411BFC7F4443A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1146,38 +1011,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B9B5D61553C4540F163ECD179F084D7E /* Build configuration list for PBXNativeTarget "SCLAlertView" */ = {
+		E1AC6963C1A78C36EC6B4B9F5A5F36AE /* Build configuration list for PBXNativeTarget "Pods-GDSA" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5A1B93CB60350C090757395F839C8573 /* Debug */,
-				EABD97C088E0A3618B8F5F18E7AC374B /* Release */,
+				D2079FBE4E22803775D33F3FA1D29ACD /* Debug */,
+				4CB4E05FE286E67F9AB574BF9D2BBE60 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C6756C91F1DBB2B0F7C041A319828058 /* Build configuration list for PBXNativeTarget "Pods-GDSA" */ = {
+		F31F8A96D81CCF2618E009E1E3DE2100 /* Build configuration list for PBXNativeTarget "TSMessages" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9C83D6111F6D9CA3FF0DF10DCED379DE /* Debug */,
-				3C1731E0EBBAABF8B23481FD80C9A9BE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CA85F2BF69637EE21AB719E67C75B86C /* Build configuration list for PBXNativeTarget "DeviceKit" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				088F11AE61BC97A0E0CFE7244448B59C /* Debug */,
-				637CCEF0205D8D0BF882C2533A2712A6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D934B5D7C3BA028EDA534803AE32F04D /* Build configuration list for PBXNativeTarget "TSMessages" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F8EAD5B24B15B60CCD925CC45C542A09 /* Debug */,
-				90B50D5DD20A0E81B9AEDCA16829D02C /* Release */,
+				2569C7AC28A6AB63CF5C49931EC03936 /* Debug */,
+				5DB81394D5A5A126E8DD74CBADC5F8A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

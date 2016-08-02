@@ -16,7 +16,7 @@ class AKCustomViewController: UIViewController, UIGestureRecognizerDelegate
         super.viewDidLoad()
     }
     
-    override func viewDidAppear(animated: Bool)
+    override func viewDidAppear(_ animated: Bool)
     {
         super.viewDidAppear(animated)
         
@@ -27,7 +27,7 @@ class AKCustomViewController: UIViewController, UIGestureRecognizerDelegate
     }
     
     // MARK: UIGestureRecognizerDelegate Implementation
-    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool { return !self.shouldDisableGesture }
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool { return !self.shouldDisableGesture }
     
     // MARK: Miscellaneous
     func setup()
@@ -42,7 +42,7 @@ class AKCustomViewController: UIViewController, UIGestureRecognizerDelegate
         self.definesPresentationContext = true
     }
     
-    func tap(gesture: UIGestureRecognizer?)
+    func tap(_ gesture: UIGestureRecognizer?)
     {
         self.view.endEditing(true)
         self.customOperationsWhenTaped()
@@ -54,22 +54,22 @@ class AKCustomViewController: UIViewController, UIGestureRecognizerDelegate
     func manageAccessToLocationServices()
     {
         switch CLLocationManager.authorizationStatus() {
-        case .NotDetermined:
+        case .notDetermined:
             AKDelegate().locationManager.requestWhenInUseAuthorization()
             break
-        case .Restricted, .Denied:
+        case .restricted, .denied:
             let alertController = UIAlertController(
                 title: "Location Access Disabled",
                 message: "The App cannot be used if \"Location Access\" is disabled. Please enabled it in \"Settings\".",
-                preferredStyle: .Alert)
+                preferredStyle: .alert)
             
-            alertController.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: { (action) in AKDelegate().applicationActive = false }))
-            alertController.addAction(UIAlertAction(title: "Open Settings", style: .Default) { (action) in
-                if let url = NSURL(string:UIApplicationOpenSettingsURLString) {
-                    AKDelay(0.0, task: { () in UIApplication.sharedApplication().openURL(url) })
+            alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in AKDelegate().applicationActive = false }))
+            alertController.addAction(UIAlertAction(title: "Open Settings", style: .default) { (action) in
+                if let url = URL(string:UIApplicationOpenSettingsURLString) {
+                    AKDelay(0.0, task: { () in UIApplication.shared().openURL(url) })
                 }})
             
-            self.presentViewController(alertController, animated: true, completion: nil)
+            self.present(alertController, animated: true, completion: nil)
             break
         default:
             break

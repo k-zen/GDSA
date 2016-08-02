@@ -8,7 +8,7 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
 {
     // MARK: Local Structures
     struct Defaults {
-        static let AKDefaultStrokeAndFillColor = UIColor.clearColor()
+        static let AKDefaultStrokeAndFillColor = UIColor.clear()
         static let AKDefaultAlpha = 1.0
         static let AKDefaultLineWidth = 1.0
     }
@@ -28,10 +28,10 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
     @IBOutlet weak var map: MGLMapView!
     
     // MARK: Actions
-    @IBAction func stopRecordingTravel(sender: AnyObject)
+    @IBAction func stopRecordingTravel(_ sender: AnyObject)
     {
         self.stopRecording({ Void -> Void in
-            self.navigationController?.popViewControllerAnimated(true)
+            self.navigationController?.popViewController(animated: true)
         })
     }
     
@@ -42,7 +42,7 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
         self.customSetup()
     }
     
-    override func viewDidAppear(animated: Bool)
+    override func viewDidAppear(_ animated: Bool)
     {
         super.viewDidAppear(animated)
         
@@ -50,7 +50,7 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
         self.map.minimumZoomLevel = 8
         self.map.maximumZoomLevel = 18
         self.map.zoomLevel = 14
-        self.map.userTrackingMode = MGLUserTrackingMode.Follow
+        self.map.userTrackingMode = MGLUserTrackingMode.follow
         
         // Add map overlay for travel information.
         self.infoOverlayViewSubView = self.infoOverlayViewContainer.customView
@@ -58,16 +58,16 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
         self.infoOverlayViewSubView.frame = CGRect(x: 0, y: 0, width: self.map.bounds.width, height: 22)
         self.infoOverlayViewSubView.translatesAutoresizingMaskIntoConstraints = true
         self.infoOverlayViewSubView.clipsToBounds = true
-        self.infoOverlayViewSubView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        self.infoOverlayViewSubView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
         self.map.addSubview(self.infoOverlayViewSubView)
         
         let constraintWidth = NSLayoutConstraint(
             item: self.infoOverlayViewSubView,
-            attribute: NSLayoutAttribute.Width,
-            relatedBy: NSLayoutRelation.Equal,
+            attribute: NSLayoutAttribute.width,
+            relatedBy: NSLayoutRelation.equal,
             toItem: self.map,
-            attribute: NSLayoutAttribute.Width,
+            attribute: NSLayoutAttribute.width,
             multiplier: 1.0,
             constant: 0.0
         )
@@ -78,7 +78,7 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
     }
     
     // MARK: Recording Methods
-    func startRecording(completionTask: Void -> Void)
+    func startRecording(_ completionTask: (Void) -> Void)
     {
         defer {
             completionTask()
@@ -107,7 +107,7 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
         }
     }
     
-    func stopRecording(completionTask: Void -> Void)
+    func stopRecording(_ completionTask: (Void) -> Void)
     {
         NSLog("=> LOCATION SERVICES ==> STOP RECORDING TRAVEL ...")
         AKDelegate().recordingTravel = false
@@ -153,9 +153,9 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
     }
     
     // MARK: MGLMapViewDelegate Implementation
-    func mapView(mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool { return true }
+    func mapView(_ mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool { return true }
     
-    func mapView(mapView: MGLMapView, alphaForShapeAnnotation annotation: MGLShape) -> CGFloat
+    func mapView(_ mapView: MGLMapView, alphaForShapeAnnotation annotation: MGLShape) -> CGFloat
     {
         if annotation.title == nil {
             return CGFloat(Defaults.AKDefaultAlpha)
@@ -172,7 +172,7 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
         }
     }
     
-    func mapView(mapView: MGLMapView, lineWidthForPolylineAnnotation annotation: MGLPolyline) -> CGFloat
+    func mapView(_ mapView: MGLMapView, lineWidthForPolylineAnnotation annotation: MGLPolyline) -> CGFloat
     {
         if annotation.title == nil {
             return CGFloat(Defaults.AKDefaultLineWidth)
@@ -187,7 +187,7 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
         }
     }
     
-    func mapView(mapView: MGLMapView, strokeColorForShapeAnnotation annotation: MGLShape) -> UIColor
+    func mapView(_ mapView: MGLMapView, strokeColorForShapeAnnotation annotation: MGLShape) -> UIColor
     {
         if annotation.title == nil {
             return Defaults.AKDefaultStrokeAndFillColor
@@ -202,7 +202,7 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
         }
     }
     
-    func mapView(mapView: MGLMapView, fillColorForPolygonAnnotation annotation: MGLPolygon) -> UIColor
+    func mapView(_ mapView: MGLMapView, fillColorForPolygonAnnotation annotation: MGLPolygon) -> UIColor
     {
         if annotation.title == nil {
             return Defaults.AKDefaultStrokeAndFillColor
@@ -220,10 +220,10 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
     }
     
     // MARK: Observers
-    func locationUpdated(notification: NSNotification)
+    func locationUpdated(_ notification: Notification)
     {
-        NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
-            let travelSegment = notification.userInfo!["data"] as! AKTravelSegment
+        OperationQueue.main.addOperation({ () -> Void in
+            let travelSegment = (notification as NSNotification).userInfo!["data"] as! AKTravelSegment
             self.currentPosition = UserLocation(lat: travelSegment.computeEnd().lat, lon: travelSegment.computeEnd().lon)
             self.travel.addSegment(travelSegment)
             
@@ -233,9 +233,9 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
                 self.infoOverlayViewContainer.filteredPoints.text = String(format: "%iFP", self.filteredPointsCounter)
             }
             else {
-                self.travel.addDistance(travelSegment.computeDistance(UnitOfLength.Meter))
-                self.infoOverlayViewContainer.distance.text = String(format: "%.1fkm", self.travel.computeDistance(UnitOfLength.Kilometer))
-                self.infoOverlayViewContainer.speed.text = String(format: "%ikm/h", travelSegment.computeDistance(UnitOfLength.Kilometer) / travelSegment.computeTime(UnitOfTime.Hour))
+                self.travel.addDistance(travelSegment.computeDistance(UnitOfLength.meter))
+                self.infoOverlayViewContainer.distance.text = String(format: "%.1fkm", self.travel.computeDistance(UnitOfLength.kilometer))
+                self.infoOverlayViewContainer.speed.text = String(format: "%ikm/h", travelSegment.computeDistance(UnitOfLength.kilometer) / travelSegment.computeTime(UnitOfTime.hour))
                 self.coordinates.append(CLLocationCoordinate2DMake(self.currentPosition.lat, self.currentPosition.lon))
                 self.map.centerCoordinate = CLLocationCoordinate2DMake(self.currentPosition.lat, self.currentPosition.lon)
                 self.drawPolyline()
@@ -280,10 +280,10 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
         super.setup()
         
         // Custom notifications.
-        NSNotificationCenter.defaultCenter().addObserver(
+        NotificationCenter.default.addObserver(
             self,
             selector: #selector(AKRecordTravelViewController.locationUpdated(_:)),
-            name: GlobalConstants.AKLocationUpdateNotificationName,
+            name: NSNotification.Name(rawValue: GlobalConstants.AKLocationUpdateNotificationName),
             object: nil)
         
         // Delegates

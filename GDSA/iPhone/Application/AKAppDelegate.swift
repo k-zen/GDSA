@@ -25,7 +25,7 @@ class AKAppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelega
     }
     
     // MARK: UIApplicationDelegate Implementation
-    func applicationWillResignActive(application: UIApplication)
+    func applicationWillResignActive(_ application: UIApplication)
     {
         do {
             NSLog("=> SAVING *MASTER FILE* TO FILE.")
@@ -36,7 +36,7 @@ class AKAppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelega
         }
     }
     
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
     {
         do {
             NSLog("=> READING *MASTER FILE* FROM FILE.")
@@ -60,7 +60,7 @@ class AKAppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelega
     }
     
     // MARK: CLLocationManagerDelegate
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
     {
         let currentLocation = locations.last
         
@@ -75,14 +75,14 @@ class AKAppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelega
         }
         
         // Compute travel segment in regular intervals.
-        if Int(NSDate().timeIntervalSince1970 - self.lastSavedTime) < GlobalConstants.AKLocationUpdateInterval {
+        if Int(Date().timeIntervalSince1970 - self.lastSavedTime) < GlobalConstants.AKLocationUpdateInterval {
             return
         }
         else {
             let pointA = UserLocation(lat: self.lastSavedPosition.lat, lon: self.lastSavedPosition.lon)
             let pointB = UserLocation(lat: self.currentPosition.lat, lon: self.currentPosition.lon)
             
-            let travelSegment = AKTravelSegment(str: pointA, end: pointB, time: (NSDate().timeIntervalSince1970 - self.lastSavedTime))
+            let travelSegment = AKTravelSegment(str: pointA, end: pointB, time: (Date().timeIntervalSince1970 - self.lastSavedTime))
             
             if travelSegment.shouldSave() {
                 if GlobalConstants.AKDebug {
@@ -91,30 +91,30 @@ class AKAppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelega
                     NSLog("=> ### NEWLY DETECTED SEGMENT")
                 }
                 
-                NSNotificationCenter.defaultCenter().postNotificationName(GlobalConstants.AKLocationUpdateNotificationName, object: self, userInfo: [ "data" : travelSegment ])
+                NotificationCenter.default.post(name: Notification.Name(rawValue: GlobalConstants.AKLocationUpdateNotificationName), object: self, userInfo: [ "data" : travelSegment ])
             }
             
-            self.lastSavedTime = NSDate().timeIntervalSince1970
+            self.lastSavedTime = Date().timeIntervalSince1970
             self.lastSavedPosition.lat = self.currentPosition.lat
             self.lastSavedPosition.lon = self.currentPosition.lon
         }
     }
     
-    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) { NSLog("=> LOCATION SERVICES ERROR ==> %@", error.description) }
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: NSError) { NSLog("=> LOCATION SERVICES ERROR ==> %@", error.description) }
     
-    func locationManagerDidPauseLocationUpdates(manager: CLLocationManager) { NSLog("=> LOCATION SERVICES HAS PAUSED.") }
+    func locationManagerDidPauseLocationUpdates(_ manager: CLLocationManager) { NSLog("=> LOCATION SERVICES HAS PAUSED.") }
     
-    func locationManagerDidResumeLocationUpdates(manager: CLLocationManager) { NSLog("=> LOCATION SERVICES HAS RESUMED.") }
+    func locationManagerDidResumeLocationUpdates(_ manager: CLLocationManager) { NSLog("=> LOCATION SERVICES HAS RESUMED.") }
     
-    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus)
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus)
     {
         switch CLLocationManager.authorizationStatus() {
-        case .AuthorizedWhenInUse:
+        case .authorizedWhenInUse:
             NSLog("=> LOCATION SERVICES ==> AUTHORIZED WHEN IN USE")
             NSLog("=> READY TO START RECORDING TRAVELS.")
             self.locationManager.startUpdatingLocation()
             break
-        case .Restricted, .Denied:
+        case .restricted, .denied:
             NSLog("=> LOCATION SERVICES ==> DENIED")
             break
         default:
