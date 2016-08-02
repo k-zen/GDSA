@@ -6,6 +6,13 @@ import UIKit
 
 class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
 {
+    // MARK: Local Structures
+    struct Defaults {
+        static let AKDefaultStrokeAndFillColor = UIColor.clearColor()
+        static let AKDefaultAlpha = 1.0
+        static let AKDefaultLineWidth = 1.0
+    }
+    
     // MARK: Properties
     private let startAnnotation: MGLPointAnnotation = MGLPointAnnotation()
     private let endAnnotation: MGLPointAnnotation = MGLPointAnnotation()
@@ -91,6 +98,7 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
             // Add start annotation.
             self.startAnnotation.coordinate = try self.travel.computeOriginAsCoordinate()
             self.startAnnotation.title = GlobalConstants.AKTravelStartAnnotationTitle
+            self.startAnnotation.subtitle = String(format: "Lat: %f, Lon: %f", try self.travel.computeOrigin().lat, try self.travel.computeOrigin().lon)
             self.map.addAnnotation(self.startAnnotation)
         }
         catch {
@@ -115,6 +123,7 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
             // Add end annotation.
             self.endAnnotation.coordinate = try self.travel.computeDestinationAsCoordinate()
             self.endAnnotation.title = GlobalConstants.AKTravelEndAnnotationTitle
+            self.endAnnotation.subtitle = String(format: "Lat: %f, Lon: %f", try self.travel.computeDestination().lat, try self.travel.computeDestination().lon)
             self.map.addAnnotation(self.endAnnotation)
         }
         catch {
@@ -144,19 +153,21 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
     }
     
     // MARK: MGLMapViewDelegate Implementation
+    func mapView(mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool { return true }
+    
     func mapView(mapView: MGLMapView, alphaForShapeAnnotation annotation: MGLShape) -> CGFloat
     {
         if annotation.title == nil {
-            return 1.0
+            return CGFloat(Defaults.AKDefaultAlpha)
         }
         else {
             switch annotation.title! {
             case GlobalConstants.AKTravelSegmentAnnotationTitle:
-                return 0.75
+                return CGFloat(GlobalConstants.AKTravelPathLineAlpha)
             case GlobalConstants.AKTravelStopPointMarkTitle:
-                return 0.5
+                return CGFloat(GlobalConstants.AKTravelStopPointMarkAlpha)
             default:
-                return 1.0
+                return CGFloat(Defaults.AKDefaultAlpha)
             }
         }
     }
@@ -164,14 +175,14 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
     func mapView(mapView: MGLMapView, lineWidthForPolylineAnnotation annotation: MGLPolyline) -> CGFloat
     {
         if annotation.title == nil {
-            return 1.0
+            return CGFloat(Defaults.AKDefaultLineWidth)
         }
         else {
             switch annotation.title! {
             case GlobalConstants.AKTravelSegmentAnnotationTitle:
-                return 6.0
+                return CGFloat(GlobalConstants.AKTravelPathLineWidth)
             default:
-                return 1.0
+                return CGFloat(Defaults.AKDefaultLineWidth)
             }
         }
     }
@@ -179,14 +190,14 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
     func mapView(mapView: MGLMapView, strokeColorForShapeAnnotation annotation: MGLShape) -> UIColor
     {
         if annotation.title == nil {
-            return UIColor.clearColor()
+            return Defaults.AKDefaultStrokeAndFillColor
         }
         else {
             switch annotation.title! {
             case GlobalConstants.AKTravelSegmentAnnotationTitle:
-                return GlobalConstants.AKTravelPathMarkerColor
+                return GlobalConstants.AKTravelPathLineColor
             default:
-                return UIColor.clearColor()
+                return Defaults.AKDefaultStrokeAndFillColor
             }
         }
     }
@@ -194,16 +205,16 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
     func mapView(mapView: MGLMapView, fillColorForPolygonAnnotation annotation: MGLPolygon) -> UIColor
     {
         if annotation.title == nil {
-            return UIColor.clearColor()
+            return Defaults.AKDefaultStrokeAndFillColor
         }
         else {
             switch annotation.title! {
             case GlobalConstants.AKTravelSegmentAnnotationTitle:
-                return GlobalConstants.AKTravelPathMarkerColor
+                return GlobalConstants.AKTravelPathLineColor
             case GlobalConstants.AKTravelStopPointMarkTitle:
-                return UIColor.redColor()
+                return GlobalConstants.AKTravelStopPointMarkColor
             default:
-                return UIColor.clearColor()
+                return Defaults.AKDefaultStrokeAndFillColor
             }
         }
     }
@@ -279,7 +290,7 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
         self.map.delegate = self
         
         // Custom L&F.
-        self.stopRecordingTravel.layer.cornerRadius = 4.0
+        self.stopRecordingTravel.layer.cornerRadius = CGFloat(GlobalConstants.AKButtonCornerRadius)
         
         // Configure NavigationController.
         self.navigationItem.hidesBackButton = true

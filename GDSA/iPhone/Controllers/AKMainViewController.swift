@@ -54,11 +54,11 @@ class AKMainViewController: AKCustomViewController, UITableViewDataSource, UITab
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
     {
-        let headerCell = UIView(frame: CGRectMake(8, 0, 276, 22))
+        let headerCell = UIView(frame: CGRectMake(8, 0, 276, 30))
         headerCell.backgroundColor = GlobalConstants.AKTableHeaderCellBg
         
         let title = UILabel(frame: headerCell.frame)
-        title.font = UIFont(name: GlobalConstants.AKDefaultFont, size: 14.0)
+        title.font = UIFont(name: GlobalConstants.AKDefaultFont, size: 16.0)
         title.textColor = UIColor.whiteColor()
         title.text = "Travels"
         
@@ -126,7 +126,7 @@ class AKMainViewController: AKCustomViewController, UITableViewDataSource, UITab
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat { return 62 }
     
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat { return 22 }
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat { return 30 }
     
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat { return CGFloat.min }
     
@@ -144,6 +144,6 @@ class AKMainViewController: AKCustomViewController, UITableViewDataSource, UITab
         self.travelsTable?.delegate = self
         
         // Custom L&F.
-        self.startRecordingTravel.layer.cornerRadius = 4.0
+        self.startRecordingTravel.layer.cornerRadius = CGFloat(GlobalConstants.AKButtonCornerRadius)
     }
 }

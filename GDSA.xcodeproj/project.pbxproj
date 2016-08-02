@@ -17,11 +17,13 @@
 		4922DD721CE67C01003E0AFB /* AKViewTravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4922DD711CE67C01003E0AFB /* AKViewTravelViewController.swift */; };
 		4934C6781D0AF920004754AF /* AKFileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4934C6771D0AF920004754AF /* AKFileUtils.swift */; };
 		4934C67A1D0B5FEB004754AF /* AKMasterFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4934C6791D0B5FEB004754AF /* AKMasterFile.swift */; };
+		494344331D1D80CB005681C3 /* GDSATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494344321D1D80CB005681C3 /* GDSATests.swift */; };
 		495683341CEA235B0057B06E /* AKCustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495683331CEA235B0057B06E /* AKCustomViewController.swift */; };
 		495683361CEA268B0057B06E /* AKConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495683351CEA268B0057B06E /* AKConstants.swift */; };
 		495683391CEA57BC0057B06E /* AKInputData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495683371CEA57BC0057B06E /* AKInputData.swift */; };
 		4956833A1CEA57BC0057B06E /* AKTravelSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495683381CEA57BC0057B06E /* AKTravelSegment.swift */; };
 		4967CF981D060A560050DDF2 /* AKFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4967CF971D060A560050DDF2 /* AKFilters.swift */; };
+		4986E92B1D1C37C0009E54E4 /* Home-UCA-Route_1.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 4986E92A1D1C37C0009E54E4 /* Home-UCA-Route_1.tsv */; };
 		499DB6801CB6E8B900342742 /* 0001-512px.png in Resources */ = {isa = PBXBuildFile; fileRef = 499DB6791CB6E8B900342742 /* 0001-512px.png */; };
 		499DB6811CB6E8B900342742 /* AppIcon-29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 499DB67A1CB6E8B900342742 /* AppIcon-29@2x.png */; };
 		499DB6821CB6E8B900342742 /* AppIcon-29@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 499DB67B1CB6E8B900342742 /* AppIcon-29@3x.png */; };
@@ -39,7 +41,18 @@
 		49B252351CB2FA13005C88C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49B2522D1CB2FA13005C88C9 /* Assets.xcassets */; };
 		49BEBB1A1CEA635F00A5FC12 /* AKTravel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BEBB191CEA635F00A5FC12 /* AKTravel.swift */; };
 		49CAA8471D1B3A25007BDD57 /* 0003-128px.png in Resources */ = {isa = PBXBuildFile; fileRef = 49CAA8461D1B3A25007BDD57 /* 0003-128px.png */; };
+		49D889E61D21714100CEBB9E /* Read_Route.py in Resources */ = {isa = PBXBuildFile; fileRef = 49D889E51D21714100CEBB9E /* Read_Route.py */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		494344351D1D80CB005681C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49B251E91CB2F26B005C88C9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 49B251F01CB2F26B005C88C9;
+			remoteInfo = GDSA;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		490F91541CF785BF0031B8AE /* AKTravelInfoOverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AKTravelInfoOverlayView.xib; sourceTree = "<group>"; };
@@ -52,11 +65,14 @@
 		4922DD711CE67C01003E0AFB /* AKViewTravelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKViewTravelViewController.swift; sourceTree = "<group>"; };
 		4934C6771D0AF920004754AF /* AKFileUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKFileUtils.swift; sourceTree = "<group>"; };
 		4934C6791D0B5FEB004754AF /* AKMasterFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKMasterFile.swift; sourceTree = "<group>"; };
+		494344301D1D80CB005681C3 /* GDSATests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GDSATests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		494344321D1D80CB005681C3 /* GDSATests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDSATests.swift; sourceTree = "<group>"; };
 		495683331CEA235B0057B06E /* AKCustomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKCustomViewController.swift; sourceTree = "<group>"; };
 		495683351CEA268B0057B06E /* AKConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKConstants.swift; sourceTree = "<group>"; };
 		495683371CEA57BC0057B06E /* AKInputData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKInputData.swift; sourceTree = "<group>"; };
 		495683381CEA57BC0057B06E /* AKTravelSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKTravelSegment.swift; sourceTree = "<group>"; };
 		4967CF971D060A560050DDF2 /* AKFilters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKFilters.swift; sourceTree = "<group>"; };
+		4986E92A1D1C37C0009E54E4 /* Home-UCA-Route_1.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Home-UCA-Route_1.tsv"; sourceTree = "<group>"; };
 		499DB6791CB6E8B900342742 /* 0001-512px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "0001-512px.png"; sourceTree = "<group>"; };
 		499DB67A1CB6E8B900342742 /* AppIcon-29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon-29@2x.png"; sourceTree = "<group>"; };
 		499DB67B1CB6E8B900342742 /* AppIcon-29@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon-29@3x.png"; sourceTree = "<group>"; };
@@ -75,14 +91,23 @@
 		49B252291CB2FA13005C88C9 /* AKMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AKMain.storyboard; sourceTree = "<group>"; };
 		49B2522D1CB2FA13005C88C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49B252311CB2FA13005C88C9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49BE0DAA1D30540900F50868 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49BEBB191CEA635F00A5FC12 /* AKTravel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKTravel.swift; sourceTree = "<group>"; };
 		49CAA8461D1B3A25007BDD57 /* 0003-128px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "0003-128px.png"; sourceTree = "<group>"; };
+		49D889E51D21714100CEBB9E /* Read_Route.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = Read_Route.py; sourceTree = "<group>"; };
 		BBC791C1362B49FEE23CD920 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E02FA7FCAA3C364950EA04A8 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F12237D9CD9C0B4697286FF7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4943442D1D1D80CB005681C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		49B251EE1CB2F26B005C88C9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -94,6 +119,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		494344311D1D80CB005681C3 /* GDSATests */ = {
+			isa = PBXGroup;
+			children = (
+				494344321D1D80CB005681C3 /* GDSATests.swift */,
+				49BE0DA91D30540900F50868 /* Supporting Files */,
+			);
+			path = GDSATests;
+			sourceTree = "<group>";
+		};
 		495683321CEA235B0057B06E /* CustomComponents */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +140,14 @@
 			path = CustomComponents;
 			sourceTree = "<group>";
 		};
+		4986E92C1D1C4DAC009E54E4 /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				49D889E51D21714100CEBB9E /* Read_Route.py */,
+			);
+			path = Scripts;
+			sourceTree = "<group>";
+		};
 		499DB6761CB6E8B900342742 /* Certificates */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,11 +155,12 @@
 			path = Certificates;
 			sourceTree = "<group>";
 		};
-		499DB6771CB6E8B900342742 /* Files */ = {
+		499DB6771CB6E8B900342742 /* Routes */ = {
 			isa = PBXGroup;
 			children = (
+				4986E92A1D1C37C0009E54E4 /* Home-UCA-Route_1.tsv */,
 			);
-			path = Files;
+			path = Routes;
 			sourceTree = "<group>";
 		};
 		499DB6781CB6E8B900342742 /* Images */ = {
@@ -142,6 +185,7 @@
 				49B252221CB2F84D005C88C9 /* Podfile */,
 				49B252211CB2F84D005C88C9 /* CHANGES.txt */,
 				49B251F31CB2F26B005C88C9 /* GDSA */,
+				494344311D1D80CB005681C3 /* GDSATests */,
 				49B251F21CB2F26B005C88C9 /* Products */,
 				C9BF0941AE39059F0DE534A3 /* Pods */,
 				66481AA77F176DBE344C17C0 /* Frameworks */,
@@ -152,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				49B251F11CB2F26B005C88C9 /* GDSA.app */,
+				494344301D1D80CB005681C3 /* GDSATests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -211,8 +256,9 @@
 			children = (
 				49B2522D1CB2FA13005C88C9 /* Assets.xcassets */,
 				499DB6761CB6E8B900342742 /* Certificates */,
-				499DB6771CB6E8B900342742 /* Files */,
 				499DB6781CB6E8B900342742 /* Images */,
+				499DB6771CB6E8B900342742 /* Routes */,
+				4986E92C1D1C4DAC009E54E4 /* Scripts */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -249,6 +295,14 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		49BE0DA91D30540900F50868 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				49BE0DAA1D30540900F50868 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		66481AA77F176DBE344C17C0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -269,6 +323,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		4943442F1D1D80CB005681C3 /* GDSATests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 494344391D1D80CB005681C3 /* Build configuration list for PBXNativeTarget "GDSATests" */;
+			buildPhases = (
+				4943442C1D1D80CB005681C3 /* Sources */,
+				4943442D1D1D80CB005681C3 /* Frameworks */,
+				4943442E1D1D80CB005681C3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				494344361D1D80CB005681C3 /* PBXTargetDependency */,
+			);
+			name = GDSATests;
+			productName = GDSATests;
+			productReference = 494344301D1D80CB005681C3 /* GDSATests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		49B251F01CB2F26B005C88C9 /* GDSA */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 49B252031CB2F26B005C88C9 /* Build configuration list for PBXNativeTarget "GDSA" */;
@@ -300,9 +372,15 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = APKC.net;
 				TargetAttributes = {
+					4943442F1D1D80CB005681C3 = {
+						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
+						TestTargetID = 49B251F01CB2F26B005C88C9;
+					};
 					49B251F01CB2F26B005C88C9 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 8JQ7MFA6Q2;
+						LastSwiftMigration = 0800;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -328,11 +406,19 @@
 			projectRoot = "";
 			targets = (
 				49B251F01CB2F26B005C88C9 /* GDSA */,
+				4943442F1D1D80CB005681C3 /* GDSATests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4943442E1D1D80CB005681C3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		49B251EF1CB2F26B005C88C9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -347,9 +433,11 @@
 				499DB6811CB6E8B900342742 /* AppIcon-29@2x.png in Resources */,
 				490F91551CF785BF0031B8AE /* AKTravelInfoOverlayView.xib in Resources */,
 				49B252231CB2F84D005C88C9 /* CHANGES.txt in Resources */,
+				49D889E61D21714100CEBB9E /* Read_Route.py in Resources */,
 				49B252341CB2FA13005C88C9 /* AKMain.storyboard in Resources */,
 				49CAA8471D1B3A25007BDD57 /* 0003-128px.png in Resources */,
 				499DB6821CB6E8B900342742 /* AppIcon-29@3x.png in Resources */,
+				4986E92B1D1C37C0009E54E4 /* Home-UCA-Route_1.tsv in Resources */,
 				49B252351CB2FA13005C88C9 /* Assets.xcassets in Resources */,
 				49199ABD1D15A367009A5A31 /* AKTravelsTableViewCell.xib in Resources */,
 			);
@@ -406,6 +494,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4943442C1D1D80CB005681C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				494344331D1D80CB005681C3 /* GDSATests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		49B251ED1CB2F26B005C88C9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -431,7 +527,43 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		494344361D1D80CB005681C3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 49B251F01CB2F26B005C88C9 /* GDSA */;
+			targetProxy = 494344351D1D80CB005681C3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		494344371D1D80CB005681C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "GDSATests/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.apkc.projects.ios.GDSATests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GDSA.app/GDSA";
+			};
+			name = Debug;
+		};
+		494344381D1D80CB005681C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "GDSATests/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.apkc.projects.ios.GDSATests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GDSA.app/GDSA";
+			};
+			name = Release;
+		};
 		49B252011CB2F26B005C88C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -520,13 +652,14 @@
 			baseConfigurationReference = BBC791C1362B49FEE23CD920 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Andreas P. Koenzen (5GQB46H9ER)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "$(SRCROOT)/GDSA/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.apkc.projects.ios.GDSA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "0fb9fd46-1890-4bf5-80fb-2f95a7592420";
 				SWIFT_OBJC_BRIDGING_HEADER = GDSA/iPhone/Application/AKBridgingHeader.h;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -535,19 +668,29 @@
 			baseConfigurationReference = F12237D9CD9C0B4697286FF7 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Andreas P. Koenzen (8JQ7MFA6Q2)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "$(SRCROOT)/GDSA/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.apkc.projects.ios.GDSA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "0fb9fd46-1890-4bf5-80fb-2f95a7592420";
 				SWIFT_OBJC_BRIDGING_HEADER = GDSA/iPhone/Application/AKBridgingHeader.h;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		494344391D1D80CB005681C3 /* Build configuration list for PBXNativeTarget "GDSATests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				494344371D1D80CB005681C3 /* Debug */,
+				494344381D1D80CB005681C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		49B251EC1CB2F26B005C88C9 /* Build configuration list for PBXProject "GDSA" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
