@@ -378,7 +378,6 @@
 						CreatedOnToolsVersion = 7.3.1;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Manual;
-						TestTargetID = 49B251F01CB2F26B005C88C9;
 					};
 					49B251F01CB2F26B005C88C9 = {
 						CreatedOnToolsVersion = 7.3;
@@ -542,7 +541,6 @@
 		494344371D1D80CB005681C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "GDSATests/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -551,14 +549,12 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = 8JQ7MFA6Q2/;
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GDSA.app/GDSA";
 			};
 			name = Debug;
 		};
 		494344381D1D80CB005681C3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				INFOPLIST_FILE = "GDSATests/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -568,7 +564,6 @@
 				PROVISIONING_PROFILE_SPECIFIER = 8JQ7MFA6Q2/;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GDSA.app/GDSA";
 			};
 			name = Release;
 		};

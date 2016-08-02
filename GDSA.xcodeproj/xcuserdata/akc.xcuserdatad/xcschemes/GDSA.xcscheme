@@ -20,6 +20,20 @@
                ReferencedContainer = "container:GDSA.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "4943442F1D1D80CB005681C3"
+               BuildableName = "GDSATests.xctest"
+               BlueprintName = "GDSATests"
+               ReferencedContainer = "container:GDSA.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
