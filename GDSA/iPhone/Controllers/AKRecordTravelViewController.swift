@@ -1,17 +1,11 @@
 import CoreLocation
 import Foundation
 import Mapbox
+import SCLAlertView
 import UIKit
 
 class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
 {
-    // MARK: Local Structures
-    struct Defaults {
-        static let AKDefaultStrokeAndFillColor = UIColor.clear
-        static let AKDefaultAlpha = 1.0
-        static let AKDefaultLineWidth = 1.0
-    }
-    
     // MARK: Properties
     private let startAnnotation: MGLPointAnnotation = MGLPointAnnotation()
     private let endAnnotation: MGLPointAnnotation = MGLPointAnnotation()
@@ -27,10 +21,10 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
     @IBOutlet weak var map: MGLMapView!
     
     // MARK: Actions
-    @IBAction func stopRecordingTravel(_ sender: AnyObject)
+    @IBAction func stopRecordingTravel(sender: AnyObject)
     {
         self.stopRecording({ Void -> Void in
-            _ = self.navigationController?.popViewController(animated: true)
+            self.navigationController?.popViewControllerAnimated(true)
         })
     }
     
@@ -41,7 +35,7 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
         self.customSetup()
     }
     
-    override func viewDidAppear(_ animated: Bool)
+    override func viewDidAppear(animated: Bool)
     {
         super.viewDidAppear(animated)
         
@@ -49,7 +43,7 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
         self.map.minimumZoomLevel = 8
         self.map.maximumZoomLevel = 18
         self.map.zoomLevel = 14
-        self.map.userTrackingMode = MGLUserTrackingMode.follow
+        self.map.userTrackingMode = MGLUserTrackingMode.Follow
         
         // Add map overlay for travel information.
         self.infoOverlayViewSubView = self.infoOverlayViewContainer.customView
@@ -57,16 +51,16 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
         self.infoOverlayViewSubView.frame = CGRect(x: 0, y: 0, width: self.map.bounds.width, height: 22)
         self.infoOverlayViewSubView.translatesAutoresizingMaskIntoConstraints = true
         self.infoOverlayViewSubView.clipsToBounds = true
-        self.infoOverlayViewSubView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.infoOverlayViewSubView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         
         self.map.addSubview(self.infoOverlayViewSubView)
         
         let constraintWidth = NSLayoutConstraint(
             item: self.infoOverlayViewSubView,
-            attribute: NSLayoutAttribute.width,
-            relatedBy: NSLayoutRelation.equal,
+            attribute: NSLayoutAttribute.Width,
+            relatedBy: NSLayoutRelation.Equal,
             toItem: self.map,
-            attribute: NSLayoutAttribute.width,
+            attribute: NSLayoutAttribute.Width,
             multiplier: 1.0,
             constant: 0.0
         )
@@ -77,7 +71,7 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
     }
     
     // MARK: Recording Methods
-    func startRecording(_ completionTask: (Void) -> Void)
+    func startRecording(completionTask: Void -> Void)
     {
         defer {
             completionTask()
@@ -97,7 +91,6 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
             // Add start annotation.
             self.startAnnotation.coordinate = try self.travel.computeOriginAsCoordinate()
             self.startAnnotation.title = GlobalConstants.AKTravelStartAnnotationTitle
-            self.startAnnotation.subtitle = String(format: "Lat: %f, Lon: %f", try self.travel.computeOrigin().lat, try self.travel.computeOrigin().lon)
             self.map.addAnnotation(self.startAnnotation)
         }
         catch {
@@ -106,7 +99,7 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
         }
     }
     
-    func stopRecording(_ completionTask: (Void) -> Void)
+    func stopRecording(completionTask: Void -> Void)
     {
         NSLog("=> LOCATION SERVICES ==> STOP RECORDING TRAVEL ...")
         AKDelegate().recordingTravel = false
@@ -122,100 +115,104 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
             // Add end annotation.
             self.endAnnotation.coordinate = try self.travel.computeDestinationAsCoordinate()
             self.endAnnotation.title = GlobalConstants.AKTravelEndAnnotationTitle
-            self.endAnnotation.subtitle = String(format: "Lat: %f, Lon: %f", try self.travel.computeDestination().lat, try self.travel.computeDestination().lon)
             self.map.addAnnotation(self.endAnnotation)
         }
         catch {
             AKPresentMessageFromError("\(error)", controller: self)
         }
         
-        let alertController = UIAlertController(
-            title: "Stop Travel",
-            message: "Do you want to save the travel...?",
-            preferredStyle: UIAlertControllerStyle.actionSheet
+        let appearance = SCLAlertView.SCLAppearance(
+            kTitleFont: UIFont(name: GlobalConstants.AKDefaultFont, size: 20)!,
+            kTextFont: UIFont(name: GlobalConstants.AKDefaultFont, size: 14)!,
+            kButtonFont: UIFont(name: GlobalConstants.AKDefaultFont, size: 14)!,
+            showCloseButton: true
         )
-        alertController.addAction(UIAlertAction(
-            title: "Save & Exit",
-            style: UIAlertActionStyle.default,
-            handler: { (action) -> Void in
-                AKDelegate().masterFile?.addTravel(self.travel)
-                completionTask() })
+        let alertController = SCLAlertView(appearance: appearance)
+        
+        alertController.addButton("Save & Exit", action: { () -> Void in
+            AKDelegate().masterFile?.addTravel(self.travel)
+            completionTask()
+        })
+        alertController.addButton("Discard", action: { () -> Void in completionTask() })
+        
+        alertController.showNotice(
+            "Stop Travel",
+            subTitle: "Do you want to save the travel...?",
+            closeButtonTitle: nil,
+            duration: 0.0
         )
-        alertController.addAction(UIAlertAction(title: "Discard", style: UIAlertActionStyle.destructive, handler: { (action) -> Void in completionTask() }))
     }
     
     // MARK: MGLMapViewDelegate Implementation
-    func mapView(_ mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool { return true }
-    
-    func mapView(_ mapView: MGLMapView, alphaForShapeAnnotation annotation: MGLShape) -> CGFloat
+    func mapView(mapView: MGLMapView, alphaForShapeAnnotation annotation: MGLShape) -> CGFloat
     {
         if annotation.title == nil {
-            return CGFloat(Defaults.AKDefaultAlpha)
+            return 1.0
         }
         else {
             switch annotation.title! {
             case GlobalConstants.AKTravelSegmentAnnotationTitle:
-                return CGFloat(GlobalConstants.AKTravelPathLineAlpha)
+                return 0.75
             case GlobalConstants.AKTravelStopPointMarkTitle:
-                return CGFloat(GlobalConstants.AKTravelStopPointMarkAlpha)
+                return 0.5
             default:
-                return CGFloat(Defaults.AKDefaultAlpha)
+                return 1.0
             }
         }
     }
     
-    func mapView(_ mapView: MGLMapView, lineWidthForPolylineAnnotation annotation: MGLPolyline) -> CGFloat
+    func mapView(mapView: MGLMapView, lineWidthForPolylineAnnotation annotation: MGLPolyline) -> CGFloat
     {
         if annotation.title == nil {
-            return CGFloat(Defaults.AKDefaultLineWidth)
+            return 1.0
         }
         else {
             switch annotation.title! {
             case GlobalConstants.AKTravelSegmentAnnotationTitle:
-                return CGFloat(GlobalConstants.AKTravelPathLineWidth)
+                return 6.0
             default:
-                return CGFloat(Defaults.AKDefaultLineWidth)
+                return 1.0
             }
         }
     }
     
-    func mapView(_ mapView: MGLMapView, strokeColorForShapeAnnotation annotation: MGLShape) -> UIColor
+    func mapView(mapView: MGLMapView, strokeColorForShapeAnnotation annotation: MGLShape) -> UIColor
     {
         if annotation.title == nil {
-            return Defaults.AKDefaultStrokeAndFillColor
+            return UIColor.clearColor()
         }
         else {
             switch annotation.title! {
             case GlobalConstants.AKTravelSegmentAnnotationTitle:
-                return GlobalConstants.AKTravelPathLineColor
+                return GlobalConstants.AKTravelPathMarkerColor
             default:
-                return Defaults.AKDefaultStrokeAndFillColor
+                return UIColor.clearColor()
             }
         }
     }
     
-    func mapView(_ mapView: MGLMapView, fillColorForPolygonAnnotation annotation: MGLPolygon) -> UIColor
+    func mapView(mapView: MGLMapView, fillColorForPolygonAnnotation annotation: MGLPolygon) -> UIColor
     {
         if annotation.title == nil {
-            return Defaults.AKDefaultStrokeAndFillColor
+            return UIColor.clearColor()
         }
         else {
             switch annotation.title! {
             case GlobalConstants.AKTravelSegmentAnnotationTitle:
-                return GlobalConstants.AKTravelPathLineColor
+                return GlobalConstants.AKTravelPathMarkerColor
             case GlobalConstants.AKTravelStopPointMarkTitle:
-                return GlobalConstants.AKTravelStopPointMarkColor
+                return UIColor.redColor()
             default:
-                return Defaults.AKDefaultStrokeAndFillColor
+                return UIColor.clearColor()
             }
         }
     }
     
     // MARK: Observers
-    func locationUpdated(_ notification: Notification)
+    func locationUpdated(notification: NSNotification)
     {
-        OperationQueue.main.addOperation({ () -> Void in
-            let travelSegment = (notification as NSNotification).userInfo!["data"] as! AKTravelSegment
+        NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+            let travelSegment = notification.userInfo!["data"] as! AKTravelSegment
             self.currentPosition = UserLocation(lat: travelSegment.computeEnd().lat, lon: travelSegment.computeEnd().lon)
             self.travel.addSegment(travelSegment)
             
@@ -225,9 +222,9 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
                 self.infoOverlayViewContainer.filteredPoints.text = String(format: "%iFP", self.filteredPointsCounter)
             }
             else {
-                self.travel.addDistance(travelSegment.computeDistance(UnitOfLength.meter))
-                self.infoOverlayViewContainer.distance.text = String(format: "%.1fkm", self.travel.computeDistance(UnitOfLength.kilometer))
-                self.infoOverlayViewContainer.speed.text = String(format: "%ikm/h", travelSegment.computeDistance(UnitOfLength.kilometer) / travelSegment.computeTime(UnitOfTime.hour))
+                self.travel.addDistance(travelSegment.computeDistance(UnitOfLength.Meter))
+                self.infoOverlayViewContainer.distance.text = String(format: "%.1fkm", self.travel.computeDistance(UnitOfLength.Kilometer))
+                self.infoOverlayViewContainer.speed.text = String(format: "%ikm/h", travelSegment.computeDistance(UnitOfLength.Kilometer) / travelSegment.computeTime(UnitOfTime.Hour))
                 self.coordinates.append(CLLocationCoordinate2DMake(self.currentPosition.lat, self.currentPosition.lon))
                 self.map.centerCoordinate = CLLocationCoordinate2DMake(self.currentPosition.lat, self.currentPosition.lon)
                 self.drawPolyline()
@@ -272,17 +269,17 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
         super.setup()
         
         // Custom notifications.
-        NotificationCenter.default.addObserver(
+        NSNotificationCenter.defaultCenter().addObserver(
             self,
             selector: #selector(AKRecordTravelViewController.locationUpdated(_:)),
-            name: NSNotification.Name(rawValue: GlobalConstants.AKLocationUpdateNotificationName),
+            name: GlobalConstants.AKLocationUpdateNotificationName,
             object: nil)
         
         // Delegates
         self.map.delegate = self
         
         // Custom L&F.
-        self.stopRecordingTravel.layer.cornerRadius = CGFloat(GlobalConstants.AKButtonCornerRadius)
+        self.stopRecordingTravel.layer.cornerRadius = 4.0
         
         // Configure NavigationController.
         self.navigationItem.hidesBackButton = true

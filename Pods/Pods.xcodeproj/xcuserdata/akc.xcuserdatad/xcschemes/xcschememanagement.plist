@@ -4,41 +4,55 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>DeviceKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>HexColors.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>1</integer>
 		</dict>
-		<key>Pods-GDSA.xcscheme</key>
+		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>2</integer>
+		</dict>
+		<key>SCLAlertView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>TSMessages.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>3</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1402647B73E47EABFE6DD15DA31E81FB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>3C015959684D48CA885B865BBB066924</key>
+		<key>A3B48BF93B212BC3D46A6AD24C1EF979</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>C408D4E183A88B763793C217A66A1950</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CDC414A36F36C22915C03574CAB0ECF6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E2664F00878D9067CCD55050385834D0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EF78824223C74AA13AE655CD2ACF32A3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

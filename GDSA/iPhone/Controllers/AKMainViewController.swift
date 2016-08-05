@@ -7,9 +7,9 @@ class AKMainViewController: AKCustomViewController, UITableViewDataSource, UITab
     @IBOutlet weak var startRecordingTravel: UIButton!
     
     // MARK: Actions
-    @IBAction func startRecordingTravel(_ sender: AnyObject)
+    @IBAction func startRecordingTravel(sender: AnyObject)
     {
-        self.performSegue(withIdentifier: "RecordTravelSegue", sender: sender)
+        self.performSegueWithIdentifier("RecordTravelSegue", sender: sender)
     }
     
     // MARK: AKCustomViewController Overriding
@@ -19,7 +19,7 @@ class AKMainViewController: AKCustomViewController, UITableViewDataSource, UITab
         self.customSetup()
     }
     
-    override func viewDidAppear(_ animated: Bool)
+    override func viewDidAppear(animated: Bool)
     {
         super.viewDidAppear(animated)
         
@@ -27,52 +27,52 @@ class AKMainViewController: AKCustomViewController, UITableViewDataSource, UITab
     }
     
     // MARK: UITableViewDataSource Implementation
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         do {
-            let e = try AKObtainMasterFile().travels![(indexPath as NSIndexPath).row]
+            let e = try AKObtainMasterFile().travels![indexPath.row]
             
-            let cell = self.travelsTable.dequeueReusableCell(withIdentifier: "Travels_Table_Cell") as! AKTravelsTableViewCell
+            let cell = self.travelsTable.dequeueReusableCellWithIdentifier("Travels_Table_Cell") as! AKTravelsTableViewCell
             cell.origin.text = String(format: "%f, %f", try e.computeOrigin().lat, try e.computeOrigin().lon)
-            cell.distance.text = String(format: "%.1fkm", e.computeDistance(UnitOfLength.kilometer))
+            cell.distance.text = String(format: "%.1fkm", e.computeDistance(UnitOfLength.Kilometer))
             cell.destination.text = String(format: "%f, %f", try e.computeDestination().lat, try e.computeDestination().lon)
             
             // Custom L&F.
-            cell.selectionStyle = UITableViewCellSelectionStyle.none
+            cell.selectionStyle = UITableViewCellSelectionStyle.None
             
             return cell
         }
         catch {
             NSLog("=> ERROR: \(error)")
             
-            let defaultCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "Default_Table_Cell")
-            defaultCell.selectionStyle = UITableViewCellSelectionStyle.none
+            let defaultCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "Default_Table_Cell")
+            defaultCell.selectionStyle = UITableViewCellSelectionStyle.None
             
             return defaultCell
         }
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
     {
-        let headerCell = UIView(frame: CGRect(x: 8, y: 0, width: 276, height: 30))
+        let headerCell = UIView(frame: CGRectMake(8, 0, 276, 22))
         headerCell.backgroundColor = GlobalConstants.AKTableHeaderCellBg
         
         let title = UILabel(frame: headerCell.frame)
-        title.font = UIFont(name: GlobalConstants.AKDefaultFont, size: 16.0)
-        title.textColor = UIColor.white
+        title.font = UIFont(name: GlobalConstants.AKDefaultFont, size: 14.0)
+        title.textColor = UIColor.whiteColor()
         title.text = "Travels"
         
         headerCell.addSubview(title)
         
         AKAddBorderDeco(headerCell,
-                        color: GlobalConstants.AKTableHeaderLeftBorderBg.cgColor,
+                        color: GlobalConstants.AKTableHeaderLeftBorderBg.CGColor,
                         thickness: GlobalConstants.AKDefaultBorderThickness,
-                        position: CustomBorderDecorationPosition.left)
+                        position: CustomBorderDecorationPosition.Left)
         
         return headerCell
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         do {
             return (try AKObtainMasterFile().travels?.count)!
@@ -84,19 +84,19 @@ class AKMainViewController: AKCustomViewController, UITableViewDataSource, UITab
         }
     }
     
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool { return true }
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool { return true }
     
     // MARK: UITableViewDelegate Implementation
-    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String?
+    func tableView(tableView: UITableView, titleForDeleteConfirmationButtonForRowAtIndexPath indexPath: NSIndexPath) -> String?
     {
         return "Delete"
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath)
     {
-        if editingStyle == UITableViewCellEditingStyle.delete {
+        if editingStyle == UITableViewCellEditingStyle.Delete {
             do {
-                try AKObtainMasterFile().travels?.remove(at: (indexPath as NSIndexPath).row)
+                try AKObtainMasterFile().travels?.removeAtIndex(indexPath.row)
                 self.travelsTable.reloadData()
             }
             catch {
@@ -105,17 +105,17 @@ class AKMainViewController: AKCustomViewController, UITableViewDataSource, UITab
         }
     }
     
-    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle
+    func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle
     {
-        return UITableViewCellEditingStyle.delete
+        return UITableViewCellEditingStyle.Delete
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int { return 1 }
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int { return 1 }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
         do {
-            _ = try AKObtainMasterFile().travels![(indexPath as NSIndexPath).row]
+            _ = try AKObtainMasterFile().travels![indexPath.row]
         }
         catch {
             NSLog("=> ERROR: \(error)")
@@ -124,11 +124,11 @@ class AKMainViewController: AKCustomViewController, UITableViewDataSource, UITab
         // MOVE TO VIEW HERE.
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat { return 62 }
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat { return 62 }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat { return 30 }
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat { return 22 }
     
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat { return CGFloat.leastNormalMagnitude }
+    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat { return CGFloat.min }
     
     // MARK: Miscellaneous
     func customSetup()
@@ -137,13 +137,13 @@ class AKMainViewController: AKCustomViewController, UITableViewDataSource, UITab
         super.setup()
         
         // Custom Components
-        self.travelsTable.register(UINib(nibName: "AKTravelsTableViewCell", bundle: nil), forCellReuseIdentifier: "Travels_Table_Cell")
+        self.travelsTable.registerNib(UINib(nibName: "AKTravelsTableViewCell", bundle: nil), forCellReuseIdentifier: "Travels_Table_Cell")
         
         // Add UITableView's DataSource & Delegate.
         self.travelsTable?.dataSource = self
         self.travelsTable?.delegate = self
         
         // Custom L&F.
-        self.startRecordingTravel.layer.cornerRadius = CGFloat(GlobalConstants.AKButtonCornerRadius)
+        self.startRecordingTravel.layer.cornerRadius = 4.0
     }
 }

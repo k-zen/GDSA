@@ -6,23 +6,22 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  The MGLAccountManager object provides a global way to set a Mapbox API access
- token.
+ token, as well as other settings used framework-wide.
  */
 @interface MGLAccountManager : NSObject
 
 #pragma mark Authorizing Access
 
 /**
- Set the
- <a href="https://www.mapbox.com/help/define-access-token/">Mapbox access token</a>
+ Set the [Mapbox access token](https://www.mapbox.com/help/define-access-token/)
  to be used by all instances of MGLMapView in the current application.
  
  Mapbox-hosted vector tiles and styles require an API access token, which you
  can obtain from the
- <a href="https://www.mapbox.com/studio/account/tokens/">Mapbox account page</a>.
- Access tokens associate requests to Mapbox’s vector tile and style APIs with
- your Mapbox account. They also deter other developers from using your styles
- without your permission.
+ [Mapbox account page](https://www.mapbox.com/studio/account/tokens/). Access
+ tokens associate requests to Mapbox’s vector tile and style APIs with your
+ Mapbox account. They also deter other developers from using your styles without
+ your permission.
  
  @param accessToken A Mapbox access token. Calling this method with a value of
     `nil` has no effect.
@@ -38,8 +37,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  Returns the
- <a href="https://www.mapbox.com/help/define-access-token/">Mapbox access token</a>
- in use by instances of MGLMapView in the current application.
+ [Mapbox access token](https://www.mapbox.com/help/define-access-token/) in use
+ by instances of MGLMapView in the current application.
  */
 + (nullable NSString *)accessToken;
 

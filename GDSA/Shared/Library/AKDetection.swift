@@ -5,13 +5,13 @@ import UIKit
 class AKDetection: NSObject
 {
     // MARK: Functions
-    static func detect(_ map: MGLMapView, travel: AKTravel, travelSegment: AKTravelSegment)
+    static func detect(let map: MGLMapView, let travel: AKTravel, let travelSegment: AKTravelSegment)
     {
         AKDetection.detectStops(map, travel: travel, travelSegment: travelSegment)
     }
     
     // MARK: Detection
-    private static func detectStops(_ map: MGLMapView, travel: AKTravel, travelSegment: AKTravelSegment)
+    private static func detectStops(let map: MGLMapView, let travel: AKTravel, let travelSegment: AKTravelSegment)
     {
         NSLog("=> DETECTION: *STOPS*")
         
@@ -27,24 +27,24 @@ class AKDetection: NSObject
         
         let lastIndex = segments.endIndex - 2 // EndIndex - 1 = Last Element, so EndIndex - 2 = Penultimate Element
         let firstIndex = lastIndex - elementsToCount + 1
-        for k in (firstIndex ... lastIndex).reversed() { // Iterate in reverse order.
-            totalDistance += segments[k].computeDistance(UnitOfLength.meter)
+        for k in (firstIndex ... lastIndex).reverse() { // Iterate in reverse order.
+            totalDistance += segments[k].computeDistance(UnitOfLength.Meter)
             lastSegment = segments[k]
         }
         
         isStop = totalDistance <= 10 ? 1 : 0 // If it's 1 then is a STOP.
         
         if isStop == 1 {
-            let stopID: String = UUID().uuidString
+            let stopID: String = NSUUID().UUIDString
             var stopTime: Double = 0.0
             
             // Sum stop time.
-            for k in (firstIndex ... lastIndex).reversed() { // Iterate in reverse order.
-                stopTime += segments[k].computeTime(UnitOfTime.second)
+            for k in (firstIndex ... lastIndex).reverse() { // Iterate in reverse order.
+                stopTime += segments[k].computeTime(UnitOfTime.Second)
             }
             
             // Mark all segments with the STOP flag and sum time.
-            for k in (firstIndex ... lastIndex).reversed() { // Iterate in reverse order.
+            for k in (firstIndex ... lastIndex).reverse() { // Iterate in reverse order.
                 segments[k].markAsStop(stopID, stopTime: stopTime)
             }
             

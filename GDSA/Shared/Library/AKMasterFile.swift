@@ -16,13 +16,13 @@ class AKMasterFile: NSObject, NSCoding
         self.travels = []
     }
     
-    init(travels: [AKTravel])
+    init(let travels: [AKTravel])
     {
         self.travels = travels
     }
     
     // MARK: Utilities
-    func addTravel(_ travel: AKTravel)
+    func addTravel(let travel: AKTravel)
     {
         self.travels?.append(travel)
         
@@ -36,7 +36,7 @@ class AKMasterFile: NSObject, NSCoding
     // MARK: NSCoding Implementation
     required convenience init(coder aDecoder: NSCoder)
     {
-        let travels = aDecoder.decodeObject(forKey: Keys.masterFile) as! [AKTravel]
+        let travels = aDecoder.decodeObjectForKey(Keys.masterFile) as! [AKTravel]
         
         if GlobalConstants.AKDebug {
             NSLog("=> ### READING TRAVELS FROM FILE")
@@ -54,9 +54,9 @@ class AKMasterFile: NSObject, NSCoding
         self.init(travels: travels)
     }
     
-    func encode(with aCoder: NSCoder)
+    func encodeWithCoder(aCoder: NSCoder)
     {
-        aCoder.encode(self.travels, forKey: Keys.masterFile)
+        aCoder.encodeObject(self.travels, forKey: Keys.masterFile)
         
         if GlobalConstants.AKDebug {
             NSLog("=> ### WRITING TRAVELS TO FILE")

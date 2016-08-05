@@ -57,31 +57,31 @@ class AKTravelSegment: NSObject, NSCoding
     
     func computeEnd() -> UserLocation { return self.end }
     
-    func computeTime(_ unit: UnitOfTime) -> Double
+    func computeTime(let unit: UnitOfTime) -> Double
     {
         switch unit {
-        case UnitOfTime.second:
+        case UnitOfTime.Second:
             return self.time
-        case UnitOfTime.minute:
+        case UnitOfTime.Minute:
             return self.time / 60
-        case UnitOfTime.hour:
+        case UnitOfTime.Hour:
             return self.time / 3600
         }
     }
     
-    func computeDistance(_ unit: UnitOfLength) -> Double
+    func computeDistance(let unit: UnitOfLength) -> Double
     {
         switch unit {
-        case UnitOfLength.meter:
+        case UnitOfLength.Meter:
             return self.distance
-        case UnitOfLength.kilometer:
+        case UnitOfLength.Kilometer:
             return self.distance / 1000
         }
     }
     
     func computeStop() -> Bool { return self.stop }
     
-    func markAsStop(_ stopID: String, stopTime: Double) { self.stopID = stopID; self.stop = true; self.stopTime = stopTime }
+    func markAsStop(let stopID: String, stopTime: Double) { self.stopID = stopID; self.stop = true; self.stopTime = stopTime }
     
     func shouldSave() -> Bool
     {
@@ -94,11 +94,11 @@ class AKTravelSegment: NSObject, NSCoding
         return true
     }
     
-    func printObject(_ padding: String = "") -> String
+    func printObject(let padding: String = "") -> String
     {
         let string: NSMutableString = NSMutableString()
         
-        string.append("\n")
+        string.appendString("\n")
         string.appendFormat("%@****** TRAVEL SEGMENT ******\n", padding)
         string.appendFormat("%@\t>>> Start = Lat: %f, Lon: %f\n", padding, self.str.lat, self.str.lon)
         string.appendFormat("%@\t>>> End = Lat: %f, Lon: %f\n", padding, self.end.lat, self.end.lon)
@@ -116,29 +116,29 @@ class AKTravelSegment: NSObject, NSCoding
     // MARK: NSCoding Implementation
     required convenience init(coder aDecoder: NSCoder)
     {
-        let str = UserLocation(lat: aDecoder.decodeDouble(forKey: Keys.strLat), lon: aDecoder.decodeDouble(forKey: Keys.strLon))
-        let end = UserLocation(lat: aDecoder.decodeDouble(forKey: Keys.endLat), lon: aDecoder.decodeDouble(forKey: Keys.endLon))
-        let time = aDecoder.decodeDouble(forKey: Keys.time)
-        let distance = aDecoder.decodeDouble(forKey: Keys.distance)
-        let speed = aDecoder.decodeDouble(forKey: Keys.speed)
-        let stopID = aDecoder.decodeObject(forKey: Keys.stopID) as! String
-        let stop = aDecoder.decodeBool(forKey: Keys.stop)
-        let stopTime = aDecoder.decodeDouble(forKey: Keys.stopTime)
+        let str = UserLocation(lat: aDecoder.decodeDoubleForKey(Keys.strLat), lon: aDecoder.decodeDoubleForKey(Keys.strLon))
+        let end = UserLocation(lat: aDecoder.decodeDoubleForKey(Keys.endLat), lon: aDecoder.decodeDoubleForKey(Keys.endLon))
+        let time = aDecoder.decodeDoubleForKey(Keys.time)
+        let distance = aDecoder.decodeDoubleForKey(Keys.distance)
+        let speed = aDecoder.decodeDoubleForKey(Keys.speed)
+        let stopID = aDecoder.decodeObjectForKey(Keys.stopID) as! String
+        let stop = aDecoder.decodeBoolForKey(Keys.stop)
+        let stopTime = aDecoder.decodeDoubleForKey(Keys.stopTime)
         
         self.init(str: str, end: end, time: time, distance: distance, speed: speed, stopID: stopID, stop: stop, stopTime: stopTime)
     }
     
-    func encode(with aCoder: NSCoder)
+    func encodeWithCoder(aCoder: NSCoder)
     {
-        aCoder.encode(self.str.lat, forKey: Keys.strLat)
-        aCoder.encode(self.str.lon, forKey: Keys.strLon)
-        aCoder.encode(self.end.lat, forKey: Keys.endLat)
-        aCoder.encode(self.end.lon, forKey: Keys.endLon)
-        aCoder.encode(self.time, forKey: Keys.time)
-        aCoder.encode(self.distance, forKey: Keys.distance)
-        aCoder.encode(self.speed, forKey: Keys.speed)
-        aCoder.encode(self.stopID, forKey: Keys.stopID)
-        aCoder.encode(self.stop, forKey: Keys.stop)
-        aCoder.encode(self.stopTime, forKey: Keys.stopTime)
+        aCoder.encodeDouble(self.str.lat, forKey: Keys.strLat)
+        aCoder.encodeDouble(self.str.lon, forKey: Keys.strLon)
+        aCoder.encodeDouble(self.end.lat, forKey: Keys.endLat)
+        aCoder.encodeDouble(self.end.lon, forKey: Keys.endLon)
+        aCoder.encodeDouble(self.time, forKey: Keys.time)
+        aCoder.encodeDouble(self.distance, forKey: Keys.distance)
+        aCoder.encodeDouble(self.speed, forKey: Keys.speed)
+        aCoder.encodeObject(self.stopID, forKey: Keys.stopID)
+        aCoder.encodeBool(self.stop, forKey: Keys.stop)
+        aCoder.encodeDouble(self.stopTime, forKey: Keys.stopTime)
     }
 }

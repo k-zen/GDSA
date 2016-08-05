@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4216E7129EE45E75C3D6F62D /* Pods_GDSA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1818E2416E679C6D528FE9F5 /* Pods_GDSA.framework */; };
+		178A34455A0F7214483C7616 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E02FA7FCAA3C364950EA04A8 /* Pods.framework */; };
 		490F91551CF785BF0031B8AE /* AKTravelInfoOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490F91541CF785BF0031B8AE /* AKTravelInfoOverlayView.xib */; };
 		490F91581CF7870F0031B8AE /* AKCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 490F91571CF7870F0031B8AE /* AKCustomView.m */; };
 		490F915A1CF7876B0031B8AE /* AKTravelInfoOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F91591CF7876B0031B8AE /* AKTravelInfoOverlayView.swift */; };
@@ -17,13 +17,11 @@
 		4922DD721CE67C01003E0AFB /* AKViewTravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4922DD711CE67C01003E0AFB /* AKViewTravelViewController.swift */; };
 		4934C6781D0AF920004754AF /* AKFileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4934C6771D0AF920004754AF /* AKFileUtils.swift */; };
 		4934C67A1D0B5FEB004754AF /* AKMasterFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4934C6791D0B5FEB004754AF /* AKMasterFile.swift */; };
-		494344331D1D80CB005681C3 /* GDSATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494344321D1D80CB005681C3 /* GDSATests.swift */; };
 		495683341CEA235B0057B06E /* AKCustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495683331CEA235B0057B06E /* AKCustomViewController.swift */; };
 		495683361CEA268B0057B06E /* AKConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495683351CEA268B0057B06E /* AKConstants.swift */; };
 		495683391CEA57BC0057B06E /* AKInputData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495683371CEA57BC0057B06E /* AKInputData.swift */; };
 		4956833A1CEA57BC0057B06E /* AKTravelSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495683381CEA57BC0057B06E /* AKTravelSegment.swift */; };
 		4967CF981D060A560050DDF2 /* AKFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4967CF971D060A560050DDF2 /* AKFilters.swift */; };
-		4986E92B1D1C37C0009E54E4 /* Home-UCA-Route_1.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 4986E92A1D1C37C0009E54E4 /* Home-UCA-Route_1.tsv */; };
 		499DB6801CB6E8B900342742 /* 0001-512px.png in Resources */ = {isa = PBXBuildFile; fileRef = 499DB6791CB6E8B900342742 /* 0001-512px.png */; };
 		499DB6811CB6E8B900342742 /* AppIcon-29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 499DB67A1CB6E8B900342742 /* AppIcon-29@2x.png */; };
 		499DB6821CB6E8B900342742 /* AppIcon-29@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 499DB67B1CB6E8B900342742 /* AppIcon-29@3x.png */; };
@@ -41,21 +39,9 @@
 		49B252351CB2FA13005C88C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49B2522D1CB2FA13005C88C9 /* Assets.xcassets */; };
 		49BEBB1A1CEA635F00A5FC12 /* AKTravel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BEBB191CEA635F00A5FC12 /* AKTravel.swift */; };
 		49CAA8471D1B3A25007BDD57 /* 0003-128px.png in Resources */ = {isa = PBXBuildFile; fileRef = 49CAA8461D1B3A25007BDD57 /* 0003-128px.png */; };
-		49D889E61D21714100CEBB9E /* Read_Route.py in Resources */ = {isa = PBXBuildFile; fileRef = 49D889E51D21714100CEBB9E /* Read_Route.py */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		494344351D1D80CB005681C3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 49B251E91CB2F26B005C88C9 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 49B251F01CB2F26B005C88C9;
-			remoteInfo = GDSA;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		1818E2416E679C6D528FE9F5 /* Pods_GDSA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GDSA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		490F91541CF785BF0031B8AE /* AKTravelInfoOverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AKTravelInfoOverlayView.xib; sourceTree = "<group>"; };
 		490F91561CF7870F0031B8AE /* AKCustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKCustomView.h; sourceTree = "<group>"; };
 		490F91571CF7870F0031B8AE /* AKCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKCustomView.m; sourceTree = "<group>"; };
@@ -66,14 +52,11 @@
 		4922DD711CE67C01003E0AFB /* AKViewTravelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKViewTravelViewController.swift; sourceTree = "<group>"; };
 		4934C6771D0AF920004754AF /* AKFileUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKFileUtils.swift; sourceTree = "<group>"; };
 		4934C6791D0B5FEB004754AF /* AKMasterFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKMasterFile.swift; sourceTree = "<group>"; };
-		494344301D1D80CB005681C3 /* GDSATests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GDSATests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		494344321D1D80CB005681C3 /* GDSATests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDSATests.swift; sourceTree = "<group>"; };
 		495683331CEA235B0057B06E /* AKCustomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKCustomViewController.swift; sourceTree = "<group>"; };
 		495683351CEA268B0057B06E /* AKConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKConstants.swift; sourceTree = "<group>"; };
 		495683371CEA57BC0057B06E /* AKInputData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKInputData.swift; sourceTree = "<group>"; };
 		495683381CEA57BC0057B06E /* AKTravelSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKTravelSegment.swift; sourceTree = "<group>"; };
 		4967CF971D060A560050DDF2 /* AKFilters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKFilters.swift; sourceTree = "<group>"; };
-		4986E92A1D1C37C0009E54E4 /* Home-UCA-Route_1.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Home-UCA-Route_1.tsv"; sourceTree = "<group>"; };
 		499DB6791CB6E8B900342742 /* 0001-512px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "0001-512px.png"; sourceTree = "<group>"; };
 		499DB67A1CB6E8B900342742 /* AppIcon-29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon-29@2x.png"; sourceTree = "<group>"; };
 		499DB67B1CB6E8B900342742 /* AppIcon-29@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon-29@3x.png"; sourceTree = "<group>"; };
@@ -92,59 +75,25 @@
 		49B252291CB2FA13005C88C9 /* AKMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AKMain.storyboard; sourceTree = "<group>"; };
 		49B2522D1CB2FA13005C88C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49B252311CB2FA13005C88C9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		49BE0DAA1D30540900F50868 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49BEBB191CEA635F00A5FC12 /* AKTravel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKTravel.swift; sourceTree = "<group>"; };
 		49CAA8461D1B3A25007BDD57 /* 0003-128px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "0003-128px.png"; sourceTree = "<group>"; };
-		49D889E51D21714100CEBB9E /* Read_Route.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = Read_Route.py; sourceTree = "<group>"; };
-		6200416BB172E62A0A82470C /* Pods-GDSA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GDSA.release.xcconfig"; path = "Pods/Target Support Files/Pods-GDSA/Pods-GDSA.release.xcconfig"; sourceTree = "<group>"; };
-		6F1BBB1256C594003928737D /* Pods-GDSA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GDSA.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GDSA/Pods-GDSA.debug.xcconfig"; sourceTree = "<group>"; };
+		BBC791C1362B49FEE23CD920 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E02FA7FCAA3C364950EA04A8 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F12237D9CD9C0B4697286FF7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4943442D1D1D80CB005681C3 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		49B251EE1CB2F26B005C88C9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4216E7129EE45E75C3D6F62D /* Pods_GDSA.framework in Frameworks */,
+				178A34455A0F7214483C7616 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1A7A81B7153109286A93E891 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				6F1BBB1256C594003928737D /* Pods-GDSA.debug.xcconfig */,
-				6200416BB172E62A0A82470C /* Pods-GDSA.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		492427151D54D9FE004820EF /* Simulations */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Simulations;
-			sourceTree = "<group>";
-		};
-		494344311D1D80CB005681C3 /* GDSATests */ = {
-			isa = PBXGroup;
-			children = (
-				494344321D1D80CB005681C3 /* GDSATests.swift */,
-				49BE0DA91D30540900F50868 /* Supporting Files */,
-			);
-			path = GDSATests;
-			sourceTree = "<group>";
-		};
 		495683321CEA235B0057B06E /* CustomComponents */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,14 +106,6 @@
 			path = CustomComponents;
 			sourceTree = "<group>";
 		};
-		4986E92C1D1C4DAC009E54E4 /* Scripts */ = {
-			isa = PBXGroup;
-			children = (
-				49D889E51D21714100CEBB9E /* Read_Route.py */,
-			);
-			path = Scripts;
-			sourceTree = "<group>";
-		};
 		499DB6761CB6E8B900342742 /* Certificates */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,12 +113,11 @@
 			path = Certificates;
 			sourceTree = "<group>";
 		};
-		499DB6771CB6E8B900342742 /* Routes */ = {
+		499DB6771CB6E8B900342742 /* Files */ = {
 			isa = PBXGroup;
 			children = (
-				4986E92A1D1C37C0009E54E4 /* Home-UCA-Route_1.tsv */,
 			);
-			path = Routes;
+			path = Files;
 			sourceTree = "<group>";
 		};
 		499DB6781CB6E8B900342742 /* Images */ = {
@@ -202,10 +142,9 @@
 				49B252221CB2F84D005C88C9 /* Podfile */,
 				49B252211CB2F84D005C88C9 /* CHANGES.txt */,
 				49B251F31CB2F26B005C88C9 /* GDSA */,
-				494344311D1D80CB005681C3 /* GDSATests */,
 				49B251F21CB2F26B005C88C9 /* Products */,
+				C9BF0941AE39059F0DE534A3 /* Pods */,
 				66481AA77F176DBE344C17C0 /* Frameworks */,
-				1A7A81B7153109286A93E891 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -213,7 +152,6 @@
 			isa = PBXGroup;
 			children = (
 				49B251F11CB2F26B005C88C9 /* GDSA.app */,
-				494344301D1D80CB005681C3 /* GDSATests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -273,10 +211,8 @@
 			children = (
 				49B2522D1CB2FA13005C88C9 /* Assets.xcassets */,
 				499DB6761CB6E8B900342742 /* Certificates */,
+				499DB6771CB6E8B900342742 /* Files */,
 				499DB6781CB6E8B900342742 /* Images */,
-				499DB6771CB6E8B900342742 /* Routes */,
-				4986E92C1D1C4DAC009E54E4 /* Scripts */,
-				492427151D54D9FE004820EF /* Simulations */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -313,54 +249,36 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		49BE0DA91D30540900F50868 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				49BE0DAA1D30540900F50868 /* Info.plist */,
-			);
-			path = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		66481AA77F176DBE344C17C0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				E02FA7FCAA3C364950EA04A8 /* Pods.framework */,
-				1818E2416E679C6D528FE9F5 /* Pods_GDSA.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C9BF0941AE39059F0DE534A3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BBC791C1362B49FEE23CD920 /* Pods.debug.xcconfig */,
+				F12237D9CD9C0B4697286FF7 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4943442F1D1D80CB005681C3 /* GDSATests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 494344391D1D80CB005681C3 /* Build configuration list for PBXNativeTarget "GDSATests" */;
-			buildPhases = (
-				4943442C1D1D80CB005681C3 /* Sources */,
-				4943442D1D1D80CB005681C3 /* Frameworks */,
-				4943442E1D1D80CB005681C3 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				494344361D1D80CB005681C3 /* PBXTargetDependency */,
-			);
-			name = GDSATests;
-			productName = GDSATests;
-			productReference = 494344301D1D80CB005681C3 /* GDSATests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		49B251F01CB2F26B005C88C9 /* GDSA */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 49B252031CB2F26B005C88C9 /* Build configuration list for PBXNativeTarget "GDSA" */;
 			buildPhases = (
-				943638549CE1E2AA69507714 /* [CP] Check Pods Manifest.lock */,
+				42183EA6A6E1FEB723713B0B /* Check Pods Manifest.lock */,
 				49B251ED1CB2F26B005C88C9 /* Sources */,
 				49B251EE1CB2F26B005C88C9 /* Frameworks */,
 				49B251EF1CB2F26B005C88C9 /* Resources */,
-				7C73BA53BE2C81786116202F /* [CP] Embed Pods Frameworks */,
-				6155082010E98FAB96AB5515 /* [CP] Copy Pods Resources */,
+				BBFC7B3B7D467DD4A564E5D0 /* Embed Pods Frameworks */,
+				F7DD6ECDFD8BFDFA5D6C6595 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -379,20 +297,12 @@
 			attributes = {
 				CLASSPREFIX = AK;
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = APKC.net;
 				TargetAttributes = {
-					4943442F1D1D80CB005681C3 = {
-						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 8JQ7MFA6Q2;
-						LastSwiftMigration = 0800;
-						ProvisioningStyle = Manual;
-					};
 					49B251F01CB2F26B005C88C9 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 8JQ7MFA6Q2;
-						LastSwiftMigration = 0800;
-						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -418,19 +328,11 @@
 			projectRoot = "";
 			targets = (
 				49B251F01CB2F26B005C88C9 /* GDSA */,
-				4943442F1D1D80CB005681C3 /* GDSATests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		4943442E1D1D80CB005681C3 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		49B251EF1CB2F26B005C88C9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -445,11 +347,9 @@
 				499DB6811CB6E8B900342742 /* AppIcon-29@2x.png in Resources */,
 				490F91551CF785BF0031B8AE /* AKTravelInfoOverlayView.xib in Resources */,
 				49B252231CB2F84D005C88C9 /* CHANGES.txt in Resources */,
-				49D889E61D21714100CEBB9E /* Read_Route.py in Resources */,
 				49B252341CB2FA13005C88C9 /* AKMain.storyboard in Resources */,
 				49CAA8471D1B3A25007BDD57 /* 0003-128px.png in Resources */,
 				499DB6821CB6E8B900342742 /* AppIcon-29@3x.png in Resources */,
-				4986E92B1D1C37C0009E54E4 /* Home-UCA-Route_1.tsv in Resources */,
 				49B252351CB2FA13005C88C9 /* Assets.xcassets in Resources */,
 				49199ABD1D15A367009A5A31 /* AKTravelsTableViewCell.xib in Resources */,
 			);
@@ -458,44 +358,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6155082010E98FAB96AB5515 /* [CP] Copy Pods Resources */ = {
+		42183EA6A6E1FEB723713B0B /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GDSA/Pods-GDSA-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7C73BA53BE2C81786116202F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GDSA/Pods-GDSA-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		943638549CE1E2AA69507714 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -503,17 +373,39 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		BBFC7B3B7D467DD4A564E5D0 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F7DD6ECDFD8BFDFA5D6C6595 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4943442C1D1D80CB005681C3 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				494344331D1D80CB005681C3 /* GDSATests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		49B251ED1CB2F26B005C88C9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -539,46 +431,7 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		494344361D1D80CB005681C3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 49B251F01CB2F26B005C88C9 /* GDSA */;
-			targetProxy = 494344351D1D80CB005681C3 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		494344371D1D80CB005681C3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 8JQ7MFA6Q2;
-				INFOPLIST_FILE = "GDSATests/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = net.apkc.projects.ios.GDSATests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Debug;
-		};
-		494344381D1D80CB005681C3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 8JQ7MFA6Q2;
-				INFOPLIST_FILE = "GDSATests/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = net.apkc.projects.ios.GDSATests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
 		49B252011CB2F26B005C88C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -593,12 +446,11 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -617,7 +469,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -639,12 +491,11 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -657,7 +508,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -666,53 +517,37 @@
 		};
 		49B252041CB2F26B005C88C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6F1BBB1256C594003928737D /* Pods-GDSA.debug.xcconfig */;
+			baseConfigurationReference = BBC791C1362B49FEE23CD920 /* Pods.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Andreas P. Koenzen (5GQB46H9ER)";
-				DEVELOPMENT_TEAM = 8JQ7MFA6Q2;
 				INFOPLIST_FILE = "$(SRCROOT)/GDSA/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.apkc.projects.ios.GDSA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "GDSA (iOS Development)";
+				PROVISIONING_PROFILE = "0fb9fd46-1890-4bf5-80fb-2f95a7592420";
 				SWIFT_OBJC_BRIDGING_HEADER = GDSA/iPhone/Application/AKBridgingHeader.h;
-				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		49B252051CB2F26B005C88C9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6200416BB172E62A0A82470C /* Pods-GDSA.release.xcconfig */;
+			baseConfigurationReference = F12237D9CD9C0B4697286FF7 /* Pods.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Andreas P. Koenzen (5GQB46H9ER)";
-				DEVELOPMENT_TEAM = 8JQ7MFA6Q2;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Andreas P. Koenzen (8JQ7MFA6Q2)";
 				INFOPLIST_FILE = "$(SRCROOT)/GDSA/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.apkc.projects.ios.GDSA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "GDSA (iOS Development)";
+				PROVISIONING_PROFILE = "0fb9fd46-1890-4bf5-80fb-2f95a7592420";
 				SWIFT_OBJC_BRIDGING_HEADER = GDSA/iPhone/Application/AKBridgingHeader.h;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		494344391D1D80CB005681C3 /* Build configuration list for PBXNativeTarget "GDSATests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				494344371D1D80CB005681C3 /* Debug */,
-				494344381D1D80CB005681C3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		49B251EC1CB2F26B005C88C9 /* Build configuration list for PBXProject "GDSA" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
