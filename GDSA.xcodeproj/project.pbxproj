@@ -22,6 +22,8 @@
 		495683391CEA57BC0057B06E /* AKInputData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495683371CEA57BC0057B06E /* AKInputData.swift */; };
 		4956833A1CEA57BC0057B06E /* AKTravelSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495683381CEA57BC0057B06E /* AKTravelSegment.swift */; };
 		4967CF981D060A560050DDF2 /* AKFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4967CF971D060A560050DDF2 /* AKFilters.swift */; };
+		4981C7F01D55530200908876 /* Home-UCA-Route_1.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 4981C7EC1D55530200908876 /* Home-UCA-Route_1.tsv */; };
+		4981C7F11D55530200908876 /* Read_Route.py in Resources */ = {isa = PBXBuildFile; fileRef = 4981C7EE1D55530200908876 /* Read_Route.py */; };
 		499DB6801CB6E8B900342742 /* 0001-512px.png in Resources */ = {isa = PBXBuildFile; fileRef = 499DB6791CB6E8B900342742 /* 0001-512px.png */; };
 		499DB6811CB6E8B900342742 /* AppIcon-29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 499DB67A1CB6E8B900342742 /* AppIcon-29@2x.png */; };
 		499DB6821CB6E8B900342742 /* AppIcon-29@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 499DB67B1CB6E8B900342742 /* AppIcon-29@3x.png */; };
@@ -57,6 +59,8 @@
 		495683371CEA57BC0057B06E /* AKInputData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKInputData.swift; sourceTree = "<group>"; };
 		495683381CEA57BC0057B06E /* AKTravelSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKTravelSegment.swift; sourceTree = "<group>"; };
 		4967CF971D060A560050DDF2 /* AKFilters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKFilters.swift; sourceTree = "<group>"; };
+		4981C7EC1D55530200908876 /* Home-UCA-Route_1.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Home-UCA-Route_1.tsv"; sourceTree = "<group>"; };
+		4981C7EE1D55530200908876 /* Read_Route.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = Read_Route.py; sourceTree = "<group>"; };
 		499DB6791CB6E8B900342742 /* 0001-512px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "0001-512px.png"; sourceTree = "<group>"; };
 		499DB67A1CB6E8B900342742 /* AppIcon-29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon-29@2x.png"; sourceTree = "<group>"; };
 		499DB67B1CB6E8B900342742 /* AppIcon-29@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon-29@3x.png"; sourceTree = "<group>"; };
@@ -106,18 +110,27 @@
 			path = CustomComponents;
 			sourceTree = "<group>";
 		};
-		499DB6761CB6E8B900342742 /* Certificates */ = {
+		4981C7EB1D55530200908876 /* Routes */ = {
 			isa = PBXGroup;
 			children = (
+				4981C7EC1D55530200908876 /* Home-UCA-Route_1.tsv */,
 			);
-			path = Certificates;
+			path = Routes;
 			sourceTree = "<group>";
 		};
-		499DB6771CB6E8B900342742 /* Files */ = {
+		4981C7ED1D55530200908876 /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				4981C7EE1D55530200908876 /* Read_Route.py */,
+			);
+			path = Scripts;
+			sourceTree = "<group>";
+		};
+		4981C7EF1D55530200908876 /* Simulations */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Files;
+			path = Simulations;
 			sourceTree = "<group>";
 		};
 		499DB6781CB6E8B900342742 /* Images */ = {
@@ -210,9 +223,10 @@
 			isa = PBXGroup;
 			children = (
 				49B2522D1CB2FA13005C88C9 /* Assets.xcassets */,
-				499DB6761CB6E8B900342742 /* Certificates */,
-				499DB6771CB6E8B900342742 /* Files */,
 				499DB6781CB6E8B900342742 /* Images */,
+				4981C7EB1D55530200908876 /* Routes */,
+				4981C7ED1D55530200908876 /* Scripts */,
+				4981C7EF1D55530200908876 /* Simulations */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -347,6 +361,8 @@
 				499DB6811CB6E8B900342742 /* AppIcon-29@2x.png in Resources */,
 				490F91551CF785BF0031B8AE /* AKTravelInfoOverlayView.xib in Resources */,
 				49B252231CB2F84D005C88C9 /* CHANGES.txt in Resources */,
+				4981C7F11D55530200908876 /* Read_Route.py in Resources */,
+				4981C7F01D55530200908876 /* Home-UCA-Route_1.tsv in Resources */,
 				49B252341CB2FA13005C88C9 /* AKMain.storyboard in Resources */,
 				49CAA8471D1B3A25007BDD57 /* 0003-128px.png in Resources */,
 				499DB6821CB6E8B900342742 /* AppIcon-29@3x.png in Resources */,
