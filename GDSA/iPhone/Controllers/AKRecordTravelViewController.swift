@@ -7,7 +7,7 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
 {
     // MARK: Local Structures
     struct Defaults {
-        static let AKDefaultStrokeAndFillColor = UIColor.clear()
+        static let AKDefaultStrokeAndFillColor = UIColor.clear
         static let AKDefaultAlpha = 1.0
         static let AKDefaultLineWidth = 1.0
     }

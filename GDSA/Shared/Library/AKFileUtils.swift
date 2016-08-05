@@ -1,10 +1,10 @@
 import Foundation
 
-enum FileIOError: ErrorProtocol
+enum FileIOError: Error
 {
-    case notSerializableObject(String)
-    case fileCreationError(String)
-    case fileWriteError(String)
+    case notSerializableObject(text: String)
+    case fileCreationError(text: String)
+    case fileWriteError(text: String)
 }
 
 /// Utility class for handling file IO inside the App.
@@ -22,27 +22,27 @@ class AKFileUtils {
         shouldCreate: Bool) throws -> String?
     {
         let fm: FileManager = FileManager()
-        let appSupportDir: URL = try fm.urlForDirectory(
-            location,
+        let appSupportDir: URL = try fm.url(
+            for: FileManager.SearchPathDirectory.applicationSupportDirectory,
             in: FileManager.SearchPathDomainMask.userDomainMask,
             appropriateFor: nil,
             create: true
         )
         
-        if fm.fileExists(atPath: try! appSupportDir.appendingPathComponent(fileName).path!) {
-            return try! appSupportDir.appendingPathComponent(fileName).path
+        if fm.fileExists(atPath: appSupportDir.appendingPathComponent(fileName).path) {
+            return appSupportDir.appendingPathComponent(fileName).path
         }
         else {
             if shouldCreate {
                 NSLog("=> FILE *%@* DOES NOT EXISTS! CREATING...", fileName)
-                guard fm.createFile(atPath: try! appSupportDir.appendingPathComponent(fileName).path!, contents: nil, attributes: nil) else {
-                    throw FileIOError.fileCreationError("File cannot be created.")
+                guard fm.createFile(atPath: appSupportDir.appendingPathComponent(fileName).path, contents: nil, attributes: nil) else {
+                    throw FileIOError.fileCreationError(text: "File cannot be created.")
                 }
                 
-                return try! appSupportDir.appendingPathComponent(fileName).path
+                return appSupportDir.appendingPathComponent(fileName).path
             }
             else {
-                throw FileIOError.fileCreationError("No file to open.")
+                throw FileIOError.fileCreationError(text: "No file to open.")
             }
         }
     }
@@ -56,14 +56,14 @@ class AKFileUtils {
         let fileName = String(format: "%@.%@.%@", fileName, AKAppVersion(), AKAppBuild())
         
         // 1. Check that object is serializable.
-        guard newData is NSCoding else { throw FileIOError.notSerializableObject("Object not serializable.") }
+        guard newData is NSCoding else { throw FileIOError.notSerializableObject(text: "Object not serializable.") }
         
         do {
             NSLog("=> WRITING DATA...")
             
             let path = try AKFileUtils.openFileArchive(fileName, location: FileManager.SearchPathDirectory.applicationSupportDirectory, shouldCreate: true)
             guard NSKeyedArchiver.archiveRootObject(newData, toFile: path!) else {
-                throw FileIOError.fileWriteError("Error writing data to file.")
+                throw FileIOError.fileWriteError(text: "Error writing data to file.")
             }
         }
         catch {

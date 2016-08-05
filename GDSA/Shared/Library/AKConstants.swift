@@ -51,7 +51,7 @@ struct GlobalConstants {
     static let AKTravelSegmentAnnotationTitle = "Segment"
     static let AKTravelStopPointMarkTitle = "Stop Circle"
     static let AKTravelStopPointMarkAlpha = 0.25
-    static let AKTravelStopPointMarkColor = UIColor.red()
+    static let AKTravelStopPointMarkColor = UIColor.red
     static let AKTravelStopPointPinTitle = "Stop"
     static let AKTravelPathLineColor = AKHexColor(0xE09E9F)
     static let AKTravelPathLineWidth = 6.0
@@ -73,11 +73,11 @@ enum ErrorCodes: Int {
     case generic = 1000
 }
 
-enum Exceptions: ErrorProtocol {
-    case notInitialized(String)
-    case emptyData(String)
-    case invalidLength(String)
-    case notValid(String)
+enum Exceptions: Error {
+    case notInitialized(text: String)
+    case emptyData(text: String)
+    case invalidLength(text: String)
+    case notValid(text: String)
 }
 
 enum UnitOfLength: Int {
@@ -117,7 +117,7 @@ func AKAppBuild() -> String
 /// - Returns: The App's version.
 func AKAppVersion() -> String
 {
-    if let v = Bundle.main.objectForInfoDictionaryKey("CFBundleShortVersionString") as? String {
+    if let v = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String {
         return v
     }
     else {
@@ -131,13 +131,13 @@ func AKAppVersion() -> String
 /// - Parameter task:  The function to execute.
 func AKDelay(_ delay: Double, task: (Void) -> Void)
 {
-    DispatchQueue.main.after(when: DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: task)
+    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: task)
 }
 
 /// Returns the App's delegate object.
 ///
 /// - Returns: The App's delegate object.
-func AKDelegate() -> AKAppDelegate { return UIApplication.shared().delegate as! AKAppDelegate }
+func AKDelegate() -> AKAppDelegate { return UIApplication.shared.delegate as! AKAppDelegate }
 
 /// Returns the App's master file object.
 ///
@@ -148,7 +148,7 @@ func AKObtainMasterFile() throws -> AKMasterFile
         return mf
     }
     else {
-        throw Exceptions.notInitialized("The *Master File* has not been initialized.")
+        throw Exceptions.notInitialized(text: "The *Master File* has not been initialized.")
     }
 }
 
@@ -292,11 +292,11 @@ func AKPresentMessageFromError(_ errorMessage: String = "", controller: AKCustom
 {
     do {
         let input = errorMessage
-        let regex = try RegularExpression(pattern: ".*\"(.*)\"", options: RegularExpression.Options.caseInsensitive)
+        let regex = try NSRegularExpression(pattern: ".*\"(.*)\"", options: NSRegularExpression.Options.caseInsensitive)
         let matches = regex.matches(in: input, options: [], range: NSMakeRange(0, input.characters.count))
         
         if let match = matches.first {
-            let range = match.range(at: 1)
+            let range = match.rangeAt(1)
             if let swiftRange = AKRangeFromNSRange(range, forString: input) {
                 let msg = input.substring(with: swiftRange)
                 AKPresentTopMessageError(controller, message: msg)

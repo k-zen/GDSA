@@ -129,6 +129,13 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		492427151D54D9FE004820EF /* Simulations */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Simulations;
+			sourceTree = "<group>";
+		};
 		494344311D1D80CB005681C3 /* GDSATests */ = {
 			isa = PBXGroup;
 			children = (
@@ -269,6 +276,7 @@
 				499DB6781CB6E8B900342742 /* Images */,
 				499DB6771CB6E8B900342742 /* Routes */,
 				4986E92C1D1C4DAC009E54E4 /* Scripts */,
+				492427151D54D9FE004820EF /* Simulations */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -376,6 +384,7 @@
 				TargetAttributes = {
 					4943442F1D1D80CB005681C3 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 8JQ7MFA6Q2;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Manual;
 					};
@@ -383,6 +392,7 @@
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 8JQ7MFA6Q2;
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -541,13 +551,14 @@
 		494344371D1D80CB005681C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 8JQ7MFA6Q2;
 				INFOPLIST_FILE = "GDSATests/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.apkc.projects.ios.GDSATests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = 8JQ7MFA6Q2/;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -555,13 +566,14 @@
 		494344381D1D80CB005681C3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 8JQ7MFA6Q2;
 				INFOPLIST_FILE = "GDSATests/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.apkc.projects.ios.GDSATests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = 8JQ7MFA6Q2/;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 			};
@@ -581,8 +593,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
@@ -625,8 +639,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
@@ -654,12 +670,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Andreas P. Koenzen (5GQB46H9ER)";
+				DEVELOPMENT_TEAM = 8JQ7MFA6Q2;
 				INFOPLIST_FILE = "$(SRCROOT)/GDSA/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.apkc.projects.ios.GDSA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0fb9fd46-1890-4bf5-80fb-2f95a7592420";
+				PROVISIONING_PROFILE_SPECIFIER = "GDSA (iOS Development)";
 				SWIFT_OBJC_BRIDGING_HEADER = GDSA/iPhone/Application/AKBridgingHeader.h;
 				SWIFT_VERSION = 3.0;
 			};
@@ -671,12 +688,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Andreas P. Koenzen (5GQB46H9ER)";
+				DEVELOPMENT_TEAM = 8JQ7MFA6Q2;
 				INFOPLIST_FILE = "$(SRCROOT)/GDSA/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.apkc.projects.ios.GDSA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0fb9fd46-1890-4bf5-80fb-2f95a7592420";
+				PROVISIONING_PROFILE_SPECIFIER = "GDSA (iOS Development)";
 				SWIFT_OBJC_BRIDGING_HEADER = GDSA/iPhone/Application/AKBridgingHeader.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;

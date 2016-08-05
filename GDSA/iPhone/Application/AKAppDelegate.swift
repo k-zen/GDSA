@@ -100,7 +100,7 @@ class AKAppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelega
         }
     }
     
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: NSError) { NSLog("=> LOCATION SERVICES ERROR ==> %@", error.description) }
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) { NSLog("=> LOCATION SERVICES ERROR ==> %@", error.localizedDescription) }
     
     func locationManagerDidPauseLocationUpdates(_ manager: CLLocationManager) { NSLog("=> LOCATION SERVICES HAS PAUSED.") }
     

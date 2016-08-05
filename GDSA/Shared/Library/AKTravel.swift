@@ -53,7 +53,7 @@ class AKTravel: NSObject, NSCoding
             return self.origin
         }
         else {
-            throw Exceptions.notInitialized("The travel origin has not been set!")
+            throw Exceptions.notInitialized(text: "The travel origin has not been set!")
         }
     }
     
@@ -63,7 +63,7 @@ class AKTravel: NSObject, NSCoding
             return CLLocationCoordinate2DMake(self.origin.lat, self.origin.lon)
         }
         else {
-            throw Exceptions.notInitialized("The travel origin has not been set!")
+            throw Exceptions.notInitialized(text: "The travel origin has not been set!")
         }
     }
     
@@ -73,7 +73,7 @@ class AKTravel: NSObject, NSCoding
             return self.destination
         }
         else {
-            throw Exceptions.notInitialized("The travel destination has not been set!")
+            throw Exceptions.notInitialized(text: "The travel destination has not been set!")
         }
     }
     
@@ -83,7 +83,7 @@ class AKTravel: NSObject, NSCoding
             return CLLocationCoordinate2DMake(self.destination.lat, self.destination.lon)
         }
         else {
-            throw Exceptions.notInitialized("The travel destination has not been set!")
+            throw Exceptions.notInitialized(text: "The travel destination has not been set!")
         }
     }
     

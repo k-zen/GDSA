@@ -59,7 +59,7 @@ class AKMainViewController: AKCustomViewController, UITableViewDataSource, UITab
         
         let title = UILabel(frame: headerCell.frame)
         title.font = UIFont(name: GlobalConstants.AKDefaultFont, size: 16.0)
-        title.textColor = UIColor.white()
+        title.textColor = UIColor.white
         title.text = "Travels"
         
         headerCell.addSubview(title)
