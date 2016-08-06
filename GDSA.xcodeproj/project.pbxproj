@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4909CE5F1D555E2300A8B5FD /* integeruniquer.data in Resources */ = {isa = PBXBuildFile; fileRef = 4909CE551D555E2300A8B5FD /* integeruniquer.data */; };
+		4909CE601D555E2300A8B5FD /* integeruniquer.index in Resources */ = {isa = PBXBuildFile; fileRef = 4909CE561D555E2300A8B5FD /* integeruniquer.index */; };
+		4909CE611D555E2300A8B5FD /* integeruniquer.data in Resources */ = {isa = PBXBuildFile; fileRef = 4909CE581D555E2300A8B5FD /* integeruniquer.data */; };
+		4909CE621D555E2300A8B5FD /* integeruniquer.index in Resources */ = {isa = PBXBuildFile; fileRef = 4909CE591D555E2300A8B5FD /* integeruniquer.index */; };
+		4909CE631D555E2300A8B5FD /* MANIFEST.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4909CE5A1D555E2300A8B5FD /* MANIFEST.plist */; };
+		4909CE641D555E2300A8B5FD /* form.template in Resources */ = {isa = PBXBuildFile; fileRef = 4909CE5B1D555E2300A8B5FD /* form.template */; };
 		490F91551CF785BF0031B8AE /* AKTravelInfoOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490F91541CF785BF0031B8AE /* AKTravelInfoOverlayView.xib */; };
 		490F91581CF7870F0031B8AE /* AKCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 490F91571CF7870F0031B8AE /* AKCustomView.m */; };
 		490F915A1CF7876B0031B8AE /* AKTravelInfoOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F91591CF7876B0031B8AE /* AKTravelInfoOverlayView.swift */; };
@@ -46,6 +52,12 @@
 /* Begin PBXFileReference section */
 		112557B2B953CDA77E4FF6A8 /* Pods_GDSA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GDSA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		171705F8CE2165FB5BB5DD10 /* Pods-GDSA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GDSA.release.xcconfig"; path = "Pods/Target Support Files/Pods-GDSA/Pods-GDSA.release.xcconfig"; sourceTree = "<group>"; };
+		4909CE551D555E2300A8B5FD /* integeruniquer.data */ = {isa = PBXFileReference; lastKnownFileType = file; path = integeruniquer.data; sourceTree = "<group>"; };
+		4909CE561D555E2300A8B5FD /* integeruniquer.index */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = integeruniquer.index; sourceTree = "<group>"; };
+		4909CE581D555E2300A8B5FD /* integeruniquer.data */ = {isa = PBXFileReference; lastKnownFileType = file; path = integeruniquer.data; sourceTree = "<group>"; };
+		4909CE591D555E2300A8B5FD /* integeruniquer.index */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = integeruniquer.index; sourceTree = "<group>"; };
+		4909CE5A1D555E2300A8B5FD /* MANIFEST.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MANIFEST.plist; sourceTree = "<group>"; };
+		4909CE5B1D555E2300A8B5FD /* form.template */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = form.template; sourceTree = "<group>"; };
 		490F91541CF785BF0031B8AE /* AKTravelInfoOverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AKTravelInfoOverlayView.xib; sourceTree = "<group>"; };
 		490F91561CF7870F0031B8AE /* AKCustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKCustomView.h; sourceTree = "<group>"; };
 		490F91571CF7870F0031B8AE /* AKCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKCustomView.m; sourceTree = "<group>"; };
@@ -99,6 +111,91 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4909CE4F1D555E2300A8B5FD /* Travel_Simulation.trace */ = {
+			isa = PBXGroup;
+			children = (
+				4909CE501D555E2300A8B5FD /* corespace */,
+				4909CE5B1D555E2300A8B5FD /* form.template */,
+				4909CE5C1D555E2300A8B5FD /* instrument_data */,
+			);
+			path = Travel_Simulation.trace;
+			sourceTree = "<group>";
+		};
+		4909CE501D555E2300A8B5FD /* corespace */ = {
+			isa = PBXGroup;
+			children = (
+				4909CE511D555E2300A8B5FD /* currentRun */,
+				4909CE5A1D555E2300A8B5FD /* MANIFEST.plist */,
+			);
+			path = corespace;
+			sourceTree = "<group>";
+		};
+		4909CE511D555E2300A8B5FD /* currentRun */ = {
+			isa = PBXGroup;
+			children = (
+				4909CE521D555E2300A8B5FD /* core */,
+			);
+			path = currentRun;
+			sourceTree = "<group>";
+		};
+		4909CE521D555E2300A8B5FD /* core */ = {
+			isa = PBXGroup;
+			children = (
+				4909CE531D555E2300A8B5FD /* uniquing */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		4909CE531D555E2300A8B5FD /* uniquing */ = {
+			isa = PBXGroup;
+			children = (
+				4909CE541D555E2300A8B5FD /* arrayUniquer */,
+				4909CE571D555E2300A8B5FD /* typedArrayUniquer */,
+			);
+			path = uniquing;
+			sourceTree = "<group>";
+		};
+		4909CE541D555E2300A8B5FD /* arrayUniquer */ = {
+			isa = PBXGroup;
+			children = (
+				4909CE551D555E2300A8B5FD /* integeruniquer.data */,
+				4909CE561D555E2300A8B5FD /* integeruniquer.index */,
+			);
+			path = arrayUniquer;
+			sourceTree = "<group>";
+		};
+		4909CE571D555E2300A8B5FD /* typedArrayUniquer */ = {
+			isa = PBXGroup;
+			children = (
+				4909CE581D555E2300A8B5FD /* integeruniquer.data */,
+				4909CE591D555E2300A8B5FD /* integeruniquer.index */,
+			);
+			path = typedArrayUniquer;
+			sourceTree = "<group>";
+		};
+		4909CE5C1D555E2300A8B5FD /* instrument_data */ = {
+			isa = PBXGroup;
+			children = (
+				4909CE5D1D555E2300A8B5FD /* 1E2B732A-6DCA-48F6-9272-CF92DECBC024 */,
+			);
+			path = instrument_data;
+			sourceTree = "<group>";
+		};
+		4909CE5D1D555E2300A8B5FD /* 1E2B732A-6DCA-48F6-9272-CF92DECBC024 */ = {
+			isa = PBXGroup;
+			children = (
+				4909CE5E1D555E2300A8B5FD /* run_data */,
+			);
+			path = "1E2B732A-6DCA-48F6-9272-CF92DECBC024";
+			sourceTree = "<group>";
+		};
+		4909CE5E1D555E2300A8B5FD /* run_data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = run_data;
+			sourceTree = "<group>";
+		};
 		495683321CEA235B0057B06E /* CustomComponents */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +227,7 @@
 		4981C7EF1D55530200908876 /* Simulations */ = {
 			isa = PBXGroup;
 			children = (
+				4909CE4F1D555E2300A8B5FD /* Travel_Simulation.trace */,
 			);
 			path = Simulations;
 			sourceTree = "<group>";
@@ -354,8 +452,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				499DB6951CB6F24200342742 /* 0002-044px.png in Resources */,
+				4909CE641D555E2300A8B5FD /* form.template in Resources */,
 				499DB6841CB6E8B900342742 /* AppIcon-40@3x.png in Resources */,
 				499DB6861CB6E8B900342742 /* AppIcon-60@3x.png in Resources */,
+				4909CE601D555E2300A8B5FD /* integeruniquer.index in Resources */,
 				499DB6851CB6E8B900342742 /* AppIcon-60@2x.png in Resources */,
 				49B252241CB2F84D005C88C9 /* Podfile in Resources */,
 				499DB6831CB6E8B900342742 /* AppIcon-40@2x.png in Resources */,
@@ -365,9 +465,13 @@
 				49B252231CB2F84D005C88C9 /* CHANGES.txt in Resources */,
 				4981C7F11D55530200908876 /* Read_Route.py in Resources */,
 				4981C7F01D55530200908876 /* Home-UCA-Route_1.tsv in Resources */,
+				4909CE5F1D555E2300A8B5FD /* integeruniquer.data in Resources */,
+				4909CE611D555E2300A8B5FD /* integeruniquer.data in Resources */,
+				4909CE631D555E2300A8B5FD /* MANIFEST.plist in Resources */,
 				49B252341CB2FA13005C88C9 /* AKMain.storyboard in Resources */,
 				49CAA8471D1B3A25007BDD57 /* 0003-128px.png in Resources */,
 				499DB6821CB6E8B900342742 /* AppIcon-29@3x.png in Resources */,
+				4909CE621D555E2300A8B5FD /* integeruniquer.index in Resources */,
 				49B252351CB2FA13005C88C9 /* Assets.xcassets in Resources */,
 				49199ABD1D15A367009A5A31 /* AKTravelsTableViewCell.xib in Resources */,
 			);

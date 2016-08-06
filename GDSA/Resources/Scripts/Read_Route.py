@@ -11,7 +11,7 @@ from sys import argv
 first = int(argv[1])
 
 # Open the file.
-fp = open("../Routes/Home-UCA-Route_1.tsv", "r")
+fp = open("/Users/akc/Proyectos/GDSA/GDSA/Resources/Routes/Home-UCA-Route_1.tsv", "r")
 
 for i, line in enumerate(fp):    
     if i == first:
