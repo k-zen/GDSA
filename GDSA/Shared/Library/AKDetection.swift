@@ -21,11 +21,11 @@ class AKDetection: NSObject
         var isStop: Int8 = 0
         var lastSegment: AKTravelSegment?
         
-        if segments.count <= elementsToCount {
+        if segments.count < elementsToCount {
             return
         }
         
-        let lastIndex = segments.endIndex - 2 // EndIndex - 1 = Last Element, so EndIndex - 2 = Penultimate Element
+        let lastIndex = segments.endIndex - 1 // EndIndex - 1 = Last Element, so EndIndex - 2 = Penultimate Element
         let firstIndex = lastIndex - elementsToCount + 1
         for k in (firstIndex ... lastIndex).reverse() { // Iterate in reverse order.
             totalDistance += segments[k].computeDistance(UnitOfLength.Meter)
@@ -35,6 +35,8 @@ class AKDetection: NSObject
         isStop = totalDistance <= 10 ? 1 : 0 // If it's 1 then is a STOP.
         
         if isStop == 1 {
+            NSLog("=> DETECTION: *STOPS* IS A STOP!")
+            
             let stopID: String = NSUUID().UUIDString
             var stopTime: Double = 0.0
             

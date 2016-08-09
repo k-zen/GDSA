@@ -8,6 +8,7 @@ Functionalities
         * Stops (Time, Location)
 Changes
     * Version 1.0 Build 01 (2016/XX/XX)
+        * Modification to the *Stop Detection* algorithm, now is 5 previous stops inclusive. (2016/08/09)
         * Added support for simulating travels. (2016/08/05)
         * Added new images, icons. (2016/08/05)
         * Added base support for *Previous Travels Table*. (2016/06/22)
