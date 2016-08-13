@@ -111,6 +111,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		490857271D5EAF7800D63998 /* AKHeatMap */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AKHeatMap;
+			sourceTree = "<group>";
+		};
 		4909CE4F1D555E2300A8B5FD /* Travel_Simulation.trace */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,7 +203,7 @@
 			path = run_data;
 			sourceTree = "<group>";
 		};
-		495683321CEA235B0057B06E /* CustomComponents */ = {
+		495683321CEA235B0057B06E /* AKCustomComponents */ = {
 			isa = PBXGroup;
 			children = (
 				490F91561CF7870F0031B8AE /* AKCustomView.h */,
@@ -205,7 +212,7 @@
 				490F91591CF7876B0031B8AE /* AKTravelInfoOverlayView.swift */,
 				49199ABE1D15A3DA009A5A31 /* AKTravelsTableViewCell.swift */,
 			);
-			path = CustomComponents;
+			path = AKCustomComponents;
 			sourceTree = "<group>";
 		};
 		4981C7EB1D55530200908876 /* Routes */ = {
@@ -349,7 +356,8 @@
 				4934C6791D0B5FEB004754AF /* AKMasterFile.swift */,
 				49BEBB191CEA635F00A5FC12 /* AKTravel.swift */,
 				495683381CEA57BC0057B06E /* AKTravelSegment.swift */,
-				495683321CEA235B0057B06E /* CustomComponents */,
+				495683321CEA235B0057B06E /* AKCustomComponents */,
+				490857271D5EAF7800D63998 /* AKHeatMap */,
 			);
 			path = Library;
 			sourceTree = "<group>";
