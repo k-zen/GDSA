@@ -17,15 +17,55 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
     private var filteredPointsCounter: Int = 0
     
     // MARK: Outlets
+    @IBOutlet weak var startRecordingTravel: UIButton!
     @IBOutlet weak var stopRecordingTravel: UIButton!
     @IBOutlet weak var map: MGLMapView!
     
     // MARK: Actions
+    @IBAction func startRecordingTravel(sender: AnyObject)
+    {
+        self.startRecording(
+            { Void -> Void in
+                // Clear map.
+                self.clearMap()
+            }, completionTask: { Void -> Void in
+                // Change color of the info overlay.
+                self.infoOverlayViewSubView.backgroundColor = AKHexColor(0xBB5C5A)
+                self.infoOverlayViewContainer.distance.backgroundColor = AKHexColor(0x9B2C32)
+                self.infoOverlayViewContainer.speed.backgroundColor = AKHexColor(0x9B2C32)
+                self.infoOverlayViewContainer.filteredPoints.backgroundColor = AKHexColor(0x9B2C32)
+                self.infoOverlayViewContainer.coordinates.backgroundColor = AKHexColor(0x9B2C32)
+                
+                self.infoOverlayViewContainer.startAnimation()
+                
+                // Disable Record button.
+                self.startRecordingTravel.enabled = false
+                UIView.animateWithDuration(1.0, animations: { () -> () in self.startRecordingTravel.backgroundColor = AKHexColor(0xBB5C5A) })
+            }
+        )
+    }
+    
     @IBAction func stopRecordingTravel(sender: AnyObject)
     {
-        self.stopRecording({ Void -> Void in
-            self.navigationController?.popViewControllerAnimated(true)
-        })
+        self.stopRecording(
+            { Void -> Void in
+                // Revert color of info overlay.
+                self.infoOverlayViewSubView.backgroundColor = AKHexColor(0x253B49)
+                self.infoOverlayViewContainer.distance.backgroundColor = AKHexColor(0x08303A)
+                self.infoOverlayViewContainer.speed.backgroundColor = AKHexColor(0x08303A)
+                self.infoOverlayViewContainer.filteredPoints.backgroundColor = AKHexColor(0x08303A)
+                self.infoOverlayViewContainer.coordinates.backgroundColor = AKHexColor(0x08303A)
+                
+                self.infoOverlayViewContainer.stopAnimation()
+                
+                // Enable Record button.
+                self.startRecordingTravel.enabled = true
+                UIView.animateWithDuration(1.0, animations: { () -> () in self.startRecordingTravel.backgroundColor = GlobalConstants.AKEnabledButtonBg })
+            }, completionTask: { Void -> Void in
+                // Clear map.
+                self.clearMap()
+            }
+        )
     }
     
     // MARK: AKCustomViewController Overriding
@@ -39,6 +79,9 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
     {
         super.viewDidAppear(animated)
         
+        // Clear previous data.
+        self.clearMap()
+        
         // Configure map.
         self.map.minimumZoomLevel = 8
         self.map.maximumZoomLevel = 18
@@ -48,7 +91,7 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
         // Add map overlay for travel information.
         self.infoOverlayViewSubView = self.infoOverlayViewContainer.customView
         self.infoOverlayViewContainer.controller = self
-        self.infoOverlayViewSubView.frame = CGRect(x: 0, y: 0, width: self.map.bounds.width, height: 22)
+        self.infoOverlayViewSubView.frame = CGRect(x: 0, y: 0, width: self.map.bounds.width, height: 60)
         self.infoOverlayViewSubView.translatesAutoresizingMaskIntoConstraints = true
         self.infoOverlayViewSubView.clipsToBounds = true
         self.infoOverlayViewSubView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
@@ -65,14 +108,12 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
             constant: 0.0
         )
         self.map.addConstraint(constraintWidth)
-        
-        // Start recording.
-        self.startRecording({})
     }
     
     // MARK: Recording Methods
-    func startRecording(completionTask: Void -> Void)
+    func startRecording(beforeTask: Void -> Void, completionTask: Void -> Void)
     {
+        beforeTask()
         defer {
             completionTask()
         }
@@ -91,6 +132,7 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
             // Add start annotation.
             self.startAnnotation.coordinate = try self.travel.computeOriginAsCoordinate()
             self.startAnnotation.title = GlobalConstants.AKTravelStartAnnotationTitle
+            self.startAnnotation.subtitle = String(format: "Lat: %f, Lng: %f", try self.travel.computeOrigin().lat, try self.travel.computeOrigin().lon)
             self.map.addAnnotation(self.startAnnotation)
         }
         catch {
@@ -99,8 +141,10 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
         }
     }
     
-    func stopRecording(completionTask: Void -> Void)
+    func stopRecording(beforeTask: Void -> Void, completionTask: Void -> Void)
     {
+        beforeTask()
+        
         NSLog("=> LOCATION SERVICES ==> STOP RECORDING TRAVEL ...")
         AKDelegate().recordingTravel = false
         
@@ -115,6 +159,7 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
             // Add end annotation.
             self.endAnnotation.coordinate = try self.travel.computeDestinationAsCoordinate()
             self.endAnnotation.title = GlobalConstants.AKTravelEndAnnotationTitle
+            self.endAnnotation.subtitle = String(format: "Lat: %f, Lng: %f", try self.travel.computeDestination().lat, try self.travel.computeDestination().lon)
             self.map.addAnnotation(self.endAnnotation)
         }
         catch {
@@ -128,13 +173,13 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
             showCloseButton: true
         )
         let alertController = SCLAlertView(appearance: appearance)
-        
-        alertController.addButton("Save & Exit", action: { () -> Void in
+        alertController.addButton("Save", action: { () -> Void in
             AKDelegate().masterFile?.addTravel(self.travel)
             completionTask()
         })
-        alertController.addButton("Discard", action: { () -> Void in completionTask() })
-        
+        alertController.addButton("Discard", action: { () -> Void in
+            completionTask()
+        })
         alertController.showNotice(
             "Stop Travel",
             subTitle: "Do you want to save the travel...?",
@@ -184,7 +229,7 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
         else {
             switch annotation.title! {
             case GlobalConstants.AKTravelSegmentAnnotationTitle:
-                return GlobalConstants.AKTravelPathMarkerColor
+                return GlobalConstants.AKTravelPathMarkerStrokeColor
             default:
                 return UIColor.clearColor()
             }
@@ -198,14 +243,43 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
         }
         else {
             switch annotation.title! {
-            case GlobalConstants.AKTravelSegmentAnnotationTitle:
-                return GlobalConstants.AKTravelPathMarkerColor
             case GlobalConstants.AKTravelStopPointMarkTitle:
                 return UIColor.redColor()
             default:
                 return UIColor.clearColor()
             }
         }
+    }
+    
+    func mapView(mapView: MGLMapView, imageForAnnotation annotation: MGLAnnotation) -> MGLAnnotationImage?
+    {
+        if annotation.title == nil {
+            return nil
+        }
+        else {
+            switch annotation.title!! {
+            case GlobalConstants.AKTravelStartAnnotationTitle, GlobalConstants.AKTravelEndAnnotationTitle:
+                if let annotationImage = mapView.dequeueReusableAnnotationImageWithIdentifier(annotation.title!!) {
+                    return annotationImage
+                }
+                else {
+                    return MGLAnnotationImage(
+                        image: AKCircleImageWithRadius(
+                            10,
+                            strokeColor: AKHexColor(0x000000),
+                            strokeAlpha: 1.0,
+                            fillColor: annotation.title!! == GlobalConstants.AKTravelStartAnnotationTitle ? AKHexColor(0x429867) : AKHexColor(0xE02130),
+                            fillAlpha: 1.0), reuseIdentifier: annotation.title!!)
+                }
+            default:
+                return nil
+            }
+        }
+    }
+    
+    func mapView(mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool
+    {
+        return true
     }
     
     // MARK: Observers
@@ -224,7 +298,7 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
             else {
                 self.travel.addDistance(travelSegment.computeDistance(UnitOfLength.Meter))
                 self.infoOverlayViewContainer.distance.text = String(format: "%.1fkm", self.travel.computeDistance(UnitOfLength.Kilometer))
-                self.infoOverlayViewContainer.speed.text = String(format: "%ikm/h", travelSegment.computeDistance(UnitOfLength.Kilometer) / travelSegment.computeTime(UnitOfTime.Hour))
+                self.infoOverlayViewContainer.speed.text = String(format: "%ikm/h", travelSegment.computeSpeed(UnitOfSpeed.KilometersPerHour))
                 self.coordinates.append(CLLocationCoordinate2DMake(self.currentPosition.lat, self.currentPosition.lon))
                 self.map.centerCoordinate = CLLocationCoordinate2DMake(self.currentPosition.lat, self.currentPosition.lon)
                 self.drawPolyline()
@@ -232,6 +306,9 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
             
             // Execute detections.
             AKDetection.detect(self.map, travel: self.travel, travelSegment: travelSegment)
+            
+            // Update info label.
+            self.infoOverlayViewContainer.coordinates.text = String(format: "%f : %f", self.currentPosition.lat, self.currentPosition.lon)
         })
     }
     
@@ -279,9 +356,24 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
         self.map.delegate = self
         
         // Custom L&F.
+        self.startRecordingTravel.layer.cornerRadius = 4.0
         self.stopRecordingTravel.layer.cornerRadius = 4.0
         
         // Configure NavigationController.
         self.navigationItem.hidesBackButton = true
+    }
+    
+    func clearMap()
+    {
+        self.coordinates.removeAll()
+        
+        if let annotations = self.map.annotations {
+            self.map.removeAnnotations(annotations)
+        }
+        
+        self.infoOverlayViewContainer.filteredPoints.text = String(format: "%iFP", 0)
+        self.infoOverlayViewContainer.distance.text = String(format: "%.1fkm", 0.0)
+        self.infoOverlayViewContainer.speed.text = String(format: "%ikm/h", 0.0)
+        self.infoOverlayViewContainer.coordinates.text = String(format: "%f : %f", 0.0, 0.0)
     }
 }

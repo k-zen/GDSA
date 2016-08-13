@@ -46,16 +46,16 @@ struct GlobalConstants {
     static let AKNotificationBarDismissDelay = 8
     static let AKNotificationBarSound = 1057
     static let AKPointDiscardRadius = 50.0
-    static let AKTravelStartAnnotationTitle = "Start Annotation"
-    static let AKTravelEndAnnotationTitle = "End Annotation"
+    static let AKTravelStartAnnotationTitle = "Start"
+    static let AKTravelEndAnnotationTitle = "End"
     static let AKTravelSegmentAnnotationTitle = "Travel Segment"
     static let AKTravelStopPointMarkTitle = "Stop Mark"
     static let AKTravelStopPointPinTitle = "Stop Point"
-    static let AKTravelPathMarkerColor = AKHexColor(0xE09E9F)
+    static let AKTravelPathMarkerStrokeColor = AKHexColor(0x253B49)
     static let AKMasterFileName = "MasterFile.dat"
     static let AKDefaultFont = "HelveticaNeue-CondensedBold"
     static let AKDisabledButtonBg = AKHexColor(0xEEEEEE)
-    static let AKEnabledButtonBg = AKHexColor(0xCCCCCC)
+    static let AKEnabledButtonBg = AKHexColor(0x437483)
     static let AKTableHeaderCellBg = AKHexColor(0x333333)
     static let AKTableHeaderLeftBorderBg = AKHexColor(0x72BF44)
     static let AKHeaderLeftBorderBg = AKHexColor(0x555555)
@@ -85,6 +85,12 @@ enum UnitOfTime: Int {
     case Second = 1
     case Minute = 2
     case Hour = 3
+}
+
+enum UnitOfSpeed: Int {
+    case MetersPerSecond = 1
+    case KilometersPerHour = 2
+    case MilesPerHour = 3
 }
 
 enum CustomBorderDecorationPosition: Int {
@@ -195,6 +201,41 @@ func AKCreateCircleForCoordinate(title: String, coordinate: CLLocationCoordinate
     polygon.title = title
     
     return polygon
+}
+
+/// Create an image with the form of a circle.
+///
+/// - Parameter radius:      The radius of the circle.
+/// - Parameter strokeColor: The color of the stroke.
+/// - Parameter strokeAlpha: The alpha factor of the stroke.
+/// - Parameter fillColor:   The color of the fill.
+/// - Parameter fillAlpha:   The alpha factor of the fill.
+///
+/// - Returns: An image object in the form of a circle.
+func AKCircleImageWithRadius(
+    radius: Int,
+    strokeColor: UIColor,
+    strokeAlpha: Float,
+    fillColor: UIColor,
+    fillAlpha: Float) -> UIImage
+{
+    let buffer = 2
+    let rect = CGRect(x: 0, y: 0, width: radius * 2 + buffer, height: radius * 2 + buffer)
+    
+    UIGraphicsBeginImageContextWithOptions(rect.size, false, UIScreen.mainScreen().scale)
+    
+    let context = UIGraphicsGetCurrentContext()
+    CGContextSetFillColorWithColor(context, fillColor.colorWithAlphaComponent(CGFloat(fillAlpha)).CGColor)
+    CGContextSetStrokeColorWithColor(context, strokeColor.colorWithAlphaComponent(CGFloat(strokeAlpha)).CGColor)
+    CGContextSetLineWidth(context, 2)
+    CGContextFillEllipseInRect(context, CGRectInset(rect, CGFloat(buffer * 2), CGFloat(buffer * 2)))
+    CGContextStrokeEllipseInRect(context, CGRectInset(rect, CGFloat(buffer * 2), CGFloat(buffer * 2)))
+    
+    let image = UIGraphicsGetImageFromCurrentImageContext()
+    
+    UIGraphicsEndImageContext()
+    
+    return image
 }
 
 /// Computes and generates a **UIColor** object based

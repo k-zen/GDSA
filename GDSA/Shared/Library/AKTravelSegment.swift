@@ -79,6 +79,18 @@ class AKTravelSegment: NSObject, NSCoding
         }
     }
     
+    func computeSpeed(let unit: UnitOfSpeed) -> Int16
+    {
+        switch unit {
+        case UnitOfSpeed.MetersPerSecond:
+            return Int16(self.speed)
+        case UnitOfSpeed.KilometersPerHour:
+            return Int16(self.speed * 3.6)
+        case UnitOfSpeed.MilesPerHour:
+            return Int16(self.speed * 2.23694)
+        }
+    }
+    
     func computeStop() -> Bool { return self.stop }
     
     func markAsStop(let stopID: String, stopTime: Double) { self.stopID = stopID; self.stop = true; self.stopTime = stopTime }

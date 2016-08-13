@@ -4,13 +4,6 @@ class AKMainViewController: AKCustomViewController, UITableViewDataSource, UITab
 {
     // MARK: Outlets
     @IBOutlet weak var travelsTable: UITableView!
-    @IBOutlet weak var startRecordingTravel: UIButton!
-    
-    // MARK: Actions
-    @IBAction func startRecordingTravel(sender: AnyObject)
-    {
-        self.performSegueWithIdentifier("RecordTravelSegue", sender: sender)
-    }
     
     // MARK: AKCustomViewController Overriding
     override func viewDidLoad()
@@ -142,8 +135,5 @@ class AKMainViewController: AKCustomViewController, UITableViewDataSource, UITab
         // Add UITableView's DataSource & Delegate.
         self.travelsTable?.dataSource = self
         self.travelsTable?.delegate = self
-        
-        // Custom L&F.
-        self.startRecordingTravel.layer.cornerRadius = 4.0
     }
 }
