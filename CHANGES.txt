@@ -4,8 +4,7 @@ Description
 Functionalities
     * Ability to record travels.
     * Ability to visualize travels.
-        * Travel distance.
-        * Stops (Time, Location)
+    * Heatmap of traffic.
 Changes
     * Version 1.0 Build 01 (2016/XX/XX)
         * Modification to the *Stop Detection* algorithm, now is 5 previous stops inclusive. (2016/08/09)
