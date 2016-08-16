@@ -277,10 +277,7 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
         }
     }
     
-    func mapView(mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool
-    {
-        return true
-    }
+    func mapView(mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool { return true }
     
     // MARK: Observers
     func locationUpdated(notification: NSNotification)
