@@ -11,6 +11,7 @@ class AKAppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelega
     var window: UIWindow?
     // ### USER POSITION ### //
     var currentPosition: UserLocation = UserLocation()
+    var currentHeading: CLLocationDirection = CLLocationDirection(0.0)
     private var lastSavedPosition: UserLocation = UserLocation()
     // ### USER POSITION ### //
     var recordingTravel: Bool = false
@@ -54,6 +55,14 @@ class AKAppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelega
             // Configure Location Services
             self.locationManager.delegate = self
             self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+        }
+        
+        // Start heading updates.
+        if CLLocationManager.headingAvailable() {
+            self.locationManager.headingFilter = 5
+        }
+        else {
+            NSLog("=> HEADING NOT AVAILABLE.")
         }
         
         return true
@@ -100,6 +109,14 @@ class AKAppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelega
         }
     }
     
+    func locationManager(manager: CLLocationManager, didUpdateHeading newHeading: CLHeading)
+    {
+        if newHeading.headingAccuracy < 0 { return }
+        
+        self.currentHeading = ((newHeading.trueHeading > 0) ? newHeading.trueHeading : newHeading.magneticHeading)
+        NSLog("=> CURRENT HEADING: %f", self.currentHeading)
+    }
+    
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) { NSLog("=> LOCATION SERVICES ERROR ==> %@", error.description) }
     
     func locationManagerDidPauseLocationUpdates(manager: CLLocationManager) { NSLog("=> LOCATION SERVICES HAS PAUSED.") }
@@ -113,6 +130,7 @@ class AKAppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelega
             NSLog("=> LOCATION SERVICES ==> AUTHORIZED WHEN IN USE")
             NSLog("=> READY TO START RECORDING TRAVELS.")
             self.locationManager.startUpdatingLocation()
+            self.locationManager.startUpdatingHeading()
             break
         case .Restricted, .Denied:
             NSLog("=> LOCATION SERVICES ==> DENIED")

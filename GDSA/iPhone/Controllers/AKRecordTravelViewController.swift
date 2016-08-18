@@ -44,7 +44,7 @@ class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
                 
                 // Disable Record button.
                 self.startRecordingTravel.enabled = false
-                UIView.animateWithDuration(1.0, animations: { () -> () in self.startRecordingTravel.backgroundColor = AKHexColor(0xBB5C5A) })
+                UIView.animateWithDuration(1.0, animations: { () -> () in self.startRecordingTravel.backgroundColor = AKHexColor(0x9B2C32) })
             }
         )
     }
@@ -87,10 +87,10 @@ class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
         self.clearMap()
         
         // Configure map.
-        // self.mapView.minimumZoomLevel = 8
-        // self.mapView.maximumZoomLevel = 18
-        // self.mapView.zoomLevel = 14
         self.mapView.userTrackingMode = MKUserTrackingMode.Follow
+        // self.mapView.showsScale = true
+        // self.mapView.showsCompass = true
+        self.mapView.showsTraffic = true
         
         // Add map overlay for travel information.
         self.infoOverlayViewSubView = self.infoOverlayViewContainer.customView
@@ -273,7 +273,7 @@ class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
     {
         if overlay.isKindOfClass(AKRoutePolyline) {
             let customOverlay = MKPolylineRenderer(overlay: overlay)
-            customOverlay.alpha = 0.75
+            customOverlay.alpha = 1.0
             customOverlay.lineWidth = 4.0
             customOverlay.strokeColor = GlobalConstants.AKTravelPathMarkerStrokeColor
             
@@ -367,6 +367,10 @@ class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
         
         if self.mapView.annotations.count > 0 {
             self.mapView.removeAnnotations(self.mapView.annotations)
+        }
+        
+        if self.mapView.overlays.count > 0 {
+            self.mapView.removeOverlays(self.mapView.overlays)
         }
         
         self.infoOverlayViewContainer.filteredPoints.text = String(format: "%iFP", 0)

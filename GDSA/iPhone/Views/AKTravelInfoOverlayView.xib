@@ -21,7 +21,7 @@
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0km" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SAM-aT-jOa" userLabel="Distance_Value">
                     <rect key="frame" x="7" y="6" width="92" height="22"/>
-                    <color key="backgroundColor" red="0.031372549020000001" green="0.18823529410000001" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.011764705882352941" green="0.047058823529411764" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="92" id="5Gf-Ao-o7w"/>
                         <constraint firstAttribute="height" constant="22" id="Fkk-d1-7si"/>
@@ -32,7 +32,7 @@
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0FP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q2F-93-4W8" userLabel="FP_Value">
                     <rect key="frame" x="215" y="6" width="92" height="22"/>
-                    <color key="backgroundColor" red="0.031372549020000001" green="0.18823529410000001" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.011764705882352941" green="0.047058823529411764" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="92" id="GXp-tO-0rV"/>
                         <constraint firstAttribute="height" constant="22" id="cfp-1A-7QB"/>
@@ -43,7 +43,7 @@
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0 : 0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MjF-AB-f1J" userLabel="Coordinates_Value">
                     <rect key="frame" x="7" y="31" width="300" height="22"/>
-                    <color key="backgroundColor" red="0.031372549020000001" green="0.18823529410000001" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.011764705882352941" green="0.047058823529411764" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="300" id="a74-Po-EdH"/>
                         <constraint firstAttribute="height" constant="22" id="lbP-GH-N9u"/>
@@ -54,7 +54,7 @@
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0km/h" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zuc-TH-RVI" userLabel="Speed_Value">
                     <rect key="frame" x="105" y="6" width="104" height="22"/>
-                    <color key="backgroundColor" red="0.031372549020000001" green="0.18823529410000001" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.011764705882352941" green="0.047058823529411764" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="22" id="0f7-2p-dze"/>
                         <constraint firstAttribute="width" constant="104" id="9Sh-kg-SWq"/>
@@ -64,7 +64,7 @@
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" red="0.14509803921568626" green="0.23137254901960785" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.25098039215686274" green="0.27843137254901962" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="MjF-AB-f1J" firstAttribute="leading" secondItem="SAM-aT-jOa" secondAttribute="leading" id="Kd2-0C-P1p"/>
                 <constraint firstItem="SAM-aT-jOa" firstAttribute="baseline" secondItem="zuc-TH-RVI" secondAttribute="firstBaseline" constant="2.5" id="STe-20-EzS"/>
