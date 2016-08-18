@@ -1,7 +1,7 @@
 import AudioToolbox
 import CoreLocation
 import Foundation
-import Mapbox
+import MapKit
 import TSMessages
 import UIKit
 
@@ -46,11 +46,6 @@ struct GlobalConstants {
     static let AKNotificationBarDismissDelay = 8
     static let AKNotificationBarSound = 1057
     static let AKPointDiscardRadius = 50.0
-    static let AKTravelStartAnnotationTitle = "Start"
-    static let AKTravelEndAnnotationTitle = "End"
-    static let AKTravelSegmentAnnotationTitle = "Travel Segment"
-    static let AKTravelStopPointMarkTitle = "Stop Mark"
-    static let AKTravelStopPointPinTitle = "Stop Point"
     static let AKTravelPathMarkerStrokeColor = AKHexColor(0x253B49)
     static let AKMasterFileName = "MasterFile.dat"
     static let AKDefaultFont = "HelveticaNeue-CondensedBold"
@@ -176,7 +171,7 @@ func AKComputeDistanceBetweenTwoPoints(pointA pointA: UserLocation,
 /// - Parameter withMeterRadius: The radius of the circle.
 ///
 /// - Returns: A polygon object in the form of a circle.
-func AKCreateCircleForCoordinate(title: String, coordinate: CLLocationCoordinate2D, withMeterRadius: Double) -> MGLPolygon
+func AKCreateCircleForCoordinate(title: String, coordinate: CLLocationCoordinate2D, withMeterRadius: Double) -> MKPolygon
 {
     let degreesBetweenPoints = 8.0
     let numberOfPoints = floor(360.0 / degreesBetweenPoints)
@@ -197,7 +192,7 @@ func AKCreateCircleForCoordinate(title: String, coordinate: CLLocationCoordinate
         coordinates.append(point)
     }
     
-    let polygon = MGLPolygon(coordinates: &coordinates, count: UInt(coordinates.count))
+    let polygon = MKPolygon(coordinates: &coordinates, count: Int(coordinates.count))
     polygon.title = title
     
     return polygon

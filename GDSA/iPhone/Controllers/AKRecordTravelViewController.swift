@@ -1,14 +1,18 @@
 import CoreLocation
 import Foundation
-import Mapbox
+import MapKit
 import SCLAlertView
 import UIKit
 
-class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
+class AKOriginPointAnnotation: MKPointAnnotation {}
+class AKDestinationPointAnnotation: MKPointAnnotation {}
+class AKRoutePolyline: MKPolyline {}
+
+class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
 {
     // MARK: Properties
-    private let startAnnotation: MGLPointAnnotation = MGLPointAnnotation()
-    private let endAnnotation: MGLPointAnnotation = MGLPointAnnotation()
+    private let originAnnotation: AKOriginPointAnnotation = AKOriginPointAnnotation()
+    private let destinationAnnotation: AKDestinationPointAnnotation = AKDestinationPointAnnotation()
     private let infoOverlayViewContainer: AKTravelInfoOverlayView = AKTravelInfoOverlayView()
     private var infoOverlayViewSubView: UIView!
     private var travel: AKTravel! = AKTravel()
@@ -19,7 +23,7 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
     // MARK: Outlets
     @IBOutlet weak var startRecordingTravel: UIButton!
     @IBOutlet weak var stopRecordingTravel: UIButton!
-    @IBOutlet weak var map: MGLMapView!
+    @IBOutlet weak var mapView: MKMapView!
     
     // MARK: Actions
     @IBAction func startRecordingTravel(sender: AnyObject)
@@ -83,31 +87,31 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
         self.clearMap()
         
         // Configure map.
-        self.map.minimumZoomLevel = 8
-        self.map.maximumZoomLevel = 18
-        self.map.zoomLevel = 14
-        self.map.userTrackingMode = MGLUserTrackingMode.Follow
+        // self.mapView.minimumZoomLevel = 8
+        // self.mapView.maximumZoomLevel = 18
+        // self.mapView.zoomLevel = 14
+        self.mapView.userTrackingMode = MKUserTrackingMode.Follow
         
         // Add map overlay for travel information.
         self.infoOverlayViewSubView = self.infoOverlayViewContainer.customView
         self.infoOverlayViewContainer.controller = self
-        self.infoOverlayViewSubView.frame = CGRect(x: 0, y: 0, width: self.map.bounds.width, height: 60)
+        self.infoOverlayViewSubView.frame = CGRect(x: 0, y: 0, width: self.mapView.bounds.width, height: 60)
         self.infoOverlayViewSubView.translatesAutoresizingMaskIntoConstraints = true
         self.infoOverlayViewSubView.clipsToBounds = true
         self.infoOverlayViewSubView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         
-        self.map.addSubview(self.infoOverlayViewSubView)
+        self.mapView.addSubview(self.infoOverlayViewSubView)
         
         let constraintWidth = NSLayoutConstraint(
             item: self.infoOverlayViewSubView,
             attribute: NSLayoutAttribute.Width,
             relatedBy: NSLayoutRelation.Equal,
-            toItem: self.map,
+            toItem: self.mapView,
             attribute: NSLayoutAttribute.Width,
             multiplier: 1.0,
             constant: 0.0
         )
-        self.map.addConstraint(constraintWidth)
+        self.mapView.addConstraint(constraintWidth)
     }
     
     // MARK: Recording Methods
@@ -127,13 +131,13 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
         do {
             // Append origin to coordinates and center map.
             self.coordinates.append(try self.travel.computeOriginAsCoordinate())
-            self.map.centerCoordinate = try self.travel.computeOriginAsCoordinate()
+            self.mapView.centerCoordinate = try self.travel.computeOriginAsCoordinate()
             
             // Add start annotation.
-            self.startAnnotation.coordinate = try self.travel.computeOriginAsCoordinate()
-            self.startAnnotation.title = GlobalConstants.AKTravelStartAnnotationTitle
-            self.startAnnotation.subtitle = String(format: "Lat: %f, Lng: %f", try self.travel.computeOrigin().lat, try self.travel.computeOrigin().lon)
-            self.map.addAnnotation(self.startAnnotation)
+            self.originAnnotation.coordinate = try self.travel.computeOriginAsCoordinate()
+            self.originAnnotation.title = "Origen"
+            self.originAnnotation.subtitle = String(format: "Lat: %f, Lng: %f", try self.travel.computeOrigin().lat, try self.travel.computeOrigin().lon)
+            self.mapView.addAnnotation(self.originAnnotation)
         }
         catch {
             AKPresentMessageFromError("\(error)", controller: self)
@@ -154,13 +158,13 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
             
             // Append origin to coordinates and center map.
             self.coordinates.append(try self.travel.computeDestinationAsCoordinate())
-            self.map.centerCoordinate = try self.travel.computeDestinationAsCoordinate()
+            self.mapView.centerCoordinate = try self.travel.computeDestinationAsCoordinate()
             
             // Add end annotation.
-            self.endAnnotation.coordinate = try self.travel.computeDestinationAsCoordinate()
-            self.endAnnotation.title = GlobalConstants.AKTravelEndAnnotationTitle
-            self.endAnnotation.subtitle = String(format: "Lat: %f, Lng: %f", try self.travel.computeDestination().lat, try self.travel.computeDestination().lon)
-            self.map.addAnnotation(self.endAnnotation)
+            self.destinationAnnotation.coordinate = try self.travel.computeDestinationAsCoordinate()
+            self.destinationAnnotation.title = "Destino"
+            self.destinationAnnotation.subtitle = String(format: "Lat: %f, Lng: %f", try self.travel.computeDestination().lat, try self.travel.computeDestination().lon)
+            self.mapView.addAnnotation(self.destinationAnnotation)
         }
         catch {
             AKPresentMessageFromError("\(error)", controller: self)
@@ -188,96 +192,99 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
         )
     }
     
-    // MARK: MGLMapViewDelegate Implementation
-    func mapView(mapView: MGLMapView, alphaForShapeAnnotation annotation: MGLShape) -> CGFloat
+    // MARK: MKMapViewDelegate Implementation
+    func mapView(mapView: MKMapView, alphaForShapeAnnotation annotation: MKShape) -> CGFloat
     {
         if annotation.title == nil {
             return 1.0
         }
         else {
             switch annotation.title! {
-            case GlobalConstants.AKTravelSegmentAnnotationTitle:
-                return 0.75
-            case GlobalConstants.AKTravelStopPointMarkTitle:
-                return 0.5
             default:
                 return 1.0
             }
         }
     }
     
-    func mapView(mapView: MGLMapView, lineWidthForPolylineAnnotation annotation: MGLPolyline) -> CGFloat
+    func mapView(mapView: MKMapView, lineWidthForPolylineAnnotation annotation: MKPolyline) -> CGFloat
     {
         if annotation.title == nil {
             return 1.0
         }
         else {
             switch annotation.title! {
-            case GlobalConstants.AKTravelSegmentAnnotationTitle:
-                return 6.0
             default:
                 return 1.0
             }
         }
     }
     
-    func mapView(mapView: MGLMapView, strokeColorForShapeAnnotation annotation: MGLShape) -> UIColor
+    func mapView(mapView: MKMapView, strokeColorForShapeAnnotation annotation: MKShape) -> UIColor
     {
         if annotation.title == nil {
             return UIColor.clearColor()
         }
         else {
             switch annotation.title! {
-            case GlobalConstants.AKTravelSegmentAnnotationTitle:
-                return GlobalConstants.AKTravelPathMarkerStrokeColor
             default:
                 return UIColor.clearColor()
             }
         }
     }
     
-    func mapView(mapView: MGLMapView, fillColorForPolygonAnnotation annotation: MGLPolygon) -> UIColor
+    func mapView(mapView: MKMapView, fillColorForPolygonAnnotation annotation: MKPolygon) -> UIColor
     {
         if annotation.title == nil {
             return UIColor.clearColor()
         }
         else {
             switch annotation.title! {
-            case GlobalConstants.AKTravelStopPointMarkTitle:
+            default:
                 return UIColor.redColor()
-            default:
-                return UIColor.clearColor()
             }
         }
     }
     
-    func mapView(mapView: MGLMapView, imageForAnnotation annotation: MGLAnnotation) -> MGLAnnotationImage?
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView?
     {
-        if annotation.title == nil {
+        if annotation.isKindOfClass(AKOriginPointAnnotation) || annotation.isKindOfClass(AKDestinationPointAnnotation) {
+            if let annotationView = mapView.dequeueReusableAnnotationViewWithIdentifier(annotation.title!!) {
+                return annotationView
+            }
+            else {
+                let customView = MKAnnotationView(annotation: annotation, reuseIdentifier: annotation.title!!)
+                customView.canShowCallout = true
+                customView.layer.backgroundColor = UIColor.clearColor().CGColor
+                customView.layer.cornerRadius = 6.0
+                customView.layer.borderWidth = 0.0
+                customView.layer.masksToBounds = true
+                customView.image = AKCircleImageWithRadius(10, strokeColor: AKHexColor(0x000000), strokeAlpha: 1.0, fillColor: annotation.isKindOfClass(AKOriginPointAnnotation) ? AKHexColor(0x429867) : AKHexColor(0xE02130), fillAlpha: 1.0)
+                customView.clipsToBounds = false
+                
+                return customView
+            }
+        }
+        else {
             return nil
         }
+    }
+    
+    func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer
+    {
+        if overlay.isKindOfClass(AKRoutePolyline) {
+            let customOverlay = MKPolylineRenderer(overlay: overlay)
+            customOverlay.alpha = 0.75
+            customOverlay.lineWidth = 4.0
+            customOverlay.strokeColor = GlobalConstants.AKTravelPathMarkerStrokeColor
+            
+            return customOverlay
+        }
         else {
-            switch annotation.title!! {
-            case GlobalConstants.AKTravelStartAnnotationTitle, GlobalConstants.AKTravelEndAnnotationTitle:
-                if let annotationImage = mapView.dequeueReusableAnnotationImageWithIdentifier(annotation.title!!) {
-                    return annotationImage
-                }
-                else {
-                    return MGLAnnotationImage(
-                        image: AKCircleImageWithRadius(
-                            10,
-                            strokeColor: AKHexColor(0x000000),
-                            strokeAlpha: 1.0,
-                            fillColor: annotation.title!! == GlobalConstants.AKTravelStartAnnotationTitle ? AKHexColor(0x429867) : AKHexColor(0xE02130),
-                            fillAlpha: 1.0), reuseIdentifier: annotation.title!!)
-                }
-            default:
-                return nil
-            }
+            return MKPolylineRenderer(overlay: overlay)
         }
     }
     
-    func mapView(mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool { return true }
+    func mapView(mapView: MKMapView, annotationCanShowCallout annotation: MKAnnotation) -> Bool { return true }
     
     // MARK: Observers
     func locationUpdated(notification: NSNotification)
@@ -288,7 +295,7 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
             self.travel.addSegment(travelSegment)
             
             // Execute filters.
-            if !AKFilters.filter(self.map, travel: self.travel, travelSegment: travelSegment) {
+            if !AKFilters.filter(self.mapView, travel: self.travel, travelSegment: travelSegment) {
                 self.filteredPointsCounter += 1
                 self.infoOverlayViewContainer.filteredPoints.text = String(format: "%iFP", self.filteredPointsCounter)
             }
@@ -297,12 +304,12 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
                 self.infoOverlayViewContainer.distance.text = String(format: "%.1fkm", self.travel.computeDistance(UnitOfLength.Kilometer))
                 self.infoOverlayViewContainer.speed.text = String(format: "%ikm/h", travelSegment.computeSpeed(UnitOfSpeed.KilometersPerHour))
                 self.coordinates.append(CLLocationCoordinate2DMake(self.currentPosition.lat, self.currentPosition.lon))
-                self.map.centerCoordinate = CLLocationCoordinate2DMake(self.currentPosition.lat, self.currentPosition.lon)
+                self.mapView.centerCoordinate = CLLocationCoordinate2DMake(self.currentPosition.lat, self.currentPosition.lon)
                 self.drawPolyline()
             }
             
             // Execute detections.
-            AKDetection.detect(self.map, travel: self.travel, travelSegment: travelSegment)
+            AKDetection.detect(self.mapView, travel: self.travel, travelSegment: travelSegment)
             
             // Update info label.
             self.infoOverlayViewContainer.coordinates.text = String(format: "%f : %f", self.currentPosition.lat, self.currentPosition.lon)
@@ -311,29 +318,23 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
     
     // MARK: Utilities
     func drawPolyline() {
-        let line = MGLPolyline(coordinates: &self.coordinates, count: UInt(coordinates.count))
-        line.title = GlobalConstants.AKTravelSegmentAnnotationTitle
+        let line = AKRoutePolyline(coordinates: &self.coordinates, count: Int(coordinates.count))
         
-        if self.map.annotations?.count > 0 {
-            let annotationsToRemove = self.map.annotations!.filter {
-                let annotation = $0
+        if self.mapView.overlays.count > 0 {
+            let overlaysToRemove = self.mapView.overlays.filter {
+                let overlay = $0
                 
-                if annotation.title == nil {
+                if overlay.title == nil {
                     return true
                 }
                 else {
-                    switch annotation.title!! {
-                    case GlobalConstants.AKTravelStartAnnotationTitle, GlobalConstants.AKTravelEndAnnotationTitle, GlobalConstants.AKTravelStopPointMarkTitle, GlobalConstants.AKTravelStopPointPinTitle:
-                        return false
-                    default:
-                        return true
-                    }
+                    return overlay.isKindOfClass(AKRoutePolyline)
                 }
             }
-            self.map.removeAnnotations(annotationsToRemove)
+            self.mapView.removeOverlays(overlaysToRemove)
         }
         
-        self.map.addAnnotation(line)
+        self.mapView.addOverlay(line, level: MKOverlayLevel.AboveRoads)
     }
     
     // MARK: Miscellaneous
@@ -350,7 +351,7 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
             object: nil)
         
         // Delegates
-        self.map.delegate = self
+        self.mapView.delegate = self
         
         // Custom L&F.
         self.startRecordingTravel.layer.cornerRadius = 4.0
@@ -364,8 +365,8 @@ class AKRecordTravelViewController: AKCustomViewController, MGLMapViewDelegate
     {
         self.coordinates.removeAll()
         
-        if let annotations = self.map.annotations {
-            self.map.removeAnnotations(annotations)
+        if self.mapView.annotations.count > 0 {
+            self.mapView.removeAnnotations(self.mapView.annotations)
         }
         
         self.infoOverlayViewContainer.filteredPoints.text = String(format: "%iFP", 0)

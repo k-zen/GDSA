@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A286a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="egE-zI-B6a">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A294a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="egE-zI-B6a">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -15,7 +15,6 @@
         <!--GDSA-->
         <scene sceneID="v1F-Ub-gJk">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ClU-ti-xfz" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController title="GDSA" id="egE-zI-B6a" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Zvq-LK-q21">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
@@ -28,6 +27,7 @@
                         <segue destination="bS8-2O-k1d" kind="relationship" relationship="viewControllers" id="1NO-3W-Qop"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ClU-ti-xfz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="586" y="411"/>
         </scene>
@@ -172,47 +172,33 @@
                                     <constraint firstAttribute="height" constant="2" id="M8T-oO-hqB"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j0j-6e-D1M" userLabel="Map_Container" customClass="MGLMapView">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="J0d-4a-FbW" userLabel="Map_Container">
                                 <rect key="frame" x="0.0" y="67" width="600" height="484"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="showsUserLocation" value="NO"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="styleURL__" value="mapbox://styles/mapbox/light-v9"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" red="0.14509803921568626" green="0.23137254901960785" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="j0j-6e-D1M" firstAttribute="trailing" secondItem="CWK-GB-zQm" secondAttribute="trailing" id="0AZ-ER-UbJ"/>
                             <constraint firstItem="CWK-GB-zQm" firstAttribute="leading" secondItem="CNF-ug-vaW" secondAttribute="leadingMargin" constant="-20" id="203-C3-b4D"/>
-                            <constraint firstItem="j0j-6e-D1M" firstAttribute="top" secondItem="CNF-ug-vaW" secondAttribute="top" constant="80" id="9GQ-SU-FEM"/>
                             <constraint firstAttribute="trailing" secondItem="CWK-GB-zQm" secondAttribute="trailing" id="BjK-FG-HQo"/>
                             <constraint firstItem="CWK-GB-zQm" firstAttribute="leading" secondItem="CNF-ug-vaW" secondAttribute="leading" id="Cb8-xF-0MG"/>
+                            <constraint firstItem="J0d-4a-FbW" firstAttribute="bottom" secondItem="eOP-cn-jQP" secondAttribute="top" id="GVL-Mw-FeK"/>
                             <constraint firstItem="CWK-GB-zQm" firstAttribute="trailing" secondItem="CNF-ug-vaW" secondAttribute="trailingMargin" constant="20" id="Ifn-0n-Pzi"/>
                             <constraint firstItem="pNz-DE-Tw4" firstAttribute="leading" secondItem="CWK-GB-zQm" secondAttribute="leading" id="Jcc-LU-pDq"/>
                             <constraint firstItem="CWK-GB-zQm" firstAttribute="top" secondItem="oQE-nB-6ul" secondAttribute="bottom" id="L54-D7-f2s"/>
                             <constraint firstItem="pNz-DE-Tw4" firstAttribute="top" secondItem="CWK-GB-zQm" secondAttribute="bottom" id="OIz-Ij-qla"/>
-                            <constraint firstItem="j0j-6e-D1M" firstAttribute="top" secondItem="CWK-GB-zQm" secondAttribute="bottom" id="Rut-tT-0WK"/>
-                            <constraint firstItem="j0j-6e-D1M" firstAttribute="top" secondItem="pNz-DE-Tw4" secondAttribute="bottom" id="YuC-Hc-S3m"/>
-                            <constraint firstItem="j0j-6e-D1M" firstAttribute="top" secondItem="CNF-ug-vaW" secondAttribute="top" constant="80" id="czt-5w-fNX"/>
-                            <constraint firstItem="CWK-GB-zQm" firstAttribute="trailing" secondItem="j0j-6e-D1M" secondAttribute="trailing" id="gIk-tB-qQB"/>
-                            <constraint firstItem="eOP-cn-jQP" firstAttribute="top" secondItem="j0j-6e-D1M" secondAttribute="bottom" id="hPN-ZU-oYE"/>
-                            <constraint firstItem="j0j-6e-D1M" firstAttribute="leading" secondItem="CWK-GB-zQm" secondAttribute="leading" id="kFR-HT-iSA"/>
-                            <constraint firstItem="CWK-GB-zQm" firstAttribute="leading" secondItem="j0j-6e-D1M" secondAttribute="leading" id="pHp-aM-Umu"/>
+                            <constraint firstItem="J0d-4a-FbW" firstAttribute="leading" secondItem="pNz-DE-Tw4" secondAttribute="leading" id="RgK-XC-ffc"/>
+                            <constraint firstItem="J0d-4a-FbW" firstAttribute="top" secondItem="CWK-GB-zQm" secondAttribute="bottom" constant="2" id="Zyt-Tf-rEB"/>
+                            <constraint firstItem="J0d-4a-FbW" firstAttribute="leading" secondItem="CWK-GB-zQm" secondAttribute="leading" id="kYt-1R-yyq"/>
                             <constraint firstItem="pNz-DE-Tw4" firstAttribute="trailing" secondItem="CWK-GB-zQm" secondAttribute="trailing" id="r2S-uI-BhP"/>
-                            <constraint firstItem="j0j-6e-D1M" firstAttribute="trailing" secondItem="pNz-DE-Tw4" secondAttribute="trailing" id="uYf-Md-GDA"/>
-                            <constraint firstItem="j0j-6e-D1M" firstAttribute="leading" secondItem="pNz-DE-Tw4" secondAttribute="leading" id="yAj-hQ-oM2"/>
+                            <constraint firstItem="J0d-4a-FbW" firstAttribute="trailing" secondItem="CWK-GB-zQm" secondAttribute="trailing" id="tWu-dr-fMc"/>
+                            <constraint firstItem="J0d-4a-FbW" firstAttribute="trailing" secondItem="pNz-DE-Tw4" secondAttribute="trailing" id="toK-5n-I21"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="203-C3-b4D"/>
                                 <exclude reference="Ifn-0n-Pzi"/>
-                                <exclude reference="gIk-tB-qQB"/>
-                                <exclude reference="pHp-aM-Umu"/>
                                 <exclude reference="Jcc-LU-pDq"/>
                                 <exclude reference="r2S-uI-BhP"/>
-                                <exclude reference="9GQ-SU-FEM"/>
-                                <exclude reference="Rut-tT-0WK"/>
-                                <exclude reference="czt-5w-fNX"/>
                             </mask>
                         </variation>
                     </view>
@@ -221,7 +207,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="2Cg-TJ-Mg3"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="map" destination="j0j-6e-D1M" id="qLb-p8-4Rr"/>
+                        <outlet property="mapView" destination="J0d-4a-FbW" id="dHJ-cp-tYu"/>
                         <outlet property="startRecordingTravel" destination="1bf-2Q-rr4" id="l4X-e2-JFt"/>
                         <outlet property="stopRecordingTravel" destination="8kB-p2-mqB" id="UmV-BZ-N1d"/>
                     </connections>

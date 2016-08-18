@@ -1,17 +1,17 @@
 import Foundation
-import Mapbox
+import MapKit
 import UIKit
 
 class AKDetection: NSObject
 {
     // MARK: Functions
-    static func detect(let map: MGLMapView, let travel: AKTravel, let travelSegment: AKTravelSegment)
+    static func detect(let map: MKMapView, let travel: AKTravel, let travelSegment: AKTravelSegment)
     {
         AKDetection.detectStops(map, travel: travel, travelSegment: travelSegment)
     }
     
     // MARK: Detection
-    private static func detectStops(let map: MGLMapView, let travel: AKTravel, let travelSegment: AKTravelSegment)
+    private static func detectStops(let map: MKMapView, let travel: AKTravel, let travelSegment: AKTravelSegment)
     {
         NSLog("=> DETECTION: *STOPS*")
         
@@ -51,15 +51,15 @@ class AKDetection: NSObject
             }
             
             map.addAnnotation(AKCreateCircleForCoordinate(
-                GlobalConstants.AKTravelStopPointMarkTitle,
+                "Parada",
                 coordinate: CLLocationCoordinate2DMake((lastSegment?.computeEnd().lat)!, lastSegment!.computeEnd().lon),
                 withMeterRadius: 10.0)
             )
             
             // Add PIN.
-            let annotation = MGLPointAnnotation()
+            let annotation = MKPointAnnotation()
             annotation.coordinate = CLLocationCoordinate2DMake((lastSegment?.computeEnd().lat)!, lastSegment!.computeEnd().lon)
-            annotation.title = GlobalConstants.AKTravelStopPointPinTitle
+            annotation.title = "Parada"
             annotation.subtitle = String(format: "Stop ID: %@, Stop Time: %.1f", stopID, stopTime)
             map.addAnnotation(annotation)
         }

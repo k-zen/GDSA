@@ -7,6 +7,7 @@ Functionalities
     * Heatmap of traffic.
 Changes
     * Version 1.0 Build 01 (2016/XX/XX)
+        * Migration from MapBox to MapKit. (2016/08/18)
         * Added ObjC library for Heatmaps. (2016/08/16)
         * Modification to the *Stop Detection* algorithm, now is 5 previous stops inclusive. (2016/08/09)
         * Added support for simulating travels. (2016/08/05)
