@@ -46,7 +46,7 @@ struct GlobalConstants {
     static let AKNotificationBarDismissDelay = 8
     static let AKNotificationBarSound = 1057
     static let AKPointDiscardRadius = 50.0
-    static let AKTravelPathMarkerStrokeColor = AKHexColor(0x346EF2)
+    static let AKTravelPathMarkerStrokeColor = AKHexColor(0x333333)
     static let AKMasterFileName = "MasterFile.dat"
     static let AKDefaultFont = "HelveticaNeue-CondensedBold"
     static let AKDisabledButtonBg = AKHexColor(0xEEEEEE)

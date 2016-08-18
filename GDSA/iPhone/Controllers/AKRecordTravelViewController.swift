@@ -90,7 +90,7 @@ class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
         self.mapView.userTrackingMode = MKUserTrackingMode.Follow
         // self.mapView.showsScale = true
         // self.mapView.showsCompass = true
-        self.mapView.showsTraffic = true
+        self.mapView.showsTraffic = false
         
         // Add map overlay for travel information.
         self.infoOverlayViewSubView = self.infoOverlayViewContainer.customView
@@ -274,8 +274,11 @@ class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
         if overlay.isKindOfClass(AKRoutePolyline) {
             let customOverlay = MKPolylineRenderer(overlay: overlay)
             customOverlay.alpha = 1.0
-            customOverlay.lineWidth = 4.0
+            customOverlay.lineWidth = 3.5
             customOverlay.strokeColor = GlobalConstants.AKTravelPathMarkerStrokeColor
+            customOverlay.lineDashPattern = [5]
+            customOverlay.lineCap = CGLineCap.Square
+            customOverlay.lineJoin = CGLineJoin.Round
             
             return customOverlay
         }

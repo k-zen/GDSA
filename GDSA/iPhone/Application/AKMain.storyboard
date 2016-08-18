@@ -9,6 +9,7 @@
             <string>HelveticaNeue-CondensedBold</string>
             <string>HelveticaNeue-CondensedBold</string>
             <string>HelveticaNeue-CondensedBold</string>
+            <string>HelveticaNeue-CondensedBold</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -127,10 +128,10 @@
                                 <rect key="frame" x="0.0" y="20" width="600" height="45"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1bf-2Q-rr4" userLabel="Record_Button">
-                                        <rect key="frame" x="197" y="6" width="100" height="34"/>
+                                        <rect key="frame" x="157" y="6" width="90" height="34"/>
                                         <color key="backgroundColor" red="0.011764705882352941" green="0.047058823529411764" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="3gv-EA-uFB"/>
+                                            <constraint firstAttribute="width" constant="90" id="3gv-EA-uFB"/>
                                             <constraint firstAttribute="height" constant="34" id="oc1-Sq-jnL"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="20"/>
@@ -141,12 +142,27 @@
                                             <action selector="startRecordingTravel:" destination="X3k-3j-jYF" eventType="touchUpInside" id="G37-FU-2kN"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Npn-7Z-9GJ" userLabel="Pause_Button">
+                                        <rect key="frame" x="255" y="6" width="90" height="34"/>
+                                        <color key="backgroundColor" red="0.01176470588" green="0.047058823530000002" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="90" id="8g9-jX-tkZ"/>
+                                            <constraint firstAttribute="height" constant="34" id="w7A-qm-Rh3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="20"/>
+                                        <state key="normal" title="Pause" image="0005-024px.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="stopRecordingTravel:" destination="X3k-3j-jYF" eventType="touchUpInside" id="IVO-na-hDG"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8kB-p2-mqB" userLabel="Stop_Button">
-                                        <rect key="frame" x="303" y="6" width="100" height="34"/>
+                                        <rect key="frame" x="353" y="6" width="90" height="34"/>
                                         <color key="backgroundColor" red="0.011764705882352941" green="0.047058823529411764" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="34" id="sT8-Sv-OqM"/>
-                                            <constraint firstAttribute="width" constant="100" id="wCU-hW-O9n"/>
+                                            <constraint firstAttribute="height" constant="34" id="3VI-Tx-ahu"/>
+                                            <constraint firstAttribute="width" constant="90" id="Xq1-et-oWE"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="20"/>
                                         <state key="normal" title="Stop" image="0005-024px.png">
@@ -159,10 +175,12 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="2C8-uk-mJK"/>
-                                    <constraint firstItem="1bf-2Q-rr4" firstAttribute="baseline" secondItem="8kB-p2-mqB" secondAttribute="baseline" id="4Ya-Em-g3S"/>
-                                    <constraint firstItem="8kB-p2-mqB" firstAttribute="leading" secondItem="1bf-2Q-rr4" secondAttribute="trailing" constant="6" id="cSj-Ts-Uu9"/>
+                                    <constraint firstItem="Npn-7Z-9GJ" firstAttribute="baseline" secondItem="1bf-2Q-rr4" secondAttribute="baseline" id="8Vv-M3-CMx"/>
+                                    <constraint firstItem="Npn-7Z-9GJ" firstAttribute="baseline" secondItem="8kB-p2-mqB" secondAttribute="baseline" id="BH6-cU-Rno"/>
+                                    <constraint firstItem="8kB-p2-mqB" firstAttribute="leading" secondItem="Npn-7Z-9GJ" secondAttribute="trailing" constant="8" symbolic="YES" id="G1w-JQ-x2E"/>
+                                    <constraint firstItem="Npn-7Z-9GJ" firstAttribute="leading" secondItem="1bf-2Q-rr4" secondAttribute="trailing" constant="8" symbolic="YES" id="LJ8-a2-5k1"/>
                                     <constraint firstItem="1bf-2Q-rr4" firstAttribute="top" secondItem="CWK-GB-zQm" secondAttribute="top" constant="6" id="jzz-zm-uDg"/>
-                                    <constraint firstItem="1bf-2Q-rr4" firstAttribute="centerX" secondItem="CWK-GB-zQm" secondAttribute="centerX" constant="-53" id="tCc-Jd-HhC"/>
+                                    <constraint firstItem="1bf-2Q-rr4" firstAttribute="centerX" secondItem="CWK-GB-zQm" secondAttribute="centerX" constant="-98" id="tCc-Jd-HhC"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pNz-DE-Tw4" userLabel="Separator">
