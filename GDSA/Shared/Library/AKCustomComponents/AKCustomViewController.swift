@@ -9,6 +9,7 @@ class AKCustomViewController: UIViewController, UIGestureRecognizerDelegate
     var shouldCheckLoggedUser: Bool = true
     var shouldDisableGesture: Bool = false
     var customOperationsWhenTaped: () -> Void = {}
+    var bottomMenu: UIAlertController?
     
     // MARK: UIViewController Overriding
     override func viewDidLoad()
@@ -49,6 +50,23 @@ class AKCustomViewController: UIViewController, UIGestureRecognizerDelegate
     }
     
     func tap() { self.tap(nil) }
+    
+    func setupMenu(title: String!, message: String!, type: UIAlertControllerStyle!)
+    { self.bottomMenu = UIAlertController.init(title: title, message: message, preferredStyle: type) }
+    
+    func addMenuAction(title: String!, style: UIAlertActionStyle, handler: ((UIAlertAction) -> Void)?)
+    {
+        if let menu = self.bottomMenu {
+            menu.addAction(UIAlertAction(title: title, style: style, handler: handler))
+        }
+    }
+    
+    func showMenu()
+    {
+        if let menu = self.bottomMenu {
+            self.presentViewController(menu, animated: true, completion: nil)
+        }
+    }
     
     // MARK: Utility functions
     func manageAccessToLocationServices()
