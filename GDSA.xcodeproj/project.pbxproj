@@ -51,6 +51,7 @@
 		49B252321CB2FA13005C88C9 /* AKAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B252271CB2FA13005C88C9 /* AKAppDelegate.swift */; };
 		49B252341CB2FA13005C88C9 /* AKMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49B252291CB2FA13005C88C9 /* AKMain.storyboard */; };
 		49B252351CB2FA13005C88C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49B2522D1CB2FA13005C88C9 /* Assets.xcassets */; };
+		49B7C67D1D675066004C7410 /* 0006-024px.png in Resources */ = {isa = PBXBuildFile; fileRef = 49B7C67C1D675066004C7410 /* 0006-024px.png */; };
 		49BEBB1A1CEA635F00A5FC12 /* AKTravel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BEBB191CEA635F00A5FC12 /* AKTravel.swift */; };
 		49CAA8471D1B3A25007BDD57 /* 0003-128px.png in Resources */ = {isa = PBXBuildFile; fileRef = 49CAA8461D1B3A25007BDD57 /* 0003-128px.png */; };
 		F659B09BE1C8F648E866A8EE /* Pods_GDSA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 112557B2B953CDA77E4FF6A8 /* Pods_GDSA.framework */; };
@@ -112,6 +113,7 @@
 		49B252291CB2FA13005C88C9 /* AKMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AKMain.storyboard; sourceTree = "<group>"; };
 		49B2522D1CB2FA13005C88C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49B252311CB2FA13005C88C9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49B7C67C1D675066004C7410 /* 0006-024px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "0006-024px.png"; sourceTree = "<group>"; };
 		49BEBB191CEA635F00A5FC12 /* AKTravel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKTravel.swift; sourceTree = "<group>"; };
 		49CAA8461D1B3A25007BDD57 /* 0003-128px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "0003-128px.png"; sourceTree = "<group>"; };
 		D07A537C06C51C24CADEF4A3 /* Pods-GDSA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GDSA.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GDSA/Pods-GDSA.debug.xcconfig"; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 				49CAA8461D1B3A25007BDD57 /* 0003-128px.png */,
 				497ED46D1D66124B003CE13E /* 0004-024px.png */,
 				497ED46F1D6613FC003CE13E /* 0005-024px.png */,
+				49B7C67C1D675066004C7410 /* 0006-024px.png */,
 				499DB67A1CB6E8B900342742 /* AppIcon-29@2x.png */,
 				499DB67B1CB6E8B900342742 /* AppIcon-29@3x.png */,
 				499DB67C1CB6E8B900342742 /* AppIcon-40@2x.png */,
@@ -508,6 +511,7 @@
 				4909CE611D555E2300A8B5FD /* integeruniquer.data in Resources */,
 				497ED4701D6613FC003CE13E /* 0005-024px.png in Resources */,
 				497ED46E1D66124B003CE13E /* 0004-024px.png in Resources */,
+				49B7C67D1D675066004C7410 /* 0006-024px.png in Resources */,
 				4909CE631D555E2300A8B5FD /* MANIFEST.plist in Resources */,
 				49B252341CB2FA13005C88C9 /* AKMain.storyboard in Resources */,
 				49CAA8471D1B3A25007BDD57 /* 0003-128px.png in Resources */,

@@ -150,7 +150,7 @@
                                             <constraint firstAttribute="height" constant="34" id="w7A-qm-Rh3"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="20"/>
-                                        <state key="normal" title="Pause" image="0005-024px.png">
+                                        <state key="normal" title="Pause" image="0006-024px.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -259,5 +259,6 @@
     <resources>
         <image name="0004-024px.png" width="24" height="24"/>
         <image name="0005-024px.png" width="24" height="24"/>
+        <image name="0006-024px.png" width="24" height="24"/>
     </resources>
 </document>
