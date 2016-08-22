@@ -61,11 +61,14 @@ class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
     
     // MARK: Outlets
     @IBOutlet weak var startRecordingTravel: UIButton!
+    @IBOutlet weak var pauseRecordingTravel: UIButton!
     @IBOutlet weak var stopRecordingTravel: UIButton!
     @IBOutlet weak var mapView: MKMapView!
     
     // MARK: Actions
     @IBAction func startRecordingTravel(sender: AnyObject) { self.startRecording() }
+    
+    @IBAction func pauseRecordingTravel(sender: AnyObject) { }
     
     @IBAction func stopRecordingTravel(sender: AnyObject) { self.stopRecording() }
     
@@ -316,6 +319,7 @@ class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
         
         // Custom L&F.
         self.startRecordingTravel.layer.cornerRadius = 4.0
+        self.pauseRecordingTravel.layer.cornerRadius = 4.0
         self.stopRecordingTravel.layer.cornerRadius = 4.0
     }
     

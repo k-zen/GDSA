@@ -1,6 +1,6 @@
 import UIKit
 
-class AKMainViewController: AKCustomViewController, UITableViewDataSource, UITableViewDelegate
+class AKPreviousTravelsViewController: AKCustomViewController, UITableViewDataSource, UITableViewDelegate
 {
     // MARK: Outlets
     @IBOutlet weak var travelsTable: UITableView!

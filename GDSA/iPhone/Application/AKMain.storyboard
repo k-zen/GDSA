@@ -16,7 +16,7 @@
         <!--GDSA-->
         <scene sceneID="v1F-Ub-gJk">
             <objects>
-                <tabBarController title="GDSA" id="egE-zI-B6a" sceneMemberID="viewController">
+                <tabBarController title="GDSA" id="egE-zI-B6a" customClass="AKMainTabController" customModule="GDSA" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Zvq-LK-q21">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -35,7 +35,7 @@
         <!--Previous Travels-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="MainView" title="Previous Travels" id="BYZ-38-t0r" customClass="AKMainViewController" customModule="GDSA" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainView" title="Previous Travels" id="BYZ-38-t0r" customClass="AKPreviousTravelsViewController" customModule="GDSA" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -81,10 +81,7 @@
                             <constraint firstItem="vX1-pG-j8s" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="wUe-aF-8X3"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Previous" id="jAy-s9-YvI"/>
-                    <navigationItem key="navigationItem" title="Main" id="1xK-wB-F8c">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="J2e-Vy-8wS"/>
-                    </navigationItem>
+                    <tabBarItem key="tabBarItem" tag="2" title="Previous" id="jAy-s9-YvI"/>
                     <connections>
                         <outlet property="travelsTable" destination="Mup-7e-09B" id="e5G-0m-gTp"/>
                     </connections>
@@ -106,7 +103,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.21176470589999999" green="0.2470588235" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Traffic Heatmap" id="PGj-gq-Sf8"/>
+                    <tabBarItem key="tabBarItem" tag="3" title="Traffic Heatmap" id="PGj-gq-Sf8"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R8F-T8-TWq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -154,7 +151,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="stopRecordingTravel:" destination="X3k-3j-jYF" eventType="touchUpInside" id="IVO-na-hDG"/>
+                                            <action selector="pauseRecordingTravel:" destination="X3k-3j-jYF" eventType="touchUpInside" id="tHx-GR-Ai2"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8kB-p2-mqB" userLabel="Stop_Button">
@@ -220,12 +217,10 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Record" id="9Jw-CU-P2q"/>
-                    <navigationItem key="navigationItem" title="Record Travel" id="h0R-Uz-8Xk">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="2Cg-TJ-Mg3"/>
-                    </navigationItem>
+                    <tabBarItem key="tabBarItem" tag="1" title="Record" id="9Jw-CU-P2q"/>
                     <connections>
                         <outlet property="mapView" destination="J0d-4a-FbW" id="dHJ-cp-tYu"/>
+                        <outlet property="pauseRecordingTravel" destination="Npn-7Z-9GJ" id="EIR-xn-POQ"/>
                         <outlet property="startRecordingTravel" destination="1bf-2Q-rr4" id="l4X-e2-JFt"/>
                         <outlet property="stopRecordingTravel" destination="8kB-p2-mqB" id="UmV-BZ-N1d"/>
                     </connections>
@@ -247,9 +242,6 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="View Travel" id="gc4-GJ-moF">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="LRp-qD-yG6"/>
-                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Reg-fW-jH0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

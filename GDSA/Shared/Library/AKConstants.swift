@@ -43,7 +43,7 @@ struct GlobalConstants {
     static let AKStartRecordingTravelNotificationName = "StartRecordingTravel"
     static let AKStopRecordingTravelNotificationName = "StopRecordingTravel"
     static let AKLocationUpdateNotificationName = "LocationUpdate"
-    static let AKNotificationBarDismissDelay = 8
+    static let AKNotificationBarDismissDelay = 4
     static let AKNotificationBarSound = 1057
     static let AKPointDiscardRadius = 50.0
     static let AKTravelPathMarkerStrokeColor = AKHexColor(0x333333)
@@ -57,6 +57,9 @@ struct GlobalConstants {
     static let AKHeaderTopBorderBg = AKHexColor(0x72BF44)
     static let AKButtonCornerRadius = 4.0
     static let AKDefaultBorderThickness = 2.0
+    static let AKRecordTravelTab = 1
+    static let AKPreviousTravelsTab = 2
+    static let AKHeatmapTab = 3
 }
 
 // MARK: Global Enumerations
@@ -248,7 +251,7 @@ func AKHexColor(hex: UInt) -> UIColor
     return UIColor.init(red: red, green: green, blue: blue, alpha: 1)
 }
 
-func AKPresentTopMessageInfo(presenter: AKCustomViewController!, title: String! = "Information", message: String!)
+func AKPresentTopMessageInfo(presenter: UIViewController!, title: String! = "Información", message: String!)
 {
     TSMessage.showNotificationInViewController(
         presenter,
@@ -266,7 +269,7 @@ func AKPresentTopMessageInfo(presenter: AKCustomViewController!, title: String! 
     AudioServicesPlaySystemSound(UInt32(GlobalConstants.AKNotificationBarSound))
 }
 
-func AKPresentTopMessageWarn(presenter: AKCustomViewController!, title: String! = "Warning", message: String!)
+func AKPresentTopMessageWarn(presenter: UIViewController!, title: String! = "Advertencia", message: String!)
 {
     TSMessage.showNotificationInViewController(
         presenter,
@@ -284,7 +287,7 @@ func AKPresentTopMessageWarn(presenter: AKCustomViewController!, title: String! 
     AudioServicesPlaySystemSound(UInt32(GlobalConstants.AKNotificationBarSound))
 }
 
-func AKPresentTopMessageError(presenter: AKCustomViewController!, title: String! = "Error", message: String!)
+func AKPresentTopMessageError(presenter: UIViewController!, title: String! = "Error", message: String!)
 {
     TSMessage.showNotificationInViewController(
         presenter,
@@ -302,7 +305,7 @@ func AKPresentTopMessageError(presenter: AKCustomViewController!, title: String!
     AudioServicesPlaySystemSound(UInt32(GlobalConstants.AKNotificationBarSound))
 }
 
-func AKPresentTopMessageSuccess(presenter: AKCustomViewController!, title: String! = "Message", message: String!)
+func AKPresentTopMessageSuccess(presenter: UIViewController!, title: String! = "Mensaje", message: String!)
 {
     TSMessage.showNotificationInViewController(
         presenter,
@@ -320,7 +323,7 @@ func AKPresentTopMessageSuccess(presenter: AKCustomViewController!, title: Strin
     AudioServicesPlaySystemSound(UInt32(GlobalConstants.AKNotificationBarSound))
 }
 
-func AKPresentMessageFromError(errorMessage: String = "", controller: AKCustomViewController!)
+func AKPresentMessageFromError(errorMessage: String = "", controller: UIViewController!)
 {
     do {
         let input = errorMessage
