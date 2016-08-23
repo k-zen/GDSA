@@ -81,7 +81,7 @@
                             <constraint firstItem="vX1-pG-j8s" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="wUe-aF-8X3"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="2" title="Previous" id="jAy-s9-YvI"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="Previous" image="0008-030px.png" id="jAy-s9-YvI"/>
                     <connections>
                         <outlet property="travelsTable" destination="Mup-7e-09B" id="e5G-0m-gTp"/>
                     </connections>
@@ -103,7 +103,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.21176470589999999" green="0.2470588235" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="3" title="Traffic Heatmap" id="PGj-gq-Sf8"/>
+                    <tabBarItem key="tabBarItem" tag="3" title="Traffic Heatmap" image="0009-030px.png" id="PGj-gq-Sf8"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R8F-T8-TWq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -217,7 +217,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="1" title="Record" id="9Jw-CU-P2q"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="Record" image="0007-030px.png" id="9Jw-CU-P2q"/>
                     <connections>
                         <outlet property="mapView" destination="J0d-4a-FbW" id="dHJ-cp-tYu"/>
                         <outlet property="pauseRecordingTravel" destination="Npn-7Z-9GJ" id="EIR-xn-POQ"/>
@@ -252,5 +252,8 @@
         <image name="0004-024px.png" width="24" height="24"/>
         <image name="0005-024px.png" width="24" height="24"/>
         <image name="0006-024px.png" width="24" height="24"/>
+        <image name="0007-030px.png" width="30" height="30"/>
+        <image name="0008-030px.png" width="30" height="30"/>
+        <image name="0009-030px.png" width="30" height="30"/>
     </resources>
 </document>

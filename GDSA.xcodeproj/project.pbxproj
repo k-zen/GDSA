@@ -28,6 +28,9 @@
 		4934C6781D0AF920004754AF /* AKFileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4934C6771D0AF920004754AF /* AKFileUtils.swift */; };
 		4934C67A1D0B5FEB004754AF /* AKMasterFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4934C6791D0B5FEB004754AF /* AKMasterFile.swift */; };
 		4937B1AB1D6B790900BED13B /* AKMainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4937B1AA1D6B790900BED13B /* AKMainTabController.swift */; };
+		4937B1AF1D6BFA5800BED13B /* 0007-030px.png in Resources */ = {isa = PBXBuildFile; fileRef = 4937B1AC1D6BFA5800BED13B /* 0007-030px.png */; };
+		4937B1B01D6BFA5800BED13B /* 0008-030px.png in Resources */ = {isa = PBXBuildFile; fileRef = 4937B1AD1D6BFA5800BED13B /* 0008-030px.png */; };
+		4937B1B11D6BFA5800BED13B /* 0009-030px.png in Resources */ = {isa = PBXBuildFile; fileRef = 4937B1AE1D6BFA5800BED13B /* 0009-030px.png */; };
 		495683341CEA235B0057B06E /* AKCustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495683331CEA235B0057B06E /* AKCustomViewController.swift */; };
 		495683361CEA268B0057B06E /* AKConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495683351CEA268B0057B06E /* AKConstants.swift */; };
 		495683391CEA57BC0057B06E /* AKInputData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495683371CEA57BC0057B06E /* AKInputData.swift */; };
@@ -88,6 +91,9 @@
 		4934C6771D0AF920004754AF /* AKFileUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKFileUtils.swift; sourceTree = "<group>"; };
 		4934C6791D0B5FEB004754AF /* AKMasterFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKMasterFile.swift; sourceTree = "<group>"; };
 		4937B1AA1D6B790900BED13B /* AKMainTabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKMainTabController.swift; sourceTree = "<group>"; };
+		4937B1AC1D6BFA5800BED13B /* 0007-030px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "0007-030px.png"; sourceTree = "<group>"; };
+		4937B1AD1D6BFA5800BED13B /* 0008-030px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "0008-030px.png"; sourceTree = "<group>"; };
+		4937B1AE1D6BFA5800BED13B /* 0009-030px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "0009-030px.png"; sourceTree = "<group>"; };
 		495683331CEA235B0057B06E /* AKCustomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKCustomViewController.swift; sourceTree = "<group>"; };
 		495683351CEA268B0057B06E /* AKConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKConstants.swift; sourceTree = "<group>"; };
 		495683371CEA57BC0057B06E /* AKInputData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKInputData.swift; sourceTree = "<group>"; };
@@ -281,6 +287,9 @@
 				497ED46D1D66124B003CE13E /* 0004-024px.png */,
 				497ED46F1D6613FC003CE13E /* 0005-024px.png */,
 				49B7C67C1D675066004C7410 /* 0006-024px.png */,
+				4937B1AC1D6BFA5800BED13B /* 0007-030px.png */,
+				4937B1AD1D6BFA5800BED13B /* 0008-030px.png */,
+				4937B1AE1D6BFA5800BED13B /* 0009-030px.png */,
 				499DB67A1CB6E8B900342742 /* AppIcon-29@2x.png */,
 				499DB67B1CB6E8B900342742 /* AppIcon-29@3x.png */,
 				499DB67C1CB6E8B900342742 /* AppIcon-40@2x.png */,
@@ -509,14 +518,17 @@
 				490F91551CF785BF0031B8AE /* AKTravelInfoOverlayView.xib in Resources */,
 				49B252231CB2F84D005C88C9 /* CHANGES.txt in Resources */,
 				4981C7F11D55530200908876 /* Read_Route.py in Resources */,
+				4937B1B01D6BFA5800BED13B /* 0008-030px.png in Resources */,
 				4981C7F01D55530200908876 /* Home-UCA-Route_1.tsv in Resources */,
 				4909CE5F1D555E2300A8B5FD /* integeruniquer.data in Resources */,
 				4909CE611D555E2300A8B5FD /* integeruniquer.data in Resources */,
 				497ED4701D6613FC003CE13E /* 0005-024px.png in Resources */,
 				497ED46E1D66124B003CE13E /* 0004-024px.png in Resources */,
 				49B7C67D1D675066004C7410 /* 0006-024px.png in Resources */,
+				4937B1AF1D6BFA5800BED13B /* 0007-030px.png in Resources */,
 				4909CE631D555E2300A8B5FD /* MANIFEST.plist in Resources */,
 				49B252341CB2FA13005C88C9 /* AKMain.storyboard in Resources */,
+				4937B1B11D6BFA5800BED13B /* 0009-030px.png in Resources */,
 				49CAA8471D1B3A25007BDD57 /* 0003-128px.png in Resources */,
 				499DB6821CB6E8B900342742 /* AppIcon-29@3x.png in Resources */,
 				4909CE621D555E2300A8B5FD /* integeruniquer.index in Resources */,

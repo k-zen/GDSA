@@ -9,7 +9,7 @@ class AKTravelInfoOverlayView: AKCustomView
     // MARK: Outlets
     @IBOutlet weak var distance: UILabel!
     @IBOutlet weak var speed: UILabel!
-    @IBOutlet weak var filteredPoints: UILabel!
+    @IBOutlet weak var time: UILabel!
     @IBOutlet weak var coordinates: UILabel!
     
     // MARK: UIView Overriding
@@ -49,8 +49,8 @@ class AKTravelInfoOverlayView: AKCustomView
         self.distance.layer.masksToBounds = true
         self.speed.layer.cornerRadius = 4.0
         self.speed.layer.masksToBounds = true
-        self.filteredPoints.layer.cornerRadius = 4.0
-        self.filteredPoints.layer.masksToBounds = true
+        self.time.layer.cornerRadius = 4.0
+        self.time.layer.masksToBounds = true
         self.coordinates.layer.cornerRadius = 4.0
         self.coordinates.layer.masksToBounds = true
     }

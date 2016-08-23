@@ -10,8 +10,8 @@
             <connections>
                 <outlet property="coordinates" destination="MjF-AB-f1J" id="quq-vO-0ev"/>
                 <outlet property="distance" destination="SAM-aT-jOa" id="xn3-ni-i76"/>
-                <outlet property="filteredPoints" destination="q2F-93-4W8" id="FHb-X2-j4G"/>
                 <outlet property="speed" destination="zuc-TH-RVI" id="o7r-MO-Czf"/>
+                <outlet property="time" destination="q2F-93-4W8" id="Cey-LY-z77"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -30,7 +30,7 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0FP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q2F-93-4W8" userLabel="FP_Value">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q2F-93-4W8" userLabel="Time_Value">
                     <rect key="frame" x="215" y="6" width="92" height="22"/>
                     <color key="backgroundColor" red="0.011764705882352941" green="0.047058823529411764" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>

@@ -16,7 +16,7 @@ class AKDetection: NSObject
         NSLog("=> DETECTION: *STOPS*")
         
         let segments = travel.computeSegments()
-        let elementsToCount: Int = 5
+        let elementsToCount: Int = GlobalConstants.AKStopDetectionSegmentsToCount
         var totalDistance: Double = 0.0
         var isStop: Int8 = 0
         var lastSegment: AKTravelSegment?
@@ -32,8 +32,7 @@ class AKDetection: NSObject
             lastSegment = segments[k]
         }
         
-        isStop = totalDistance <= 10 ? 1 : 0 // If it's 1 then is a STOP.
-        
+        isStop = totalDistance <= GlobalConstants.AKStopDetectionMaxDistance ? 1 : 0 // If it's 1 then is a STOP.
         if isStop == 1 {
             NSLog("=> DETECTION: *STOPS* IS A STOP!")
             
@@ -60,7 +59,7 @@ class AKDetection: NSObject
             let annotation = MKPointAnnotation()
             annotation.coordinate = CLLocationCoordinate2DMake((lastSegment?.computeEnd().lat)!, lastSegment!.computeEnd().lon)
             annotation.title = "Parada"
-            annotation.subtitle = String(format: "Stop ID: %@, Stop Time: %.1f", stopID, stopTime)
+            annotation.subtitle = String(format: "Stop Time: %.1f", stopTime)
             map.addAnnotation(annotation)
         }
     }

@@ -22,7 +22,7 @@ class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
         controller.infoOverlayViewSubView.backgroundColor = AKHexColor(0xBB5C5A)
         controller.infoOverlayViewContainer.distance.backgroundColor = AKHexColor(0x9B2C32)
         controller.infoOverlayViewContainer.speed.backgroundColor = AKHexColor(0x9B2C32)
-        controller.infoOverlayViewContainer.filteredPoints.backgroundColor = AKHexColor(0x9B2C32)
+        controller.infoOverlayViewContainer.time.backgroundColor = AKHexColor(0x9B2C32)
         controller.infoOverlayViewContainer.coordinates.backgroundColor = AKHexColor(0x9B2C32)
         
         controller.infoOverlayViewContainer.startAnimation()
@@ -32,13 +32,22 @@ class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
         UIView.animateWithDuration(1.0, animations: { () -> () in
             controller.startRecordingTravel.backgroundColor = AKHexColor(0x9B2C32)
         })
+        
+        // Start stopwatch.
+        controller.startTimeTimer = NSTimer.scheduledTimerWithTimeInterval(
+            1.0,
+            target: controller,
+            selector: #selector(AKRecordTravelViewController.stopWatchTicked as (AKRecordTravelViewController) -> () -> ()),
+            userInfo: nil,
+            repeats: true
+        )
     }
     private let stopRecordingPreRoutine: (AKRecordTravelViewController) -> Void = { (controller) -> Void in
         // Revert color of info overlay.
         controller.infoOverlayViewSubView.backgroundColor = AKHexColor(0x253B49)
         controller.infoOverlayViewContainer.distance.backgroundColor = AKHexColor(0x08303A)
         controller.infoOverlayViewContainer.speed.backgroundColor = AKHexColor(0x08303A)
-        controller.infoOverlayViewContainer.filteredPoints.backgroundColor = AKHexColor(0x08303A)
+        controller.infoOverlayViewContainer.time.backgroundColor = AKHexColor(0x08303A)
         controller.infoOverlayViewContainer.coordinates.backgroundColor = AKHexColor(0x08303A)
         
         controller.infoOverlayViewContainer.stopAnimation()
@@ -48,6 +57,13 @@ class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
         UIView.animateWithDuration(1.0, animations: { () -> () in
             controller.startRecordingTravel.backgroundColor = GlobalConstants.AKEnabledButtonBg
         })
+        
+        // Stop stopwatch.
+        if let timer = controller.startTimeTimer {
+            if timer.valid {
+                timer.invalidate()
+            }
+        }
     }
     private let stopRecordingPostRoutine: (AKRecordTravelViewController) -> Void = { (controller) -> Void in
         // Clear map.
@@ -57,7 +73,8 @@ class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
     private var travel: AKTravel! = AKTravel()
     private var currentPosition: UserLocation = UserLocation()
     private var coordinates: [CLLocationCoordinate2D] = []
-    private var filteredPointsCounter: Int = 0
+    private var startTimeTimer: NSTimer?
+    private var startTime: Int64 = 0
     
     // MARK: Outlets
     @IBOutlet weak var startRecordingTravel: UIButton!
@@ -237,8 +254,9 @@ class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
             
             // Execute filters.
             if !AKFilters.filter(self.mapView, travel: self.travel, travelSegment: travelSegment) {
-                self.filteredPointsCounter += 1
-                self.infoOverlayViewContainer.filteredPoints.text = String(format: "%iFP", self.filteredPointsCounter)
+                if GlobalConstants.AKDebug {
+                    NSLog("=> FILTERED POINT!")
+                }
             }
             else {
                 self.travel.addDistance(travelSegment.computeDistance(UnitOfLength.Meter))
@@ -335,9 +353,19 @@ class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
             self.mapView.removeOverlays(self.mapView.overlays)
         }
         
-        self.infoOverlayViewContainer.filteredPoints.text = String(format: "%iFP", 0)
+        self.infoOverlayViewContainer.time.text = String(format: "00:00:00")
         self.infoOverlayViewContainer.distance.text = String(format: "%.1fkm", 0.0)
         self.infoOverlayViewContainer.speed.text = String(format: "%ikm/h", 0.0)
         self.infoOverlayViewContainer.coordinates.text = String(format: "%f : %f", 0.0, 0.0)
+        
+        // Reset
+        self.startTime = 0
+    }
+    
+    func stopWatchTicked()
+    {
+        self.startTime += 1
+        
+        self.infoOverlayViewContainer.time.text = String(format: "%02d:%02d:%02d", (startTime / 3600), ((startTime / 60) % 60), (startTime % 60))
     }
 }

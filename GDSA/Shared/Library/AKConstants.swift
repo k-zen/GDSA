@@ -60,6 +60,9 @@ struct GlobalConstants {
     static let AKRecordTravelTab = 1
     static let AKPreviousTravelsTab = 2
     static let AKHeatmapTab = 3
+    // StopDetection
+    static let AKStopDetectionMaxDistance = 20.0
+    static let AKStopDetectionSegmentsToCount = 5
 }
 
 // MARK: Global Enumerations
