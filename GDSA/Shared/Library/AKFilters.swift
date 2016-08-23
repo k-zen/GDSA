@@ -5,7 +5,7 @@ import UIKit
 class AKFilters: NSObject
 {
     // MARK: Functions
-    static func filter(let map: MKMapView, let travel: AKTravel, let travelSegment: AKTravelSegment) -> Bool
+    static func filter(_ map: MKMapView, travel: AKTravel, travelSegment: AKTravelSegment) -> Bool
     {
         var result: Int8 = 0
         
@@ -16,7 +16,7 @@ class AKFilters: NSObject
     
     // MARK: Filters
     /// This filters excludes points which are too close to the origin.
-    private static func filterOriginDistance(let map: MKMapView, let travel: AKTravel, let travelSegment: AKTravelSegment) -> Int8
+    private static func filterOriginDistance(_ map: MKMapView, travel: AKTravel, travelSegment: AKTravelSegment) -> Int8
     {
         NSLog("=> FILTERS: *ORIGIN DISTANCE*")
         

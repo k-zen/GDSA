@@ -1,10 +1,10 @@
 import Foundation
 
-enum FileIOError: ErrorType
+enum FileIOError: Error
 {
-    case NotSerializableObject(String)
-    case FileCreationError(String)
-    case FileWriteError(String)
+    case notSerializableObject(String)
+    case fileCreationError(String)
+    case fileWriteError(String)
 }
 
 /// Utility class for handling file IO inside the App.
@@ -17,32 +17,31 @@ class AKFileUtils {
     ///
     /// \returns The URL of the file archive.
     static func openFileArchive(
-        let fileName: String,
-            let location: NSSearchPathDirectory,
-                let shouldCreate: Bool) throws -> String?
+        _ fileName: String,
+        location: FileManager.SearchPathDirectory,
+        shouldCreate: Bool) throws -> String?
     {
-        let fm: NSFileManager = NSFileManager()
-        let appSupportDir: NSURL = try fm.URLForDirectory(
-            location,
-            inDomain: NSSearchPathDomainMask.UserDomainMask,
-            appropriateForURL: nil,
-            create: true
+        let fm: FileManager = FileManager()
+        let appSupportDir: URL = try fm.url(for: location,
+                                            in: FileManager.SearchPathDomainMask.userDomainMask,
+                                            appropriateFor: nil,
+                                            create: true
         )
         
-        if fm.fileExistsAtPath(appSupportDir.URLByAppendingPathComponent(fileName).path!) {
-            return appSupportDir.URLByAppendingPathComponent(fileName).path
+        if fm.fileExists(atPath: appSupportDir.appendingPathComponent(fileName).path) {
+            return appSupportDir.appendingPathComponent(fileName).path
         }
         else {
             if shouldCreate {
                 NSLog("=> FILE *%@* DOES NOT EXISTS! CREATING...", fileName)
-                guard fm.createFileAtPath(appSupportDir.URLByAppendingPathComponent(fileName).path!, contents: nil, attributes: nil) else {
-                    throw FileIOError.FileCreationError("File cannot be created.")
+                guard fm.createFile(atPath: appSupportDir.appendingPathComponent(fileName).path, contents: nil, attributes: nil) else {
+                    throw FileIOError.fileCreationError("File cannot be created.")
                 }
                 
-                return appSupportDir.URLByAppendingPathComponent(fileName).path
+                return appSupportDir.appendingPathComponent(fileName).path
             }
             else {
-                throw FileIOError.FileCreationError("No file to open.")
+                throw FileIOError.fileCreationError("No file to open.")
             }
         }
     }
@@ -51,19 +50,19 @@ class AKFileUtils {
     ///
     /// \param fileName The name of the file archive.
     /// \param newData The new object to save.
-    static func write(let fileName: String, let newData: AnyObject) throws
+    static func write(_ fileName: String, newData: AnyObject) throws
     {
         let fileName = String(format: "%@.%@.%@", fileName, AKAppVersion(), AKAppBuild())
         
         // 1. Check that object is serializable.
-        guard newData is NSCoding else { throw FileIOError.NotSerializableObject("Object not serializable.") }
+        guard newData is NSCoding else { throw FileIOError.notSerializableObject("Object not serializable.") }
         
         do {
             NSLog("=> WRITING DATA...")
             
-            let path = try AKFileUtils.openFileArchive(fileName, location: NSSearchPathDirectory.ApplicationSupportDirectory, shouldCreate: true)
+            let path = try AKFileUtils.openFileArchive(fileName, location: FileManager.SearchPathDirectory.applicationSupportDirectory, shouldCreate: true)
             guard NSKeyedArchiver.archiveRootObject(newData, toFile: path!) else {
-                throw FileIOError.FileWriteError("Error writing data to file.")
+                throw FileIOError.fileWriteError("Error writing data to file.")
             }
         }
         catch {
@@ -76,15 +75,15 @@ class AKFileUtils {
     /// \param fileName The name of the file archive.
     ///
     /// \returns The object.
-    static func read(let fileName: String) throws -> AnyObject
+    static func read(_ fileName: String) throws -> AnyObject
     {
         let fileName = String(format: "%@.%@.%@", fileName, AKAppVersion(), AKAppBuild())
         
         do {
             NSLog("=> READING DATA...")
             
-            let path = try AKFileUtils.openFileArchive(fileName, location: NSSearchPathDirectory.ApplicationSupportDirectory, shouldCreate: false)
-            if let object = NSKeyedUnarchiver.unarchiveObjectWithFile(path!) {
+            let path = try AKFileUtils.openFileArchive(fileName, location: FileManager.SearchPathDirectory.applicationSupportDirectory, shouldCreate: false)
+            if let object = NSKeyedUnarchiver.unarchiveObject(withFile: path!) {
                 return object
             }
         }

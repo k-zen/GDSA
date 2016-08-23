@@ -11,7 +11,7 @@ class AKMainTabController: UITabBarController, UITabBarControllerDelegate
     }
     
     // MARK: UITabBarControllerDelegate Implementation
-    func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool
     {
         if AKDelegate().recordingTravel {
             AKPresentTopMessageWarn(self, message: "Estas grabando un viaje, paralo primero.")

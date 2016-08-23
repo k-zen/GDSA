@@ -8,7 +8,7 @@ import UIKit
 // MARK: Extensions
 extension Int
 {
-    func modulo(divisor: Int) -> Int
+    func modulo(_ divisor: Int) -> Int
     {
         var result = self % divisor
         if (result < 0) {
@@ -23,7 +23,7 @@ extension String
 {
     func splitOnNewLine () -> [String]
     {
-        return self.componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet())
+        return self.components(separatedBy: CharacterSet.newlines)
     }
 }
 
@@ -67,38 +67,38 @@ struct GlobalConstants {
 
 // MARK: Global Enumerations
 enum ErrorCodes: Int {
-    case GENERIC = 1000
+    case generic = 1000
 }
 
-enum Exceptions: ErrorType {
-    case NotInitialized(String)
-    case EmptyData(String)
-    case InvalidLength(String)
-    case NotValid(String)
+enum Exceptions: Error {
+    case notInitialized(String)
+    case emptyData(String)
+    case invalidLength(String)
+    case notValid(String)
 }
 
 enum UnitOfLength: Int {
-    case Meter = 1
-    case Kilometer = 2
+    case meter = 1
+    case kilometer = 2
 }
 
 enum UnitOfTime: Int {
-    case Second = 1
-    case Minute = 2
-    case Hour = 3
+    case second = 1
+    case minute = 2
+    case hour = 3
 }
 
 enum UnitOfSpeed: Int {
-    case MetersPerSecond = 1
-    case KilometersPerHour = 2
-    case MilesPerHour = 3
+    case metersPerSecond = 1
+    case kilometersPerHour = 2
+    case milesPerHour = 3
 }
 
 enum CustomBorderDecorationPosition: Int {
-    case Top = 0
-    case Right = 1
-    case Bottom = 2
-    case Left = 3
+    case top = 0
+    case right = 1
+    case bottom = 2
+    case left = 3
 }
 
 // MARK: Global Functions
@@ -107,7 +107,7 @@ enum CustomBorderDecorationPosition: Int {
 /// - Returns: The App's build version.
 func AKAppBuild() -> String
 {
-    if let b = NSBundle.mainBundle().infoDictionary?["CFBundleVersion"] as? String {
+    if let b = Bundle.main.infoDictionary?["CFBundleVersion"] as? String {
         return b
     }
     else {
@@ -120,7 +120,7 @@ func AKAppBuild() -> String
 /// - Returns: The App's version.
 func AKAppVersion() -> String
 {
-    if let v = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleShortVersionString") as? String {
+    if let v = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String {
         return v
     }
     else {
@@ -132,15 +132,15 @@ func AKAppVersion() -> String
 ///
 /// - Parameter delay: The delay.
 /// - Parameter task:  The function to execute.
-func AKDelay(delay: Double, task: Void -> Void)
+func AKDelay(_ delay: Double, task: (Void) -> Void)
 {
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(delay * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), task)
+    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: task)
 }
 
 /// Returns the App's delegate object.
 ///
 /// - Returns: The App's delegate object.
-func AKDelegate() -> AKAppDelegate { return UIApplication.sharedApplication().delegate as! AKAppDelegate }
+func AKDelegate() -> AKAppDelegate { return UIApplication.shared.delegate as! AKAppDelegate }
 
 /// Returns the App's master file object.
 ///
@@ -151,7 +151,7 @@ func AKObtainMasterFile() throws -> AKMasterFile
         return mf
     }
     else {
-        throw Exceptions.NotInitialized("The *Master File* has not been initialized.")
+        throw Exceptions.notInitialized("The *Master File* has not been initialized.")
     }
 }
 
@@ -161,13 +161,13 @@ func AKObtainMasterFile() throws -> AKMasterFile
 /// - Parameter pointB: Point B location.
 ///
 /// - Returns: TRUE if within range, FALSE otherwise.
-func AKComputeDistanceBetweenTwoPoints(pointA pointA: UserLocation,
-                                              pointB: UserLocation) -> CLLocationDistance
+func AKComputeDistanceBetweenTwoPoints(pointA: UserLocation,
+                                       pointB: UserLocation) -> CLLocationDistance
 {
     let pointA = CLLocation(latitude: pointA.lat, longitude: pointA.lon)
     let pointB = CLLocation(latitude: pointB.lat, longitude: pointB.lon)
     
-    return pointA.distanceFromLocation(pointB)
+    return pointA.distance(from: pointB)
 }
 
 /// Create a polygon with the form of a circle.
@@ -177,7 +177,7 @@ func AKComputeDistanceBetweenTwoPoints(pointA pointA: UserLocation,
 /// - Parameter withMeterRadius: The radius of the circle.
 ///
 /// - Returns: A polygon object in the form of a circle.
-func AKCreateCircleForCoordinate(title: String, coordinate: CLLocationCoordinate2D, withMeterRadius: Double) -> MKPolygon
+func AKCreateCircleForCoordinate(_ title: String, coordinate: CLLocationCoordinate2D, withMeterRadius: Double) -> MKPolygon
 {
     let degreesBetweenPoints = 8.0
     let numberOfPoints = floor(360.0 / degreesBetweenPoints)
@@ -214,7 +214,7 @@ func AKCreateCircleForCoordinate(title: String, coordinate: CLLocationCoordinate
 ///
 /// - Returns: An image object in the form of a circle.
 func AKCircleImageWithRadius(
-    radius: Int,
+    _ radius: Int,
     strokeColor: UIColor,
     strokeAlpha: Float,
     fillColor: UIColor,
@@ -223,20 +223,20 @@ func AKCircleImageWithRadius(
     let buffer = 2
     let rect = CGRect(x: 0, y: 0, width: radius * 2 + buffer, height: radius * 2 + buffer)
     
-    UIGraphicsBeginImageContextWithOptions(rect.size, false, UIScreen.mainScreen().scale)
+    UIGraphicsBeginImageContextWithOptions(rect.size, false, UIScreen.main.scale)
     
     let context = UIGraphicsGetCurrentContext()
-    CGContextSetFillColorWithColor(context, fillColor.colorWithAlphaComponent(CGFloat(fillAlpha)).CGColor)
-    CGContextSetStrokeColorWithColor(context, strokeColor.colorWithAlphaComponent(CGFloat(strokeAlpha)).CGColor)
-    CGContextSetLineWidth(context, 2)
-    CGContextFillEllipseInRect(context, CGRectInset(rect, CGFloat(buffer * 2), CGFloat(buffer * 2)))
-    CGContextStrokeEllipseInRect(context, CGRectInset(rect, CGFloat(buffer * 2), CGFloat(buffer * 2)))
+    context?.setFillColor(fillColor.withAlphaComponent(CGFloat(fillAlpha)).cgColor)
+    context?.setStrokeColor(strokeColor.withAlphaComponent(CGFloat(strokeAlpha)).cgColor)
+    context?.setLineWidth(2)
+    context?.fillEllipse(in: rect.insetBy(dx: CGFloat(buffer * 2), dy: CGFloat(buffer * 2)))
+    context?.strokeEllipse(in: rect.insetBy(dx: CGFloat(buffer * 2), dy: CGFloat(buffer * 2)))
     
     let image = UIGraphicsGetImageFromCurrentImageContext()
     
     UIGraphicsEndImageContext()
     
-    return image
+    return image!
 }
 
 /// Computes and generates a **UIColor** object based
@@ -245,7 +245,7 @@ func AKCircleImageWithRadius(
 /// - Parameter hex: The hexadecimal representation of the color.
 ///
 /// - Returns: A **UIColor** object.
-func AKHexColor(hex: UInt) -> UIColor
+func AKHexColor(_ hex: UInt) -> UIColor
 {
     let red = CGFloat((hex >> 16) & 0xFF) / 255.0
     let green = CGFloat((hex >> 8) & 0xFF) / 255.0
@@ -254,89 +254,89 @@ func AKHexColor(hex: UInt) -> UIColor
     return UIColor.init(red: red, green: green, blue: blue, alpha: 1)
 }
 
-func AKPresentTopMessageInfo(presenter: UIViewController!, title: String! = "Información", message: String!)
+func AKPresentTopMessageInfo(_ presenter: UIViewController!, title: String! = "Información", message: String!)
 {
-    TSMessage.showNotificationInViewController(
-        presenter,
+    TSMessage.showNotification(
+        in: presenter,
         title: title,
         subtitle: message,
         image: nil,
-        type: TSMessageNotificationType.Message,
-        duration: NSTimeInterval(GlobalConstants.AKNotificationBarDismissDelay),
+        type: TSMessageNotificationType.message,
+        duration: TimeInterval(GlobalConstants.AKNotificationBarDismissDelay),
         callback: nil,
         buttonTitle: nil,
         buttonCallback: {},
-        atPosition: TSMessageNotificationPosition.Top,
+        at: TSMessageNotificationPosition.top,
         canBeDismissedByUser: true
     )
     AudioServicesPlaySystemSound(UInt32(GlobalConstants.AKNotificationBarSound))
 }
 
-func AKPresentTopMessageWarn(presenter: UIViewController!, title: String! = "Advertencia", message: String!)
+func AKPresentTopMessageWarn(_ presenter: UIViewController!, title: String! = "Advertencia", message: String!)
 {
-    TSMessage.showNotificationInViewController(
-        presenter,
+    TSMessage.showNotification(
+        in: presenter,
         title: title,
         subtitle: message,
         image: nil,
-        type: TSMessageNotificationType.Warning,
-        duration: NSTimeInterval(GlobalConstants.AKNotificationBarDismissDelay),
+        type: TSMessageNotificationType.warning,
+        duration: TimeInterval(GlobalConstants.AKNotificationBarDismissDelay),
         callback: nil,
         buttonTitle: nil,
         buttonCallback: {},
-        atPosition: TSMessageNotificationPosition.Top,
+        at: TSMessageNotificationPosition.top,
         canBeDismissedByUser: true
     )
     AudioServicesPlaySystemSound(UInt32(GlobalConstants.AKNotificationBarSound))
 }
 
-func AKPresentTopMessageError(presenter: UIViewController!, title: String! = "Error", message: String!)
+func AKPresentTopMessageError(_ presenter: UIViewController!, title: String! = "Error", message: String!)
 {
-    TSMessage.showNotificationInViewController(
-        presenter,
+    TSMessage.showNotification(
+        in: presenter,
         title: title,
         subtitle: message,
         image: nil,
-        type: TSMessageNotificationType.Error,
-        duration: NSTimeInterval(GlobalConstants.AKNotificationBarDismissDelay),
+        type: TSMessageNotificationType.error,
+        duration: TimeInterval(GlobalConstants.AKNotificationBarDismissDelay),
         callback: nil,
         buttonTitle: nil,
         buttonCallback: {},
-        atPosition: TSMessageNotificationPosition.Top,
+        at: TSMessageNotificationPosition.top,
         canBeDismissedByUser: true
     )
     AudioServicesPlaySystemSound(UInt32(GlobalConstants.AKNotificationBarSound))
 }
 
-func AKPresentTopMessageSuccess(presenter: UIViewController!, title: String! = "Mensaje", message: String!)
+func AKPresentTopMessageSuccess(_ presenter: UIViewController!, title: String! = "Mensaje", message: String!)
 {
-    TSMessage.showNotificationInViewController(
-        presenter,
+    TSMessage.showNotification(
+        in: presenter,
         title: title,
         subtitle: message,
         image: nil,
-        type: TSMessageNotificationType.Success,
-        duration: NSTimeInterval(GlobalConstants.AKNotificationBarDismissDelay),
+        type: TSMessageNotificationType.success,
+        duration: TimeInterval(GlobalConstants.AKNotificationBarDismissDelay),
         callback: nil,
         buttonTitle: nil,
         buttonCallback: {},
-        atPosition: TSMessageNotificationPosition.Top,
+        at: TSMessageNotificationPosition.top,
         canBeDismissedByUser: true
     )
     AudioServicesPlaySystemSound(UInt32(GlobalConstants.AKNotificationBarSound))
 }
 
-func AKPresentMessageFromError(errorMessage: String = "", controller: UIViewController!)
+func AKPresentMessageFromError(_ errorMessage: String = "", controller: UIViewController!)
 {
     do {
         let input = errorMessage
-        let regex = try NSRegularExpression(pattern: ".*\"(.*)\"", options: NSRegularExpressionOptions.CaseInsensitive)
-        let matches = regex.matchesInString(input, options: [], range: NSMakeRange(0, input.characters.count))
+        let regex = try NSRegularExpression(pattern: ".*\"(.*)\"", options: NSRegularExpression.Options.caseInsensitive)
+        let matches = regex.matches(in: input, options: [], range: NSMakeRange(0, input.characters.count))
         
         if let match = matches.first {
-            let range = match.rangeAtIndex(1)
+            let range = match.rangeAt(1)
             if let swiftRange = AKRangeFromNSRange(range, forString: input) {
-                let msg = input.substringWithRange(swiftRange)
+                let msg = input.substring(with: swiftRange)
                 AKPresentTopMessageError(controller, message: msg)
             }
         }
@@ -346,10 +346,10 @@ func AKPresentMessageFromError(errorMessage: String = "", controller: UIViewCont
     }
 }
 
-func AKRangeFromNSRange(nsRange: NSRange, forString str: String) -> Range<String.Index>?
+func AKRangeFromNSRange(_ nsRange: NSRange, forString str: String) -> Range<String.Index>?
 {
-    let fromUTF16 = str.utf16.startIndex.advancedBy(nsRange.location, limit: str.utf16.endIndex)
-    let toUTF16 = fromUTF16.advancedBy(nsRange.length, limit: str.utf16.endIndex)
+    let fromUTF16 = str.utf16.startIndex.advanced(by: nsRange.location)
+    let toUTF16 = fromUTF16.advanced(by: nsRange.length)
     
     if let from = String.Index(fromUTF16, within: str), let to = String.Index(toUTF16, within: str) {
         return from ..< to
@@ -358,22 +358,22 @@ func AKRangeFromNSRange(nsRange: NSRange, forString str: String) -> Range<String
     return nil
 }
 
-func AKAddBorderDeco(component: UIView, color: CGColorRef, thickness: Double, position: CustomBorderDecorationPosition) -> Void
+func AKAddBorderDeco(_ component: UIView, color: CGColor, thickness: Double, position: CustomBorderDecorationPosition) -> Void
 {
     let border = CALayer()
     border.backgroundColor = color
     switch position {
-    case .Top:
-        border.frame = CGRectMake(0, 0, component.frame.width, CGFloat(thickness))
+    case .top:
+        border.frame = CGRect(x: 0, y: 0, width: component.frame.width, height: CGFloat(thickness))
         break
-    case .Right:
-        border.frame = CGRectMake((component.frame.width - CGFloat(thickness)), 0, CGFloat(thickness), component.frame.height)
+    case .right:
+        border.frame = CGRect(x: (component.frame.width - CGFloat(thickness)), y: 0, width: CGFloat(thickness), height: component.frame.height)
         break
-    case .Bottom:
-        border.frame = CGRectMake(0, (component.frame.height - CGFloat(thickness)), component.frame.width, CGFloat(thickness))
+    case .bottom:
+        border.frame = CGRect(x: 0, y: (component.frame.height - CGFloat(thickness)), width: component.frame.width, height: CGFloat(thickness))
         break
-    case .Left:
-        border.frame = CGRectMake(0, 0, CGFloat(thickness), component.frame.height)
+    case .left:
+        border.frame = CGRect(x: 0, y: 0, width: CGFloat(thickness), height: component.frame.height)
         break
     }
     

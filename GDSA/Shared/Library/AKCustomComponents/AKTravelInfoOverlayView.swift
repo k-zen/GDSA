@@ -57,7 +57,7 @@ class AKTravelInfoOverlayView: AKCustomView
     
     func startAnimation()
     {
-        self.customView.layer.addAnimation(animation, forKey: "opacity")
+        self.customView.layer.add(animation, forKey: "opacity")
     }
     
     func stopAnimation()

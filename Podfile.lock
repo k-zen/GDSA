@@ -1,11 +1,9 @@
 PODS:
-  - DeviceKit (0.3.3)
   - HexColors (2.3.0)
   - TSMessages (0.9.13):
     - HexColors (~> 2.3.0)
 
 DEPENDENCIES:
-  - DeviceKit
   - TSMessages (from `https://github.com/KrauseFx/TSMessages.git`)
 
 EXTERNAL SOURCES:
@@ -18,10 +16,9 @@ CHECKOUT OPTIONS:
     :git: https://github.com/KrauseFx/TSMessages.git
 
 SPEC CHECKSUMS:
-  DeviceKit: cb3f10c41c0d8d2a615ffc3f4ef947a0d73f1676
   HexColors: 6ad3947c3447a055a3aa8efa859def096351fe5f
   TSMessages: 6e403b790139636c15ab4f51946537095e03e79c
 
-PODFILE CHECKSUM: ca874523e96569405232afbd26d4187bc1bee54e
+PODFILE CHECKSUM: 7ec523cdb93add107b5b17cbb1d43d503f4c72ec
 
 COCOAPODS: 1.0.1
