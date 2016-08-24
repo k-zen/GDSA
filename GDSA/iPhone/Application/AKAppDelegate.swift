@@ -7,12 +7,12 @@ class AKAppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelega
 {
     // MARK: Properties
     let locationManager: CLLocationManager! = CLLocationManager()
-    var masterFile: AKMasterFile?
+    var masterFile: AKMasterFile = AKMasterFile()
     var window: UIWindow?
     // ### USER POSITION ### //
-    var currentPosition: UserLocation = UserLocation()
+    var currentPosition: CLLocationCoordinate2D = CLLocationCoordinate2D()
     var currentHeading: CLLocationDirection = CLLocationDirection(0.0)
-    private var lastSavedPosition: UserLocation = UserLocation()
+    private var lastSavedPosition: CLLocationCoordinate2D = CLLocationCoordinate2D()
     // ### USER POSITION ### //
     var recordingTravel: Bool = false
     private var lastSavedTime: Double = 0.0
@@ -30,31 +30,31 @@ class AKAppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelega
     {
         do {
             NSLog("=> SAVING *MASTER FILE* TO FILE.")
-            try AKFileUtils.write(GlobalConstants.AKMasterFileName, newData: self.masterFile!)
+            try AKFileUtils.write(GlobalConstants.AKMasterFileName, newData: self.masterFile)
         }
         catch {
             NSLog("=> ERROR: \(error)")
         }
     }
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool
     {
         do {
             NSLog("=> READING *MASTER FILE* FROM FILE.")
-            self.masterFile = try AKFileUtils.read(GlobalConstants.AKMasterFileName) as? AKMasterFile
+            self.masterFile = try AKFileUtils.read(GlobalConstants.AKMasterFileName)
         }
         catch {
             NSLog("=> ERROR: \(error)")
         }
-        
-        // LOOK & FEEL CUSTOMIZATIONS.
-        UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBold", size: 16.0)!]
         
         // Manage Location Services
         if CLLocationManager.locationServicesEnabled() {
             // Configure Location Services
             self.locationManager.delegate = self
             self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+        }
+        else {
+            NSLog("=> LOCATION NOT AVAILABLE.")
         }
         
         // Start heading updates.
@@ -74,10 +74,9 @@ class AKAppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelega
         let currentLocation = locations.last
         
         // Always save the current location.
-        self.currentPosition.lat = (currentLocation?.coordinate.latitude)!
-        self.currentPosition.lon = (currentLocation?.coordinate.longitude)!
+        self.currentPosition = (currentLocation?.coordinate)!
         
-        NSLog("=> CURRENT LAT: %f, CURRENT LON: %f", self.currentPosition.lat, self.currentPosition.lon)
+        NSLog("=> CURRENT LAT: %f, CURRENT LON: %f", self.currentPosition.latitude, self.currentPosition.longitude)
         
         if !self.recordingTravel {
             return
@@ -88,8 +87,8 @@ class AKAppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelega
             return
         }
         else {
-            let pointA = UserLocation(lat: self.lastSavedPosition.lat, lon: self.lastSavedPosition.lon)
-            let pointB = UserLocation(lat: self.currentPosition.lat, lon: self.currentPosition.lon)
+            let pointA = self.lastSavedPosition
+            let pointB = self.currentPosition
             
             let travelSegment = AKTravelSegment(str: pointA, end: pointB, time: (Date().timeIntervalSince1970 - self.lastSavedTime))
             
@@ -104,8 +103,7 @@ class AKAppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelega
             }
             
             self.lastSavedTime = Date().timeIntervalSince1970
-            self.lastSavedPosition.lat = self.currentPosition.lat
-            self.lastSavedPosition.lon = self.currentPosition.lon
+            self.lastSavedPosition = self.currentPosition
         }
     }
     

@@ -51,13 +51,13 @@ class AKDetection: NSObject
             
             map.addAnnotation(AKCreateCircleForCoordinate(
                 "Parada",
-                coordinate: CLLocationCoordinate2DMake((lastSegment?.computeEnd().lat)!, lastSegment!.computeEnd().lon),
+                coordinate: (lastSegment?.computeEnd())!,
                 withMeterRadius: 10.0)
             )
             
             // Add PIN.
             let annotation = MKPointAnnotation()
-            annotation.coordinate = CLLocationCoordinate2DMake((lastSegment?.computeEnd().lat)!, lastSegment!.computeEnd().lon)
+            annotation.coordinate = (lastSegment?.computeEnd())!
             annotation.title = "Parada"
             annotation.subtitle = String(format: "Stop Time: %.1f", stopTime)
             map.addAnnotation(annotation)

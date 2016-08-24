@@ -20,16 +20,10 @@ class AKFilters: NSObject
     {
         NSLog("=> FILTERS: *ORIGIN DISTANCE*")
         
-        do {
-            let currentPosition = UserLocation(lat: travelSegment.computeEnd().lat, lon: travelSegment.computeEnd().lon)
-            let travelOrigin = try travel.computeOrigin()
-            
-            if AKComputeDistanceBetweenTwoPoints(pointA: travelOrigin, pointB: currentPosition) < GlobalConstants.AKPointDiscardRadius {
-                return 1
-            }
-        }
-        catch {
-            NSLog("=> ERROR: \(error)")
+        let currentPosition = travelSegment.computeEnd()
+        let travelOrigin = travel.computeOrigin()
+        
+        if AKComputeDistanceBetweenTwoPoints(pointA: travelOrigin, pointB: currentPosition) < GlobalConstants.AKPointDiscardRadius {
             return 1
         }
         

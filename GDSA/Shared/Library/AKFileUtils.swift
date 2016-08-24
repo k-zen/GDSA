@@ -75,7 +75,7 @@ class AKFileUtils {
     /// \param fileName The name of the file archive.
     ///
     /// \returns The object.
-    static func read(_ fileName: String) throws -> AnyObject
+    static func read(_ fileName: String) throws -> AKMasterFile
     {
         let fileName = String(format: "%@.%@.%@", fileName, AKAppVersion(), AKAppBuild())
         
@@ -84,7 +84,7 @@ class AKFileUtils {
             
             let path = try AKFileUtils.openFileArchive(fileName, location: FileManager.SearchPathDirectory.applicationSupportDirectory, shouldCreate: false)
             if let object = NSKeyedUnarchiver.unarchiveObject(withFile: path!) {
-                return object as AnyObject
+                return object as! AKMasterFile
             }
         }
         catch {

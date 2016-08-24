@@ -28,13 +28,6 @@ extension String
 }
 
 // MARK: Structures
-/// The user's location.
-struct UserLocation {
-    /// Denotes the user's geographic latitude.
-    var lat: Double = 0.0
-    /// Denotes the user's geographic longitude.
-    var lon: Double = 0.0
-}
 
 // MARK: Global Constants
 struct GlobalConstants {
@@ -61,7 +54,7 @@ struct GlobalConstants {
     static let AKPreviousTravelsTab = 2
     static let AKHeatmapTab = 3
     // StopDetection
-    static let AKStopDetectionMaxDistance = 20.0
+    static let AKStopDetectionMaxDistance = 10.0
     static let AKStopDetectionSegmentsToCount = 5
 }
 
@@ -71,10 +64,10 @@ enum ErrorCodes: Int {
 }
 
 enum Exceptions: Error {
-    case notInitialized(String)
-    case emptyData(String)
-    case invalidLength(String)
-    case notValid(String)
+    case notInitialized(msg: String)
+    case emptyData(msg: String)
+    case invalidLength(msg: String)
+    case notValid(msg: String)
 }
 
 enum UnitOfLength: Int {
@@ -145,14 +138,9 @@ func AKDelegate() -> AKAppDelegate { return UIApplication.shared.delegate as! AK
 /// Returns the App's master file object.
 ///
 /// - Returns The App's master file.
-func AKObtainMasterFile() throws -> AKMasterFile
+func AKObtainMasterFile() -> AKMasterFile
 {
-    if let mf = AKDelegate().masterFile {
-        return mf
-    }
-    else {
-        throw Exceptions.notInitialized("The *Master File* has not been initialized.")
-    }
+    return AKDelegate().masterFile
 }
 
 /// Computes the distance between two points and returns the distance in meters.
@@ -161,11 +149,11 @@ func AKObtainMasterFile() throws -> AKMasterFile
 /// - Parameter pointB: Point B location.
 ///
 /// - Returns: TRUE if within range, FALSE otherwise.
-func AKComputeDistanceBetweenTwoPoints(pointA: UserLocation,
-                                       pointB: UserLocation) -> CLLocationDistance
+func AKComputeDistanceBetweenTwoPoints(pointA: CLLocationCoordinate2D,
+                                       pointB: CLLocationCoordinate2D) -> CLLocationDistance
 {
-    let pointA = CLLocation(latitude: pointA.lat, longitude: pointA.lon)
-    let pointB = CLLocation(latitude: pointB.lat, longitude: pointB.lon)
+    let pointA = CLLocation(latitude: pointA.latitude, longitude: pointA.longitude)
+    let pointB = CLLocation(latitude: pointB.latitude, longitude: pointB.longitude)
     
     return pointA.distance(from: pointB)
 }

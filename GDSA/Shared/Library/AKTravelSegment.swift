@@ -17,8 +17,8 @@ class AKTravelSegment: NSObject, NSCoding
     }
     
     // MARK: Properties
-    private var str: UserLocation = UserLocation(lat: 0.0, lon: 0.0)
-    private var end: UserLocation = UserLocation(lat: 0.0, lon: 0.0)
+    private var str: CLLocationCoordinate2D = CLLocationCoordinate2D()
+    private var end: CLLocationCoordinate2D = CLLocationCoordinate2D()
     private var time: Double = 0.0
     private var distance: Double = 0.0
     private var speed: Double = 0.0
@@ -27,7 +27,7 @@ class AKTravelSegment: NSObject, NSCoding
     private var stopTime: Double = 0.0
     
     // MARK: Initializers
-    init(str: UserLocation, end: UserLocation, time: Double)
+    init(str: CLLocationCoordinate2D, end: CLLocationCoordinate2D, time: Double)
     {
         self.str = str
         self.end = end
@@ -41,7 +41,7 @@ class AKTravelSegment: NSObject, NSCoding
         super.init()
     }
     
-    init(str: UserLocation, end: UserLocation, time: Double, distance: Double, speed: Double, stopID: String, stop: Bool, stopTime: Double)
+    init(str: CLLocationCoordinate2D, end: CLLocationCoordinate2D, time: Double, distance: Double, speed: Double, stopID: String, stop: Bool, stopTime: Double)
     {
         self.str = str
         self.end = end
@@ -55,7 +55,7 @@ class AKTravelSegment: NSObject, NSCoding
         super.init()
     }
     
-    func computeEnd() -> UserLocation { return self.end }
+    func computeEnd() -> CLLocationCoordinate2D { return self.end }
     
     func computeTime(_ unit: UnitOfTime) -> Double
     {
@@ -97,13 +97,7 @@ class AKTravelSegment: NSObject, NSCoding
     
     func shouldSave() -> Bool
     {
-        // The logic to discard a segment can be:
-        //  1. That the Latitude and Longitude are both 0 for some point.
-        if self.str.lat + self.str.lon == 0.0 || self.end.lat + self.end.lon == 0.0 {
-            return false
-        }
-        
-        return true
+        return CLLocationCoordinate2DIsValid(self.str) && CLLocationCoordinate2DIsValid(self.end)
     }
     
     func printObject(_ padding: String = "") -> String
@@ -112,8 +106,8 @@ class AKTravelSegment: NSObject, NSCoding
         
         string.append("\n")
         string.appendFormat("%@****** TRAVEL SEGMENT ******\n", padding)
-        string.appendFormat("%@\t>>> Start = Lat: %f, Lon: %f\n", padding, self.str.lat, self.str.lon)
-        string.appendFormat("%@\t>>> End = Lat: %f, Lon: %f\n", padding, self.end.lat, self.end.lon)
+        string.appendFormat("%@\t>>> Start = Lat: %f, Lon: %f\n", padding, self.str.latitude, self.str.longitude)
+        string.appendFormat("%@\t>>> End = Lat: %f, Lon: %f\n", padding, self.end.latitude, self.end.longitude)
         string.appendFormat("%@\t>>> Time = %f\n", padding, self.time)
         string.appendFormat("%@\t>>> Distance = %f\n", padding, self.distance)
         string.appendFormat("%@\t>>> Speed = %f\n", padding, self.speed)
@@ -128,8 +122,8 @@ class AKTravelSegment: NSObject, NSCoding
     // MARK: NSCoding Implementation
     required convenience init(coder aDecoder: NSCoder)
     {
-        let str = UserLocation(lat: aDecoder.decodeDouble(forKey: Keys.strLat), lon: aDecoder.decodeDouble(forKey: Keys.strLon))
-        let end = UserLocation(lat: aDecoder.decodeDouble(forKey: Keys.endLat), lon: aDecoder.decodeDouble(forKey: Keys.endLon))
+        let str = CLLocationCoordinate2D(latitude: aDecoder.decodeDouble(forKey: Keys.strLat), longitude: aDecoder.decodeDouble(forKey: Keys.strLon))
+        let end = CLLocationCoordinate2D(latitude: aDecoder.decodeDouble(forKey: Keys.endLat), longitude: aDecoder.decodeDouble(forKey: Keys.endLon))
         let time = aDecoder.decodeDouble(forKey: Keys.time)
         let distance = aDecoder.decodeDouble(forKey: Keys.distance)
         let speed = aDecoder.decodeDouble(forKey: Keys.speed)
@@ -142,10 +136,10 @@ class AKTravelSegment: NSObject, NSCoding
     
     func encode(with aCoder: NSCoder)
     {
-        aCoder.encode(self.str.lat, forKey: Keys.strLat)
-        aCoder.encode(self.str.lon, forKey: Keys.strLon)
-        aCoder.encode(self.end.lat, forKey: Keys.endLat)
-        aCoder.encode(self.end.lon, forKey: Keys.endLon)
+        aCoder.encode(self.str.latitude, forKey: Keys.strLat)
+        aCoder.encode(self.str.longitude, forKey: Keys.strLon)
+        aCoder.encode(self.end.latitude, forKey: Keys.endLat)
+        aCoder.encode(self.end.longitude, forKey: Keys.endLon)
         aCoder.encode(self.time, forKey: Keys.time)
         aCoder.encode(self.distance, forKey: Keys.distance)
         aCoder.encode(self.speed, forKey: Keys.speed)

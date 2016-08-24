@@ -26,9 +26,9 @@ class AKPreviousTravelsViewController: AKCustomViewController, UITableViewDataSo
             let e = try AKObtainMasterFile().travels![(indexPath as NSIndexPath).row]
             
             let cell = self.travelsTable.dequeueReusableCell(withIdentifier: "Travels_Table_Cell") as! AKTravelsTableViewCell
-            cell.origin.text = String(format: "%f, %f", try e.computeOrigin().lat, try e.computeOrigin().lon)
+            cell.origin.text = String(format: "%f, %f", e.computeOrigin().latitude, e.computeOrigin().longitude)
             cell.distance.text = String(format: "%.1fkm", e.computeDistance(UnitOfLength.kilometer))
-            cell.destination.text = String(format: "%f, %f", try e.computeDestination().lat, try e.computeDestination().lon)
+            cell.destination.text = String(format: "%f, %f", e.computeDestination().latitude, e.computeDestination().longitude)
             
             // Custom L&F.
             cell.selectionStyle = UITableViewCellSelectionStyle.none

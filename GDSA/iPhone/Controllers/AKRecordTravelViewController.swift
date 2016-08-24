@@ -71,7 +71,7 @@ class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
     }
     private var infoOverlayViewSubView: UIView!
     private var travel: AKTravel! = AKTravel()
-    private var currentPosition: UserLocation = UserLocation()
+    private var currentPosition: CLLocationCoordinate2D = CLLocationCoordinate2D()
     private var coordinates: [CLLocationCoordinate2D] = []
     private var startTimeTimer: Timer?
     private var startTime: Int64 = 0
@@ -143,22 +143,22 @@ class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
         AKDelegate().recordingTravel = true
         
         // Compute travel origin.
-        self.travel.addOrigin(UserLocation(lat: AKDelegate().currentPosition.lat, lon: AKDelegate().currentPosition.lon))
+        self.travel.addOrigin(AKDelegate().currentPosition)
         
-        do {
+        let origin = self.travel.computeOrigin()
+        if CLLocationCoordinate2DIsValid(origin) {
             // Append origin to coordinates and center map.
-            self.coordinates.append(try self.travel.computeOriginAsCoordinate())
-            self.mapView.centerCoordinate = try self.travel.computeOriginAsCoordinate()
+            self.coordinates.append(origin)
+            self.mapView.centerCoordinate = origin
             
             // Add start annotation.
-            self.originAnnotation.coordinate = try self.travel.computeOriginAsCoordinate()
+            self.originAnnotation.coordinate = origin
             self.originAnnotation.title = "Origen"
-            self.originAnnotation.subtitle = String(format: "Lat: %f, Lng: %f", try self.travel.computeOrigin().lat, try self.travel.computeOrigin().lon)
+            self.originAnnotation.subtitle = String(format: "Lat: %f, Lng: %f", origin.latitude, origin.longitude)
             self.mapView.addAnnotation(self.originAnnotation)
         }
-        catch {
-            AKPresentMessageFromError("\(error)", controller: self)
-            return
+        else {
+            AKPresentTopMessageError(self, message: "Error en coordenadas. No es posible grabar el trayecto.")
         }
     }
     
@@ -170,22 +170,23 @@ class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
             NSLog("=> LOCATION SERVICES ==> STOP RECORDING TRAVEL ...")
             AKDelegate().recordingTravel = false
             
-            do {
-                // Compute travel destination.
-                self.travel.addDestination(UserLocation(lat: self.currentPosition.lat, lon: self.currentPosition.lon))
-                
+            // Compute travel destination.
+            self.travel.addDestination(self.currentPosition)
+            
+            let destination = self.travel.computeDestination()
+            if CLLocationCoordinate2DIsValid(destination) {
                 // Append origin to coordinates and center map.
-                self.coordinates.append(try self.travel.computeDestinationAsCoordinate())
-                self.mapView.centerCoordinate = try self.travel.computeDestinationAsCoordinate()
+                self.coordinates.append(destination)
+                self.mapView.centerCoordinate = destination
                 
                 // Add end annotation.
-                self.destinationAnnotation.coordinate = try self.travel.computeDestinationAsCoordinate()
+                self.destinationAnnotation.coordinate = destination
                 self.destinationAnnotation.title = "Destino"
-                self.destinationAnnotation.subtitle = String(format: "Lat: %f, Lng: %f", try self.travel.computeDestination().lat, try self.travel.computeDestination().lon)
+                self.destinationAnnotation.subtitle = String(format: "Lat: %f, Lng: %f", destination.latitude, destination.longitude)
                 self.mapView.addAnnotation(self.destinationAnnotation)
             }
-            catch {
-                AKPresentMessageFromError("\(error)", controller: self)
+            else {
+                AKPresentTopMessageError(self, message: "Error en coordenadas. No es posible grabar el trayecto.")
             }
         }
         
@@ -249,7 +250,7 @@ class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
     {
         OperationQueue.main.addOperation({ () -> Void in
             let travelSegment = (notification as NSNotification).userInfo!["data"] as! AKTravelSegment
-            self.currentPosition = UserLocation(lat: travelSegment.computeEnd().lat, lon: travelSegment.computeEnd().lon)
+            self.currentPosition = travelSegment.computeEnd()
             self.travel.addSegment(travelSegment)
             
             // Execute filters.
@@ -262,8 +263,8 @@ class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
                 self.travel.addDistance(travelSegment.computeDistance(UnitOfLength.meter))
                 self.infoOverlayViewContainer.distance.text = String(format: "%.1fkm", self.travel.computeDistance(UnitOfLength.kilometer))
                 self.infoOverlayViewContainer.speed.text = String(format: "%ikm/h", travelSegment.computeSpeed(UnitOfSpeed.kilometersPerHour))
-                self.coordinates.append(CLLocationCoordinate2DMake(self.currentPosition.lat, self.currentPosition.lon))
-                self.mapView.centerCoordinate = CLLocationCoordinate2DMake(self.currentPosition.lat, self.currentPosition.lon)
+                self.coordinates.append(self.currentPosition)
+                self.mapView.centerCoordinate = self.currentPosition
                 self.drawPolyline()
             }
             
@@ -271,7 +272,7 @@ class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
             AKDetection.detect(self.mapView, travel: self.travel, travelSegment: travelSegment)
             
             // Update info label.
-            self.infoOverlayViewContainer.coordinates.text = String(format: "%f : %f", self.currentPosition.lat, self.currentPosition.lon)
+            self.infoOverlayViewContainer.coordinates.text = String(format: "%f : %f", self.currentPosition.latitude, self.currentPosition.longitude)
         })
     }
     
@@ -315,7 +316,7 @@ class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
             "Guardar Viaje",
             style: UIAlertActionStyle.default,
             handler: { (action) -> Void in
-                AKDelegate().masterFile?.addTravel(self.travel)
+                AKDelegate().masterFile.addTravel(self.travel)
                 self.stopRecordingPostRoutine(self)
             }
         )
