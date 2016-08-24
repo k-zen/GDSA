@@ -7,12 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4909CE5F1D555E2300A8B5FD /* integeruniquer.data in Resources */ = {isa = PBXBuildFile; fileRef = 4909CE551D555E2300A8B5FD /* integeruniquer.data */; };
-		4909CE601D555E2300A8B5FD /* integeruniquer.index in Resources */ = {isa = PBXBuildFile; fileRef = 4909CE561D555E2300A8B5FD /* integeruniquer.index */; };
-		4909CE611D555E2300A8B5FD /* integeruniquer.data in Resources */ = {isa = PBXBuildFile; fileRef = 4909CE581D555E2300A8B5FD /* integeruniquer.data */; };
-		4909CE621D555E2300A8B5FD /* integeruniquer.index in Resources */ = {isa = PBXBuildFile; fileRef = 4909CE591D555E2300A8B5FD /* integeruniquer.index */; };
-		4909CE631D555E2300A8B5FD /* MANIFEST.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4909CE5A1D555E2300A8B5FD /* MANIFEST.plist */; };
-		4909CE641D555E2300A8B5FD /* form.template in Resources */ = {isa = PBXBuildFile; fileRef = 4909CE5B1D555E2300A8B5FD /* form.template */; };
 		490F91551CF785BF0031B8AE /* AKTravelInfoOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490F91541CF785BF0031B8AE /* AKTravelInfoOverlayView.xib */; };
 		490F91581CF7870F0031B8AE /* AKCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 490F91571CF7870F0031B8AE /* AKCustomView.m */; };
 		490F915A1CF7876B0031B8AE /* AKTravelInfoOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F91591CF7876B0031B8AE /* AKTravelInfoOverlayView.swift */; };
@@ -38,8 +32,6 @@
 		4967CF981D060A560050DDF2 /* AKFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4967CF971D060A560050DDF2 /* AKFilters.swift */; };
 		497ED46E1D66124B003CE13E /* 0004-024px.png in Resources */ = {isa = PBXBuildFile; fileRef = 497ED46D1D66124B003CE13E /* 0004-024px.png */; };
 		497ED4701D6613FC003CE13E /* 0005-024px.png in Resources */ = {isa = PBXBuildFile; fileRef = 497ED46F1D6613FC003CE13E /* 0005-024px.png */; };
-		4981C7F01D55530200908876 /* Home-UCA-Route_1.tsv in Resources */ = {isa = PBXBuildFile; fileRef = 4981C7EC1D55530200908876 /* Home-UCA-Route_1.tsv */; };
-		4981C7F11D55530200908876 /* Read_Route.py in Resources */ = {isa = PBXBuildFile; fileRef = 4981C7EE1D55530200908876 /* Read_Route.py */; };
 		499DB6801CB6E8B900342742 /* 0001-512px.png in Resources */ = {isa = PBXBuildFile; fileRef = 499DB6791CB6E8B900342742 /* 0001-512px.png */; };
 		499DB6811CB6E8B900342742 /* AppIcon-29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 499DB67A1CB6E8B900342742 /* AppIcon-29@2x.png */; };
 		499DB6821CB6E8B900342742 /* AppIcon-29@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 499DB67B1CB6E8B900342742 /* AppIcon-29@3x.png */; };
@@ -51,7 +43,6 @@
 		499DB6951CB6F24200342742 /* 0002-044px.png in Resources */ = {isa = PBXBuildFile; fileRef = 499DB6941CB6F24200342742 /* 0002-044px.png */; };
 		49B138F71D09BDC70071E0DB /* AKDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B138F61D09BDC70071E0DB /* AKDetection.swift */; };
 		49B252231CB2F84D005C88C9 /* CHANGES.txt in Resources */ = {isa = PBXBuildFile; fileRef = 49B252211CB2F84D005C88C9 /* CHANGES.txt */; };
-		49B252241CB2F84D005C88C9 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 49B252221CB2F84D005C88C9 /* Podfile */; };
 		49B252321CB2FA13005C88C9 /* AKAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B252271CB2FA13005C88C9 /* AKAppDelegate.swift */; };
 		49B252341CB2FA13005C88C9 /* AKMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49B252291CB2FA13005C88C9 /* AKMain.storyboard */; };
 		49B252351CB2FA13005C88C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49B2522D1CB2FA13005C88C9 /* Assets.xcassets */; };
@@ -506,35 +497,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				499DB6951CB6F24200342742 /* 0002-044px.png in Resources */,
-				4909CE641D555E2300A8B5FD /* form.template in Resources */,
-				499DB6841CB6E8B900342742 /* AppIcon-40@3x.png in Resources */,
-				499DB6861CB6E8B900342742 /* AppIcon-60@3x.png in Resources */,
-				4909CE601D555E2300A8B5FD /* integeruniquer.index in Resources */,
-				499DB6851CB6E8B900342742 /* AppIcon-60@2x.png in Resources */,
-				49B252241CB2F84D005C88C9 /* Podfile in Resources */,
-				499DB6831CB6E8B900342742 /* AppIcon-40@2x.png in Resources */,
 				499DB6801CB6E8B900342742 /* 0001-512px.png in Resources */,
-				499DB6811CB6E8B900342742 /* AppIcon-29@2x.png in Resources */,
-				490F91551CF785BF0031B8AE /* AKTravelInfoOverlayView.xib in Resources */,
-				49B252231CB2F84D005C88C9 /* CHANGES.txt in Resources */,
-				4981C7F11D55530200908876 /* Read_Route.py in Resources */,
-				4937B1B01D6BFA5800BED13B /* 0008-030px.png in Resources */,
-				4981C7F01D55530200908876 /* Home-UCA-Route_1.tsv in Resources */,
-				4909CE5F1D555E2300A8B5FD /* integeruniquer.data in Resources */,
-				4909CE611D555E2300A8B5FD /* integeruniquer.data in Resources */,
-				497ED4701D6613FC003CE13E /* 0005-024px.png in Resources */,
+				499DB6951CB6F24200342742 /* 0002-044px.png in Resources */,
+				49CAA8471D1B3A25007BDD57 /* 0003-128px.png in Resources */,
 				497ED46E1D66124B003CE13E /* 0004-024px.png in Resources */,
+				497ED4701D6613FC003CE13E /* 0005-024px.png in Resources */,
 				49B7C67D1D675066004C7410 /* 0006-024px.png in Resources */,
 				4937B1AF1D6BFA5800BED13B /* 0007-030px.png in Resources */,
-				4909CE631D555E2300A8B5FD /* MANIFEST.plist in Resources */,
-				49B252341CB2FA13005C88C9 /* AKMain.storyboard in Resources */,
+				4937B1B01D6BFA5800BED13B /* 0008-030px.png in Resources */,
 				4937B1B11D6BFA5800BED13B /* 0009-030px.png in Resources */,
-				49CAA8471D1B3A25007BDD57 /* 0003-128px.png in Resources */,
+				499DB6811CB6E8B900342742 /* AppIcon-29@2x.png in Resources */,
 				499DB6821CB6E8B900342742 /* AppIcon-29@3x.png in Resources */,
-				4909CE621D555E2300A8B5FD /* integeruniquer.index in Resources */,
-				49B252351CB2FA13005C88C9 /* Assets.xcassets in Resources */,
+				499DB6831CB6E8B900342742 /* AppIcon-40@2x.png in Resources */,
+				499DB6841CB6E8B900342742 /* AppIcon-40@3x.png in Resources */,
+				499DB6851CB6E8B900342742 /* AppIcon-60@2x.png in Resources */,
+				499DB6861CB6E8B900342742 /* AppIcon-60@3x.png in Resources */,
+				49B252341CB2FA13005C88C9 /* AKMain.storyboard in Resources */,
+				490F91551CF785BF0031B8AE /* AKTravelInfoOverlayView.xib in Resources */,
 				49199ABD1D15A367009A5A31 /* AKTravelsTableViewCell.xib in Resources */,
+				49B252351CB2FA13005C88C9 /* Assets.xcassets in Resources */,
+				49B252231CB2F84D005C88C9 /* CHANGES.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
