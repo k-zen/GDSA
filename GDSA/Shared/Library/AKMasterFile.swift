@@ -60,7 +60,7 @@ class AKMasterFile: NSObject, NSCoding
         
         if GlobalConstants.AKDebug {
             NSLog("=> ### WRITING TRAVELS TO FILE")
-            if self.travels?.count > 0 {
+            if (self.travels?.count)! > 0 {
                 for travel in self.travels! {
                     NSLog("%@", travel.printObject("=> "))
                 }

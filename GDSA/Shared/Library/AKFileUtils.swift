@@ -84,7 +84,7 @@ class AKFileUtils {
             
             let path = try AKFileUtils.openFileArchive(fileName, location: FileManager.SearchPathDirectory.applicationSupportDirectory, shouldCreate: false)
             if let object = NSKeyedUnarchiver.unarchiveObject(withFile: path!) {
-                return object
+                return object as AnyObject
             }
         }
         catch {

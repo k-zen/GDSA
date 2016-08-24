@@ -132,7 +132,7 @@ func AKAppVersion() -> String
 ///
 /// - Parameter delay: The delay.
 /// - Parameter task:  The function to execute.
-func AKDelay(_ delay: Double, task: (Void) -> Void)
+func AKDelay(_ delay: Double, task: @escaping (Void) -> Void)
 {
     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: task)
 }

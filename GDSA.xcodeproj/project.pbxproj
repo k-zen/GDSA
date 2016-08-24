@@ -734,7 +734,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.apkc.projects.ios.GDSA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "GDSA (iOS Development)";
+				PROVISIONING_PROFILE_SPECIFIER = "GDSA (iOS Distribution)";
 				SWIFT_OBJC_BRIDGING_HEADER = GDSA/iPhone/Application/AKBridgingHeader.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;

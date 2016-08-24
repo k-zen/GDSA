@@ -21,7 +21,7 @@ class AKCustomViewController: UIViewController, UIGestureRecognizerDelegate
     {
         super.viewDidAppear(animated)
         
-        NSLog("=> VIEW DID APPEAR ON: \(self.dynamicType)")
+        NSLog("=> VIEW DID APPEAR ON: \(type(of: self))")
         
         // Checks
         self.manageAccessToLocationServices()
