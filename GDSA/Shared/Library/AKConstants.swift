@@ -201,12 +201,7 @@ func AKCreateCircleForCoordinate(_ title: String, coordinate: CLLocationCoordina
 /// - Parameter fillAlpha:   The alpha factor of the fill.
 ///
 /// - Returns: An image object in the form of a circle.
-func AKCircleImageWithRadius(
-    _ radius: Int,
-    strokeColor: UIColor,
-    strokeAlpha: Float,
-    fillColor: UIColor,
-    fillAlpha: Float) -> UIImage
+func AKCircleImageWithRadius(_ radius: Int, strokeColor: UIColor, strokeAlpha: Float, fillColor: UIColor, fillAlpha: Float) -> UIImage
 {
     let buffer = 2
     let rect = CGRect(x: 0, y: 0, width: radius * 2 + buffer, height: radius * 2 + buffer)
