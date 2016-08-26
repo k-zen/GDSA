@@ -237,68 +237,26 @@ func AKHexColor(_ hex: UInt) -> UIColor
     return UIColor.init(red: red, green: green, blue: blue, alpha: 1)
 }
 
-func AKPresentTopMessageInfo(_ presenter: UIViewController!, title: String! = "Información", message: String!)
+func AKPresentTopMessage(_ presenter: UIViewController!, type: TSMessageNotificationType, message: String!)
 {
+    let title: String
+    switch type {
+    case .message:
+        title = "Información"
+    case .warning:
+        title = "Advertencia"
+    case .error:
+        title = "Error"
+    case .success:
+        title = "👍"
+    }
+    
     TSMessage.showNotification(
         in: presenter,
         title: title,
         subtitle: message,
         image: nil,
-        type: TSMessageNotificationType.message,
-        duration: TimeInterval(GlobalConstants.AKNotificationBarDismissDelay),
-        callback: nil,
-        buttonTitle: nil,
-        buttonCallback: {},
-        at: TSMessageNotificationPosition.top,
-        canBeDismissedByUser: true
-    )
-    AudioServicesPlaySystemSound(UInt32(GlobalConstants.AKNotificationBarSound))
-}
-
-func AKPresentTopMessageWarn(_ presenter: UIViewController!, title: String! = "Advertencia", message: String!)
-{
-    TSMessage.showNotification(
-        in: presenter,
-        title: title,
-        subtitle: message,
-        image: nil,
-        type: TSMessageNotificationType.warning,
-        duration: TimeInterval(GlobalConstants.AKNotificationBarDismissDelay),
-        callback: nil,
-        buttonTitle: nil,
-        buttonCallback: {},
-        at: TSMessageNotificationPosition.top,
-        canBeDismissedByUser: true
-    )
-    AudioServicesPlaySystemSound(UInt32(GlobalConstants.AKNotificationBarSound))
-}
-
-func AKPresentTopMessageError(_ presenter: UIViewController!, title: String! = "Error", message: String!)
-{
-    TSMessage.showNotification(
-        in: presenter,
-        title: title,
-        subtitle: message,
-        image: nil,
-        type: TSMessageNotificationType.error,
-        duration: TimeInterval(GlobalConstants.AKNotificationBarDismissDelay),
-        callback: nil,
-        buttonTitle: nil,
-        buttonCallback: {},
-        at: TSMessageNotificationPosition.top,
-        canBeDismissedByUser: true
-    )
-    AudioServicesPlaySystemSound(UInt32(GlobalConstants.AKNotificationBarSound))
-}
-
-func AKPresentTopMessageSuccess(_ presenter: UIViewController!, title: String! = "Mensaje", message: String!)
-{
-    TSMessage.showNotification(
-        in: presenter,
-        title: title,
-        subtitle: message,
-        image: nil,
-        type: TSMessageNotificationType.success,
+        type: type,
         duration: TimeInterval(GlobalConstants.AKNotificationBarDismissDelay),
         callback: nil,
         buttonTitle: nil,
@@ -320,7 +278,7 @@ func AKPresentMessageFromError(_ errorMessage: String = "", controller: UIViewCo
             let range = match.rangeAt(1)
             if let swiftRange = AKRangeFromNSRange(range, forString: input) {
                 let msg = input.substring(with: swiftRange)
-                AKPresentTopMessageError(controller, message: msg)
+                AKPresentTopMessage(controller, type: TSMessageNotificationType.error, message: msg)
             }
         }
     }

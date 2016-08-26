@@ -1,3 +1,4 @@
+import TSMessages
 import UIKit
 
 class AKMainTabController: UITabBarController, UITabBarControllerDelegate
@@ -14,7 +15,7 @@ class AKMainTabController: UITabBarController, UITabBarControllerDelegate
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool
     {
         if AKDelegate().recordingTravel {
-            AKPresentTopMessageWarn(self, message: "Estas grabando un viaje, paralo primero.")
+            AKPresentTopMessage(self, type: TSMessageNotificationType.warning, message: "Estas grabando un viaje, paralo primero.")
         }
         
         return !AKDelegate().recordingTravel

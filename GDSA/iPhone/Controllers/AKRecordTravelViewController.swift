@@ -1,6 +1,7 @@
 import CoreLocation
 import Foundation
 import MapKit
+import TSMessages
 import UIKit
 
 class AKOriginPointAnnotation: MKPointAnnotation {}
@@ -158,7 +159,7 @@ class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
             self.mapView.addAnnotation(self.originAnnotation)
         }
         else {
-            AKPresentTopMessageError(self, message: "Error en coordenadas. No es posible grabar el trayecto.")
+            AKPresentTopMessage(self, type: TSMessageNotificationType.error, message: "Error en coordenadas. No es posible grabar el trayecto.")
         }
     }
     
@@ -186,7 +187,7 @@ class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
                 self.mapView.addAnnotation(self.destinationAnnotation)
             }
             else {
-                AKPresentTopMessageError(self, message: "Error en coordenadas. No es posible grabar el trayecto.")
+                AKPresentTopMessage(self, type: TSMessageNotificationType.error, message: "Error en coordenadas. No es posible grabar el trayecto.")
             }
         }
         
