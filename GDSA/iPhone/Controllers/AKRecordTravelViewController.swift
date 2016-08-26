@@ -230,9 +230,9 @@ class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
         if overlay.isKind(of: AKRoutePolyline.self) {
             let customOverlay = MKPolylineRenderer(overlay: overlay)
             customOverlay.alpha = 1.0
-            customOverlay.lineWidth = 3.5
+            customOverlay.lineWidth = 4.0
             customOverlay.strokeColor = GlobalConstants.AKTravelPathMarkerStrokeColor
-            customOverlay.lineDashPattern = [5]
+            // customOverlay.lineDashPattern = [5]
             customOverlay.lineCap = CGLineCap.square
             customOverlay.lineJoin = CGLineJoin.round
             
@@ -270,6 +270,8 @@ class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
             
             // Execute detections.
             AKDetection.detect(self.mapView, travel: self.travel, travelSegment: travelSegment)
+            
+            
             
             // Update info label.
             self.infoOverlayViewContainer.coordinates.text = String(format: "%f : %f", self.currentPosition.latitude, self.currentPosition.longitude)
