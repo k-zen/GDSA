@@ -55,12 +55,6 @@
 /* Begin PBXFileReference section */
 		112557B2B953CDA77E4FF6A8 /* Pods_GDSA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GDSA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		171705F8CE2165FB5BB5DD10 /* Pods-GDSA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GDSA.release.xcconfig"; path = "Pods/Target Support Files/Pods-GDSA/Pods-GDSA.release.xcconfig"; sourceTree = "<group>"; };
-		4909CE551D555E2300A8B5FD /* integeruniquer.data */ = {isa = PBXFileReference; lastKnownFileType = file; path = integeruniquer.data; sourceTree = "<group>"; };
-		4909CE561D555E2300A8B5FD /* integeruniquer.index */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = integeruniquer.index; sourceTree = "<group>"; };
-		4909CE581D555E2300A8B5FD /* integeruniquer.data */ = {isa = PBXFileReference; lastKnownFileType = file; path = integeruniquer.data; sourceTree = "<group>"; };
-		4909CE591D555E2300A8B5FD /* integeruniquer.index */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = integeruniquer.index; sourceTree = "<group>"; };
-		4909CE5A1D555E2300A8B5FD /* MANIFEST.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MANIFEST.plist; sourceTree = "<group>"; };
-		4909CE5B1D555E2300A8B5FD /* form.template */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = form.template; sourceTree = "<group>"; };
 		490F91541CF785BF0031B8AE /* AKTravelInfoOverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AKTravelInfoOverlayView.xib; sourceTree = "<group>"; };
 		490F91561CF7870F0031B8AE /* AKCustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKCustomView.h; sourceTree = "<group>"; };
 		490F91571CF7870F0031B8AE /* AKCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKCustomView.m; sourceTree = "<group>"; };
@@ -92,8 +86,6 @@
 		4967CF971D060A560050DDF2 /* AKFilters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKFilters.swift; sourceTree = "<group>"; };
 		497ED46D1D66124B003CE13E /* 0004-024px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "0004-024px.png"; sourceTree = "<group>"; };
 		497ED46F1D6613FC003CE13E /* 0005-024px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "0005-024px.png"; sourceTree = "<group>"; };
-		4981C7EC1D55530200908876 /* Home-UCA-Route_1.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Home-UCA-Route_1.tsv"; sourceTree = "<group>"; };
-		4981C7EE1D55530200908876 /* Read_Route.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = Read_Route.py; sourceTree = "<group>"; };
 		499DB6791CB6E8B900342742 /* 0001-512px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "0001-512px.png"; sourceTree = "<group>"; };
 		499DB67A1CB6E8B900342742 /* AppIcon-29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon-29@2x.png"; sourceTree = "<group>"; };
 		499DB67B1CB6E8B900342742 /* AppIcon-29@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon-29@3x.png"; sourceTree = "<group>"; };
@@ -148,91 +140,6 @@
 			path = AKHeatMap;
 			sourceTree = "<group>";
 		};
-		4909CE4F1D555E2300A8B5FD /* Travel_Simulation.trace */ = {
-			isa = PBXGroup;
-			children = (
-				4909CE501D555E2300A8B5FD /* corespace */,
-				4909CE5B1D555E2300A8B5FD /* form.template */,
-				4909CE5C1D555E2300A8B5FD /* instrument_data */,
-			);
-			path = Travel_Simulation.trace;
-			sourceTree = "<group>";
-		};
-		4909CE501D555E2300A8B5FD /* corespace */ = {
-			isa = PBXGroup;
-			children = (
-				4909CE511D555E2300A8B5FD /* currentRun */,
-				4909CE5A1D555E2300A8B5FD /* MANIFEST.plist */,
-			);
-			path = corespace;
-			sourceTree = "<group>";
-		};
-		4909CE511D555E2300A8B5FD /* currentRun */ = {
-			isa = PBXGroup;
-			children = (
-				4909CE521D555E2300A8B5FD /* core */,
-			);
-			path = currentRun;
-			sourceTree = "<group>";
-		};
-		4909CE521D555E2300A8B5FD /* core */ = {
-			isa = PBXGroup;
-			children = (
-				4909CE531D555E2300A8B5FD /* uniquing */,
-			);
-			path = core;
-			sourceTree = "<group>";
-		};
-		4909CE531D555E2300A8B5FD /* uniquing */ = {
-			isa = PBXGroup;
-			children = (
-				4909CE541D555E2300A8B5FD /* arrayUniquer */,
-				4909CE571D555E2300A8B5FD /* typedArrayUniquer */,
-			);
-			path = uniquing;
-			sourceTree = "<group>";
-		};
-		4909CE541D555E2300A8B5FD /* arrayUniquer */ = {
-			isa = PBXGroup;
-			children = (
-				4909CE551D555E2300A8B5FD /* integeruniquer.data */,
-				4909CE561D555E2300A8B5FD /* integeruniquer.index */,
-			);
-			path = arrayUniquer;
-			sourceTree = "<group>";
-		};
-		4909CE571D555E2300A8B5FD /* typedArrayUniquer */ = {
-			isa = PBXGroup;
-			children = (
-				4909CE581D555E2300A8B5FD /* integeruniquer.data */,
-				4909CE591D555E2300A8B5FD /* integeruniquer.index */,
-			);
-			path = typedArrayUniquer;
-			sourceTree = "<group>";
-		};
-		4909CE5C1D555E2300A8B5FD /* instrument_data */ = {
-			isa = PBXGroup;
-			children = (
-				4909CE5D1D555E2300A8B5FD /* 1E2B732A-6DCA-48F6-9272-CF92DECBC024 */,
-			);
-			path = instrument_data;
-			sourceTree = "<group>";
-		};
-		4909CE5D1D555E2300A8B5FD /* 1E2B732A-6DCA-48F6-9272-CF92DECBC024 */ = {
-			isa = PBXGroup;
-			children = (
-				4909CE5E1D555E2300A8B5FD /* run_data */,
-			);
-			path = "1E2B732A-6DCA-48F6-9272-CF92DECBC024";
-			sourceTree = "<group>";
-		};
-		4909CE5E1D555E2300A8B5FD /* run_data */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = run_data;
-			sourceTree = "<group>";
-		};
 		495683321CEA235B0057B06E /* AKCustomComponents */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,25 +155,8 @@
 		4981C7EB1D55530200908876 /* Routes */ = {
 			isa = PBXGroup;
 			children = (
-				4981C7EC1D55530200908876 /* Home-UCA-Route_1.tsv */,
 			);
 			path = Routes;
-			sourceTree = "<group>";
-		};
-		4981C7ED1D55530200908876 /* Scripts */ = {
-			isa = PBXGroup;
-			children = (
-				4981C7EE1D55530200908876 /* Read_Route.py */,
-			);
-			path = Scripts;
-			sourceTree = "<group>";
-		};
-		4981C7EF1D55530200908876 /* Simulations */ = {
-			isa = PBXGroup;
-			children = (
-				4909CE4F1D555E2300A8B5FD /* Travel_Simulation.trace */,
-			);
-			path = Simulations;
 			sourceTree = "<group>";
 		};
 		499DB6781CB6E8B900342742 /* Images */ = {
@@ -368,8 +258,6 @@
 				49B2522D1CB2FA13005C88C9 /* Assets.xcassets */,
 				499DB6781CB6E8B900342742 /* Images */,
 				4981C7EB1D55530200908876 /* Routes */,
-				4981C7ED1D55530200908876 /* Scripts */,
-				4981C7EF1D55530200908876 /* Simulations */,
 			);
 			path = Resources;
 			sourceTree = "<group>";

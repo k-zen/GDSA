@@ -7,6 +7,7 @@ Functionalities
     * Heatmap of traffic.
 Changes
     * Version 1.0 Build 01 (2016/XX/XX)
+        * Removed support for AutomationUI location simulation. Now we must use GPX files only to simulate routes/travels. (2016/08/27)
         * Migrated to iOS 10. (2016/08/23)
         * Added custom *TabController*. (2016/08/22)
         * Added support for custom bottom menu on each ViewController. (2016/08/19)
