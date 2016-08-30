@@ -32,14 +32,14 @@ extension String
 // MARK: Global Constants
 struct GlobalConstants {
     static let AKDebug = true
-    static let AKLocationUpdateInterval = 6
+    static let AKLocationUpdateInterval = 5
     static let AKStartRecordingTravelNotificationName = "StartRecordingTravel"
     static let AKStopRecordingTravelNotificationName = "StopRecordingTravel"
     static let AKLocationUpdateNotificationName = "LocationUpdate"
     static let AKNotificationBarDismissDelay = 4
     static let AKNotificationBarSound = 1057
     static let AKPointDiscardRadius = 50.0
-    static let AKTravelPathMarkerStrokeColor = AKHexColor(0x999999)
+    static let AKTravelPathMarkerStrokeColor = AKHexColor(0x429867)
     static let AKMasterFileName = "MasterFile.dat"
     static let AKDefaultFont = "HelveticaNeue-CondensedBold"
     static let AKDisabledButtonBg = AKHexColor(0xEEEEEE)

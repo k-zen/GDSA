@@ -229,13 +229,10 @@ class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer
     {
         if overlay.isKind(of: AKRoutePolyline.self) {
-            let customOverlay = MKPolylineRenderer(overlay: overlay)
-            customOverlay.alpha = 1.0
-            customOverlay.lineWidth = 4.0
-            customOverlay.strokeColor = GlobalConstants.AKTravelPathMarkerStrokeColor
-            // customOverlay.lineDashPattern = [5]
-            customOverlay.lineCap = CGLineCap.square
-            customOverlay.lineJoin = CGLineJoin.round
+            let customOverlay = AKPathRenderer(polyline: overlay as! MKPolyline, colors: [AKHexColor(0x7BA9B6)])
+            customOverlay.lineWidth = 6.0
+            customOverlay.border = true
+            customOverlay.borderColor = AKHexColor(0x08303A)
             
             return customOverlay
         }

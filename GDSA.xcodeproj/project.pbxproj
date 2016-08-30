@@ -10,6 +10,7 @@
 		490F91551CF785BF0031B8AE /* AKTravelInfoOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490F91541CF785BF0031B8AE /* AKTravelInfoOverlayView.xib */; };
 		490F91581CF7870F0031B8AE /* AKCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 490F91571CF7870F0031B8AE /* AKCustomView.m */; };
 		490F915A1CF7876B0031B8AE /* AKTravelInfoOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F91591CF7876B0031B8AE /* AKTravelInfoOverlayView.swift */; };
+		4911908A1D74FC82007C5D32 /* AKPathRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491190891D74FC82007C5D32 /* AKPathRenderer.swift */; };
 		49199ABD1D15A367009A5A31 /* AKTravelsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49199ABC1D15A367009A5A31 /* AKTravelsTableViewCell.xib */; };
 		49199ABF1D15A3DA009A5A31 /* AKTravelsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49199ABE1D15A3DA009A5A31 /* AKTravelsTableViewCell.swift */; };
 		4922DD701CE679CE003E0AFB /* AKPreviousTravelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4922DD6F1CE679CE003E0AFB /* AKPreviousTravelsViewController.swift */; };
@@ -59,6 +60,7 @@
 		490F91561CF7870F0031B8AE /* AKCustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKCustomView.h; sourceTree = "<group>"; };
 		490F91571CF7870F0031B8AE /* AKCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKCustomView.m; sourceTree = "<group>"; };
 		490F91591CF7876B0031B8AE /* AKTravelInfoOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKTravelInfoOverlayView.swift; sourceTree = "<group>"; };
+		491190891D74FC82007C5D32 /* AKPathRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPathRenderer.swift; sourceTree = "<group>"; };
 		49199ABC1D15A367009A5A31 /* AKTravelsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AKTravelsTableViewCell.xib; sourceTree = "<group>"; };
 		49199ABE1D15A3DA009A5A31 /* AKTravelsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKTravelsTableViewCell.swift; sourceTree = "<group>"; };
 		4922DD6F1CE679CE003E0AFB /* AKPreviousTravelsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPreviousTravelsViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +140,14 @@
 				492F9B6B1D638B7500DAE982 /* AKHeatmapRenderer.m */,
 			);
 			path = AKHeatMap;
+			sourceTree = "<group>";
+		};
+		491190821D74F60C007C5D32 /* AKPathRenderer */ = {
+			isa = PBXGroup;
+			children = (
+				491190891D74FC82007C5D32 /* AKPathRenderer.swift */,
+			);
+			path = AKPathRenderer;
 			sourceTree = "<group>";
 		};
 		495683321CEA235B0057B06E /* AKCustomComponents */ = {
@@ -283,6 +293,7 @@
 				495683381CEA57BC0057B06E /* AKTravelSegment.swift */,
 				495683321CEA235B0057B06E /* AKCustomComponents */,
 				490857271D5EAF7800D63998 /* AKHeatMap */,
+				491190821D74F60C007C5D32 /* AKPathRenderer */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -470,6 +481,7 @@
 				4922DD721CE67C01003E0AFB /* AKViewTravelViewController.swift in Sources */,
 				4934C67A1D0B5FEB004754AF /* AKMasterFile.swift in Sources */,
 				495683391CEA57BC0057B06E /* AKInputData.swift in Sources */,
+				4911908A1D74FC82007C5D32 /* AKPathRenderer.swift in Sources */,
 				49199ABF1D15A3DA009A5A31 /* AKTravelsTableViewCell.swift in Sources */,
 				4922DD701CE679CE003E0AFB /* AKPreviousTravelsViewController.swift in Sources */,
 				492F9B6D1D638B7500DAE982 /* AKDiffColorProvider.m in Sources */,
