@@ -269,8 +269,6 @@ class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
             // Execute detections.
             AKDetection.detect(self.mapView, travel: self.travel, travelSegment: travelSegment)
             
-            
-            
             // Update info label.
             self.infoOverlayViewContainer.coordinates.text = String(format: "%f : %f", self.currentPosition.latitude, self.currentPosition.longitude)
         })
@@ -308,7 +306,8 @@ class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
             self,
             selector: #selector(AKRecordTravelViewController.locationUpdated(_:)),
             name: NSNotification.Name(rawValue: GlobalConstants.AKLocationUpdateNotificationName),
-            object: nil)
+            object: nil
+        )
         
         // Set the menu.
         self.setupMenu("Verificación", message: "Qué desea hacer ... ?", type: UIAlertControllerStyle.actionSheet)

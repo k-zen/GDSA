@@ -22,27 +22,17 @@ class AKPreviousTravelsViewController: AKCustomViewController, UITableViewDataSo
     // MARK: UITableViewDataSource Implementation
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        do {
-            let e = try AKObtainMasterFile().travels![(indexPath as NSIndexPath).row]
-            
-            let cell = self.travelsTable.dequeueReusableCell(withIdentifier: "Travels_Table_Cell") as! AKTravelsTableViewCell
-            cell.origin.text = String(format: "%f, %f", e.computeOrigin().latitude, e.computeOrigin().longitude)
-            cell.distance.text = String(format: "%.1fkm", e.computeDistance(UnitOfLength.kilometer))
-            cell.destination.text = String(format: "%f, %f", e.computeDestination().latitude, e.computeDestination().longitude)
-            
-            // Custom L&F.
-            cell.selectionStyle = UITableViewCellSelectionStyle.none
-            
-            return cell
-        }
-        catch {
-            NSLog("=> ERROR: \(error)")
-            
-            let defaultCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "Default_Table_Cell")
-            defaultCell.selectionStyle = UITableViewCellSelectionStyle.none
-            
-            return defaultCell
-        }
+        let e = AKObtainMasterFile().travels![(indexPath as NSIndexPath).row]
+        
+        let cell = self.travelsTable.dequeueReusableCell(withIdentifier: "Travels_Table_Cell") as! AKTravelsTableViewCell
+        cell.origin.text = String(format: "%f, %f", e.computeOrigin().latitude, e.computeOrigin().longitude)
+        cell.distance.text = String(format: "%.1fkm", e.computeDistance(UnitOfLength.kilometer))
+        cell.destination.text = String(format: "%f, %f", e.computeDestination().latitude, e.computeDestination().longitude)
+        
+        // Custom L&F.
+        cell.selectionStyle = UITableViewCellSelectionStyle.none
+        
+        return cell
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
@@ -67,14 +57,7 @@ class AKPreviousTravelsViewController: AKCustomViewController, UITableViewDataSo
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        do {
-            return (try AKObtainMasterFile().travels?.count)!
-        }
-        catch {
-            NSLog("=> ERROR: \(error)")
-            
-            return 0
-        }
+        return (AKObtainMasterFile().travels?.count)!
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool { return true }
@@ -88,13 +71,8 @@ class AKPreviousTravelsViewController: AKCustomViewController, UITableViewDataSo
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
     {
         if editingStyle == UITableViewCellEditingStyle.delete {
-            do {
-                try AKObtainMasterFile().travels?.remove(at: (indexPath as NSIndexPath).row)
-                self.travelsTable.reloadData()
-            }
-            catch {
-                NSLog("=> ERROR: \(error)")
-            }
+            AKObtainMasterFile().travels?.remove(at: (indexPath as NSIndexPath).row)
+            self.travelsTable.reloadData()
         }
     }
     
@@ -107,12 +85,7 @@ class AKPreviousTravelsViewController: AKCustomViewController, UITableViewDataSo
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        do {
-            _ = try AKObtainMasterFile().travels![(indexPath as NSIndexPath).row]
-        }
-        catch {
-            NSLog("=> ERROR: \(error)")
-        }
+        // AKObtainMasterFile().travels![(indexPath as NSIndexPath).row]
         
         // MOVE TO VIEW HERE.
     }
