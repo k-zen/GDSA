@@ -1,3 +1,4 @@
+import CoreLocation
 import Foundation
 
 class AKTravelSegment: NSObject, NSCoding
