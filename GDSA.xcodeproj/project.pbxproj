@@ -15,11 +15,6 @@
 		49199ABF1D15A3DA009A5A31 /* AKTravelsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49199ABE1D15A3DA009A5A31 /* AKTravelsTableViewCell.swift */; };
 		4922DD701CE679CE003E0AFB /* AKPreviousTravelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4922DD6F1CE679CE003E0AFB /* AKPreviousTravelsViewController.swift */; };
 		4922DD721CE67C01003E0AFB /* AKViewTravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4922DD711CE67C01003E0AFB /* AKViewTravelViewController.swift */; };
-		492F9B6C1D638B7500DAE982 /* AKColorProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 492F9B631D638B7500DAE982 /* AKColorProvider.m */; };
-		492F9B6D1D638B7500DAE982 /* AKDiffColorProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 492F9B651D638B7500DAE982 /* AKDiffColorProvider.m */; };
-		492F9B6E1D638B7500DAE982 /* AKDiffHeatmap.m in Sources */ = {isa = PBXBuildFile; fileRef = 492F9B671D638B7500DAE982 /* AKDiffHeatmap.m */; };
-		492F9B6F1D638B7500DAE982 /* AKHeatmap.m in Sources */ = {isa = PBXBuildFile; fileRef = 492F9B691D638B7500DAE982 /* AKHeatmap.m */; };
-		492F9B701D638B7500DAE982 /* AKHeatmapRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 492F9B6B1D638B7500DAE982 /* AKHeatmapRenderer.m */; };
 		4934C6781D0AF920004754AF /* AKFileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4934C6771D0AF920004754AF /* AKFileUtils.swift */; };
 		4934C67A1D0B5FEB004754AF /* AKMasterFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4934C6791D0B5FEB004754AF /* AKMasterFile.swift */; };
 		4937B1AB1D6B790900BED13B /* AKMainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4937B1AA1D6B790900BED13B /* AKMainTabController.swift */; };
@@ -65,16 +60,6 @@
 		49199ABE1D15A3DA009A5A31 /* AKTravelsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKTravelsTableViewCell.swift; sourceTree = "<group>"; };
 		4922DD6F1CE679CE003E0AFB /* AKPreviousTravelsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPreviousTravelsViewController.swift; sourceTree = "<group>"; };
 		4922DD711CE67C01003E0AFB /* AKViewTravelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKViewTravelViewController.swift; sourceTree = "<group>"; };
-		492F9B621D638B7500DAE982 /* AKColorProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKColorProvider.h; sourceTree = "<group>"; };
-		492F9B631D638B7500DAE982 /* AKColorProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKColorProvider.m; sourceTree = "<group>"; };
-		492F9B641D638B7500DAE982 /* AKDiffColorProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKDiffColorProvider.h; sourceTree = "<group>"; };
-		492F9B651D638B7500DAE982 /* AKDiffColorProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKDiffColorProvider.m; sourceTree = "<group>"; };
-		492F9B661D638B7500DAE982 /* AKDiffHeatmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKDiffHeatmap.h; sourceTree = "<group>"; };
-		492F9B671D638B7500DAE982 /* AKDiffHeatmap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKDiffHeatmap.m; sourceTree = "<group>"; };
-		492F9B681D638B7500DAE982 /* AKHeatmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKHeatmap.h; sourceTree = "<group>"; };
-		492F9B691D638B7500DAE982 /* AKHeatmap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKHeatmap.m; sourceTree = "<group>"; };
-		492F9B6A1D638B7500DAE982 /* AKHeatmapRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKHeatmapRenderer.h; sourceTree = "<group>"; };
-		492F9B6B1D638B7500DAE982 /* AKHeatmapRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKHeatmapRenderer.m; sourceTree = "<group>"; };
 		4934C6771D0AF920004754AF /* AKFileUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKFileUtils.swift; sourceTree = "<group>"; };
 		4934C6791D0B5FEB004754AF /* AKMasterFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKMasterFile.swift; sourceTree = "<group>"; };
 		4937B1AA1D6B790900BED13B /* AKMainTabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKMainTabController.swift; sourceTree = "<group>"; };
@@ -125,23 +110,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		490857271D5EAF7800D63998 /* AKHeatMap */ = {
-			isa = PBXGroup;
-			children = (
-				492F9B621D638B7500DAE982 /* AKColorProvider.h */,
-				492F9B631D638B7500DAE982 /* AKColorProvider.m */,
-				492F9B641D638B7500DAE982 /* AKDiffColorProvider.h */,
-				492F9B651D638B7500DAE982 /* AKDiffColorProvider.m */,
-				492F9B661D638B7500DAE982 /* AKDiffHeatmap.h */,
-				492F9B671D638B7500DAE982 /* AKDiffHeatmap.m */,
-				492F9B681D638B7500DAE982 /* AKHeatmap.h */,
-				492F9B691D638B7500DAE982 /* AKHeatmap.m */,
-				492F9B6A1D638B7500DAE982 /* AKHeatmapRenderer.h */,
-				492F9B6B1D638B7500DAE982 /* AKHeatmapRenderer.m */,
-			);
-			path = AKHeatMap;
-			sourceTree = "<group>";
-		};
 		491190821D74F60C007C5D32 /* AKPathRenderer */ = {
 			isa = PBXGroup;
 			children = (
@@ -292,7 +260,6 @@
 				49BEBB191CEA635F00A5FC12 /* AKTravel.swift */,
 				495683381CEA57BC0057B06E /* AKTravelSegment.swift */,
 				495683321CEA235B0057B06E /* AKCustomComponents */,
-				490857271D5EAF7800D63998 /* AKHeatMap */,
 				491190821D74F60C007C5D32 /* AKPathRenderer */,
 			);
 			path = Library;
@@ -484,18 +451,13 @@
 				4911908A1D74FC82007C5D32 /* AKPathRenderer.swift in Sources */,
 				49199ABF1D15A3DA009A5A31 /* AKTravelsTableViewCell.swift in Sources */,
 				4922DD701CE679CE003E0AFB /* AKPreviousTravelsViewController.swift in Sources */,
-				492F9B6D1D638B7500DAE982 /* AKDiffColorProvider.m in Sources */,
-				492F9B6F1D638B7500DAE982 /* AKHeatmap.m in Sources */,
 				4934C6781D0AF920004754AF /* AKFileUtils.swift in Sources */,
 				4967CF981D060A560050DDF2 /* AKFilters.swift in Sources */,
-				492F9B701D638B7500DAE982 /* AKHeatmapRenderer.m in Sources */,
 				490F91581CF7870F0031B8AE /* AKCustomView.m in Sources */,
 				49B138F71D09BDC70071E0DB /* AKDetection.swift in Sources */,
 				4956833A1CEA57BC0057B06E /* AKTravelSegment.swift in Sources */,
-				492F9B6C1D638B7500DAE982 /* AKColorProvider.m in Sources */,
 				4937B1AB1D6B790900BED13B /* AKMainTabController.swift in Sources */,
 				495683341CEA235B0057B06E /* AKCustomViewController.swift in Sources */,
-				492F9B6E1D638B7500DAE982 /* AKDiffHeatmap.m in Sources */,
 				490F915A1CF7876B0031B8AE /* AKTravelInfoOverlayView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
