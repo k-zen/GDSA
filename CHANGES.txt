@@ -1,4 +1,4 @@
-=================== Release 1.0 2016-XX-XX =====================
+=================== Release 1.0 2017-XX-XX =====================
 Description
     * First alpha version of the App.
 Functionalities
@@ -6,7 +6,8 @@ Functionalities
     * Ability to visualize travels.
     * Heatmap of traffic.
 Changes
-    * Version 1.0 Build 01 (2016/XX/XX)
+    * Version 1.0 Build 01 (2017/XX/XX)
+        * Minor aesthetic modifications. (2017/01/02)
         * Added new path renderer. (2016/08/30)
         * Removed support for AutomationUI location simulation. Now we must use GPX files only to simulate routes/travels. (2016/08/27)
         * Migrated to iOS 10. (2016/08/23)

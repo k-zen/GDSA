@@ -39,6 +39,16 @@ class AKAppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelega
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool
     {
+        // Configure TabBar
+        UITabBar.appearance().barTintColor = GlobalConstants.AKTabBarBg
+        UITabBar.appearance().tintColor = GlobalConstants.AKTabBarTint
+        UITabBarItem.appearance().setTitleTextAttributes(
+            [
+                NSFontAttributeName: UIFont(name: GlobalConstants.AKDefaultFont, size: 12.0) ?? UIFont.systemFont(ofSize: 12),
+                NSForegroundColorAttributeName: GlobalConstants.AKDefaultFg
+            ], for: UIControlState.normal
+        )
+        
         do {
             NSLog("=> READING *MASTER FILE* FROM FILE.")
             self.masterFile = try AKFileUtils.read(GlobalConstants.AKMasterFileName)

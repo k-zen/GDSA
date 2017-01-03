@@ -78,6 +78,7 @@ class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
     private var startTime: Int64 = 0
     
     // MARK: Outlets
+    @IBOutlet weak var actionView: UIView!
     @IBOutlet weak var startRecordingTravel: UIButton!
     @IBOutlet weak var pauseRecordingTravel: UIButton!
     @IBOutlet weak var stopRecordingTravel: UIButton!
@@ -103,33 +104,6 @@ class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
         
         // Clear previous data.
         self.clearMap()
-        
-        // Configure map.
-        self.mapView.userTrackingMode = MKUserTrackingMode.follow
-        // self.mapView.showsScale = true
-        // self.mapView.showsCompass = true
-        self.mapView.showsTraffic = false
-        
-        // Add map overlay for travel information.
-        self.infoOverlayViewSubView = self.infoOverlayViewContainer.customView
-        self.infoOverlayViewContainer.controller = self
-        self.infoOverlayViewSubView.frame = CGRect(x: 0, y: 0, width: self.mapView.bounds.width, height: 60)
-        self.infoOverlayViewSubView.translatesAutoresizingMaskIntoConstraints = true
-        self.infoOverlayViewSubView.clipsToBounds = true
-        self.infoOverlayViewSubView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        
-        self.mapView.addSubview(self.infoOverlayViewSubView)
-        
-        let constraintWidth = NSLayoutConstraint(
-            item: self.infoOverlayViewSubView,
-            attribute: NSLayoutAttribute.width,
-            relatedBy: NSLayoutRelation.equal,
-            toItem: self.mapView,
-            attribute: NSLayoutAttribute.width,
-            multiplier: 1.0,
-            constant: 0.0
-        )
-        self.mapView.addConstraint(constraintWidth)
     }
     
     // MARK: Recording Methods
@@ -309,6 +283,33 @@ class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
             object: nil
         )
         
+        // Configure map.
+        self.mapView.userTrackingMode = MKUserTrackingMode.follow
+        // self.mapView.showsScale = true
+        // self.mapView.showsCompass = true
+        self.mapView.showsTraffic = false
+        
+        // Add map overlay for travel information.
+        self.infoOverlayViewSubView = self.infoOverlayViewContainer.customView
+        self.infoOverlayViewContainer.controller = self
+        self.infoOverlayViewSubView.frame = CGRect(x: 0, y: 0, width: self.mapView.bounds.width, height: 60)
+        self.infoOverlayViewSubView.translatesAutoresizingMaskIntoConstraints = true
+        self.infoOverlayViewSubView.clipsToBounds = true
+        self.infoOverlayViewSubView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
+        self.mapView.addSubview(self.infoOverlayViewSubView)
+        
+        let constraintWidth = NSLayoutConstraint(
+            item: self.infoOverlayViewSubView,
+            attribute: NSLayoutAttribute.width,
+            relatedBy: NSLayoutRelation.equal,
+            toItem: self.mapView,
+            attribute: NSLayoutAttribute.width,
+            multiplier: 1.0,
+            constant: 0.0
+        )
+        self.mapView.addConstraint(constraintWidth)
+        
         // Set the menu.
         self.setupMenu("Verificación", message: "Qué desea hacer ... ?", type: UIAlertControllerStyle.actionSheet)
         self.addMenuAction(
@@ -317,14 +318,14 @@ class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
             handler: { (action) -> Void in
                 AKDelegate().masterFile.addTravel(self.travel)
                 self.stopRecordingPostRoutine(self)
-            }
+        }
         )
         self.addMenuAction(
             "Descartar Viaje",
             style: UIAlertActionStyle.destructive,
             handler: { (action) -> Void in
                 self.stopRecordingPostRoutine(self)
-            }
+        }
         )
         self.addMenuAction(
             "Nada",
@@ -336,9 +337,15 @@ class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
         self.mapView.delegate = self
         
         // Custom L&F.
-        self.startRecordingTravel.layer.cornerRadius = 4.0
-        self.pauseRecordingTravel.layer.cornerRadius = 4.0
-        self.stopRecordingTravel.layer.cornerRadius = 4.0
+        self.infoOverlayViewSubView.backgroundColor = GlobalConstants.AKOverlaysBg
+        self.infoOverlayViewSubView.alpha = 0.75
+        
+        AKAddBorderDeco(
+            self.actionView,
+            color: GlobalConstants.AKDefaultViewBorderBg.cgColor,
+            thickness: GlobalConstants.AKDefaultBorderThickness,
+            position: CustomBorderDecorationPosition.bottom
+        )
     }
     
     func clearMap()

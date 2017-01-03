@@ -252,15 +252,15 @@
 			isa = PBXGroup;
 			children = (
 				495683351CEA268B0057B06E /* AKConstants.swift */,
+				495683321CEA235B0057B06E /* AKCustomComponents */,
 				49B138F61D09BDC70071E0DB /* AKDetection.swift */,
 				4934C6771D0AF920004754AF /* AKFileUtils.swift */,
 				4967CF971D060A560050DDF2 /* AKFilters.swift */,
 				495683371CEA57BC0057B06E /* AKInputData.swift */,
 				4934C6791D0B5FEB004754AF /* AKMasterFile.swift */,
+				491190821D74F60C007C5D32 /* AKPathRenderer */,
 				49BEBB191CEA635F00A5FC12 /* AKTravel.swift */,
 				495683381CEA57BC0057B06E /* AKTravelSegment.swift */,
-				495683321CEA235B0057B06E /* AKCustomComponents */,
-				491190821D74F60C007C5D32 /* AKPathRenderer */,
 			);
 			path = Library;
 			sourceTree = "<group>";

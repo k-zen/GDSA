@@ -42,6 +42,15 @@ struct GlobalConstants {
     static let AKTravelPathMarkerStrokeColor = AKHexColor(0x429867)
     static let AKMasterFileName = "MasterFile.dat"
     static let AKDefaultFont = "HelveticaNeue-CondensedBold"
+    
+    // Colors: https://github.com/morhetz/gruvbox
+    static let AKDefaultBg = AKHexColor(0x1D2021)
+    static let AKDefaultFg = AKHexColor(0xA89984)
+    static let AKTabBarBg = AKHexColor(0x101010)
+    static let AKTabBarTint = AKHexColor(0xD65D0E)
+    static let AKOverlaysBg = GlobalConstants.AKDefaultBg
+    static let AKDefaultViewBorderBg = AKHexColor(0x3C3836)
+    
     static let AKDisabledButtonBg = AKHexColor(0xEEEEEE)
     static let AKEnabledButtonBg = AKHexColor(0x030C22)
     static let AKTableHeaderCellBg = AKHexColor(0x333333)
