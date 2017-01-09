@@ -44,6 +44,14 @@ struct GlobalConstants {
     static let AKDefaultFont = "HelveticaNeue-CondensedBold"
     
     // Colors: https://github.com/morhetz/gruvbox
+    static let AKBg0 = AKHexColor(0x282828)
+    static let AKBg1 = AKHexColor(0x3c3836)
+    static let AKRed1 = AKHexColor(0xcc241d)
+    static let AKRed2 = AKHexColor(0xfb4934)
+    // Colors: http://www.colourlovers.com/palette/3925646/constellation_maps
+    static let AKRed3 = AKHexColor(0xBB5C5A)
+    static let AKRed4 = AKHexColor(0x9B2C32)
+    
     static let AKDefaultBg = AKHexColor(0x1D2021)
     static let AKDefaultFg = AKHexColor(0xA89984)
     static let AKTabBarBg = AKHexColor(0x101010)
@@ -57,7 +65,7 @@ struct GlobalConstants {
     static let AKTableHeaderLeftBorderBg = AKHexColor(0x72BF44)
     static let AKHeaderLeftBorderBg = AKHexColor(0x555555)
     static let AKHeaderTopBorderBg = AKHexColor(0x72BF44)
-    static let AKButtonCornerRadius = 4.0
+    static let AKButtonCornerRadius: CGFloat = 4.0
     static let AKDefaultBorderThickness = 2.0
     static let AKRecordTravelTab = 1
     static let AKPreviousTravelsTab = 2
@@ -65,6 +73,8 @@ struct GlobalConstants {
     // StopDetection
     static let AKStopDetectionMaxDistance = 10.0
     static let AKStopDetectionSegmentsToCount = 5
+    
+    static let AKTravelInfoOlAlpha: CGFloat = 0.75
 }
 
 // MARK: Global Enumerations

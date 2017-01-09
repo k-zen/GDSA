@@ -20,18 +20,16 @@ class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
     }
     private let startRecordingPostRoutine: (AKRecordTravelViewController) -> Void = { (controller) -> Void in
         // Change color of the info overlay.
-        controller.infoOverlayViewSubView.backgroundColor = AKHexColor(0xBB5C5A)
-        controller.infoOverlayViewContainer.distance.backgroundColor = AKHexColor(0x9B2C32)
-        controller.infoOverlayViewContainer.speed.backgroundColor = AKHexColor(0x9B2C32)
-        controller.infoOverlayViewContainer.time.backgroundColor = AKHexColor(0x9B2C32)
-        controller.infoOverlayViewContainer.coordinates.backgroundColor = AKHexColor(0x9B2C32)
-        
-        controller.infoOverlayViewContainer.startAnimation()
+        controller.infoOverlayViewSubView.backgroundColor = GlobalConstants.AKRed3
+        controller.infoOverlayViewContainer.distance.backgroundColor = GlobalConstants.AKRed4
+        controller.infoOverlayViewContainer.speed.backgroundColor = GlobalConstants.AKRed4
+        controller.infoOverlayViewContainer.time.backgroundColor = GlobalConstants.AKRed4
+        controller.infoOverlayViewContainer.coordinates.backgroundColor = GlobalConstants.AKRed4
         
         // Disable Record button.
         controller.startRecordingTravel.isEnabled = false
         UIView.animate(withDuration: 1.0, animations: { () -> () in
-            controller.startRecordingTravel.backgroundColor = AKHexColor(0x9B2C32)
+            controller.startRecordingTravel.backgroundColor = GlobalConstants.AKRed4
         })
         
         // Start stopwatch.
@@ -45,13 +43,11 @@ class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
     }
     private let stopRecordingPreRoutine: (AKRecordTravelViewController) -> Void = { (controller) -> Void in
         // Revert color of info overlay.
-        controller.infoOverlayViewSubView.backgroundColor = AKHexColor(0x253B49)
-        controller.infoOverlayViewContainer.distance.backgroundColor = AKHexColor(0x08303A)
-        controller.infoOverlayViewContainer.speed.backgroundColor = AKHexColor(0x08303A)
-        controller.infoOverlayViewContainer.time.backgroundColor = AKHexColor(0x08303A)
-        controller.infoOverlayViewContainer.coordinates.backgroundColor = AKHexColor(0x08303A)
-        
-        controller.infoOverlayViewContainer.stopAnimation()
+        controller.infoOverlayViewSubView.backgroundColor = GlobalConstants.AKOverlaysBg
+        controller.infoOverlayViewContainer.distance.backgroundColor = GlobalConstants.AKBg1
+        controller.infoOverlayViewContainer.speed.backgroundColor = GlobalConstants.AKBg1
+        controller.infoOverlayViewContainer.time.backgroundColor = GlobalConstants.AKBg1
+        controller.infoOverlayViewContainer.coordinates.backgroundColor = GlobalConstants.AKBg1
         
         // Enable Record button.
         controller.startRecordingTravel.isEnabled = true
@@ -185,9 +181,9 @@ class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
                 customView.layer.masksToBounds = true
                 customView.image = AKCircleImageWithRadius(
                     10,
-                    strokeColor: AKHexColor(0x000000),
+                    strokeColor: UIColor.white,
                     strokeAlpha: 1.0,
-                    fillColor: annotation.isKind(of: AKOriginPointAnnotation.self) ? AKHexColor(0x429867) : AKHexColor(0xE02130),
+                    fillColor: GlobalConstants.AKRed1,
                     fillAlpha: 1.0
                 )
                 customView.clipsToBounds = false
@@ -203,10 +199,10 @@ class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer
     {
         if overlay.isKind(of: AKRoutePolyline.self) {
-            let customOverlay = AKPathRenderer(polyline: overlay as! MKPolyline, colors: [AKHexColor(0x7BA9B6)])
+            let customOverlay = AKPathRenderer(polyline: overlay as! MKPolyline, colors: [GlobalConstants.AKRed1])
             customOverlay.lineWidth = 6.0
             customOverlay.border = true
-            customOverlay.borderColor = AKHexColor(0x08303A)
+            customOverlay.borderColor = UIColor.white
             
             return customOverlay
         }
@@ -338,7 +334,10 @@ class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
         
         // Custom L&F.
         self.infoOverlayViewSubView.backgroundColor = GlobalConstants.AKOverlaysBg
-        self.infoOverlayViewSubView.alpha = 0.75
+        self.infoOverlayViewSubView.alpha = GlobalConstants.AKTravelInfoOlAlpha
+        self.startRecordingTravel.layer.cornerRadius = GlobalConstants.AKButtonCornerRadius
+        self.pauseRecordingTravel.layer.cornerRadius = GlobalConstants.AKButtonCornerRadius
+        self.stopRecordingTravel.layer.cornerRadius = GlobalConstants.AKButtonCornerRadius
         
         AKAddBorderDeco(
             self.actionView,
@@ -372,7 +371,6 @@ class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
     func stopWatchTicked()
     {
         self.startTime += 1
-        
         self.infoOverlayViewContainer.time.text = String(format: "%02d:%02d:%02d", (startTime / 3600), ((startTime / 60) % 60), (startTime % 60))
     }
 }
