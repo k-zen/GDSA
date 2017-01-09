@@ -44,6 +44,8 @@
 		49B252351CB2FA13005C88C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49B2522D1CB2FA13005C88C9 /* Assets.xcassets */; };
 		49B7C67D1D675066004C7410 /* 0006-024px.png in Resources */ = {isa = PBXBuildFile; fileRef = 49B7C67C1D675066004C7410 /* 0006-024px.png */; };
 		49BEBB1A1CEA635F00A5FC12 /* AKTravel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BEBB191CEA635F00A5FC12 /* AKTravel.swift */; };
+		49C9BADE1E242C5C00C466EC /* AKDIMOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C9BADC1E242C5C00C466EC /* AKDIMOverlay.swift */; };
+		49C9BADF1E242C5C00C466EC /* AKDIMOverlayRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C9BADD1E242C5C00C466EC /* AKDIMOverlayRenderer.swift */; };
 		49CAA8471D1B3A25007BDD57 /* 0003-128px.png in Resources */ = {isa = PBXBuildFile; fileRef = 49CAA8461D1B3A25007BDD57 /* 0003-128px.png */; };
 		F659B09BE1C8F648E866A8EE /* Pods_GDSA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 112557B2B953CDA77E4FF6A8 /* Pods_GDSA.framework */; };
 /* End PBXBuildFile section */
@@ -93,6 +95,8 @@
 		49B252311CB2FA13005C88C9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49B7C67C1D675066004C7410 /* 0006-024px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "0006-024px.png"; sourceTree = "<group>"; };
 		49BEBB191CEA635F00A5FC12 /* AKTravel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKTravel.swift; sourceTree = "<group>"; };
+		49C9BADC1E242C5C00C466EC /* AKDIMOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKDIMOverlay.swift; sourceTree = "<group>"; };
+		49C9BADD1E242C5C00C466EC /* AKDIMOverlayRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKDIMOverlayRenderer.swift; sourceTree = "<group>"; };
 		49CAA8461D1B3A25007BDD57 /* 0003-128px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "0003-128px.png"; sourceTree = "<group>"; };
 		D07A537C06C51C24CADEF4A3 /* Pods-GDSA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GDSA.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GDSA/Pods-GDSA.debug.xcconfig"; sourceTree = "<group>"; };
 		E02FA7FCAA3C364950EA04A8 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -254,6 +258,8 @@
 				495683351CEA268B0057B06E /* AKConstants.swift */,
 				495683321CEA235B0057B06E /* AKCustomComponents */,
 				49B138F61D09BDC70071E0DB /* AKDetection.swift */,
+				49C9BADC1E242C5C00C466EC /* AKDIMOverlay.swift */,
+				49C9BADD1E242C5C00C466EC /* AKDIMOverlayRenderer.swift */,
 				4934C6771D0AF920004754AF /* AKFileUtils.swift */,
 				4967CF971D060A560050DDF2 /* AKFilters.swift */,
 				495683371CEA57BC0057B06E /* AKInputData.swift */,
@@ -453,10 +459,12 @@
 				4922DD701CE679CE003E0AFB /* AKPreviousTravelsViewController.swift in Sources */,
 				4934C6781D0AF920004754AF /* AKFileUtils.swift in Sources */,
 				4967CF981D060A560050DDF2 /* AKFilters.swift in Sources */,
+				49C9BADF1E242C5C00C466EC /* AKDIMOverlayRenderer.swift in Sources */,
 				490F91581CF7870F0031B8AE /* AKCustomView.m in Sources */,
 				49B138F71D09BDC70071E0DB /* AKDetection.swift in Sources */,
 				4956833A1CEA57BC0057B06E /* AKTravelSegment.swift in Sources */,
 				4937B1AB1D6B790900BED13B /* AKMainTabController.swift in Sources */,
+				49C9BADE1E242C5C00C466EC /* AKDIMOverlay.swift in Sources */,
 				495683341CEA235B0057B06E /* AKCustomViewController.swift in Sources */,
 				490F915A1CF7876B0031B8AE /* AKTravelInfoOverlayView.swift in Sources */,
 			);

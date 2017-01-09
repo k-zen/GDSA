@@ -2,6 +2,12 @@ import UIKit
 
 class AKPreviousTravelsViewController: AKCustomViewController, UITableViewDataSource, UITableViewDelegate
 {
+    // MARK: Constants
+    struct LocalConstants {
+        static let AKHeaderHeight: CGFloat = 40
+        static let AKRowHeight: CGFloat = 40
+    }
+    
     // MARK: Outlets
     @IBOutlet weak var travelsTable: UITableView!
     
@@ -25,24 +31,27 @@ class AKPreviousTravelsViewController: AKCustomViewController, UITableViewDataSo
         let e = AKObtainMasterFile().travels![(indexPath as NSIndexPath).row]
         
         let cell = self.travelsTable.dequeueReusableCell(withIdentifier: "Travels_Table_Cell") as! AKTravelsTableViewCell
-        cell.origin.text = String(format: "%f, %f", e.computeOrigin().latitude, e.computeOrigin().longitude)
-        cell.distance.text = String(format: "%.1fkm", e.computeDistance(UnitOfLength.kilometer))
-        cell.destination.text = String(format: "%f, %f", e.computeDestination().latitude, e.computeDestination().longitude)
+        cell.entryDate.text = e.computeEntryDate()
+        cell.distance.text = String(format: "%.3fkm", e.computeDistance(UnitOfLength.kilometer))
         
         // Custom L&F.
         cell.selectionStyle = UITableViewCellSelectionStyle.none
+        AKAddBorderDeco(cell,
+                        color: GlobalConstants.AKTableHeaderLeftBorderBg.cgColor,
+                        thickness: GlobalConstants.AKDefaultBorderThickness,
+                        position: CustomBorderDecorationPosition.left)
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
     {
-        let headerCell = UIView(frame: CGRect(x: 8, y: 0, width: 276, height: 22))
+        let headerCell = UIView(frame: CGRect(x: 8, y: 0, width: 276, height: LocalConstants.AKHeaderHeight))
         headerCell.backgroundColor = GlobalConstants.AKTableHeaderCellBg
         
         let title = UILabel(frame: headerCell.frame)
-        title.font = UIFont(name: GlobalConstants.AKDefaultFont, size: 14.0)
-        title.textColor = UIColor.white
+        title.font = UIFont(name: GlobalConstants.AKDefaultFont, size: 20.0)
+        title.textColor = GlobalConstants.AKDefaultFg
         title.text = "Travels"
         
         headerCell.addSubview(title)
@@ -90,9 +99,9 @@ class AKPreviousTravelsViewController: AKCustomViewController, UITableViewDataSo
         // MOVE TO VIEW HERE.
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat { return 62 }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat { return LocalConstants.AKRowHeight }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat { return 22 }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat { return LocalConstants.AKHeaderHeight }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat { return CGFloat.leastNormalMagnitude }
     

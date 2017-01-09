@@ -45,41 +45,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vX1-pG-j8s" userLabel="History_Table_Container">
-                                <rect key="frame" x="16" y="20" width="343" height="590"/>
-                                <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Mup-7e-09B" userLabel="Travels_Table">
-                                        <rect key="frame" x="0.0" y="40" width="343" height="550"/>
-                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <sections/>
-                                    </tableView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Previous Travels" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qrj-0D-n8U" userLabel="Main_Title">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="32"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="32" id="HqO-in-nIg"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="18"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="qrj-0D-n8U" firstAttribute="leading" secondItem="vX1-pG-j8s" secondAttribute="leading" id="1Q0-IL-r2R"/>
-                                    <constraint firstItem="Mup-7e-09B" firstAttribute="top" secondItem="qrj-0D-n8U" secondAttribute="bottom" constant="8" symbolic="YES" id="4cK-cu-Isq"/>
-                                    <constraint firstItem="qrj-0D-n8U" firstAttribute="trailing" secondItem="Mup-7e-09B" secondAttribute="trailing" id="DH3-wy-WvC"/>
-                                    <constraint firstItem="qrj-0D-n8U" firstAttribute="leading" secondItem="Mup-7e-09B" secondAttribute="leading" id="KZa-RR-rlY"/>
-                                    <constraint firstItem="qrj-0D-n8U" firstAttribute="top" secondItem="vX1-pG-j8s" secondAttribute="top" id="MPN-jP-7Hk"/>
-                                    <constraint firstAttribute="bottom" secondItem="Mup-7e-09B" secondAttribute="bottom" id="Y2n-z7-Nka"/>
-                                    <constraint firstAttribute="trailing" secondItem="qrj-0D-n8U" secondAttribute="trailing" id="hcS-vJ-5qw"/>
-                                </constraints>
-                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Mup-7e-09B" userLabel="Travels_Table">
+                                <rect key="frame" x="10" y="30" width="355" height="578"/>
+                                <color key="backgroundColor" red="0.1137254902" green="0.12549019610000001" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <sections/>
+                            </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.21176470589999999" green="0.2470588235" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.11372549019607843" green="0.12549019607843137" blue="0.12941176470588234" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="vX1-pG-j8s" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Cav-YG-N4l"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vX1-pG-j8s" secondAttribute="bottom" constant="8" symbolic="YES" id="EJa-kf-V11"/>
-                            <constraint firstItem="vX1-pG-j8s" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="v7s-Q9-ypd"/>
-                            <constraint firstItem="vX1-pG-j8s" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="wUe-aF-8X3"/>
+                            <constraint firstAttribute="trailing" secondItem="Mup-7e-09B" secondAttribute="trailing" constant="10" id="182-lP-a1R"/>
+                            <constraint firstItem="Mup-7e-09B" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" constant="-10" id="403-th-RgH"/>
+                            <constraint firstItem="Mup-7e-09B" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="W8w-Uj-OnF"/>
+                            <constraint firstItem="Mup-7e-09B" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="i9K-tB-SKT"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" tag="2" title="Previous" image="0008-030px.png" id="jAy-s9-YvI"/>
@@ -89,7 +66,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1331" y="411"/>
+            <point key="canvasLocation" x="1330.4000000000001" y="410.64467766116945"/>
         </scene>
         <!--Traffic Heatmap-->
         <scene sceneID="tPS-8K-d8z">
@@ -102,7 +79,7 @@
                     <view key="view" contentMode="scaleToFill" id="3hO-Xg-Ytd" userLabel="Main_Container">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.21176470589999999" green="0.2470588235" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.11372549019607843" green="0.12549019607843137" blue="0.12941176470588234" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" tag="3" title="Traffic Heatmap" image="0009-030px.png" id="PGj-gq-Sf8"/>
                 </viewController>

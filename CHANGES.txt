@@ -7,6 +7,7 @@ Functionalities
     * Heatmap of traffic.
 Changes
     * Version 1.0 Build 01 (2017/XX/XX)
+        * Improved support for travel's table and some other minor modifications. (2017/01/09)
         * Minor aesthetic modifications. (2017/01/02)
         * Added new path renderer. (2016/08/30)
         * Removed support for AutomationUI location simulation. Now we must use GPX files only to simulate routes/travels. (2016/08/27)

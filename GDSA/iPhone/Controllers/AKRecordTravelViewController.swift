@@ -11,6 +11,7 @@ class AKRoutePolyline: MKPolyline {}
 class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
 {
     // MARK: Properties
+    private let addDIMOverlay = false
     private let originAnnotation: AKOriginPointAnnotation = AKOriginPointAnnotation()
     private let destinationAnnotation: AKDestinationPointAnnotation = AKDestinationPointAnnotation()
     private let infoOverlayViewContainer: AKTravelInfoOverlayView = AKTravelInfoOverlayView()
@@ -183,8 +184,8 @@ class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
                     10,
                     strokeColor: UIColor.white,
                     strokeAlpha: 1.0,
-                    fillColor: GlobalConstants.AKRed1,
-                    fillAlpha: 1.0
+                    fillColor: GlobalConstants.AKOrange2,
+                    fillAlpha: 0.50
                 )
                 customView.clipsToBounds = false
                 
@@ -205,6 +206,9 @@ class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
             customOverlay.borderColor = UIColor.white
             
             return customOverlay
+        }
+        else if overlay.isKind(of: AKDIMOverlay.self) {
+            return AKDIMOverlayRenderer(overlay: overlay, mapView: self.mapView)
         }
         else {
             return MKPolylineRenderer(overlay: overlay)
@@ -294,8 +298,7 @@ class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
         self.infoOverlayViewSubView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
         self.mapView.addSubview(self.infoOverlayViewSubView)
-        
-        let constraintWidth = NSLayoutConstraint(
+        self.mapView.addConstraint(NSLayoutConstraint(
             item: self.infoOverlayViewSubView,
             attribute: NSLayoutAttribute.width,
             relatedBy: NSLayoutRelation.equal,
@@ -303,8 +306,14 @@ class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
             attribute: NSLayoutAttribute.width,
             multiplier: 1.0,
             constant: 0.0
-        )
-        self.mapView.addConstraint(constraintWidth)
+        ))
+        
+        if addDIMOverlay {
+            self.mapView.add(
+                AKDIMOverlay(mapView: self.mapView),
+                level: MKOverlayLevel.aboveLabels
+            )
+        }
         
         // Set the menu.
         self.setupMenu("Verificación", message: "Qué desea hacer ... ?", type: UIAlertControllerStyle.actionSheet)
@@ -356,7 +365,15 @@ class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
         }
         
         if self.mapView.overlays.count > 0 {
-            self.mapView.removeOverlays(self.mapView.overlays)
+            let overlaysToRemove = self.mapView.overlays.filter({ (overlay) -> Bool in
+                if overlay.isKind(of: AKRoutePolyline.self) {
+                    return true
+                }
+                else {
+                    return false
+                }
+            })
+            self.mapView.removeOverlays(overlaysToRemove)
         }
         
         self.infoOverlayViewContainer.time.text = String(format: "00:00:00")

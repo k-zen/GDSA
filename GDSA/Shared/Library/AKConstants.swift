@@ -44,12 +44,15 @@ struct GlobalConstants {
     static let AKDefaultFont = "HelveticaNeue-CondensedBold"
     
     // Colors: https://github.com/morhetz/gruvbox
+    static let AKBg0_h = AKHexColor(0x1D2021)
     static let AKBg0 = AKHexColor(0x282828)
     static let AKBg1 = AKHexColor(0x3c3836)
     static let AKBg2 = AKHexColor(0x504945)
     static let AKRed1 = AKHexColor(0xcc241d)
     static let AKRed2 = AKHexColor(0xfb4934)
     static let AKGray = AKHexColor(0xa89984)
+    static let AKOrange1 = AKHexColor(0xd65d0e)
+    static let AKOrange2 = AKHexColor(0xfe8019)
     // Colors: http://www.colourlovers.com/palette/3925646/constellation_maps
     static let AKRed3 = AKHexColor(0xBB5C5A)
     static let AKRed4 = AKHexColor(0x9B2C32)
@@ -59,14 +62,13 @@ struct GlobalConstants {
     static let AKTabBarBg = AKHexColor(0x101010)
     static let AKTabBarTint = AKHexColor(0xD65D0E)
     static let AKOverlaysBg = GlobalConstants.AKDefaultBg
-    static let AKDefaultViewBorderBg = AKHexColor(0x3C3836)
+    static let AKDefaultViewBorderBg = GlobalConstants.AKRed1
     
     static let AKDisabledButtonBg = GlobalConstants.AKGray
     static let AKEnabledButtonBg = GlobalConstants.AKBg1
-    static let AKTableHeaderCellBg = AKHexColor(0x333333)
-    static let AKTableHeaderLeftBorderBg = AKHexColor(0x72BF44)
-    static let AKHeaderLeftBorderBg = AKHexColor(0x555555)
-    static let AKHeaderTopBorderBg = AKHexColor(0x72BF44)
+    static let AKTableHeaderCellBg = GlobalConstants.AKRed1
+    static let AKTableHeaderLeftBorderBg = GlobalConstants.AKRed1
+    static let AKTableRowSeparator = GlobalConstants.AKRed1
     static let AKButtonCornerRadius: CGFloat = 4.0
     static let AKDefaultBorderThickness = 2.0
     static let AKRecordTravelTab = 1

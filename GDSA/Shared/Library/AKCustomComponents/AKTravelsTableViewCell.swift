@@ -3,10 +3,8 @@ import UIKit
 class AKTravelsTableViewCell: UITableViewCell
 {
     // MARK: Outlets
-    @IBOutlet weak var origin: UILabel!
-    @IBOutlet weak var destination: UILabel!
+    @IBOutlet weak var entryDate: UILabel!
     @IBOutlet weak var distance: UILabel!
-    @IBOutlet weak var mapIcon: UIImageView!
     
     // MARK: UITableViewCell Overriding
     override func awakeFromNib()
