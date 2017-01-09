@@ -127,14 +127,14 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1bf-2Q-rr4" userLabel="Record_Button">
                                         <rect key="frame" x="44.5" y="13" width="90" height="34"/>
-                                        <color key="backgroundColor" red="0.15686274509803921" green="0.15686274509803921" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.23529411764705882" green="0.2196078431372549" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="90" id="3gv-EA-uFB"/>
                                             <constraint firstAttribute="height" constant="34" id="oc1-Sq-jnL"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="20"/>
                                         <state key="normal" title="Record" image="0004-024px.png">
-                                            <color key="titleColor" red="0.6588235294" green="0.59999999999999998" blue="0.51764705879999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="startRecordingTravel:" destination="X3k-3j-jYF" eventType="touchUpInside" id="G37-FU-2kN"/>
@@ -142,14 +142,14 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Npn-7Z-9GJ" userLabel="Pause_Button">
                                         <rect key="frame" x="142.5" y="13" width="90" height="34"/>
-                                        <color key="backgroundColor" red="0.15686274509803921" green="0.15686274509803921" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.23529411764705882" green="0.2196078431372549" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="90" id="8g9-jX-tkZ"/>
                                             <constraint firstAttribute="height" constant="34" id="w7A-qm-Rh3"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="20"/>
                                         <state key="normal" title="Pause" image="0006-024px.png">
-                                            <color key="titleColor" red="0.6588235294" green="0.59999999999999998" blue="0.51764705879999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="pauseRecordingTravel:" destination="X3k-3j-jYF" eventType="touchUpInside" id="tHx-GR-Ai2"/>
@@ -157,14 +157,14 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8kB-p2-mqB" userLabel="Stop_Button">
                                         <rect key="frame" x="240.5" y="13" width="90" height="34"/>
-                                        <color key="backgroundColor" red="0.15686274509803921" green="0.15686274509803921" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.23529411764705882" green="0.2196078431372549" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="3VI-Tx-ahu"/>
                                             <constraint firstAttribute="width" constant="90" id="Xq1-et-oWE"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="20"/>
                                         <state key="normal" title="Stop" image="0005-024px.png">
-                                            <color key="titleColor" red="0.6588235294" green="0.59999999999999998" blue="0.51764705879999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="stopRecordingTravel:" destination="X3k-3j-jYF" eventType="touchUpInside" id="ifZ-fJ-RtX"/>

@@ -39,28 +39,30 @@ struct GlobalConstants {
     static let AKNotificationBarDismissDelay = 4
     static let AKNotificationBarSound = 1057
     static let AKPointDiscardRadius = 50.0
-    static let AKTravelPathMarkerStrokeColor = AKHexColor(0x429867)
+    static let AKTravelPathMarkerStrokeColor = AKHexColor(0xcc241d)
     static let AKMasterFileName = "MasterFile.dat"
     static let AKDefaultFont = "HelveticaNeue-CondensedBold"
     
     // Colors: https://github.com/morhetz/gruvbox
     static let AKBg0 = AKHexColor(0x282828)
     static let AKBg1 = AKHexColor(0x3c3836)
+    static let AKBg2 = AKHexColor(0x504945)
     static let AKRed1 = AKHexColor(0xcc241d)
     static let AKRed2 = AKHexColor(0xfb4934)
+    static let AKGray = AKHexColor(0xa89984)
     // Colors: http://www.colourlovers.com/palette/3925646/constellation_maps
     static let AKRed3 = AKHexColor(0xBB5C5A)
     static let AKRed4 = AKHexColor(0x9B2C32)
     
     static let AKDefaultBg = AKHexColor(0x1D2021)
-    static let AKDefaultFg = AKHexColor(0xA89984)
+    static let AKDefaultFg = UIColor.white
     static let AKTabBarBg = AKHexColor(0x101010)
     static let AKTabBarTint = AKHexColor(0xD65D0E)
     static let AKOverlaysBg = GlobalConstants.AKDefaultBg
     static let AKDefaultViewBorderBg = AKHexColor(0x3C3836)
     
-    static let AKDisabledButtonBg = AKHexColor(0xEEEEEE)
-    static let AKEnabledButtonBg = AKHexColor(0x030C22)
+    static let AKDisabledButtonBg = GlobalConstants.AKGray
+    static let AKEnabledButtonBg = GlobalConstants.AKBg1
     static let AKTableHeaderCellBg = AKHexColor(0x333333)
     static let AKTableHeaderLeftBorderBg = AKHexColor(0x72BF44)
     static let AKHeaderLeftBorderBg = AKHexColor(0x555555)

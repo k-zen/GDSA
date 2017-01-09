@@ -199,7 +199,7 @@ class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer
     {
         if overlay.isKind(of: AKRoutePolyline.self) {
-            let customOverlay = AKPathRenderer(polyline: overlay as! MKPolyline, colors: [GlobalConstants.AKRed1])
+            let customOverlay = AKPathRenderer(polyline: overlay as! MKPolyline, colors: [GlobalConstants.AKTravelPathMarkerStrokeColor])
             customOverlay.lineWidth = 6.0
             customOverlay.border = true
             customOverlay.borderColor = UIColor.white
