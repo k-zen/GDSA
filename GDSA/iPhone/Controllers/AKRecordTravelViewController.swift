@@ -15,6 +15,7 @@ class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
     private let originAnnotation: AKOriginPointAnnotation = AKOriginPointAnnotation()
     private let destinationAnnotation: AKDestinationPointAnnotation = AKDestinationPointAnnotation()
     private let infoOverlayViewContainer: AKTravelInfoOverlayView = AKTravelInfoOverlayView()
+    private let stopsOverlayViewContainer: AKTravelStopsOverlayView = AKTravelStopsOverlayView()
     private let startRecordingPreRoutine: (AKRecordTravelViewController) -> Void = { (controller) -> Void in
         // Clear map.
         controller.clearMap()
@@ -68,6 +69,7 @@ class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
         controller.clearMap()
     }
     private var infoOverlayViewSubView: UIView!
+    private var stopsOverlayViewSubView: UIView!
     private var travel: AKTravel! = AKTravel()
     private var currentPosition: CLLocationCoordinate2D = CLLocationCoordinate2D()
     private var coordinates: [CLLocationCoordinate2D] = []
@@ -183,9 +185,9 @@ class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
                 customView.image = AKCircleImageWithRadius(
                     10,
                     strokeColor: UIColor.white,
-                    strokeAlpha: 1.0,
+                    strokeAlpha: 1.00,
                     fillColor: GlobalConstants.AKOrange2,
-                    fillAlpha: 0.50
+                    fillAlpha: 1.00
                 )
                 customView.clipsToBounds = false
                 
@@ -243,8 +245,13 @@ class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
             // Execute detections.
             AKDetection.detect(self.mapView, travel: self.travel, travelSegment: travelSegment)
             
-            // Update info label.
+            // Update info labels.
             self.infoOverlayViewContainer.coordinates.text = String(format: "%f : %f", self.currentPosition.latitude, self.currentPosition.longitude)
+            
+            // Update stops labels.
+            self.stopsOverlayViewContainer.stopsValue.text = String(format: "%i", self.travel.computeOverallStopCounter())
+            let totalStopTime = Int32(self.travel.computeOverallStopTime(UnitOfTime.second))
+            self.stopsOverlayViewContainer.totalStopsTimeValue.text = String(format: "%02d:%02d:%02d", (totalStopTime / 3600), ((totalStopTime / 60) % 60), (totalStopTime % 60))
         })
     }
     
@@ -308,6 +315,25 @@ class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
             constant: 0.0
         ))
         
+        // Add map overlay for travel stops.
+        self.stopsOverlayViewSubView = self.stopsOverlayViewContainer.customView
+        self.stopsOverlayViewContainer.controller = self
+        self.stopsOverlayViewSubView.frame = CGRect(x: 0, y: self.mapView.bounds.height - 62, width: self.mapView.bounds.width, height: 62)
+        self.stopsOverlayViewSubView.translatesAutoresizingMaskIntoConstraints = true
+        self.stopsOverlayViewSubView.clipsToBounds = true
+        self.stopsOverlayViewSubView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
+        self.mapView.addSubview(self.stopsOverlayViewSubView)
+        self.mapView.addConstraint(NSLayoutConstraint(
+            item: self.stopsOverlayViewSubView,
+            attribute: NSLayoutAttribute.width,
+            relatedBy: NSLayoutRelation.equal,
+            toItem: self.mapView,
+            attribute: NSLayoutAttribute.width,
+            multiplier: 1.0,
+            constant: 0.0
+        ))
+        
         if addDIMOverlay {
             self.mapView.add(
                 AKDIMOverlay(mapView: self.mapView),
@@ -344,12 +370,20 @@ class AKRecordTravelViewController: AKCustomViewController, MKMapViewDelegate
         // Custom L&F.
         self.infoOverlayViewSubView.backgroundColor = GlobalConstants.AKOverlaysBg
         self.infoOverlayViewSubView.alpha = GlobalConstants.AKTravelInfoOlAlpha
+        self.stopsOverlayViewSubView.backgroundColor = GlobalConstants.AKOverlaysBg
+        self.stopsOverlayViewSubView.alpha = GlobalConstants.AKTravelInfoOlAlpha
         self.startRecordingTravel.layer.cornerRadius = GlobalConstants.AKButtonCornerRadius
         self.pauseRecordingTravel.layer.cornerRadius = GlobalConstants.AKButtonCornerRadius
         self.stopRecordingTravel.layer.cornerRadius = GlobalConstants.AKButtonCornerRadius
         
         AKAddBorderDeco(
             self.actionView,
+            color: GlobalConstants.AKDefaultViewBorderBg.cgColor,
+            thickness: GlobalConstants.AKDefaultBorderThickness,
+            position: CustomBorderDecorationPosition.bottom
+        )
+        AKAddBorderDeco(
+            self.stopsOverlayViewSubView,
             color: GlobalConstants.AKDefaultViewBorderBg.cgColor,
             thickness: GlobalConstants.AKDefaultBorderThickness,
             position: CustomBorderDecorationPosition.bottom

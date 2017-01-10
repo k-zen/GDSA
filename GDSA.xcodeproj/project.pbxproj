@@ -21,6 +21,8 @@
 		4937B1AF1D6BFA5800BED13B /* 0007-030px.png in Resources */ = {isa = PBXBuildFile; fileRef = 4937B1AC1D6BFA5800BED13B /* 0007-030px.png */; };
 		4937B1B01D6BFA5800BED13B /* 0008-030px.png in Resources */ = {isa = PBXBuildFile; fileRef = 4937B1AD1D6BFA5800BED13B /* 0008-030px.png */; };
 		4937B1B11D6BFA5800BED13B /* 0009-030px.png in Resources */ = {isa = PBXBuildFile; fileRef = 4937B1AE1D6BFA5800BED13B /* 0009-030px.png */; };
+		49431A0C1E25562600757845 /* AKTravelStopsOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49431A0B1E25562600757845 /* AKTravelStopsOverlayView.xib */; };
+		49431A0E1E25584700757845 /* AKTravelStopsOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49431A0D1E25584700757845 /* AKTravelStopsOverlayView.swift */; };
 		495683341CEA235B0057B06E /* AKCustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495683331CEA235B0057B06E /* AKCustomViewController.swift */; };
 		495683361CEA268B0057B06E /* AKConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495683351CEA268B0057B06E /* AKConstants.swift */; };
 		495683391CEA57BC0057B06E /* AKInputData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495683371CEA57BC0057B06E /* AKInputData.swift */; };
@@ -68,6 +70,8 @@
 		4937B1AC1D6BFA5800BED13B /* 0007-030px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "0007-030px.png"; sourceTree = "<group>"; };
 		4937B1AD1D6BFA5800BED13B /* 0008-030px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "0008-030px.png"; sourceTree = "<group>"; };
 		4937B1AE1D6BFA5800BED13B /* 0009-030px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "0009-030px.png"; sourceTree = "<group>"; };
+		49431A0B1E25562600757845 /* AKTravelStopsOverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AKTravelStopsOverlayView.xib; sourceTree = "<group>"; };
+		49431A0D1E25584700757845 /* AKTravelStopsOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKTravelStopsOverlayView.swift; sourceTree = "<group>"; };
 		495683331CEA235B0057B06E /* AKCustomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKCustomViewController.swift; sourceTree = "<group>"; };
 		495683351CEA268B0057B06E /* AKConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKConstants.swift; sourceTree = "<group>"; };
 		495683371CEA57BC0057B06E /* AKInputData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKInputData.swift; sourceTree = "<group>"; };
@@ -130,6 +134,7 @@
 				495683331CEA235B0057B06E /* AKCustomViewController.swift */,
 				490F91591CF7876B0031B8AE /* AKTravelInfoOverlayView.swift */,
 				49199ABE1D15A3DA009A5A31 /* AKTravelsTableViewCell.swift */,
+				49431A0D1E25584700757845 /* AKTravelStopsOverlayView.swift */,
 			);
 			path = AKCustomComponents;
 			sourceTree = "<group>";
@@ -230,6 +235,7 @@
 			children = (
 				490F91541CF785BF0031B8AE /* AKTravelInfoOverlayView.xib */,
 				49199ABC1D15A367009A5A31 /* AKTravelsTableViewCell.xib */,
+				49431A0B1E25562600757845 /* AKTravelStopsOverlayView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -387,6 +393,7 @@
 				49B252341CB2FA13005C88C9 /* AKMain.storyboard in Resources */,
 				490F91551CF785BF0031B8AE /* AKTravelInfoOverlayView.xib in Resources */,
 				49199ABD1D15A367009A5A31 /* AKTravelsTableViewCell.xib in Resources */,
+				49431A0C1E25562600757845 /* AKTravelStopsOverlayView.xib in Resources */,
 				49B252351CB2FA13005C88C9 /* Assets.xcassets in Resources */,
 				49B252231CB2F84D005C88C9 /* CHANGES.txt in Resources */,
 			);
@@ -462,6 +469,7 @@
 				49C9BADF1E242C5C00C466EC /* AKDIMOverlayRenderer.swift in Sources */,
 				490F91581CF7870F0031B8AE /* AKCustomView.m in Sources */,
 				49B138F71D09BDC70071E0DB /* AKDetection.swift in Sources */,
+				49431A0E1E25584700757845 /* AKTravelStopsOverlayView.swift in Sources */,
 				4956833A1CEA57BC0057B06E /* AKTravelSegment.swift in Sources */,
 				4937B1AB1D6B790900BED13B /* AKMainTabController.swift in Sources */,
 				49C9BADE1E242C5C00C466EC /* AKDIMOverlay.swift in Sources */,

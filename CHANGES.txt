@@ -7,6 +7,7 @@ Functionalities
     * Heatmap of traffic.
 Changes
     * Version 1.0 Build 01 (2017/XX/XX)
+        * Added support for a stops overlay above the tab bar. Also added support for resume travel detection. (2017/01/10)
         * Improved support for travel's table and some other minor modifications. (2017/01/09)
         * Minor aesthetic modifications. (2017/01/02)
         * Added new path renderer. (2016/08/30)

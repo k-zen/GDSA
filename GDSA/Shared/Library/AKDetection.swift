@@ -8,6 +8,7 @@ class AKDetection: NSObject
     static func detect(_ map: MKMapView, travel: AKTravel, travelSegment: AKTravelSegment)
     {
         AKDetection.detectStops(map, travel: travel, travelSegment: travelSegment)
+        AKDetection.detectResumeTravel(map, travel: travel, travelSegment: travelSegment)
     }
     
     // MARK: Detection
@@ -19,7 +20,6 @@ class AKDetection: NSObject
         let elementsToCount: Int = GlobalConstants.AKStopDetectionSegmentsToCount
         var totalDistance: Double = 0.0
         var isStop: Int8 = 0
-        var lastSegment: AKTravelSegment?
         
         if segments.count < elementsToCount {
             return
@@ -29,7 +29,6 @@ class AKDetection: NSObject
         let firstIndex = lastIndex - elementsToCount + 1
         for k in (firstIndex ... lastIndex).reversed() { // Iterate in reverse order.
             totalDistance += segments[k].computeDistance(UnitOfLength.meter)
-            lastSegment = segments[k]
         }
         
         isStop = totalDistance <= GlobalConstants.AKStopDetectionMaxDistance ? 1 : 0 // If it's 1 then is a STOP.
@@ -49,18 +48,34 @@ class AKDetection: NSObject
                 segments[k].markAsStop(stopID, stopTime: stopTime)
             }
             
-            map.addAnnotation(AKCreateCircleForCoordinate(
-                "Parada",
-                coordinate: (lastSegment?.computeEnd())!,
-                withMeterRadius: 10.0)
-            )
+            // Update the travel object with new info.
+            travel.updateOverallStopCounter()
+            travel.updateOverallStopTime(Int64(stopTime))
+        }
+    }
+    
+    private static func detectResumeTravel(_ map: MKMapView, travel: AKTravel, travelSegment: AKTravelSegment)
+    {
+        NSLog("=> DETECTION: *RESUME TRAVEL*")
+        
+        let segments = travel.computeSegments()
+        var isResume: Int8 = 0
+        
+        if segments.count < 2 {
+            return
+        }
+        
+        isResume = (!segments[segments.endIndex - 1].computeStop() && segments[segments.endIndex - 2].computeStop()) ? 1 : 0 // If it's 1 then is a STOP.
+        if isResume == 1 {
+            NSLog("=> DETECTION: *RESUME TRAVEL* IS A RESUME!")
             
             // Add PIN.
             let annotation = MKPointAnnotation()
-            annotation.coordinate = (lastSegment?.computeEnd())!
-            annotation.title = "Parada"
-            annotation.subtitle = String(format: "Stop Time: %.1f", stopTime)
+            annotation.coordinate = segments[segments.endIndex - 2].computeEnd()
+            annotation.title = "Stop Point"
+            annotation.subtitle = String(format: "Stop Time: %.0f", travel.computeOverallStopTime(UnitOfTime.second))
             map.addAnnotation(annotation)
+            map.selectAnnotation(annotation, animated: true)
         }
     }
 }
