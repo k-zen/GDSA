@@ -1,10 +1,11 @@
 =================== Release 1.0 2017-XX-XX =====================
 Description
-    * First alpha version of the App.
+    * First version of the App.
 Functionalities
     * Ability to record travels.
     * Ability to visualize travels.
-    * Heatmap of traffic.
+    * Heatmap of stops.
+    * Ability to export travels as GPX files.
 Changes
     * Version 1.0 Build 01 (2017/XX/XX)
         * Added support for a stops overlay above the tab bar. Also added support for resume travel detection. (2017/01/10)
