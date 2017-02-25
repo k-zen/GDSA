@@ -12,13 +12,13 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   TSMessages:
-    :commit: e63f23304f781dcadbac31e6d338f3105fb3cd78
+    :commit: dd843df9a04a756210b2ed51caf1f2b9aafee508
     :git: https://github.com/KrauseFx/TSMessages.git
 
 SPEC CHECKSUMS:
   HexColors: 6ad3947c3447a055a3aa8efa859def096351fe5f
-  TSMessages: 6e403b790139636c15ab4f51946537095e03e79c
+  TSMessages: eb3cf27b6900684a21bad4fe9ea426e287b8c839
 
 PODFILE CHECKSUM: 7ec523cdb93add107b5b17cbb1d43d503f4c72ec
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.2.0
