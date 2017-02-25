@@ -41,14 +41,14 @@
 		499DB6951CB6F24200342742 /* 0002-044px.png in Resources */ = {isa = PBXBuildFile; fileRef = 499DB6941CB6F24200342742 /* 0002-044px.png */; };
 		49B138F71D09BDC70071E0DB /* AKDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B138F61D09BDC70071E0DB /* AKDetection.swift */; };
 		49B252231CB2F84D005C88C9 /* CHANGES.txt in Resources */ = {isa = PBXBuildFile; fileRef = 49B252211CB2F84D005C88C9 /* CHANGES.txt */; };
-		49B252321CB2FA13005C88C9 /* AKAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B252271CB2FA13005C88C9 /* AKAppDelegate.swift */; };
-		49B252341CB2FA13005C88C9 /* AKMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49B252291CB2FA13005C88C9 /* AKMain.storyboard */; };
 		49B252351CB2FA13005C88C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49B2522D1CB2FA13005C88C9 /* Assets.xcassets */; };
 		49B7C67D1D675066004C7410 /* 0006-024px.png in Resources */ = {isa = PBXBuildFile; fileRef = 49B7C67C1D675066004C7410 /* 0006-024px.png */; };
 		49BEBB1A1CEA635F00A5FC12 /* AKTravel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BEBB191CEA635F00A5FC12 /* AKTravel.swift */; };
 		49C9BADE1E242C5C00C466EC /* AKDIMOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C9BADC1E242C5C00C466EC /* AKDIMOverlay.swift */; };
 		49C9BADF1E242C5C00C466EC /* AKDIMOverlayRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C9BADD1E242C5C00C466EC /* AKDIMOverlayRenderer.swift */; };
 		49CAA8471D1B3A25007BDD57 /* 0003-128px.png in Resources */ = {isa = PBXBuildFile; fileRef = 49CAA8461D1B3A25007BDD57 /* 0003-128px.png */; };
+		49DF7ED71E5DF6CC0017BEC6 /* AKAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DF7ED41E5DF6CC0017BEC6 /* AKAppDelegate.swift */; };
+		49DF7ED81E5DF6CC0017BEC6 /* AKMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49DF7ED61E5DF6CC0017BEC6 /* AKMain.storyboard */; };
 		F659B09BE1C8F648E866A8EE /* Pods_GDSA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 112557B2B953CDA77E4FF6A8 /* Pods_GDSA.framework */; };
 /* End PBXBuildFile section */
 
@@ -87,14 +87,11 @@
 		499DB67E1CB6E8B900342742 /* AppIcon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon-60@2x.png"; sourceTree = "<group>"; };
 		499DB67F1CB6E8B900342742 /* AppIcon-60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon-60@3x.png"; sourceTree = "<group>"; };
 		499DB6871CB6EAD500342742 /* AKRecordTravelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKRecordTravelViewController.swift; sourceTree = "<group>"; };
-		499DB68B1CB6ECE500342742 /* AKBridgingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKBridgingHeader.h; sourceTree = "<group>"; };
 		499DB6941CB6F24200342742 /* 0002-044px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "0002-044px.png"; sourceTree = "<group>"; };
 		49B138F61D09BDC70071E0DB /* AKDetection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKDetection.swift; sourceTree = "<group>"; };
 		49B251F11CB2F26B005C88C9 /* GDSA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GDSA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49B252211CB2F84D005C88C9 /* CHANGES.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGES.txt; sourceTree = "<group>"; };
 		49B252221CB2F84D005C88C9 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		49B252271CB2FA13005C88C9 /* AKAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKAppDelegate.swift; sourceTree = "<group>"; };
-		49B252291CB2FA13005C88C9 /* AKMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AKMain.storyboard; sourceTree = "<group>"; };
 		49B2522D1CB2FA13005C88C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49B252311CB2FA13005C88C9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49B7C67C1D675066004C7410 /* 0006-024px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "0006-024px.png"; sourceTree = "<group>"; };
@@ -102,6 +99,9 @@
 		49C9BADC1E242C5C00C466EC /* AKDIMOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKDIMOverlay.swift; sourceTree = "<group>"; };
 		49C9BADD1E242C5C00C466EC /* AKDIMOverlayRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKDIMOverlayRenderer.swift; sourceTree = "<group>"; };
 		49CAA8461D1B3A25007BDD57 /* 0003-128px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "0003-128px.png"; sourceTree = "<group>"; };
+		49DF7ED41E5DF6CC0017BEC6 /* AKAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKAppDelegate.swift; sourceTree = "<group>"; };
+		49DF7ED51E5DF6CC0017BEC6 /* AKBridgingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKBridgingHeader.h; sourceTree = "<group>"; };
+		49DF7ED61E5DF6CC0017BEC6 /* AKMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AKMain.storyboard; sourceTree = "<group>"; };
 		D07A537C06C51C24CADEF4A3 /* Pods-GDSA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GDSA.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GDSA/Pods-GDSA.debug.xcconfig"; sourceTree = "<group>"; };
 		E02FA7FCAA3C364950EA04A8 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -191,6 +191,7 @@
 		49B251F31CB2F26B005C88C9 /* GDSA */ = {
 			isa = PBXGroup;
 			children = (
+				49DF7ED31E5DF6CC0017BEC6 /* Application */,
 				49B252251CB2FA13005C88C9 /* iPhone */,
 				49B2522C1CB2FA13005C88C9 /* Resources */,
 				49B2522E1CB2FA13005C88C9 /* Shared */,
@@ -202,21 +203,10 @@
 		49B252251CB2FA13005C88C9 /* iPhone */ = {
 			isa = PBXGroup;
 			children = (
-				49B252261CB2FA13005C88C9 /* Application */,
 				49B2522A1CB2FA13005C88C9 /* Controllers */,
 				49B2522B1CB2FA13005C88C9 /* Views */,
 			);
 			path = iPhone;
-			sourceTree = "<group>";
-		};
-		49B252261CB2FA13005C88C9 /* Application */ = {
-			isa = PBXGroup;
-			children = (
-				49B252271CB2FA13005C88C9 /* AKAppDelegate.swift */,
-				499DB68B1CB6ECE500342742 /* AKBridgingHeader.h */,
-				49B252291CB2FA13005C88C9 /* AKMain.storyboard */,
-			);
-			path = Application;
 			sourceTree = "<group>";
 		};
 		49B2522A1CB2FA13005C88C9 /* Controllers */ = {
@@ -283,6 +273,16 @@
 				49B252311CB2FA13005C88C9 /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		49DF7ED31E5DF6CC0017BEC6 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				49DF7ED41E5DF6CC0017BEC6 /* AKAppDelegate.swift */,
+				49DF7ED51E5DF6CC0017BEC6 /* AKBridgingHeader.h */,
+				49DF7ED61E5DF6CC0017BEC6 /* AKMain.storyboard */,
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 		66481AA77F176DBE344C17C0 /* Frameworks */ = {
@@ -379,6 +379,7 @@
 				499DB6801CB6E8B900342742 /* 0001-512px.png in Resources */,
 				499DB6951CB6F24200342742 /* 0002-044px.png in Resources */,
 				49CAA8471D1B3A25007BDD57 /* 0003-128px.png in Resources */,
+				49DF7ED81E5DF6CC0017BEC6 /* AKMain.storyboard in Resources */,
 				497ED46E1D66124B003CE13E /* 0004-024px.png in Resources */,
 				497ED4701D6613FC003CE13E /* 0005-024px.png in Resources */,
 				49B7C67D1D675066004C7410 /* 0006-024px.png in Resources */,
@@ -391,7 +392,6 @@
 				499DB6841CB6E8B900342742 /* AppIcon-40@3x.png in Resources */,
 				499DB6851CB6E8B900342742 /* AppIcon-60@2x.png in Resources */,
 				499DB6861CB6E8B900342742 /* AppIcon-60@3x.png in Resources */,
-				49B252341CB2FA13005C88C9 /* AKMain.storyboard in Resources */,
 				490F91551CF785BF0031B8AE /* AKTravelInfoOverlayView.xib in Resources */,
 				49199ABD1D15A367009A5A31 /* AKTravelsTableViewCell.xib in Resources */,
 				49431A0C1E25562600757845 /* AKTravelStopsOverlayView.xib in Resources */,
@@ -456,7 +456,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49BEBB1A1CEA635F00A5FC12 /* AKTravel.swift in Sources */,
-				49B252321CB2FA13005C88C9 /* AKAppDelegate.swift in Sources */,
+				49DF7ED71E5DF6CC0017BEC6 /* AKAppDelegate.swift in Sources */,
 				495683361CEA268B0057B06E /* AKConstants.swift in Sources */,
 				499DB6881CB6EAD500342742 /* AKRecordTravelViewController.swift in Sources */,
 				4922DD721CE67C01003E0AFB /* AKViewTravelViewController.swift in Sources */,
@@ -580,7 +580,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.apkc.projects.ios.GDSA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = GDSA/iPhone/Application/AKBridgingHeader.h;
+				SWIFT_OBJC_BRIDGING_HEADER = GDSA/Application/AKBridgingHeader.h;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -598,7 +598,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.apkc.projects.ios.GDSA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = GDSA/iPhone/Application/AKBridgingHeader.h;
+				SWIFT_OBJC_BRIDGING_HEADER = GDSA/Application/AKBridgingHeader.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 			};
